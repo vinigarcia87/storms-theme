@@ -1,0 +1,15 @@
+﻿/*
+Theme Name: Storms Theme - Storms Websolutions
+Author: Vinicius Garcia - Storms Websolutions Team
+Author URI: http://storms.com.br
+Version: 1.0.0
+License: Copyright Storms Websolutions
+Tags: storms
+Description: This is the Storms Websolutions Starter Theme
+Text Domain: storms
+
+Don't add css in this file!
+The theme css is in assets/css/style.css
+*/
+
+@import url("./assets/css/style.min.css");
