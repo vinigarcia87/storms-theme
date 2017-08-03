@@ -9,7 +9,7 @@
  * @version   3.0.0
  *
  * Under Construction Page
- * Page to show while nothing is done
+ * Page to show while the website is on construction
  */
 ?>
 <!DOCTYPE html>
