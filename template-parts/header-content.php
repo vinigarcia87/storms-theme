@@ -29,20 +29,8 @@ use \StormsFramework\Storms\Helper;
 			</a>
 		<?php endif; ?>
 	</div>
+
 	<div class="col-md-4 col-md-offset-3">
-	<?php if ( is_active_sidebar( 'header-sidebar' ) ) : ?>
-		<section class="header-sidebar" role="complementary">
-			<?php dynamic_sidebar( 'header-sidebar' ); ?>
-		</section>
-	<?php else: ?>
-		<p class="text-right">
-			<?php esc_html_e( 'Desenvolvimento de Software', 'storms' ); ?><br/>
-			<?php esc_html_e( 'vinicius.garcia@storms.com.br', 'storms' ); ?><br/>
-			<?php esc_html_e( 'Telefone: (41) 8825.3688', 'storms' ); ?><br/>
-			<a href="<?php echo esc_url( wp_login_url() ); ?>" title="Login">
-				<?php esc_html_e( 'Acessar meu sistema', 'storms' ); ?> <span class="fa fa-lock" title="Login"></span>
-			</a>
-		</p>
-	<?php endif; ?>
+        <?php get_sidebar( 'header' ); ?>
 	</div>
 </div>

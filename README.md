@@ -15,7 +15,7 @@ The PHP code is licensed with GPLv2. All the CSS, SCSS, JS, images files and oth
 
 ## Theme Features
 
-* Needs **Storms Framework 3** to work!
+* Needs **Storms Framework** to work!
 * Build with Gulp, using SASS
 * Admin area and login page fully customized with your brand
 * [Bootstrap 3](http://getbootstrap.com/) integration
@@ -23,22 +23,61 @@ The PHP code is licensed with GPLv2. All the CSS, SCSS, JS, images files and oth
 * [WooCommerce](http://www.woothemes.com/woocommerce/) support with fully bootstraped templates
 * [EditorConfig](http://editorconfig.org/) ready
 
+## Plugin list
+
+- Security and backup
+    - Storms Framework
+    - iThemes Security
+    - BackWPup
+    - WP Migrate DB
+    - Google Captcha (reCAPTCHA) by BestWebSoft
+    - WP-Optimize
+    - WP Super Cache
+    - Yoast SEO
+    - Google Analytics for WordPress by MonsterInsights
+    
+- Logging, development and maintenance
+    - WP Maintenance Mode
+    - Importador do WordPress
+    - WordPress phpinfo()
+    - User Activity Log
+    - REST API Log
+    - WP User Avatar
+    - Contact Form 7
+    - Newsletter by Stefano Lissa
+    - Relevanssi – A Better Search
+    - Nav Menu Roles
+    - Members
+    - Advanced Custom Fields
+    - TinyMCE Advanced
+    
+- eCommerce
+    - WooCommerce
+    - WooCommerce Correios
+    - WooCommerce Extra Checkout Fields for Brazil
+    - WooCommerce PagSeguro
+    - WooCommerce Role Based Price
+    - YITH WooCommerce Custom Order Status
+    - YITH WooCommerce Quick View
+    - YITH WooCommerce Wishlist
+    - Storms WooCommerce Disable Products
+    
+- Favorites ( https://br.wordpress.org/plugins/browse/favorites/ )
+    - Default featured image
+    - Featured Image Admin Thumb
+    - Smush Image Compression and Optimization
+    - Owl Carousel
+
 ## Checklist
 
-- Maintenance: pagina, css, plugin
-- WP layout: search page, search, form
-- ~~WC: bootstrap buttons, css~~
-- WC tabs: bootstrap
-- CSS: deixar login, admin, editor-style no framework
-- CSS: storms, wordpress, bootstrap, fontawesome, style no theme
-- ~~WP: verificar pq nao carrega os styles corretamente~~
-- WP: remover css de plugins (wp contact form 7, newsletter, ...)
-- JS: compilar js do bootstrap e do wc juntos - criar gulp para isso
-- IMG: gulp para otimizar imagens - https://ahmadawais.com/my-advanced-gulp-workflow-for-wordpress-themes/
-- SF: Retirar o carregamento de scripts do framework - exceto login, admin, editor-style
+- WP layout: Search page
+- Bootstrap on WooCommerce product tabs 
+- Check possibility of change Cycle2 for Owl Carousel
 
 ## Reminder
 
+- Always go HTTPS
+- Check if your server has support to HTTP2
 - WooCommerce fonts: 
     - https://github.com/woocommerce/woocommerce-icons
     - https://rawgit.com/woothemes/woocommerce-icons/master/demo.html

@@ -21,7 +21,7 @@ if ( !defined( 'STORMS_THEME_VERSION' ) )
     define( 'STORMS_THEME_VERSION', '1.0.0' );
 
 // System Environment
-define( 'SF_ENV', 'DESENVOLVIMENTO' );
+define( 'SF_ENV', 'DEV' );
 
 // Define the System Version
 if ( !defined( 'STORMS_SYSTEM_VERSION' ) )
