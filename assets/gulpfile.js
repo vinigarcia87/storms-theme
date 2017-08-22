@@ -4,8 +4,8 @@
  */
 
 // Project configuration
-var project 		= '8kdesign',                // Project name, used for build zip.
-	url 			= '8kdesign.dev.br',         // Local Development URL for BrowserSync. Change as-needed.
+var project 		= 'storms',                	 // Project name, used for build zip.
+	url 			= 'storms.dev.br',           // Local Development URL for BrowserSync. Change as-needed.
     theme_dir		= '../',					 // Theme base dir
 	wp_content		= '../../../';				 // WordPress wp-content/ dir
 

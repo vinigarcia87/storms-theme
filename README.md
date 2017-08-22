@@ -23,6 +23,10 @@ The PHP code is licensed with GPLv2. All the CSS, SCSS, JS, images files and oth
 * [WooCommerce](http://www.woothemes.com/woocommerce/) support with fully bootstraped templates
 * [EditorConfig](http://editorconfig.org/) ready
 
+## How to creat a child theme
+
+- https://premium.wpmudev.org/blog/how-to-create-wordpress-child-theme/
+
 ## Plugin list
 
 - Security and backup
@@ -68,7 +72,11 @@ The PHP code is licensed with GPLv2. All the CSS, SCSS, JS, images files and oth
     - Smush Image Compression and Optimization
     - Owl Carousel
 
-## Checklist
+## Security Checklist
+
+- Find that link of the security checklist to have it here
+	
+## To-Do List
 
 - WP layout: Search page
 - Bootstrap on WooCommerce product tabs 

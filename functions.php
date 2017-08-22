@@ -27,37 +27,41 @@ define( 'SF_ENV', 'DEV' );
 if ( !defined( 'STORMS_SYSTEM_VERSION' ) )
     define( 'STORMS_SYSTEM_VERSION', 'YYYY.MM.DD' );
 
-// Theme setup
-function theme_setup() {
-    // Enable backend support
-    add_theme_support( 'style-backend' );
-    // Enable frontend support
-    add_theme_support( 'style-frontend' );
-    // Enable layout support
-    add_theme_support( 'style-layout' );
-    // Enable bootstrap support
-    add_theme_support( 'use-bootstrap' );
-    // Enable woocommerce support
-    add_theme_support( 'use-woocommerce' );
+if( ! function_exists( 'theme_setup' ) ) {
+	// Theme setup
+	function theme_setup() {
+		// Enable backend support
+		add_theme_support( 'style-backend' );
+		// Enable frontend support
+		add_theme_support( 'style-frontend' );
+		// Enable layout support
+		add_theme_support( 'style-layout' );
+		// Enable bootstrap support
+		add_theme_support( 'use-bootstrap' );
+		// Enable woocommerce support
+		add_theme_support( 'use-woocommerce' );
 
-    // YOST SEO Breadcrumbs
-    add_theme_support( 'yoast-seo-breadcrumbs');
+		// YOST SEO Breadcrumbs
+		add_theme_support( 'yoast-seo-breadcrumbs');
+	}
+	add_action( 'after_setup_theme', 'theme_setup' );
 }
-add_action( 'after_setup_theme', 'theme_setup' );
 
-// Define storms framework options
-function define_options() {
-    update_option( 'load_external_jquery', true ); // Load jquery from Google CDN
+if( ! function_exists( 'define_options' ) ) {
+	// Define storms framework options
+	function define_options() {
+		update_option( 'load_external_jquery', true ); // Load jquery from Google CDN
 
-    update_option( 'number_of_footer_sidebars', 5 );
-    update_option( 'meta_description' , '' );
-    update_option( 'meta_keywords' , '' );
+		update_option( 'number_of_footer_sidebars', 5 );
+		update_option( 'meta_description' , '' );
+		update_option( 'meta_keywords' , '' );
 
-    // Define WooCommerce product and shop pages layout
-    update_option( 'product_layout', '2c-r' );
-    update_option( 'shop_layout', '2c-r' );
+		// Define WooCommerce product and shop pages layout
+		update_option( 'product_layout', '2c-r' );
+		update_option( 'shop_layout', '2c-r' );
+	}
+	add_action( 'init', 'define_options' );
 }
-add_action( 'init', 'define_options' );
 
 /**
  * =====================================================================================================================
@@ -67,10 +71,12 @@ add_action( 'init', 'define_options' );
  * You need to testing things?
  * Do it here!
  */
-function storms_testing() {
-    //\StormsFramework\Storms\Helper::debug( 'Debugging' );
+if( ! function_exists( 'storms_testing' ) ) {
+	function storms_testing() {
+		//\StormsFramework\Storms\Helper::debug( 'Debugging' );
+	}
+	//add_action( 'init', 'storms_testing' );
 }
-//add_action( 'init', 'storms_testing' );
 
 /**
  * 					REVISAR ESSES CODIGOS!
