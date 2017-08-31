@@ -87,8 +87,10 @@ gulp.task('load-assets', function() {
 		.pipe(notify({ message: 'Load fonts task complete', onLast: true }));
 
 	gulp.src([
-		'node_modules/jquery/dist/jquery.min.js',				// jQuery
-		'node_modules/jquery.cycle2/src/jquery.cycle2.min.js'	// Cycle2 jQuery plugin
+        'node_modules/jquery/dist/jquery.min.js',						// jQuery
+        'node_modules/jquery.cycle2/src/jquery.cycle2.min.js',			// Cycle2 jQuery plugin
+        'node_modules/bootstrap-sass/assets/javascripts/**',			// Bootstrap 3 jQuery plugin
+        '!node_modules/bootstrap-sass/assets/javascripts/bootstrap-sprockets.js'
 	])
 		.pipe(gulp.dest('js'))
 		.pipe(notify({ message: 'Load scripts task complete', onLast: true }));
