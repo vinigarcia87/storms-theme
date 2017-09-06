@@ -16,10 +16,10 @@ use \StormsFramework\Storms\Helper;
 ?>
 
 <div class="row no-margin-left no-margin-right margin-bottom-row">
-	<div class="col-md-8 col-md-offset-2 col-xs-7 col-xs-offset-2 text-center">
+	<div class="col-md-8 col-md-offset-2 col-sm-7 col-sm-offset-2 text-center">
 		<p>&copy; <?php printf( esc_html__( '2012 - %1$s by %2$s - All rights reserved.', 'storms' ), date('Y'), '<strong>Storms Websolutions</strong>' ); ?></p>
 	</div>
-	<div class="col-md-2 col-xs-2 logo-storms">
+	<div class="col-md-2 col-sm-2 logo-storms">
 		<a href="<?php echo esc_url('http://www.storms.com.br'); ?>">
 			<img src="<?php echo esc_url( Helper::get_asset_url('/img/storms/logo/bn_storms_white.png') ) ?>" alt="Storms Websolutions"/>
 		</a>
