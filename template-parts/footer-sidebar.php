@@ -17,77 +17,79 @@ $numFooterSidebars = get_option( 'number_of_footer_sidebars', 4 );
 // Get how many sidebars are active
 $numActiveFooterSidebars = 0;
 for( $i = 1; $i <= $numFooterSidebars; $i++ ) {
-	if ( is_active_sidebar( 'footer-sidebar-' . intval( $i ) ) )
-		$numActiveFooterSidebars++;
+    if ( is_active_sidebar( 'footer-sidebar-' . intval( $i ) ) )
+        $numActiveFooterSidebars++;
 }
 if ( ( $numFooterSidebars > 0 ) && ( $numActiveFooterSidebars > 0 ) ) : ?>
-	<div class="footer-sidebar row no-margin-left no-margin-right" role="complementary">
-		<?php for( $i = 1; $i <= $numFooterSidebars; $i++ ): ?>
-			<?php if ( is_active_sidebar( 'footer-sidebar-' . $i ) ) : ?>
+    <div class="footer-sidebar row no-margin-left no-margin-right" role="complementary">
+        <?php for( $i = 1; $i <= $numFooterSidebars; $i++ ): ?>
+            <?php if ( is_active_sidebar( 'footer-sidebar-' . $i ) ) : ?>
 
-				<?php
-				// Dividimos 12 (num de colunas do bootstrap) pelo num de sidebars que usaremos (usando inteiros)
-				// Assim, cada div tera o mesmo tamanho...
-				$col_size = intval( 12 / $numActiveFooterSidebars );
-				// Porem, nem sempre temos um numero de sidebars divisivel por 12, entao
-				// Se o numero de colunas calculadas nao alcançou 12...
-				if($col_size * $numActiveFooterSidebars < 12) {
-					// ... Verificamos quantas faltam para distribuir o restante entre a primeira e a ultima sidebars
-					$diff = 12 - $col_size * $numActiveFooterSidebars;
-					
-					// Options: first_div: Diferença fica na primeira div; last_div: Diferença fica na ultima div; first_last_div: Diferença eh dividida entre a primeira e a ultima div;
-					$diff_place = get_option( 'footer_diff_place', 'first_last_div' );
+                <?php
+                // Dividimos 12 (num de colunas do bootstrap) pelo num de sidebars que usaremos (usando inteiros)
+                // Assim, cada div tera o mesmo tamanho...
+                $col_size = intval( 12 / $numActiveFooterSidebars );
+                // Porem, nem sempre temos um numero de sidebars divisivel por 12, entao
+                // Se o numero de colunas calculadas nao alcançou 12...
+                if($col_size * $numActiveFooterSidebars < 12) {
+                    // ... Verificamos quantas faltam para distribuir o restante entre a primeira e a ultima sidebars
+                    $diff = 12 - $col_size * $numActiveFooterSidebars;
 
-					// Incluimos a diferença na ultima div
-					if( $diff_place == 'last_div' ) {
+                    // Options: first_div: Diferença fica na primeira div; last_div: Diferença fica na ultima div; first_last_div: Diferença eh dividida entre a primeira e a ultima div;
+                    $diff_place = get_option( 'footer_diff_place', 'first_last_div' );
 
-						// Adicionamos a diferença a ultima div
-						if($i == $numActiveFooterSidebars) {
-							$col_size += $diff;
-						}
+                    // Incluimos a diferença na ultima div
+                    if( $diff_place == 'last_div' ) {
 
-					} else
-					// Incluimos a diferença na primeira div
-					if( $diff_place == 'first_div' ) {
+                        // Adicionamos a diferença a ultima div
+                        if($i == $numActiveFooterSidebars) {
+                            $col_size += $diff;
+                        }
 
-						// Adicionamos a diferença a primeira div
-						if($i == 1) {
-							$col_size += $diff;
-						}
+                    } else
+                        // Incluimos a diferença na primeira div
+                        if( $diff_place == 'first_div' ) {
 
-					} else
-					// Dividimos a diferença entre a primeira e a ultima div
-					if( $diff_place == 'first_last_div' ) {
+                            // Adicionamos a diferença a primeira div
+                            if($i == 1) {
+                                $col_size += $diff;
+                            }
 
-						// Verificamos se faltou um numero par ou impar
-						if($diff % 2 == 0) {
-							// Se faltou um numero par, dividimos e adicionamos a diferença a primeira e a ultima div
-							if($i == 1) {
-								$col_size += $diff / 2;
-							}
-							if($i == $numActiveFooterSidebars) {
-								$col_size += $diff / 2;
-							}
-						} else {
-							// Se faltou um numero impar, adicionamos a diferença a ultima div
-							if($i == $numActiveFooterSidebars) {
-								$col_size += $diff;
-							}
-						}
+                        } else
+                            // Dividimos a diferença entre a primeira e a ultima div
+                            if( $diff_place == 'first_last_div' ) {
 
-					}
-				}
-				?>
+                                // Verificamos se faltou um numero par ou impar
+                                if($diff % 2 == 0) {
+                                    // Se faltou um numero par, dividimos e adicionamos a diferença a primeira e a ultima div
+                                    if($i == 1) {
+                                        $col_size += $diff / 2;
+                                    }
+                                    if($i == $numActiveFooterSidebars) {
+                                        $col_size += $diff / 2;
+                                    }
+                                } else {
+                                    // Se faltou um numero impar, adicionamos a diferença a ultima div
+                                    if($i == $numActiveFooterSidebars) {
+                                        $col_size += $diff;
+                                    }
+                                }
 
-				<div class="col-md-<?php echo $col_size; ?>">
-					<?php if ( is_active_sidebar( 'footer-sidebar-' . intval( $i ) ) ) : ?>
-						<section class="footer-sidebar-<?php echo intval( $i ); ?>">
-							<?php dynamic_sidebar( 'footer-sidebar-' . intval( $i ) ); ?>
-						</section>
-					<?php endif; ?>
-				</div>
+                            }
+                }
 
-			<?php endif; ?>
-		<?php endfor; ?>
-	</div>
+                $col_size_css = get_option( 'footer_size_col_' . intval( $i ), 'col-md-' . $col_size );
+                ?>
+
+                <div class="<?php echo $col_size_css; ?>">
+                    <?php if ( is_active_sidebar( 'footer-sidebar-' . intval( $i ) ) ) : ?>
+                        <section class="footer-sidebar-<?php echo intval( $i ); ?>">
+                            <?php dynamic_sidebar( 'footer-sidebar-' . intval( $i ) ); ?>
+                        </section>
+                    <?php endif; ?>
+                </div>
+
+            <?php endif; ?>
+        <?php endfor; ?>
+    </div>
 <?php endif; ?>
