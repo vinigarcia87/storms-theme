@@ -8,32 +8,26 @@
  * @package   Storms
  * @version   3.0.0
  *
- * Footer Content Template
- * The content of the footer
+ * Footer 1 sidebar Template
+ * The content of the footer 1 sidebar
  */
 ?>
-<div class="footer-1-sidebar text-center" role="complementary">
-	<?php if ( is_active_sidebar( 'footer-1-sidebar-1' ) ) : ?>
+<div class="row" role="complementary">
+    <?php if ( is_active_sidebar( 'footer-1-sidebar-left' ) ) : ?>
+        <section class="col-sm-4 footer-1-sidebar-left">
+            <?php dynamic_sidebar( 'footer-1-sidebar-left' ); ?>
+        </section>
+    <?php endif; ?>
 
-		<?php if ( is_active_sidebar( 'footer-1-sidebar-1' ) ) : ?>
-			<div class="row">
-				<div class="col-md-12">
-					<section class="footer-1-sidebar-1">
-						<?php dynamic_sidebar( 'footer-1-sidebar-1' ); ?>
-					</section>
-				</div>
-			</div>
-		<?php endif; ?>
+    <?php if ( is_active_sidebar( 'footer-1-sidebar-middle' ) ) : ?>
+        <section class="col-sm-4 footer-1-sidebar-middle">
+            <?php dynamic_sidebar( 'footer-1-sidebar-middle' ); ?>
+        </section>
+    <?php endif; ?>
 
-		<?php if ( is_active_sidebar( 'footer-1-sidebar-2' ) ) : ?>
-		<div class="row">
-			<div class="col-md-12">
-				<section class="footer-1-sidebar-2">
-					<?php dynamic_sidebar( 'footer-1-sidebar-2' ); ?>
-				</section>
-			</div>
-		</div>
-		<?php endif; ?>
-
-	<?php endif; ?>
+    <?php if ( is_active_sidebar( 'footer-1-sidebar-right' ) ) : ?>
+        <section class="col-sm-4 footer-1-sidebar-right">
+            <?php dynamic_sidebar( 'footer-1-sidebar-right' ); ?>
+        </section>
+    <?php endif; ?>
 </div>

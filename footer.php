@@ -24,7 +24,7 @@ use \StormsFramework\Storms\Front\Layout;
     <div class="footer-1">
         <div class="<?php echo Layout::footer_container(); ?>">
             <!-- Footer 1 sidebars -->
-            <?php get_template_part( 'partials/footer-1', 'sidebar' ); ?>
+            <?php get_template_part( 'template-parts/footer-1', 'sidebar' ); ?>
         </div>
     </div>
 
