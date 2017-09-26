@@ -15,7 +15,6 @@
 use \StormsFramework\Storms\Front\Layout;
 
 ?>
-</div><!-- .row -->
 </div><!-- .container -->
 </div><!-- #wrap -->
 

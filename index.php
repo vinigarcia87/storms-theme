@@ -25,50 +25,53 @@ use \StormsFramework\Storms\Front\Layout,
     
 get_header(); ?>
 
-	<!-- Website content -->
-	<main id="content" class="main <?php echo Layout::main_layout(); ?>" role="main">
+    <div class="row">
 
-			<!-- Breadcrumbs -->
-			<?php echo Breadcrumb::breadcrumb(); ?>
+        <!-- Website content -->
+        <main id="content" class="main <?php echo Layout::main_layout(); ?>" role="main">
 
-			<?php
-			if ( have_posts() ) :
+            <!-- Breadcrumbs -->
+            <?php echo Breadcrumb::breadcrumb(); ?>
 
-				if ( is_home() && ! is_front_page() ) : ?>
-					<header>
-						<h1 class="page-title sr-only"><?php single_post_title(); ?></h1>
-					</header>
+            <?php
+            if ( have_posts() ) :
 
-				<?php
-				endif;
+                if ( is_home() && ! is_front_page() ) : ?>
+                    <header>
+                        <h1 class="page-title sr-only"><?php single_post_title(); ?></h1>
+                    </header>
 
-				/* Start the Loop */
-				while ( have_posts() ) : the_post();
+                <?php
+                endif;
 
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'template-parts/content', get_post_format() );
+                /* Start the Loop */
+                while ( have_posts() ) : the_post();
 
-				endwhile;
+                    /*
+                     * Include the Post-Format-specific template for the content.
+                     * If you want to override this in a child theme, then include a file
+                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                     */
+                    get_template_part( 'template-parts/content', get_post_format() );
 
-				the_posts_navigation(); // @TODO Verificar no Helper so SF, se nao ha uma solucao para isso
-				
-				// Posts navigation
-				//echo Pagination::loop_pagination( array( 'type' => 'list', 'before' => '', 'after' => '', ) );
+                endwhile;
 
-			else :
+                the_posts_navigation(); // @TODO Verificar no Helper so SF, se nao ha uma solucao para isso
 
-				get_template_part( 'template-parts/content', 'none' );
+                // Posts navigation
+                //echo Pagination::loop_pagination( array( 'type' => 'list', 'before' => '', 'after' => '', ) );
 
-			endif; ?>
+            else :
 
-	</main><!-- /.main -->
+                get_template_part( 'template-parts/content', 'none' );
 
-	<!-- Sidebar -->
-	<?php get_sidebar(); ?>
+            endif; ?>
 
+        </main><!-- /.main -->
+
+        <!-- Sidebar -->
+        <?php get_sidebar(); ?>
+
+    </div>
 <?php
 get_footer();

@@ -17,39 +17,42 @@ use \StormsFramework\Storms\Front\Layout,
 
 get_header(); ?>
 
-	<!-- Website content -->
-	<main id="content" class="main <?php echo Layout::main_layout(); ?>" role="main">
+    <div class="row">
 
-		<?php echo Breadcrumb::breadcrumb(); ?>
+        <!-- Website content -->
+        <main id="content" class="main <?php echo Layout::main_layout(); ?>" role="main">
 
-		<?php
-			// Start the Loop.
-			while ( have_posts() ) : the_post();
+            <?php echo Breadcrumb::breadcrumb(); ?>
 
-				/*
-				 * Include the post format-specific template for the content. If you want to
-				 * use this in a child theme, then include a file called called content-___.php
-				 * (where ___ is the post format) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+            <?php
+                // Start the Loop.
+                while ( have_posts() ) : the_post();
 
-				the_post_navigation(); // @TODO Verificar no Helper so SF, se nao ha uma solucao para isso
+                    /*
+                     * Include the post format-specific template for the content. If you want to
+                     * use this in a child theme, then include a file called called content-___.php
+                     * (where ___ is the post format) and that will be used instead.
+                     */
+                    get_template_part( 'template-parts/content', get_post_format() );
 
-				// Posts navigation
-				//echo Pagination::loop_pagination( array( 'type' => 'list', 'before' => '', 'after' => '', ) );
+                    the_post_navigation(); // @TODO Verificar no Helper so SF, se nao ha uma solucao para isso
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+                    // Posts navigation
+                    //echo Pagination::loop_pagination( array( 'type' => 'list', 'before' => '', 'after' => '', ) );
 
-			endwhile; // End of the loop.
-		?>
+                    // If comments are open or we have at least one comment, load up the comment template.
+                    if ( comments_open() || get_comments_number() ) :
+                        comments_template();
+                    endif;
 
-	</main><!-- /.main -->
+                endwhile; // End of the loop.
+            ?>
 
-	<!-- Sidebar -->
-	<?php get_sidebar(); ?>
+        </main><!-- /.main -->
 
+        <!-- Sidebar -->
+        <?php get_sidebar(); ?>
+
+    </div>
 <?php
 get_footer();
