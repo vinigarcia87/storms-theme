@@ -31,7 +31,7 @@ get_header(); ?>
         <main id="content" class="main <?php echo Layout::main_layout(); ?>" role="main">
 
             <!-- Breadcrumbs -->
-            <?php echo Breadcrumb::breadcrumb(); ?>
+            <?php //echo Breadcrumb::breadcrumb(); ?>
 
             <?php
             if ( have_posts() ) :
