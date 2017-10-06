@@ -22,7 +22,7 @@ get_header(); ?>
         <!-- Website content -->
         <main id="content" class="main <?php echo Layout::main_layout(); ?>" role="main">
 
-            <?php echo Breadcrumb::breadcrumb(); ?>
+            <?php //echo Breadcrumb::breadcrumb(); ?>
 
             <?php
                 // Start the Loop.
