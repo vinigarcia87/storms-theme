@@ -17,7 +17,8 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" <?php language_attributes(); ?>> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
+<!--[if IE 9]>         <html class="no-js lt-ie10" <?php language_attributes(); ?>> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
     <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -38,8 +39,10 @@
 		<!-- Skip navigation for accessibility -->
 		<a id="skippy" class="sr-only sr-only-focusable" href="#main-container"><div class="container"><span class="skiplink-text"><?php _e( 'Skip to main content', 'storms' ); ?></span></div></a>
 
-		<!--[if lt IE 8]>
-		<div class="alert alert-warning affix text-center" style="margin-bottom: 0; width: 100%; z-index: 2147483647;">
-		    <?php __('It looks like you&#8217;re using an <strong>outdated</strong> browser. Please, <a href="http://browsehappy.com/">update your browser</a> for the best experience on the web.', 'storms'); ?>
+        <!--[if lte IE 9]>
+		<div class="alert alert-warning affix text-center alert-dismissible fade in" style="margin-bottom: 0; width: 100%; z-index: 2147483647;">
+		    <?php _e('It looks like you&#8217;re using an <strong>outdated</strong> browser. Please, <a href="http://browsehappy.com/">update your browser</a> for the best experience on the web.', 'storms'); ?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
 		</div>
-		<![endif]-->
+        <script src="<?php echo \StormsFramework\Storms\Helper::get_asset_url( '/js/bootstrap/alert.js' ); ?>"></script>
+        <![endif]-->
