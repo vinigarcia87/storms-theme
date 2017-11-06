@@ -13,8 +13,6 @@
  * This is the template that displays the area of the page that contains both the current comments and the comment form
  */
 
-use \StormsFramework\Storms\Bootstrap\CommentWalker;
-
 /*
  * If the current post is protected by a password and
  * the visitor has not yet entered the password we will
@@ -57,14 +55,14 @@ endif;
 
     <?php
     if ( have_comments() ) : ?>
-        <ul class="list-unstyled">
+        <ul class="commentlist list-unstyled">
             <?php
             // Register Bootstrap Comment Walker
             wp_list_comments( array(
                 'style'         => 'ul',
                 'short_ping'    => true,
                 'avatar_size'   => '64',
-                'walker'        => new CommentWalker(),
+                'walker'        => new \StormsFramework\Storms\Bootstrap\CommentWalker(),
             ) );
             ?>
         </ul><!-- .comment-list -->
