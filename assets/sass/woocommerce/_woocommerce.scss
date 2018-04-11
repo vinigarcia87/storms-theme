@@ -37,8 +37,20 @@
   }
 }
 
+.woocommerce-password-strength {
+	.bad,
+	.short {
+		color: #b71010;
+	}
+	.good,
+	.strong {
+		color: #155d15;
+	}
+}
+
 @import "../../../../../plugins/woocommerce/assets/css/mixins";
 @import "fonts";
+@import "forms";
 @import "buttons";
 @import "tables";
 @import "star-rating";

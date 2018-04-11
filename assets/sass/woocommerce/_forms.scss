@@ -1,0 +1,12 @@
+.form-row {
+	@extend .form-group;
+
+	label {
+		font-weight: normal;
+	}
+}
+.form-group {
+	label {
+		font-weight: normal;
+	}
+}
