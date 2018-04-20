@@ -10,3 +10,8 @@
 		font-weight: normal;
 	}
 }
+
+select.country_select,
+select.state_select {
+	@extend .form-control;
+}
