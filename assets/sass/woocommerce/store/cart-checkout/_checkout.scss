@@ -1,0 +1,94 @@
+
+.woocommerce-checkout {
+
+  p.create-account {
+    @extend .checkbox;
+  }
+
+  .woocommerce-form-login {
+    @extend .text-center;
+
+    .form-row {
+      @extend .form-group;
+	  margin: 0 auto 15px;
+	  width: 200px;
+    }
+
+    .input-text {
+      @extend .form-control;
+    }
+
+    label.woocommerce-form__label.woocommerce-form__label-for-checkbox.inline {
+		display: block;
+		margin-top: 15px;
+	}
+  }
+
+  form.checkout_coupon {
+    @extend .form-inline;
+    @extend .text-center;
+
+    .form-row {
+      @extend .form-group;
+
+      .input-text {
+        @extend .form-control;
+      }
+
+      input.button {
+        height: 37px;
+      }
+    }
+  }
+
+  #customer_details {
+
+    .woocommerce-billing-fields {
+
+    }
+
+    .woocommerce-account-fields {
+
+    }
+
+    .woocommerce-shipping-fields {
+      #ship-to-different-address {
+        @extend .checkbox;
+
+        input.woocommerce-form__input-checkbox {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .woocommerce-additional-fields {
+
+    }
+
+  }
+
+  .woocommerce-checkout-payment {
+
+	  ul.wc_payment_methods {
+		  @extend .list-unstyled;
+
+		  margin: 5px 0 10px;
+		  background-color: #f5f5f5;
+		  padding: 20px 15px;
+
+		  .payment_method_pagseguro {
+			  label {
+				  width: 100%;
+
+				  img {
+					  float: right;
+				  }
+			  }
+		  }
+	  }
+  }
+
+  button#place_order {
+	  @extend .btn-block;
+  }
+}

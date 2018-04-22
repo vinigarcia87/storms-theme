@@ -1,0 +1,21 @@
+// Store styles
+@import "store/shop-general";
+@import "store/messages";
+@import "store/quantity";
+
+// Wishlist
+@import "store/wishlist";
+
+// My Account styles
+@import "store/myaccount/myaccount";
+
+// Shop Cart and Checkout pages
+@import "store/cart-checkout/shop-cart";
+@import "store/cart-checkout/checkout";
+@import "store/cart-checkout/billing-form";
+@import "store/cart-checkout/shipping-form";
+
+// Order pages
+@import "store/order/order";
+@import "store/order/order-details";
+@import "store/order/order-details-customer";

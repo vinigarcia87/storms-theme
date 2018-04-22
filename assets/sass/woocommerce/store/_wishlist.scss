@@ -1,0 +1,74 @@
+.woocommerce {
+
+	div.wishlist-title {
+		display: none;
+	}
+
+	table.wishlist_table {
+		@extend .table;
+		@extend .table-responsive;
+		@extend .table-striped;
+
+		border: none;
+		border-collapse: collapse;
+
+		& > thead > tr > th {
+			text-align: center;
+			vertical-align: middle;
+			text-transform: uppercase;
+			border-bottom: 1px solid $gray-lighter;
+		}
+
+		& > tbody > tr {
+
+			& > td {
+				vertical-align: middle;
+			}
+
+			td.product-remove {
+				width: 50px;
+
+				a.remove {
+					width: 100%;
+					text-align: center;
+					display: inline-block;
+				}
+			}
+
+			td.product-thumbnail {
+				width: 100px;
+
+				img {
+					width: 64px;
+				}
+			}
+
+			td.product-name {
+				@extend .text-left;
+			}
+
+			td.product-price,
+			td.product-quantity,
+			td.product-subtotal {
+				width: 155px;
+				@extend .text-center;
+			}
+
+			td.go-back {
+
+			}
+
+			td.actions,
+			td.product-add-to-cart {
+				@extend .text-center;
+
+				.button {
+					color: #fff;
+					background-color: $brand-primary;
+					border-color: $btn-primary-border;
+				}
+
+			}
+		}
+	}
+}

@@ -1,0 +1,40 @@
+.woocommerce-account {
+
+  .woocommerce {
+	  .col2-set {
+		  @extend .row;
+
+		  .col-1,
+		  .col-2 {
+			  @extend .col-sm-6;
+
+			  .form-row {
+				  @extend .form-group;
+				  width: 80%;
+			  }
+
+			  .input-text {
+				  @extend .form-control;
+			  }
+
+			  label.woocommerce-form__label.woocommerce-form__label-for-checkbox.inline {
+				  display: block;
+				  margin-top: 15px;
+			  }
+		  }
+	  }
+
+	  .woocommerce-MyAccount-navigation {
+		  @extend .col-xs-3;
+
+		  ul {
+			  @extend .list-unstyled;
+		  }
+	  }
+
+	  .woocommerce-MyAccount-content {
+		  @extend .col-xs-9;
+	  }
+  }
+
+}

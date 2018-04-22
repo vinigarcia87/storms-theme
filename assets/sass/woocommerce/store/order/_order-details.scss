@@ -1,0 +1,75 @@
+.woocommerce-order-details {
+
+	table.order_details {
+		border-radius: 0;
+		border: none;
+		width: 70%;
+		margin: 0 auto 24px;
+
+		thead,
+		tbody,
+		tfoot {
+			th,
+			td {
+				width: 50%;
+			}
+		}
+
+		thead {
+			th {
+				@extend .text-center;
+				vertical-align: middle;
+				text-transform: uppercase;
+			}
+		}
+
+		tbody,
+		tfoot {
+			th {
+				font-weight: 100;
+				padding-right: 0;
+				vertical-align: middle;
+				text-transform: uppercase;
+			}
+
+			td {
+				@extend .text-right;
+				vertical-align: middle;
+				padding-left: 0;
+			}
+
+			tr.order_item {
+				td.product-name,
+				td.product-total {
+					@extend .text-center;
+					padding: 8px;
+					border-top: none !important;
+				}
+			}
+		}
+
+		tfoot {
+			& > tr:first-child {
+				th,
+				td {
+					border-top: 2px solid #ddd;
+				}
+			}
+
+			th {
+				@extend .text-center;
+				border: none;
+			}
+
+			td {
+				@extend .text-center;
+				border: none;
+
+				small.shipped_via {
+					display: block;
+				}
+			}
+		}
+	}
+
+}

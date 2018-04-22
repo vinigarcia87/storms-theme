@@ -1,0 +1,33 @@
+  .woocommerce-message,
+  .woocommerce-error,
+  .woocommerce-info {
+    width: 100%;
+    padding: 15px 30px;
+    margin: 20px 0;
+    border-left: 8px solid #222;
+    background-color: #fdfdfd;
+
+    // Medium devices (desktops, 992px and up)
+    @media (min-width: $screen-md-min) {
+      min-height: 62px;
+      position: relative;
+    }
+
+    .button {
+
+      // Medium devices (desktops, 992px and up)
+      @media (min-width: $screen-md-min) {
+        right: 30px;
+        position: absolute;
+      }
+    }
+  }
+
+  .woocommerce-error {
+    @extend .list-unstyled;
+    border-left-color: $brand-danger;
+  }
+
+  .woocommerce-info {
+    border-left-color: $brand-info;
+  }

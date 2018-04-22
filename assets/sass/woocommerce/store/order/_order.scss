@@ -1,0 +1,37 @@
+.woocommerce-order {
+
+	.woocommerce-notice {
+		padding: 30px;
+		color: #fff;
+		font-weight: 700;
+		text-align: center;
+	}
+
+	.woocommerce-notice--error {
+		background-color: #b71010;
+	}
+
+	.woocommerce-notice--success {
+		background-color: #66b56b;
+	}
+
+}
+
+ul.woocommerce-order-overview,
+ul.order_details {
+	@extend .list-unstyled;
+	display: table;
+	width: 100%;
+	padding: 15px 0;
+	background-color: #f5f5f5;
+
+	li {
+		width: 20%;
+		display: table-cell;
+		text-align: center;
+
+		strong {
+			display: block;
+		}
+	}
+}

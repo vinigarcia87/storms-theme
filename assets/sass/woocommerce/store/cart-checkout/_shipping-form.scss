@@ -1,0 +1,35 @@
+.woocommerce-shipping-fields,
+.woocommerce-address-fields {
+
+	p#shipping_first_name_field,
+	p#shipping_cnpj_field,
+	p#shipping_birthdate_field,
+	p#shipping_country_field,
+	p#shipping_neighborhood_field,
+	p#shipping_city_field,
+	p#shipping_phone_field {
+		@extend .col-sm-6;
+		padding-left: 0;
+	}
+
+	p#shipping_last_name_field,
+	p#shipping_ie_field,
+	p#shipping_sex_field,
+	p#shipping_postcode_field,
+	p#shipping_city_field,
+	p#shipping_cellphone_field {
+		@extend .col-sm-6;
+		padding-right: 0;
+	}
+
+	p#shipping_address_1_field {
+		@extend .col-sm-9;
+		padding-left: 0;
+	}
+
+	p#shipping_number_field {
+		@extend .col-sm-3;
+		padding-right: 0;
+	}
+
+}

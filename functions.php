@@ -64,6 +64,11 @@ if( ! function_exists( 'define_options' ) ) {
 	add_action( 'init', 'define_options' );
 }
 
+require_once 'services/storms-woocommerce-wishlist.php';
+require_once 'services/storms-woocommerce-changes.php';
+require_once 'services/storms-woocommerce-cart-mini.php';
+require_once 'services/storms-woocommerce-searchbar.php';
+
 /**
  * =====================================================================================================================
  */
