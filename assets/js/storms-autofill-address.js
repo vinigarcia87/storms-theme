@@ -126,6 +126,8 @@ jQuery( function( $ ) {
 			$( '#' + field + '_state option:selected' ).attr( 'selected', false ).change();
 			$( '#' + field + '_state option[value="' + data.state + '"]' ).attr( 'selected', 'selected' ).change();
 			$( '#' + field + '_state' ).trigger( 'liszt:updated' ).trigger( 'chosen:updated' ); // Chosen support.
+
+			// Storms added this!
 			$( '#' + field + '_state' ).val( data.state ).trigger('change'); // Select2 support
 		}
 	};

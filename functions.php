@@ -68,6 +68,7 @@ require_once 'services/storms-woocommerce-wishlist.php';
 require_once 'services/storms-woocommerce-changes.php';
 require_once 'services/storms-woocommerce-cart-mini.php';
 require_once 'services/storms-woocommerce-searchbar.php';
+require_once 'services/storms-calculo-st.php';
 
 /**
  * =====================================================================================================================
