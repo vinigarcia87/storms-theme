@@ -1049,7 +1049,10 @@ pre code {
 .woocommerce-address-fields p#shipping_postcode_field,
 .woocommerce-address-fields p#shipping_cellphone_field, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .woocommerce-account .woocommerce .woocommerce-MyAccount-content, .col-sm-9, .woocommerce-billing-fields p#billing_address_1_field,
 .woocommerce-address-fields p#billing_address_1_field, .woocommerce-shipping-fields p#shipping_address_1_field,
-.woocommerce-address-fields p#shipping_address_1_field, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.woocommerce-address-fields p#shipping_address_1_field, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .woocommerce-billing-fields div.radioform-row-wide.storms-tipo-compra,
+.woocommerce-billing-fields div.radioform-row-wide.storms-is-contribuinte,
+.woocommerce-address-fields div.radioform-row-wide.storms-tipo-compra,
+.woocommerce-address-fields div.radioform-row-wide.storms-is-contribuinte, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -1314,7 +1317,10 @@ pre code {
   .woocommerce-address-fields p#shipping_postcode_field,
   .woocommerce-address-fields p#shipping_cellphone_field, .col-sm-7, .col-sm-8, .col-sm-9, .woocommerce-billing-fields p#billing_address_1_field,
   .woocommerce-address-fields p#billing_address_1_field, .woocommerce-shipping-fields p#shipping_address_1_field,
-  .woocommerce-address-fields p#shipping_address_1_field, .col-sm-10, .col-sm-11, .col-sm-12 {
+  .woocommerce-address-fields p#shipping_address_1_field, .col-sm-10, .col-sm-11, .col-sm-12, .woocommerce-billing-fields div.radioform-row-wide.storms-tipo-compra,
+  .woocommerce-billing-fields div.radioform-row-wide.storms-is-contribuinte,
+  .woocommerce-address-fields div.radioform-row-wide.storms-tipo-compra,
+  .woocommerce-address-fields div.radioform-row-wide.storms-is-contribuinte {
     float: left;
   }
   .col-sm-1 {
@@ -1399,7 +1405,10 @@ pre code {
   .col-sm-11 {
     width: 91.6666666667%;
   }
-  .col-sm-12 {
+  .col-sm-12, .woocommerce-billing-fields div.radioform-row-wide.storms-tipo-compra,
+  .woocommerce-billing-fields div.radioform-row-wide.storms-is-contribuinte,
+  .woocommerce-address-fields div.radioform-row-wide.storms-tipo-compra,
+  .woocommerce-address-fields div.radioform-row-wide.storms-is-contribuinte {
     width: 100%;
   }
   .col-sm-pull-0 {
@@ -16776,51 +16785,51 @@ img#wpstats {
 }
 
 .widget_tag_cloud a:nth-child(1) {
-  font-size: 13px !important;
-}
-
-.widget_tag_cloud a:nth-child(2) {
-  font-size: 20px !important;
-}
-
-.widget_tag_cloud a:nth-child(3) {
-  font-size: 21px !important;
-}
-
-.widget_tag_cloud a:nth-child(4) {
-  font-size: 20px !important;
-}
-
-.widget_tag_cloud a:nth-child(5) {
-  font-size: 24px !important;
-}
-
-.widget_tag_cloud a:nth-child(6) {
-  font-size: 22px !important;
-}
-
-.widget_tag_cloud a:nth-child(7) {
-  font-size: 14px !important;
-}
-
-.widget_tag_cloud a:nth-child(8) {
-  font-size: 32px !important;
-}
-
-.widget_tag_cloud a:nth-child(9) {
   font-size: 30px !important;
 }
 
-.widget_tag_cloud a:nth-child(10) {
-  font-size: 32px !important;
+.widget_tag_cloud a:nth-child(2) {
+  font-size: 25px !important;
 }
 
-.widget_tag_cloud a:nth-child(11) {
+.widget_tag_cloud a:nth-child(3) {
+  font-size: 13px !important;
+}
+
+.widget_tag_cloud a:nth-child(4) {
+  font-size: 17px !important;
+}
+
+.widget_tag_cloud a:nth-child(5) {
+  font-size: 30px !important;
+}
+
+.widget_tag_cloud a:nth-child(6) {
+  font-size: 23px !important;
+}
+
+.widget_tag_cloud a:nth-child(7) {
+  font-size: 25px !important;
+}
+
+.widget_tag_cloud a:nth-child(8) {
   font-size: 15px !important;
 }
 
+.widget_tag_cloud a:nth-child(9) {
+  font-size: 13px !important;
+}
+
+.widget_tag_cloud a:nth-child(10) {
+  font-size: 13px !important;
+}
+
+.widget_tag_cloud a:nth-child(11) {
+  font-size: 21px !important;
+}
+
 .widget_tag_cloud a:nth-child(12) {
-  font-size: 31px !important;
+  font-size: 20px !important;
 }
 
 .wp-video-shortcode {
@@ -17960,6 +17969,22 @@ abbr.required {
 .woocommerce-billing-fields p#billing_number_field,
 .woocommerce-address-fields p#billing_number_field {
   padding-right: 0;
+}
+
+.woocommerce-billing-fields p#billing_ie_field div.isento-checkbox,
+.woocommerce-address-fields p#billing_ie_field div.isento-checkbox {
+  width: auto;
+  display: inline;
+  float: right;
+  margin: 0;
+}
+
+.woocommerce-billing-fields div.radioform-row-wide.storms-tipo-compra,
+.woocommerce-billing-fields div.radioform-row-wide.storms-is-contribuinte,
+.woocommerce-address-fields div.radioform-row-wide.storms-tipo-compra,
+.woocommerce-address-fields div.radioform-row-wide.storms-is-contribuinte {
+  padding: 0;
+  margin-bottom: 15px;
 }
 
 .woocommerce-shipping-fields p#shipping_first_name_field,

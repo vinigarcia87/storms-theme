@@ -6,7 +6,15 @@ jQuery( function( $ ) {
 	 */
 	$(document).ready(function() {
 
-		$('<span class="pull-right"><input type="checkbox" id="mark_isento">&nbsp;Isento</span>').appendTo('label[for="billing_ie"]');
+		var checkbox_isento  = '<div class="checkbox isento-checkbox">';
+			checkbox_isento += '	<label>';
+			checkbox_isento += '		<input type="checkbox" id="mark_isento">&nbsp;Isento';
+			checkbox_isento += '	</label>';
+			checkbox_isento += '</div>';
+
+		//checkbox_isento = '<span class="pull-right"><input type="checkbox" id="mark_isento">&nbsp;Isento</span>';
+
+		$(checkbox_isento).appendTo('label[for="billing_ie"]');
 
 		var $billing_ie = $('#billing_ie');
 		var $mark_isento = $('#mark_isento');
@@ -103,7 +111,7 @@ jQuery( function( $ ) {
 					html_alert += '</div>';
 
 
-				$('#billing_ie_field').after(html_alert);
+				$('.storms-is-contribuinte').after(html_alert);
 			} else {
 				$('.storms-tipo-compra').hide();
 				$( '.storms-is-contribuinte' ).hide();

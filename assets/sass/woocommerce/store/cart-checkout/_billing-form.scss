@@ -32,4 +32,17 @@
 		padding-right: 0;
 	}
 
+	p#billing_ie_field div.isento-checkbox {
+		width: auto;
+		display: inline;
+		float: right;
+		margin: 0;
+	}
+
+	div.radioform-row-wide.storms-tipo-compra,
+	div.radioform-row-wide.storms-is-contribuinte {
+		@extend .col-sm-12;
+		padding: 0;
+		margin-bottom: 15px;
+	}
 }

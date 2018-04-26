@@ -71,6 +71,80 @@ function storms_st_billing_field( $new_fields ) {
 add_filter( 'wcbcf_billing_fields', 'storms_st_billing_field' );
 
 /**
+ * Return an array of billing fields in order
+ */
+function storms_wc_array_order_fields() {
+	$order = array(
+		"billing_first_name",
+		"billing_last_name",
+		"billing_persontype", 		// ecfb plugin
+		"billing_cpf", 				// ecfb plugin
+		"billing_rg", 				// ecfb plugin
+		"billing_company", 			// ecfb plugin
+		"billing_cnpj", 			// ecfb plugin
+		"billing_ie", 				// ecfb plugin
+		"billing_tipo_compra", 		// DexPeças plugin
+		"billing_is_contribuinte",	// DexPeças plugin
+		"billing_birthdate", 		// ecfb plugin
+		"billing_sex", 				// ecfb plugin
+		"billing_country",
+		"billing_postcode",
+		"billing_address_1",
+		"billing_number", 			// ecfb plugin
+		"billing_address_2",
+		"billing_neighborhood", 	// ecfb plugin
+		"billing_city",
+		"billing_state",
+		"billing_phone",
+		"billing_cellphone", 		// ecfb plugin
+		"billing_email",
+	);
+
+	return $order;
+}
+
+/**
+ * Reorder billing fields in WooCommerce Checkout
+ * @link : http://wordpress.stackexchange.com/a/127490/54025
+ */
+function storms_wc_checkout_order_fields( $fields ) {
+
+	$order = storms_wc_array_order_fields();
+
+	$ordered_fields = [];
+	foreach( $order as $field ) {
+		if( isset( $fields["billing"][$field] ) ) {
+			$ordered_fields[$field] = $fields["billing"][$field];
+		}
+	}
+	$fields["billing"] = $ordered_fields;
+
+	return $fields;
+}
+add_filter( 'woocommerce_checkout_fields', 'storms_wc_checkout_order_fields' );
+
+/**
+ * Reorder billing fields in WooCommerce Address To Edit
+ */
+function storms_wc_address_to_edit( $address, $load_address ) {
+
+	$order = storms_wc_array_order_fields();
+
+	$ordered_fields = [];
+	if( $load_address == 'billing' ) {
+		foreach ( $order as $field ) {
+			if ( isset( $address[$field] ) ) {
+				$ordered_fields[$field] = $address[$field];
+			}
+		}
+		$address = $ordered_fields;
+	}
+
+	return $address;
+}
+add_filter( 'woocommerce_address_to_edit', 'storms_wc_address_to_edit', 10, 2 );
+
+/**
  * Adicionamos os scripts para gerenciar do calculo da st
  */
 function storms_checkout_enqueue_scripts() {
