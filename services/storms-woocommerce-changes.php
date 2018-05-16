@@ -64,3 +64,153 @@ function storms_autofill_correios_frontend_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'storms_autofill_correios_frontend_scripts', 100 );
 
+/**
+ * Sort Shipping Methods By Cost
+ * @see https://www.speakinginbytes.com/2016/06/woocommerce-sort-shipping-methods-cost/
+ * @see ChromeOrange - https://gist.github.com/ChromeOrange/10013862
+ *
+ * @param $rates
+ * @param $package
+ */
+function storms_sort_woocommerce_available_shipping_methods( $rates, $package ) {
+    //  if there are no rates don't do anything
+    if ( ! $rates ) {
+        return;
+    }
+
+    // get an array of prices
+    $prices = array();
+    foreach( $rates as $rate ) {
+        $prices[] = $rate->cost;
+    }
+
+    // use the prices to sort the rates
+    array_multisort( $prices, $rates );
+
+    // return the rates
+    return $rates;
+}
+add_filter( 'woocommerce_package_rates' , 'storms_sort_woocommerce_available_shipping_methods', 10, 2 );
+
+/**
+ * Exibe o label de free shipping para métodos de entrega com preço igual a zero
+ * @see https://stackoverflow.com/a/46267597/1003020
+ *
+ * @param $label
+ * @param $method
+ * @return string
+ */
+function storms_add_free_shipping_label( $label, $method ) {
+    if ( $method->cost == 0 ) {
+        $label .= ': <span class="storms-free-shipping">' . __( 'Entrega grátis', 'storms' ) . '</span>';
+    }
+    return $label;
+}
+add_filter( 'woocommerce_cart_shipping_method_full_label', 'storms_add_free_shipping_label', 10, 2 );
+
+/**
+ * Hide shipping rates when free shipping is available.
+ * Updated to support WooCommerce 2.6 Shipping Zones.
+ * @see https://docs.woocommerce.com/document/hide-other-shipping-methods-when-free-shipping-is-available/
+ * @see http://jeroensormani.com/only-show-freecheapestmost-expensive-shipping-in-woocommerce/
+ *
+ * @param array $rates Array of rates found for the package.
+ * @return array
+ */
+function storms_hide_shipping_when_free_is_available( $rates ) {
+    $free = array();
+    if( empty( $rates ) ) {
+        return $rates;
+    }
+    foreach ( $rates as $rate_id => $rate ) {
+        if ( 'free_shipping' === $rate->method_id ) {
+            $free[ $rate_id ] = $rate;
+            break;
+        }
+    }
+    return ! empty( $free ) ? $free : $rates;
+}
+//add_filter( 'woocommerce_package_rates', 'storms_hide_shipping_when_free_is_available', 100 );
+
+/**
+ * Woocommerce hide empty categories in woocommerce widget "product categories"
+ * Source: https://gist.github.com/goliver79/11091523
+ */
+function storms_hide_product_categories_widget( $list_args ){
+    $list_args[ 'hide_empty' ] = 1;
+
+    return $list_args;
+}
+add_filter( 'woocommerce_product_categories_widget_args', 'storms_hide_product_categories_widget' );
+
+/**
+ * Hook into pre_get_posts to do the main product query.
+ * Modificaçao para trazer as categorias ordenadas hierarquicamente e sem as categorias vazias *
+ * @param mixed $q query object
+ */
+function storms_product_cat_query( $query ) {
+    if ( is_product_category() ) {
+        $query->set( 'hierarchical', true );
+        $query->set( 'hide_empty', true );
+    }
+}
+add_action( 'pre_get_posts', 'storms_product_cat_query' );
+
+/**
+ * Rename WooCommerce Endpoints in My Accounts Page
+ * @see https://wpbeaches.com/change-rename-woocommerce-endpoints-accounts-page/
+ */
+function storms_woocommerce_my_account_order() {
+    $myorder = array(
+        'dashboard'       => __( 'Início', 'woocommerce' ),
+        'orders'          => __( 'Orders', 'woocommerce' ),
+        'downloads'       => __( 'Downloads', 'woocommerce' ),
+        'edit-address'    => __( 'Dados do cliente', 'woocommerce' ),
+        'payment-methods' => __( 'Payment methods', 'woocommerce' ),
+        'edit-account'    => __( 'Alterar senha', 'woocommerce' ),
+        'customer-logout' => __( 'Logout', 'woocommerce' ),
+    );
+    return $myorder;
+}
+add_filter ( 'woocommerce_account_menu_items', 'storms_woocommerce_my_account_order' );
+
+/*
+ * Change the entry title of the endpoints that appear in My Account Page
+ * @see https://wpbeaches.com/change-rename-woocommerce-endpoints-accounts-page/
+ */
+function storms_woocommerce_endpoint_title( $title, $id ) {
+    if ( is_wc_endpoint_url( 'dashboard' ) && in_the_loop() ) {
+        $title = 'Início';
+    }
+    elseif ( is_wc_endpoint_url( 'edit-address' ) && in_the_loop() ) {
+        $title = 'Dados do cliente';
+    }
+    elseif ( is_wc_endpoint_url( 'edit-account' ) && in_the_loop() ) {
+        $title = 'Alterar senha';
+    }
+    return $title;
+}
+add_filter( 'the_title', 'storms_woocommerce_endpoint_title', 10, 2 );
+
+/**
+ * Reduce the strength requirement on the woocommerce password.
+ * @see https://gist.github.com/BurlesonBrad/c89a825a64732a46b87c
+ *
+ * Strength Settings
+ * 3 = Strong (default)
+ * 2 = Medium
+ * 1 = Weak
+ * 0 = Very Weak / Anything
+ */
+function storms_reduce_woocommerce_min_strength_requirement( $strength ) {
+    return 2;
+}
+add_filter( 'woocommerce_min_password_strength', 'storms_reduce_woocommerce_min_strength_requirement' );
+
+/**
+ * Changes the messaging that comes up when the password doesn't meet minimum requirements
+ */
+function storms_password_hint( $hint ) {
+    return 'Dica: A senha deve ter pelo menos oito caracteres. Para torná-la mais forte, use letras maiúsculas e minúsculas, números e símbolos como ! \" ? $ % ^ &amp; ).';
+}
+add_filter( 'password_hint', 'storms_password_hint' );
