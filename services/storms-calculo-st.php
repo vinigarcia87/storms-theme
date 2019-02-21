@@ -222,7 +222,9 @@ function storms_calculo_st( WC_Cart $cart ) {
 	}
 
 	if( empty( $tabela_st ) ) {
-        $logger->alert( 'Tabela ST não encontrada para Origem: ' . $estado_ecomm . ' - Destino: ' . $estado_cliente . '.', array( 'source' => 'storms-calculo-st' ) );
+		if( $estado_ecomm != '' && $estado_cliente != '' ) {
+			$logger->alert('Tabela ST não encontrada para Origem: ' . $estado_ecomm . ' - Destino: ' . $estado_cliente . '.', array('source' => 'storms-calculo-st'));
+		}
 		return false;
 
 		//wc_add_notice('Não foi possível encontrar uma base para o cálculo da ST. Por favor, entre em contato conosco.', 'error');
