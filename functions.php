@@ -17,16 +17,19 @@
  *********************************/
 
 // Define the Storms Theme version
-if ( !defined( 'STORMS_THEME_VERSION' ) )
-    define( 'STORMS_THEME_VERSION', '1.0.0' );
+if ( !defined( 'STORMS_THEME_VERSION' ) ) {
+	define( 'STORMS_THEME_VERSION', '1.0.0' );
+}
 
 // System Environment
-if ( !defined( 'SF_ENV' ) )
+if ( !defined( 'SF_ENV' ) ) {
     define( 'SF_ENV', 'DEV' );
+}
 
 // Define the System Version
-if ( !defined( 'STORMS_SYSTEM_VERSION' ) )
-    define( 'STORMS_SYSTEM_VERSION', 'YYYY.MM.DD' );
+if ( !defined( 'STORMS_SYSTEM_VERSION' ) ) {
+	define( 'STORMS_SYSTEM_VERSION', 'YYYY.MM.DD' );
+}
 
 if( ! function_exists( 'theme_setup' ) ) {
 	// Theme setup

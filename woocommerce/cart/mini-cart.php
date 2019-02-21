@@ -59,14 +59,14 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
                                         <?php echo $product_name; ?>
                                     </a>
                                 <?php endif; ?>
-                                <?php echo WC()->cart->get_item_data( $cart_item ); ?>
+                                <?php echo wc_get_formatted_cart_item_data( $cart_item, false ); ?>
                                 <?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
                             </div>
                             <div class="col-md-2 product-actions">
                                 <?php
                                 echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
                                     '<a href="%s" class="remove storms_remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"><i class="fa fa-times" aria-hidden="true"></i></a>',
-                                    esc_url( WC()->cart->get_remove_url( $cart_item_key ) ),
+                                    esc_url(  wc_get_cart_remove_url( $cart_item_key ) ),
                                     __( 'Remove this item', 'woocommerce' ),
                                     esc_attr( $product_id ),
                                     esc_attr( $cart_item_key ),
