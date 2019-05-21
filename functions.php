@@ -145,7 +145,7 @@ function storms_the_content( $content ) {
     return str_replace( array( '<html><body>', '</body></html>' ), '', $string );
 
 }
-add_filter( 'the_content', 'storms_the_content' );
+//add_filter( 'the_content', 'storms_the_content' );
 
 /**
  * Removing wrapping paragraphs
