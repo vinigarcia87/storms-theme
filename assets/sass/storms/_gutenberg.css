@@ -1,0 +1,12 @@
+.alignfull {
+	width: 100vw;
+	left: calc(-50vw + 50%);
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.alignwide {
+	width: calc(100% + 96px);
+	left: -48px;
+	margin-left: 0px;
+	margin-right: 0px;
+}

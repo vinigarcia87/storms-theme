@@ -22,7 +22,7 @@ use \StormsFramework\Storms\Front\Layout,
     \StormsFramework\Storms\Bootstrap\Functions,
     \StormsFramework\Storms\Bootstrap\Breadcrumb,
     \StormsFramework\Storms\Bootstrap\Pagination;
-    
+
 get_header(); ?>
 
     <div class="row">
@@ -37,6 +37,7 @@ get_header(); ?>
             if ( have_posts() ) :
 
                 if ( is_home() && ! is_front_page() ) : ?>
+
                     <header>
                         <h1 class="page-title sr-only"><?php single_post_title(); ?></h1>
                     </header>
