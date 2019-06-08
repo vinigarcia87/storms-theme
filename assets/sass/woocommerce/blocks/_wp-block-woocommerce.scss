@@ -1,0 +1,18 @@
+
+div.wp-block-woocommerce-product-new {
+
+	.woocommerce {
+		> div.products {
+
+			@extend .container;
+
+			// Small devices (tablets, 768px and up)
+			@media (min-width: $screen-sm-min) {
+				width: auto;
+			}
+
+		}
+	}
+
+}
+

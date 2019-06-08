@@ -936,36 +936,36 @@ pre code {
   overflow-y: scroll;
 }
 
-.container {
+.container, div.wp-block-woocommerce-product-new .woocommerce > div.products, .woocommerce .cross-sells > .products {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.container:before, .container:after {
+.container:before, div.wp-block-woocommerce-product-new .woocommerce > div.products:before, .woocommerce .cross-sells > .products:before, .container:after, div.wp-block-woocommerce-product-new .woocommerce > div.products:after, .woocommerce .cross-sells > .products:after {
   content: " ";
   display: table;
 }
 
-.container:after {
+.container:after, div.wp-block-woocommerce-product-new .woocommerce > div.products:after, .woocommerce .cross-sells > .products:after {
   clear: both;
 }
 
 @media (min-width: 768px) {
-  .container {
+  .container, div.wp-block-woocommerce-product-new .woocommerce > div.products, .woocommerce .cross-sells > .products {
     width: 750px;
   }
 }
 
 @media (min-width: 992px) {
-  .container {
+  .container, div.wp-block-woocommerce-product-new .woocommerce > div.products, .woocommerce .cross-sells > .products {
     width: 970px;
   }
 }
 
 @media (min-width: 1200px) {
-  .container {
+  .container, div.wp-block-woocommerce-product-new .woocommerce > div.products, .woocommerce .cross-sells > .products {
     width: 1170px;
   }
 }
@@ -6964,8 +6964,8 @@ button, .woocommerce .input-group-btn:last-child > a.button,
   }
 }
 
-.container > .navbar-header,
-.container > .navbar-collapse,
+.container > .navbar-header, div.wp-block-woocommerce-product-new .woocommerce > div.products > .navbar-header, .woocommerce .cross-sells > .products > .navbar-header,
+.container > .navbar-collapse, div.wp-block-woocommerce-product-new .woocommerce > div.products > .navbar-collapse, .woocommerce .cross-sells > .products > .navbar-collapse,
 .container-fluid > .navbar-header,
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
@@ -6973,8 +6973,8 @@ button, .woocommerce .input-group-btn:last-child > a.button,
 }
 
 @media (min-width: 768px) {
-  .container > .navbar-header,
-  .container > .navbar-collapse,
+  .container > .navbar-header, div.wp-block-woocommerce-product-new .woocommerce > div.products > .navbar-header, .woocommerce .cross-sells > .products > .navbar-header,
+  .container > .navbar-collapse, div.wp-block-woocommerce-product-new .woocommerce > div.products > .navbar-collapse, .woocommerce .cross-sells > .products > .navbar-collapse,
   .container-fluid > .navbar-header,
   .container-fluid > .navbar-collapse {
     margin-right: 0;
@@ -7036,7 +7036,7 @@ button, .woocommerce .input-group-btn:last-child > a.button,
 }
 
 @media (min-width: 768px) {
-  .navbar > .container .navbar-brand,
+  .navbar > .container .navbar-brand, div.wp-block-woocommerce-product-new .woocommerce.navbar > div.products .navbar-brand, .woocommerce .cross-sells.navbar > .products .navbar-brand,
   .navbar > .container-fluid .navbar-brand {
     margin-left: -15px;
   }
@@ -7952,14 +7952,14 @@ a.badge:hover, a.badge:focus {
   border-top-color: #d5d5d5;
 }
 
-.container .jumbotron,
+.container .jumbotron, div.wp-block-woocommerce-product-new .woocommerce > div.products .jumbotron, .woocommerce .cross-sells > .products .jumbotron,
 .container-fluid .jumbotron {
   border-radius: 6px;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.jumbotron .container {
+.jumbotron .container, .jumbotron div.wp-block-woocommerce-product-new .woocommerce > div.products, div.wp-block-woocommerce-product-new .jumbotron .woocommerce > div.products, .jumbotron .woocommerce .cross-sells > .products, .woocommerce .jumbotron .cross-sells > .products {
   max-width: 100%;
 }
 
@@ -7968,7 +7968,7 @@ a.badge:hover, a.badge:focus {
     padding-top: 48px;
     padding-bottom: 48px;
   }
-  .container .jumbotron,
+  .container .jumbotron, div.wp-block-woocommerce-product-new .woocommerce > div.products .jumbotron, .woocommerce .cross-sells > .products .jumbotron,
   .container-fluid .jumbotron {
     padding-left: 60px;
     padding-right: 60px;
@@ -16799,19 +16799,19 @@ img#wpstats {
 }
 
 .widget_tag_cloud a:nth-child(1) {
-  font-size: 13px !important;
+  font-size: 19px !important;
 }
 
 .widget_tag_cloud a:nth-child(2) {
-  font-size: 28px !important;
+  font-size: 30px !important;
 }
 
 .widget_tag_cloud a:nth-child(3) {
-  font-size: 18px !important;
+  font-size: 25px !important;
 }
 
 .widget_tag_cloud a:nth-child(4) {
-  font-size: 15px !important;
+  font-size: 14px !important;
 }
 
 .widget_tag_cloud a:nth-child(5) {
@@ -16819,19 +16819,19 @@ img#wpstats {
 }
 
 .widget_tag_cloud a:nth-child(6) {
-  font-size: 24px !important;
-}
-
-.widget_tag_cloud a:nth-child(7) {
-  font-size: 25px !important;
-}
-
-.widget_tag_cloud a:nth-child(8) {
   font-size: 13px !important;
 }
 
+.widget_tag_cloud a:nth-child(7) {
+  font-size: 14px !important;
+}
+
+.widget_tag_cloud a:nth-child(8) {
+  font-size: 27px !important;
+}
+
 .widget_tag_cloud a:nth-child(9) {
-  font-size: 29px !important;
+  font-size: 13px !important;
 }
 
 .widget_tag_cloud a:nth-child(10) {
@@ -16839,11 +16839,11 @@ img#wpstats {
 }
 
 .widget_tag_cloud a:nth-child(11) {
-  font-size: 22px !important;
+  font-size: 28px !important;
 }
 
 .widget_tag_cloud a:nth-child(12) {
-  font-size: 27px !important;
+  font-size: 29px !important;
 }
 
 .wp-video-shortcode {
@@ -16949,7 +16949,7 @@ select.state_select, .navbar-form .input-group .woocommerce .woocommerce-orderin
 }
 
 @media (min-width: 1200px) {
-  .container-fluid .container {
+  .container-fluid .container, .container-fluid div.wp-block-woocommerce-product-new .woocommerce > div.products, div.wp-block-woocommerce-product-new .container-fluid .woocommerce > div.products, .container-fluid .woocommerce .cross-sells > .products, .woocommerce .container-fluid .cross-sells > .products {
     padding-left: 0;
     padding-right: 0;
   }
@@ -17554,6 +17554,11 @@ td.product-quantity {
   content: "";
   text-decoration: none;
   color: #5cb85c;
+}
+
+div.wp-block-woocommerce-product-new .woocommerce > div.products {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .woocommerce .woocommerce-result-count {

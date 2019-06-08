@@ -246,6 +246,12 @@
       @extend .btn-block;
     }
   }
+
+  .cross-sells {
+    > .products {
+      @extend .container;
+	}
+  }
 }
 
 .woocommerce-cart {
