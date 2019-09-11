@@ -16799,23 +16799,23 @@ img#wpstats {
 }
 
 .widget_tag_cloud a:nth-child(1) {
-  font-size: 19px !important;
+  font-size: 13px !important;
 }
 
 .widget_tag_cloud a:nth-child(2) {
-  font-size: 30px !important;
+  font-size: 27px !important;
 }
 
 .widget_tag_cloud a:nth-child(3) {
-  font-size: 25px !important;
+  font-size: 21px !important;
 }
 
 .widget_tag_cloud a:nth-child(4) {
-  font-size: 14px !important;
+  font-size: 25px !important;
 }
 
 .widget_tag_cloud a:nth-child(5) {
-  font-size: 31px !important;
+  font-size: 13px !important;
 }
 
 .widget_tag_cloud a:nth-child(6) {
@@ -16823,27 +16823,27 @@ img#wpstats {
 }
 
 .widget_tag_cloud a:nth-child(7) {
-  font-size: 14px !important;
+  font-size: 22px !important;
 }
 
 .widget_tag_cloud a:nth-child(8) {
-  font-size: 27px !important;
+  font-size: 25px !important;
 }
 
 .widget_tag_cloud a:nth-child(9) {
-  font-size: 13px !important;
+  font-size: 32px !important;
 }
 
 .widget_tag_cloud a:nth-child(10) {
-  font-size: 21px !important;
+  font-size: 32px !important;
 }
 
 .widget_tag_cloud a:nth-child(11) {
-  font-size: 28px !important;
+  font-size: 16px !important;
 }
 
 .widget_tag_cloud a:nth-child(12) {
-  font-size: 29px !important;
+  font-size: 26px !important;
 }
 
 .wp-video-shortcode {
@@ -17556,9 +17556,10 @@ td.product-quantity {
   color: #5cb85c;
 }
 
-div.wp-block-woocommerce-product-new .woocommerce > div.products {
-  padding-left: 0;
-  padding-right: 0;
+@media (min-width: 768px) {
+  div.wp-block-woocommerce-product-new .woocommerce > div.products {
+    width: auto;
+  }
 }
 
 .woocommerce .woocommerce-result-count {
@@ -17872,7 +17873,9 @@ abbr.required {
 }
 
 .woocommerce .cart_totals .shipping .amount,
-.woocommerce .woocommerce-checkout-review-order .shipping .amount {
+.woocommerce .cart_totals .shipping .storms-free-shipping,
+.woocommerce .woocommerce-checkout-review-order .shipping .amount,
+.woocommerce .woocommerce-checkout-review-order .shipping .storms-free-shipping {
   float: right;
   font-weight: 600;
 }
@@ -17884,7 +17887,9 @@ abbr.required {
 }
 
 .woocommerce .cart_totals .shipping ul#shipping_method label .amount,
-.woocommerce .woocommerce-checkout-review-order .shipping ul#shipping_method label .amount {
+.woocommerce .cart_totals .shipping ul#shipping_method label .storms-free-shipping,
+.woocommerce .woocommerce-checkout-review-order .shipping ul#shipping_method label .amount,
+.woocommerce .woocommerce-checkout-review-order .shipping ul#shipping_method label .storms-free-shipping {
   float: right;
   font-weight: 600;
 }

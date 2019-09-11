@@ -175,7 +175,8 @@
       .shipping {
         @extend .text-left;
 
-        .amount {
+	    .amount,
+	    .storms-free-shipping {
           float: right;
           font-weight: 600;
         }
@@ -188,7 +189,8 @@
             width: 90%;
             font-weight: 100;
 
-            .amount {
+			.amount,
+			.storms-free-shipping {
               float: right;
               font-weight: 600;
             }
