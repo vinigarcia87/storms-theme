@@ -1,69 +1,69 @@
 .woocommerce-account {
 
-  .woocommerce {
+	.woocommerce {
 
-	  .woocommerce-form-login {
-		  width: 40%;
-	  }
+		.woocommerce-form-login {
+			width: 40%;
+		}
 
-	  .col2-set {
-		  @extend .row;
+		.col2-set {
+			@extend .row;
 
-		  .col-1,
-		  .col-2 {
-			  @extend .col-sm-6;
+			.col-1,
+			.col-2 {
+				@extend .col-sm-6;
 
-			  .woocommerce-form-login {
-				  width: auto;
-			  }
-		  }
-	  }
+				.woocommerce-form-login {
+					width: auto;
+				}
+			}
+		}
 
-	  .form-row {
-		  @extend .form-group;
-		  width: 80%;
-	  }
+		.form-row {
+			@extend .form-group;
+			width: 80%;
+		}
 
-	  .woocommerce-privacy-policy-text {
-		  width: 80%;
+		.woocommerce-privacy-policy-text {
+			width: 80%;
 
-		  p {
-			  text-align: justify;
-		  }
-	  }
+			p {
+				text-align: justify;
+			}
+		}
 
-	  .input-text {
-		  @extend .form-control;
-	  }
+		.input-text {
+			@extend .form-control;
+		}
 
-	  label.woocommerce-form__label.woocommerce-form__label-for-checkbox.inline {
-		  display: block;
-		  margin-top: 15px;
-	  }
+		label.woocommerce-form__label.woocommerce-form__label-for-checkbox.inline {
+			display: block;
+			margin-top: 15px;
+		}
 
-	  .woocommerce-form-login__submit {
-		  display: block;
-		  @extend .btn-primary;
-	  }
+		.woocommerce-form-login__submit {
+			display: block;
+			@extend .btn-primary;
+		}
 
-	  .register {
-		  .woocommerce-Button[name=register] {
-			  display: block;
-			  @extend .btn-primary;
-		  }
-	  }
+		.register {
+			.woocommerce-Button[name=register] {
+				display: block;
+				@extend .btn-primary;
+			}
+		}
 
-	  .woocommerce-MyAccount-navigation {
-		  @extend .col-xs-3;
+		.woocommerce-MyAccount-navigation {
+			@extend .col-xs-3;
 
-		  ul {
-			  @extend .list-unstyled;
-		  }
-	  }
+			ul {
+				@extend .list-unstyled;
+			}
+		}
 
-	  .woocommerce-MyAccount-content {
-		  @extend .col-xs-9;
-	  }
-  }
+		.woocommerce-MyAccount-content {
+			@extend .col-xs-9;
+		}
+	}
 
 }
