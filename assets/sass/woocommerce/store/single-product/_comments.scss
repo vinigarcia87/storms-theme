@@ -1,0 +1,82 @@
+.woocommerce {
+
+  p.woocommerce-noreviews {
+    padding: 20px 15px;
+    background-color: #fdfdfd;
+    border-left: 8px solid #222;
+  }
+
+  .comment-form-rating {
+    label {
+      float: left;
+      width: 130px;
+      font-weight: 200;
+    }
+  }
+
+  p.stars {
+    font-size: 22px;
+
+    a {
+      position: relative;
+      height: 1em;
+      width: 1em;
+      text-indent: -999em;
+      display: inline-block;
+      text-decoration: none;
+
+      &::before {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1em;
+        height: 1em;
+        line-height: 1;
+        font-family: 'WooCommerce';
+        content: '\e021';
+        text-indent: 0;
+      }
+
+      &:hover ~ a::before {
+        content: '\e021';
+      }
+    }
+
+    &:hover a::before {
+      content: '\e020';
+    }
+
+    &.selected {
+      a.active {
+        &::before {
+          content: '\e020';
+        }
+
+        ~ a::before {
+          content: '\e021';
+        }
+      }
+
+      a:not( .active )::before {
+        content: '\e020';
+      }
+    }
+  }
+
+  #respond {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid $gray-lighter;
+
+    .form-submit {
+      @extend .text-right;
+
+      input#submit {
+        width: 200px;
+        background-color: #fff;
+      }
+    }
+  }
+
+}

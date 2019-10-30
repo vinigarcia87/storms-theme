@@ -14,7 +14,7 @@
         text-align: center;
         vertical-align: middle;
         text-transform: uppercase;
-        border-bottom: 1px solid $light-grey;
+        border-bottom: 1px solid $gray-lighter;
       }
 
       & > tbody > tr {
@@ -61,8 +61,8 @@
 
           .button {
             color: #fff;
-            background-color: $red-one;
-            border-color: #a00e0e;
+            background-color: $brand-primary;
+            border-color: $btn-primary-border;
           }
 
         }
@@ -164,7 +164,7 @@
 
           tr.order-total {
             font-size: 20px;
-            background-color: $light-grey;
+            background-color: $gray-lighter;
           }
         }
       }
@@ -175,8 +175,8 @@
       .shipping {
         @extend .text-left;
 
-		.amount,
-		.storms-free-shipping {
+	    .amount,
+	    .storms-free-shipping {
           float: right;
           font-weight: 600;
         }
@@ -190,7 +190,7 @@
             font-weight: 100;
 			padding-left: 5px;
 
-            .amount,
+			.amount,
 			.storms-free-shipping {
               float: right;
               font-weight: 600;
@@ -252,7 +252,7 @@
 
   .cross-sells {
     > .products {
-	  @extend .container;
+      @extend .container;
 	}
   }
 }

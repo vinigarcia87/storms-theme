@@ -25,9 +25,9 @@
 
   .woocommerce-error {
     @extend .list-unstyled;
-    border-left-color: $red-tree;
+    border-left-color: $brand-danger;
   }
 
   .woocommerce-info {
-    border-left-color: $info-blue;
+    border-left-color: $brand-info;
   }
