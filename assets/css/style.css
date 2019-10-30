@@ -4486,7 +4486,7 @@ button .badge, .woocommerce a.button .badge,
 .btn-primary, .woocommerce a.button.alt,
 .woocommerce button.button.alt,
 .woocommerce input.button.alt,
-.woocommerce #respond input#submit.alt {
+.woocommerce #respond input#submit.alt, .woocommerce-account .woocommerce .woocommerce-form-login__submit, .woocommerce-account .woocommerce .register .woocommerce-Button[name=register] {
   color: #fff;
   background-color: #84c3e3;
   border-color: #6fb9de;
@@ -4495,10 +4495,10 @@ button .badge, .woocommerce a.button .badge,
 .btn-primary:focus, .woocommerce a.button.alt:focus,
 .woocommerce button.button.alt:focus,
 .woocommerce input.button.alt:focus,
-.woocommerce #respond input#submit.alt:focus, .btn-primary.focus, .woocommerce a.focus.button.alt,
+.woocommerce #respond input#submit.alt:focus, .woocommerce-account .woocommerce .woocommerce-form-login__submit:focus, .woocommerce-account .woocommerce .register .woocommerce-Button[name=register]:focus, .btn-primary.focus, .woocommerce a.focus.button.alt,
 .woocommerce button.focus.button.alt,
 .woocommerce input.focus.button.alt,
-.woocommerce #respond input.focus#submit.alt {
+.woocommerce #respond input.focus#submit.alt, .woocommerce-account .woocommerce .focus.woocommerce-form-login__submit, .woocommerce-account .woocommerce .register .focus.woocommerce-Button[name=register] {
   color: #fff;
   background-color: #5aafda;
   border-color: #267ca8;
@@ -4507,7 +4507,7 @@ button .badge, .woocommerce a.button .badge,
 .btn-primary:hover, .woocommerce a.button.alt:hover,
 .woocommerce button.button.alt:hover,
 .woocommerce input.button.alt:hover,
-.woocommerce #respond input#submit.alt:hover {
+.woocommerce #respond input#submit.alt:hover, .woocommerce-account .woocommerce .woocommerce-form-login__submit:hover, .woocommerce-account .woocommerce .register .woocommerce-Button[name=register]:hover {
   color: #fff;
   background-color: #5aafda;
   border-color: #3da1d3;
@@ -4516,10 +4516,10 @@ button .badge, .woocommerce a.button .badge,
 .btn-primary:active, .woocommerce a.button.alt:active,
 .woocommerce button.button.alt:active,
 .woocommerce input.button.alt:active,
-.woocommerce #respond input#submit.alt:active, .btn-primary.active, .woocommerce a.active.button.alt,
+.woocommerce #respond input#submit.alt:active, .woocommerce-account .woocommerce .woocommerce-form-login__submit:active, .woocommerce-account .woocommerce .register .woocommerce-Button[name=register]:active, .btn-primary.active, .woocommerce a.active.button.alt,
 .woocommerce button.active.button.alt,
 .woocommerce input.active.button.alt,
-.woocommerce #respond input.active#submit.alt,
+.woocommerce #respond input.active#submit.alt, .woocommerce-account .woocommerce .active.woocommerce-form-login__submit, .woocommerce-account .woocommerce .register .active.woocommerce-Button[name=register],
 .open > .btn-primary.dropdown-toggle, .woocommerce
 .open > a.dropdown-toggle.button.alt,
 .woocommerce
@@ -4527,7 +4527,9 @@ button .badge, .woocommerce a.button .badge,
 .woocommerce
 .open > input.dropdown-toggle.button.alt,
 .woocommerce #respond
-.open > input.dropdown-toggle#submit.alt {
+.open > input.dropdown-toggle#submit.alt, .woocommerce-account .woocommerce
+.open > .dropdown-toggle.woocommerce-form-login__submit, .woocommerce-account .woocommerce .register
+.open > .dropdown-toggle.woocommerce-Button[name=register] {
   color: #fff;
   background-color: #5aafda;
   border-color: #3da1d3;
@@ -4536,22 +4538,22 @@ button .badge, .woocommerce a.button .badge,
 .btn-primary:active:hover, .woocommerce a.button.alt:active:hover,
 .woocommerce button.button.alt:active:hover,
 .woocommerce input.button.alt:active:hover,
-.woocommerce #respond input#submit.alt:active:hover, .btn-primary:active:focus, .woocommerce a.button.alt:active:focus,
+.woocommerce #respond input#submit.alt:active:hover, .woocommerce-account .woocommerce .woocommerce-form-login__submit:active:hover, .woocommerce-account .woocommerce .register .woocommerce-Button[name=register]:active:hover, .btn-primary:active:focus, .woocommerce a.button.alt:active:focus,
 .woocommerce button.button.alt:active:focus,
 .woocommerce input.button.alt:active:focus,
-.woocommerce #respond input#submit.alt:active:focus, .btn-primary:active.focus, .woocommerce a.button.alt:active.focus,
+.woocommerce #respond input#submit.alt:active:focus, .woocommerce-account .woocommerce .woocommerce-form-login__submit:active:focus, .woocommerce-account .woocommerce .register .woocommerce-Button[name=register]:active:focus, .btn-primary:active.focus, .woocommerce a.button.alt:active.focus,
 .woocommerce button.button.alt:active.focus,
 .woocommerce input.button.alt:active.focus,
-.woocommerce #respond input#submit.alt:active.focus, .btn-primary.active:hover, .woocommerce a.active.button.alt:hover,
+.woocommerce #respond input#submit.alt:active.focus, .woocommerce-account .woocommerce .woocommerce-form-login__submit:active.focus, .woocommerce-account .woocommerce .register .woocommerce-Button[name=register]:active.focus, .btn-primary.active:hover, .woocommerce a.active.button.alt:hover,
 .woocommerce button.active.button.alt:hover,
 .woocommerce input.active.button.alt:hover,
-.woocommerce #respond input.active#submit.alt:hover, .btn-primary.active:focus, .woocommerce a.active.button.alt:focus,
+.woocommerce #respond input.active#submit.alt:hover, .woocommerce-account .woocommerce .active.woocommerce-form-login__submit:hover, .woocommerce-account .woocommerce .register .active.woocommerce-Button[name=register]:hover, .btn-primary.active:focus, .woocommerce a.active.button.alt:focus,
 .woocommerce button.active.button.alt:focus,
 .woocommerce input.active.button.alt:focus,
-.woocommerce #respond input.active#submit.alt:focus, .btn-primary.active.focus, .woocommerce a.active.focus.button.alt,
+.woocommerce #respond input.active#submit.alt:focus, .woocommerce-account .woocommerce .active.woocommerce-form-login__submit:focus, .woocommerce-account .woocommerce .register .active.woocommerce-Button[name=register]:focus, .btn-primary.active.focus, .woocommerce a.active.focus.button.alt,
 .woocommerce button.active.focus.button.alt,
 .woocommerce input.active.focus.button.alt,
-.woocommerce #respond input.active.focus#submit.alt,
+.woocommerce #respond input.active.focus#submit.alt, .woocommerce-account .woocommerce .active.focus.woocommerce-form-login__submit, .woocommerce-account .woocommerce .register .active.focus.woocommerce-Button[name=register],
 .open > .btn-primary.dropdown-toggle:hover, .woocommerce
 .open > a.dropdown-toggle.button.alt:hover,
 .woocommerce
@@ -4559,7 +4561,9 @@ button .badge, .woocommerce a.button .badge,
 .woocommerce
 .open > input.dropdown-toggle.button.alt:hover,
 .woocommerce #respond
-.open > input.dropdown-toggle#submit.alt:hover,
+.open > input.dropdown-toggle#submit.alt:hover, .woocommerce-account .woocommerce
+.open > .dropdown-toggle.woocommerce-form-login__submit:hover, .woocommerce-account .woocommerce .register
+.open > .dropdown-toggle.woocommerce-Button[name=register]:hover,
 .open > .btn-primary.dropdown-toggle:focus, .woocommerce
 .open > a.dropdown-toggle.button.alt:focus,
 .woocommerce
@@ -4567,7 +4571,9 @@ button .badge, .woocommerce a.button .badge,
 .woocommerce
 .open > input.dropdown-toggle.button.alt:focus,
 .woocommerce #respond
-.open > input.dropdown-toggle#submit.alt:focus,
+.open > input.dropdown-toggle#submit.alt:focus, .woocommerce-account .woocommerce
+.open > .dropdown-toggle.woocommerce-form-login__submit:focus, .woocommerce-account .woocommerce .register
+.open > .dropdown-toggle.woocommerce-Button[name=register]:focus,
 .open > .btn-primary.dropdown-toggle.focus, .woocommerce
 .open > a.dropdown-toggle.focus.button.alt,
 .woocommerce
@@ -4575,7 +4581,9 @@ button .badge, .woocommerce a.button .badge,
 .woocommerce
 .open > input.dropdown-toggle.focus.button.alt,
 .woocommerce #respond
-.open > input.dropdown-toggle.focus#submit.alt {
+.open > input.dropdown-toggle.focus#submit.alt, .woocommerce-account .woocommerce
+.open > .dropdown-toggle.focus.woocommerce-form-login__submit, .woocommerce-account .woocommerce .register
+.open > .dropdown-toggle.focus.woocommerce-Button[name=register] {
   color: #fff;
   background-color: #3da1d3;
   border-color: #267ca8;
@@ -4584,10 +4592,10 @@ button .badge, .woocommerce a.button .badge,
 .btn-primary:active, .woocommerce a.button.alt:active,
 .woocommerce button.button.alt:active,
 .woocommerce input.button.alt:active,
-.woocommerce #respond input#submit.alt:active, .btn-primary.active, .woocommerce a.active.button.alt,
+.woocommerce #respond input#submit.alt:active, .woocommerce-account .woocommerce .woocommerce-form-login__submit:active, .woocommerce-account .woocommerce .register .woocommerce-Button[name=register]:active, .btn-primary.active, .woocommerce a.active.button.alt,
 .woocommerce button.active.button.alt,
 .woocommerce input.active.button.alt,
-.woocommerce #respond input.active#submit.alt,
+.woocommerce #respond input.active#submit.alt, .woocommerce-account .woocommerce .active.woocommerce-form-login__submit, .woocommerce-account .woocommerce .register .active.woocommerce-Button[name=register],
 .open > .btn-primary.dropdown-toggle, .woocommerce
 .open > a.dropdown-toggle.button.alt,
 .woocommerce
@@ -4595,29 +4603,31 @@ button .badge, .woocommerce a.button .badge,
 .woocommerce
 .open > input.dropdown-toggle.button.alt,
 .woocommerce #respond
-.open > input.dropdown-toggle#submit.alt {
+.open > input.dropdown-toggle#submit.alt, .woocommerce-account .woocommerce
+.open > .dropdown-toggle.woocommerce-form-login__submit, .woocommerce-account .woocommerce .register
+.open > .dropdown-toggle.woocommerce-Button[name=register] {
   background-image: none;
 }
 
 .btn-primary.disabled:hover, .woocommerce a.disabled.button.alt:hover,
 .woocommerce button.disabled.button.alt:hover,
 .woocommerce input.disabled.button.alt:hover,
-.woocommerce #respond input.disabled#submit.alt:hover, .btn-primary.disabled:focus, .woocommerce a.disabled.button.alt:focus,
+.woocommerce #respond input.disabled#submit.alt:hover, .woocommerce-account .woocommerce .disabled.woocommerce-form-login__submit:hover, .woocommerce-account .woocommerce .register .disabled.woocommerce-Button[name=register]:hover, .btn-primary.disabled:focus, .woocommerce a.disabled.button.alt:focus,
 .woocommerce button.disabled.button.alt:focus,
 .woocommerce input.disabled.button.alt:focus,
-.woocommerce #respond input.disabled#submit.alt:focus, .btn-primary.disabled.focus, .woocommerce a.disabled.focus.button.alt,
+.woocommerce #respond input.disabled#submit.alt:focus, .woocommerce-account .woocommerce .disabled.woocommerce-form-login__submit:focus, .woocommerce-account .woocommerce .register .disabled.woocommerce-Button[name=register]:focus, .btn-primary.disabled.focus, .woocommerce a.disabled.focus.button.alt,
 .woocommerce button.disabled.focus.button.alt,
 .woocommerce input.disabled.focus.button.alt,
-.woocommerce #respond input.disabled.focus#submit.alt, .btn-primary[disabled]:hover, .woocommerce a[disabled].button.alt:hover,
+.woocommerce #respond input.disabled.focus#submit.alt, .woocommerce-account .woocommerce .disabled.focus.woocommerce-form-login__submit, .woocommerce-account .woocommerce .register .disabled.focus.woocommerce-Button[name=register], .btn-primary[disabled]:hover, .woocommerce a[disabled].button.alt:hover,
 .woocommerce button[disabled].button.alt:hover,
 .woocommerce input[disabled].button.alt:hover,
-.woocommerce #respond input[disabled]#submit.alt:hover, .btn-primary[disabled]:focus, .woocommerce a[disabled].button.alt:focus,
+.woocommerce #respond input[disabled]#submit.alt:hover, .woocommerce-account .woocommerce [disabled].woocommerce-form-login__submit:hover, .woocommerce-account .woocommerce .register [disabled].woocommerce-Button[name=register]:hover, .btn-primary[disabled]:focus, .woocommerce a[disabled].button.alt:focus,
 .woocommerce button[disabled].button.alt:focus,
 .woocommerce input[disabled].button.alt:focus,
-.woocommerce #respond input[disabled]#submit.alt:focus, .btn-primary[disabled].focus, .woocommerce a[disabled].focus.button.alt,
+.woocommerce #respond input[disabled]#submit.alt:focus, .woocommerce-account .woocommerce [disabled].woocommerce-form-login__submit:focus, .woocommerce-account .woocommerce .register [disabled].woocommerce-Button[name=register]:focus, .btn-primary[disabled].focus, .woocommerce a[disabled].focus.button.alt,
 .woocommerce button[disabled].focus.button.alt,
 .woocommerce input[disabled].focus.button.alt,
-.woocommerce #respond input[disabled].focus#submit.alt,
+.woocommerce #respond input[disabled].focus#submit.alt, .woocommerce-account .woocommerce [disabled].focus.woocommerce-form-login__submit, .woocommerce-account .woocommerce .register [disabled].focus.woocommerce-Button[name=register],
 fieldset[disabled] .btn-primary:hover,
 fieldset[disabled] .woocommerce a.button.alt:hover, .woocommerce
 fieldset[disabled] a.button.alt:hover,
@@ -4633,6 +4643,10 @@ fieldset[disabled]
 .woocommerce #respond input#submit.alt:hover,
 .woocommerce #respond
 fieldset[disabled] input#submit.alt:hover,
+fieldset[disabled] .woocommerce-account .woocommerce .woocommerce-form-login__submit:hover, .woocommerce-account .woocommerce
+fieldset[disabled] .woocommerce-form-login__submit:hover,
+fieldset[disabled] .woocommerce-account .woocommerce .register .woocommerce-Button[name=register]:hover, .woocommerce-account .woocommerce .register
+fieldset[disabled] .woocommerce-Button[name=register]:hover,
 fieldset[disabled] .btn-primary:focus,
 fieldset[disabled] .woocommerce a.button.alt:focus, .woocommerce
 fieldset[disabled] a.button.alt:focus,
@@ -4648,6 +4662,10 @@ fieldset[disabled]
 .woocommerce #respond input#submit.alt:focus,
 .woocommerce #respond
 fieldset[disabled] input#submit.alt:focus,
+fieldset[disabled] .woocommerce-account .woocommerce .woocommerce-form-login__submit:focus, .woocommerce-account .woocommerce
+fieldset[disabled] .woocommerce-form-login__submit:focus,
+fieldset[disabled] .woocommerce-account .woocommerce .register .woocommerce-Button[name=register]:focus, .woocommerce-account .woocommerce .register
+fieldset[disabled] .woocommerce-Button[name=register]:focus,
 fieldset[disabled] .btn-primary.focus,
 fieldset[disabled] .woocommerce a.focus.button.alt, .woocommerce
 fieldset[disabled] a.focus.button.alt,
@@ -4662,7 +4680,11 @@ fieldset[disabled] input.focus.button.alt,
 fieldset[disabled]
 .woocommerce #respond input.focus#submit.alt,
 .woocommerce #respond
-fieldset[disabled] input.focus#submit.alt {
+fieldset[disabled] input.focus#submit.alt,
+fieldset[disabled] .woocommerce-account .woocommerce .focus.woocommerce-form-login__submit, .woocommerce-account .woocommerce
+fieldset[disabled] .focus.woocommerce-form-login__submit,
+fieldset[disabled] .woocommerce-account .woocommerce .register .focus.woocommerce-Button[name=register], .woocommerce-account .woocommerce .register
+fieldset[disabled] .focus.woocommerce-Button[name=register] {
   background-color: #84c3e3;
   border-color: #6fb9de;
 }
@@ -4670,7 +4692,7 @@ fieldset[disabled] input.focus#submit.alt {
 .btn-primary .badge, .woocommerce a.button.alt .badge,
 .woocommerce button.button.alt .badge,
 .woocommerce input.button.alt .badge,
-.woocommerce #respond input#submit.alt .badge {
+.woocommerce #respond input#submit.alt .badge, .woocommerce-account .woocommerce .woocommerce-form-login__submit .badge, .woocommerce-account .woocommerce .register .woocommerce-Button[name=register] .badge {
   color: #84c3e3;
   background-color: #fff;
 }
@@ -16614,19 +16636,19 @@ img#wpstats {
 }
 
 .widget_tag_cloud a:nth-child(1) {
-  font-size: 14px !important;
+  font-size: 25px !important;
 }
 
 .widget_tag_cloud a:nth-child(2) {
-  font-size: 18px !important;
+  font-size: 23px !important;
 }
 
 .widget_tag_cloud a:nth-child(3) {
-  font-size: 20px !important;
+  font-size: 30px !important;
 }
 
 .widget_tag_cloud a:nth-child(4) {
-  font-size: 28px !important;
+  font-size: 17px !important;
 }
 
 .widget_tag_cloud a:nth-child(5) {
@@ -16638,27 +16660,27 @@ img#wpstats {
 }
 
 .widget_tag_cloud a:nth-child(7) {
-  font-size: 18px !important;
+  font-size: 32px !important;
 }
 
 .widget_tag_cloud a:nth-child(8) {
-  font-size: 21px !important;
+  font-size: 27px !important;
 }
 
 .widget_tag_cloud a:nth-child(9) {
-  font-size: 14px !important;
+  font-size: 21px !important;
 }
 
 .widget_tag_cloud a:nth-child(10) {
-  font-size: 29px !important;
+  font-size: 20px !important;
 }
 
 .widget_tag_cloud a:nth-child(11) {
-  font-size: 14px !important;
+  font-size: 26px !important;
 }
 
 .widget_tag_cloud a:nth-child(12) {
-  font-size: 24px !important;
+  font-size: 20px !important;
 }
 
 .wp-video-shortcode {
@@ -17538,9 +17560,25 @@ abbr.required {
   width: 80%;
 }
 
+.woocommerce-account .woocommerce .woocommerce-privacy-policy-text {
+  width: 80%;
+}
+
+.woocommerce-account .woocommerce .woocommerce-privacy-policy-text p {
+  text-align: justify;
+}
+
 .woocommerce-account .woocommerce label.woocommerce-form__label.woocommerce-form__label-for-checkbox.inline {
   display: block;
   margin-top: 15px;
+}
+
+.woocommerce-account .woocommerce .woocommerce-form-login__submit {
+  display: block;
+}
+
+.woocommerce-account .woocommerce .register .woocommerce-Button[name=register] {
+  display: block;
 }
 
 .woocommerce form.woocommerce-cart-form table.shop_table {
