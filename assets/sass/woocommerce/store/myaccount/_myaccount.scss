@@ -1,26 +1,47 @@
 .woocommerce-account {
 
   .woocommerce {
+
 	  .col2-set {
 		  @extend .row;
 
 		  .col-1,
 		  .col-2 {
 			  @extend .col-sm-6;
+		  }
+	  }
 
-			  .form-row {
-				  @extend .form-group;
-				  width: 80%;
-			  }
+	  .form-row {
+		  @extend .form-group;
+		  width: 80%;
+	  }
 
-			  .input-text {
-				  @extend .form-control;
-			  }
+	  .woocommerce-privacy-policy-text {
+		  width: 80%;
 
-			  label.woocommerce-form__label.woocommerce-form__label-for-checkbox.inline {
-				  display: block;
-				  margin-top: 15px;
-			  }
+		  p {
+			  text-align: justify;
+		  }
+	  }
+
+	  .input-text {
+		  @extend .form-control;
+	  }
+
+	  label.woocommerce-form__label.woocommerce-form__label-for-checkbox.inline {
+		  display: block;
+		  margin-top: 15px;
+	  }
+
+	  .woocommerce-form-login__submit {
+		  display: block;
+		  @extend .btn-primary;
+	  }
+
+	  .register {
+		  .woocommerce-Button[name=register] {
+			  display: block;
+			  @extend .btn-primary;
 		  }
 	  }
 
