@@ -111,7 +111,7 @@ class Storms_WC_SearchBar extends WC_Widget
                 <input class="form-control search-input" type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="<?php echo esc_attr( $label_input ); ?>" />
 
                 <div class="input-group-btn">
-                    <button type="button" class="btn btn-default dropdown-toggle categories-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn btn-secondary dropdown-toggle categories-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <?php echo esc_attr( $label_dropdown ); ?> <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right categories-dropdown">
@@ -142,7 +142,7 @@ class Storms_WC_SearchBar extends WC_Widget
                         ?>
                     </ul>
 
-                    <button type="submit" id="searchsubmit" class="btn btn-default search-submit-button">
+                    <button type="submit" id="searchsubmit" class="btn btn-secondary search-submit-button">
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </button>
                 </div>

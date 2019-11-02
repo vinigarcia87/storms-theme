@@ -54,7 +54,7 @@
 		}
 
 		.woocommerce-MyAccount-navigation {
-			@extend .col-xs-3;
+			@extend .col-3;
 
 			ul {
 				@extend .list-unstyled;
@@ -62,7 +62,7 @@
 		}
 
 		.woocommerce-MyAccount-content {
-			@extend .col-xs-9;
+			@extend .col-9;
 		}
 	}
 

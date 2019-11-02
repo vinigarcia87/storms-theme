@@ -3,12 +3,12 @@
 		@extend .row;
 
 		.col-1 {
-			@extend .col-xs-offset-2;
-			@extend .col-xs-4;
+			@extend .offset-2;
+			@extend .col-4;
 			border-right: 2px solid #f5f5f5;
 		}
 		.col-2 {
-			@extend .col-xs-4;
+			@extend .col-4;
 			padding-left: 45px;
 		}
 	}

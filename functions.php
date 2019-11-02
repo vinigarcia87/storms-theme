@@ -31,47 +31,11 @@ if ( !defined( 'STORMS_SYSTEM_VERSION' ) ) {
 	define( 'STORMS_SYSTEM_VERSION', 'YYYY.MM.DD' );
 }
 
-if( ! function_exists( 'theme_setup' ) ) {
-	// Theme setup
-	function theme_setup() {
-		// Enable backend support
-		add_theme_support( 'style-backend' );
-		// Enable frontend support
-		add_theme_support( 'style-frontend' );
-		// Enable layout support
-		add_theme_support( 'style-layout' );
-		// Enable bootstrap support
-		add_theme_support( 'use-bootstrap' );
-		// Enable woocommerce support
-		add_theme_support( 'use-woocommerce' );
+// Require services of this theme
+require_once 'services/storms-theme-setup.php';
+require_once 'services/storms-environment-config.php';
+require_once 'services/storms-wp-default-configuration.php';
 
-		// YOST SEO Breadcrumbs
-		add_theme_support( 'yoast-seo-breadcrumbs');
-	}
-	add_action( 'after_setup_theme', 'theme_setup' );
-}
-
-if( ! function_exists( 'define_options' ) ) {
-	// Define storms framework options
-	function define_options() {
-		update_option( 'load_external_jquery', true ); // Load jquery from Google CDN
-
-		update_option( 'number_of_footer_sidebars', 5 );
-		update_option( 'meta_description' , '' );
-		update_option( 'meta_keywords' , '' );
-
-		// Define WooCommerce product and shop pages layout
-		update_option( 'product_layout', '2c-r' );
-		update_option( 'shop_layout', '2c-r' );
-	}
-	add_action( 'init', 'define_options' );
-}
-
-require_once 'services/storms-woocommerce-wishlist.php';
-require_once 'services/storms-woocommerce-changes.php';
-require_once 'services/storms-woocommerce-cart-mini.php';
-require_once 'services/storms-woocommerce-searchbar.php';
-//require_once 'services/storms-calculo-st.php';
 
 /**
  * =====================================================================================================================
@@ -88,8 +52,43 @@ if( ! function_exists( 'storms_testing' ) ) {
 	//add_action( 'init', 'storms_testing' );
 }
 
+function storms_inspect_scripts() {
+    $wp_scripts = wp_scripts();
+    \StormsFramework\Storms\Helper::debug( $wp_scripts->queue );
+}
+//add_action( 'wp_head', 'storms_inspect_scripts', 999 );
+
 /**
  * 					REVISAR ESSES CODIGOS!
+ * =====================================================================================================================
+ */
+
+// @TODO Revisar!!
+require_once 'services/storms-woocommerce-wishlist.php';
+require_once 'services/storms-woocommerce-changes.php';
+require_once 'services/storms-woocommerce-cart-mini.php';
+require_once 'services/storms-woocommerce-searchbar.php';
+//require_once 'services/storms-calculo-st.php';
+
+// Remove Wordpress oembed
+// @see https://www.isitwp.com/remove-everything-oembed/
+
+//Remove the REST API endpoint.
+remove_action('rest_api_init', 'wp_oembed_register_route');
+
+// Turn off oEmbed auto discovery.
+add_filter( 'embed_oembed_discover', '__return_false' );
+
+//Don't filter oEmbed results.
+remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
+
+//Remove oEmbed discovery links.
+remove_action('wp_head', 'wp_oembed_add_discovery_links');
+
+//Remove oEmbed JavaScript from the front-end and back-end.
+remove_action('wp_head', 'wp_oembed_add_host_js');
+
+/**
  * =====================================================================================================================
  */
 

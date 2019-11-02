@@ -56,7 +56,7 @@ get_header( 'shop' ); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col-12">
 					<?php
 						/**
 						 * woocommerce_before_shop_loop hook.

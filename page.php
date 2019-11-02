@@ -20,14 +20,14 @@
  * @package storms
  */
 
-use \StormsFramework\Storms\Front\Layout;
+use \StormsFramework\Storms\Template;
 
 get_header(); ?>
 
     <div class="row">
 
         <!-- Website content -->
-        <main id="content" class="main <?php echo Layout::main_layout(); ?>" role="main">
+        <main id="content" class="main <?php echo Template::main_layout(); ?>" role="main">
 
                 <?php
                 while ( have_posts() ) : the_post();

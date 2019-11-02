@@ -2,8 +2,7 @@
 
   // Input de quantidade
   .quantity {
-    @extend .col-xs-6; // Vamos sobrescrever o width... o extend é soh pra garantir o comportamento de uma col-*-*
-    //@extend .col-sm-2; @extend .col-md-4;
+    @extend .col-6; // Vamos sobrescrever o width... o extend é soh pra garantir o comportamento de uma col-*-*
     width: 125px;
 
     .input-text.qty {
@@ -40,12 +39,12 @@
         line-height: 17px;
         color: #646464;
         padding: 0 10px;
-        border-top: 1px solid $gray-lighter;
-        border-right: 1px solid $gray-lighter;
+        border-top: 1px solid theme-color("light");
+        border-right: 1px solid theme-color("light");
       }
       a.minus {
         bottom: -37px;
-        border-bottom: 1px solid $gray-lighter;
+        border-bottom: 1px solid theme-color("light");
       }
     }
   }

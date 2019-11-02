@@ -18,13 +18,9 @@
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
-if ( post_password_required() ) : ?>
-	<section id="comments" class="content-wrap" itemscope itemtype="http://schema.org/Comment">
-		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view all comments.', 'storms' ); ?></p>
-	</section><!-- #comments -->
-<?php
+if ( post_password_required() ) {
     return;
-endif;
+}
 ?>
 
 <div id="comments" class="comments-area" itemscope itemtype="http://schema.org/Comment">
@@ -62,7 +58,7 @@ endif;
                 'style'         => 'ul',
                 'short_ping'    => true,
                 'avatar_size'   => '64',
-                'walker'        => new \StormsFramework\Storms\Bootstrap\CommentWalker(),
+                'walker'        => new \StormsFramework\Storms\Bootstrap\WP_Bootstrap_Commentwalker(),
             ) );
             ?>
         </ul><!-- .comment-list -->

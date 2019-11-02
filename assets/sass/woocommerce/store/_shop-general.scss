@@ -3,7 +3,7 @@
   // Contador de resultados na listagem de produtos
   .woocommerce-result-count {
     @extend .pull-left;
-    @extend .form-control-static;
+    @extend .form-control-plaintext;
     margin-bottom: 20px;
   }
 

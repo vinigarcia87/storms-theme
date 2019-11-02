@@ -18,22 +18,20 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  */
 
-use \StormsFramework\Storms\Front\Layout,
-    \StormsFramework\Storms\Bootstrap\Functions,
-    \StormsFramework\Storms\Bootstrap\Breadcrumb,
-    \StormsFramework\Storms\Bootstrap\Pagination;
+use \StormsFramework\Storms\Template;
 
 get_header(); ?>
 
     <div class="row">
 
         <!-- Website content -->
-        <main id="content" class="main <?php echo Layout::main_layout(); ?>" role="main">
+        <main id="content" class="main <?php echo Template::main_layout(); ?>" role="main">
 
-            <!-- Breadcrumbs -->
-            <?php //echo Breadcrumb::breadcrumb(); ?>
+            <!--  -->
+            <?php  ?>
 
             <?php
+
             if ( have_posts() ) :
 
                 if ( is_home() && ! is_front_page() ) : ?>
@@ -57,10 +55,7 @@ get_header(); ?>
 
                 endwhile;
 
-                the_posts_navigation(); // @TODO Verificar no Helper so SF, se nao ha uma solucao para isso
-
-                // Posts navigation
-                //echo Pagination::loop_pagination( array( 'type' => 'list', 'before' => '', 'after' => '', ) );
+                the_posts_navigation();
 
             else :
 

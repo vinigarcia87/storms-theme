@@ -13,12 +13,12 @@
  * Includes all the scripts and page definitions
  */
 
-use \StormsFramework\Storms\Front\Layout;
+use \StormsFramework\Storms\Template;
 
 get_template_part( 'template-parts/head' ); ?>
 
 <header id="header" role="banner">
-    <div class="<?php echo Layout::header_container(); ?>">
+    <div class="<?php echo Template::header_container(); ?>">
         <!-- Header content -->
         <?php get_template_part('template-parts/header', 'content'); ?>
     </div>
@@ -30,14 +30,14 @@ get_template_part( 'template-parts/head' ); ?>
 
 <!-- Wrap all page content here -->
 <div id="wrap" class="wrap" role="document">
-    <div class="<?php echo Layout::wrap_container(); ?>">
+    <div class="<?php echo Template::wrap_container(); ?>">
 
-        <div class="row">
-            <div class="col-xs-12">
-                <?php
-                if ( is_front_page() && is_home() ) : ?>
+        <?php
+        if ( is_front_page() && is_home() ) : ?>
+            <div class="row">
+                <div class="col-12">
                     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                <?php
-                endif; ?>
+                </div>
             </div>
-        </div>
+        <?php
+        endif; ?>

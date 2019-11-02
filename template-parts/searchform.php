@@ -14,15 +14,9 @@
 ?>
 
 <?php $search_terms = get_search_query(); ?>
+<form role="search" class="form-inline my-2 my-lg-0" action="<?php echo esc_url( get_bloginfo('url') ); ?>/" id="searchform" method="get">
+	<input type="search" class="form-control mr-sm-2" id="s" name="s"
+		   placeholder="<?php echo __( 'Search' ); ?>" <?php if ( $search_terms !== '' ) { echo ' value="' . $search_terms . '"'; } ?> />
 
-<form role="form" action="<?php echo esc_url( get_bloginfo('url') ); ?>/" id="searchform" method="get" class="navbar-form">
-    <div class="input-group input-group-sm">
-		<label for="s" class="sr-only"><?php echo __( 'Search', 'storms' ); ?></label>
-		<input type="text" class="form-control" id="s" name="s" placeholder="<?php echo __( 'Search', 'storms' ); ?>" <?php if ( $search_terms !== '' ) { echo ' value="' . $search_terms . '"'; } ?> />
-		<span class="input-group-btn">
-            <button type="submit" class="btn btn-default">
-				<span class="fa fa-search"></span>
-			</button>
-        </span>
-    </div>
+	<button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><span class="fa fa-search"></span></button>
 </form>

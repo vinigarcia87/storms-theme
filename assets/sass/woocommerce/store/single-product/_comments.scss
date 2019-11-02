@@ -67,13 +67,14 @@
   #respond {
     margin-top: 25px;
     padding-top: 25px;
-    border-top: 1px solid $gray-lighter;
+    border-top: 1px solid theme-color("light");
 
     .form-submit {
       @extend .text-right;
 
       input#submit {
         width: 200px;
+        color: #000;
         background-color: #fff;
       }
     }

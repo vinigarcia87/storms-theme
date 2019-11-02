@@ -12,17 +12,14 @@
  * The template for displaying all single posts
  */
 
-use \StormsFramework\Storms\Front\Layout,
-	\StormsFramework\Storms\Bootstrap\Breadcrumb;
+use \StormsFramework\Storms\Template;
 
 get_header(); ?>
 
     <div class="row">
 
         <!-- Website content -->
-        <main id="content" class="main <?php echo Layout::main_layout(); ?>" role="main">
-
-            <?php //echo Breadcrumb::breadcrumb(); ?>
+        <main id="content" class="main <?php echo Template::main_layout(); ?>" role="main">
 
             <?php
                 // Start the Loop.
@@ -35,10 +32,7 @@ get_header(); ?>
                      */
                     get_template_part( 'template-parts/content', get_post_format() );
 
-                    the_post_navigation(); // @TODO Verificar no Helper so SF, se nao ha uma solucao para isso
-
-                    // Posts navigation
-                    //echo Pagination::loop_pagination( array( 'type' => 'list', 'before' => '', 'after' => '', ) );
+                    the_post_navigation();
 
                     // If comments are open or we have at least one comment, load up the comment template.
                     if ( comments_open() || get_comments_number() ) :

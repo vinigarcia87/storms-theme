@@ -2,7 +2,7 @@
 .woocommerce-checkout {
 
   p.create-account {
-    @extend .checkbox;
+    //@extend .checkbox;
   }
 
   .woocommerce-form-login {
@@ -53,7 +53,7 @@
 
     .woocommerce-shipping-fields {
       #ship-to-different-address {
-        @extend .checkbox;
+        //@extend .checkbox;
 
         input.woocommerce-form__input-checkbox {
           margin-top: 10px;

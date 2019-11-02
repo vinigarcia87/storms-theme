@@ -30,7 +30,7 @@ use \StormsFramework\Storms\Helper;
 		<?php endif; ?>
 	</div>
 
-	<div class="col-md-4 col-md-offset-3">
+	<div class="col-md-4 offset-md-3">
         <?php get_sidebar( 'header' ); ?>
 	</div>
 </div>

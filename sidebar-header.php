@@ -12,8 +12,6 @@
  * The sidebar containing the main widget area
  */
 
-use \StormsFramework\Storms\Front\Layout;
-
 ?>
 
 <aside id="sidebar" class="sidebar header-sidebar" role="complementary">

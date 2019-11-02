@@ -12,10 +12,7 @@
  * The sidebar containing the main widget area
  */
 
-use \StormsFramework\Storms\Front\Layout;
-
-// Defined as global in \StormsFramework\Storms\WooCommerce\WooCommerce::after_content()
-global $storms_wc_page_layout;
+use \StormsFramework\Storms\Template;
 
 if ( ! is_active_sidebar( 'product-sidebar' ) &&
 	 ! is_active_sidebar( 'shop-sidebar' ) ) {
@@ -23,7 +20,7 @@ if ( ! is_active_sidebar( 'product-sidebar' ) &&
 }
 ?>
 
-<aside id="sidebar" class="sidebar product-sidebar <?php echo Layout::sidebar_layout( $storms_wc_page_layout ); ?>" role="complementary">
+<aside id="sidebar" class="sidebar product-sidebar <?php echo Template::sidebar_layout(); ?>" role="complementary">
 	<?php
 		/*
 		* When we call the dynamic_sidebar() function, it'll spit out

@@ -14,7 +14,7 @@
         text-align: center;
         vertical-align: middle;
         text-transform: uppercase;
-        border-bottom: 1px solid $gray-lighter;
+        border-bottom: 1px solid theme-color("light");
       }
 
       & > tbody > tr {
@@ -61,8 +61,8 @@
 
           .button {
             color: #fff;
-            background-color: $brand-primary;
-            border-color: $btn-primary-border;
+            background-color: $primary;
+            border-color: $primary;
           }
 
         }
@@ -164,7 +164,7 @@
 
           tr.order-total {
             font-size: 20px;
-            background-color: $gray-lighter;
+            background-color: theme-color("light");
           }
         }
       }

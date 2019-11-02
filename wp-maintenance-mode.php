@@ -51,7 +51,7 @@
 				<h1><?php bloginfo('name'); ?></h1>
 				<h2>Mais um website produzido por Storms Websolutions</h2>
 			</div>
-			<div class="content col-sm-offset-3 col-sm-6 text-center">
+			<div class="content offset-sm-3 col-sm-6 text-center">
 				<h3>Nosso site está quase pronto!</h3>
 				<p>
 					<strong>Em breve</strong>, mais um grande projeto desenvolvido pela Storms Websolutions. Aguarde nosso lançamento!

@@ -12,14 +12,14 @@
  * The sidebar containing the main widget area
  */
 
-use \StormsFramework\Storms\Front\Layout;
+use \StormsFramework\Storms\Template;
 
 if ( ! is_active_sidebar( 'main-sidebar' ) ) {
 	return;
 }
 ?>
 
-<aside id="sidebar" class="sidebar <?php echo Layout::sidebar_layout(); ?>" role="complementary">
+<aside id="sidebar" class="sidebar <?php echo Template::sidebar_layout(); ?>" role="complementary">
 	<?php
 		/*
 		* When we call the dynamic_sidebar() function, it'll spit out

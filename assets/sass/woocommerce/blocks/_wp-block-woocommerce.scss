@@ -7,7 +7,7 @@ div.wp-block-woocommerce-product-new {
 			@extend .container;
 
 			// Small devices (tablets, 768px and up)
-			@media (min-width: $screen-sm-min) {
+			@include media-breakpoint-up(sm) {
 				width: auto;
 			}
 

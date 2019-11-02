@@ -16,7 +16,7 @@ use \StormsFramework\Storms\Helper;
 ?>
 
 <div class="row no-margin-left no-margin-right margin-bottom-row">
-	<div class="col-md-8 col-md-offset-2 col-sm-7 col-sm-offset-2 text-center">
+	<div class="col-md-8 offset-md-2 col-sm-7 offset-sm-2 text-center">
 		<p>&copy; <?php printf( esc_html__( '2012 - %1$s by %2$s - All rights reserved.', 'storms' ), date('Y'), '<strong>Storms Websolutions</strong>' ); ?></p>
 	</div>
 	<div class="col-md-2 col-sm-2 logo-storms">
