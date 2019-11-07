@@ -44,11 +44,32 @@ if( ! function_exists( 'storms_define_woocommerce_options' ) ) {
         update_option( 'woocommerce_thumbnail_image_width', 400);
 
         // Permitir que seus clientes efetuem pedidos sem uma conta
-        update_option( 'woocommerce_enable_guest_checkout', 'no' );
+        update_option( 'woocommerce_enable_guest_checkout', 'yes' );
+        // Permitir que seus clientes criem uma conta na página "Minha Conta"
+        update_option( 'woocommerce_enable_myaccount_registration', 'yes' );
         // Permitir que seus clientes criem uma conta durante a finalização da compra
-        update_option( 'woocommerce_enable_signup_and_login_from_checkout', 'no' );
+        update_option( 'woocommerce_enable_signup_and_login_from_checkout', 'yes' );
         // Permitir que seus clientes façam login em uma conta existente durante a finalização da compra
-        update_option( 'woocommerce_enable_checkout_login_reminder', 'no' );
+        update_option( 'woocommerce_enable_checkout_login_reminder', 'yes' );
+        // Quando uma conta for criada, gerar automaticamente uma senha para a conta
+        update_option( 'woocommerce_registration_generate_password', 'no' );
+
+        // Check for woocommerce-extra-checkout-fields-for-brazil plugin
+        if( in_array( 'woocommerce-extra-checkout-fields-for-brazil/woocommerce-extra-checkout-fields-for-brazil.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+
+            update_option( 'wcbcf_settings', array(
+                'person_type'     => 1,
+                'only_brazil'     => 1,
+                'ie'              => 1,
+                'birthdate_sex'   => 1,
+                'cell_phone'      => 1,
+                'mailcheck'       => 1,
+                'maskedinput'     => 1,
+                'addresscomplete' => 1,
+                'validate_cpf'    => 1,
+                'validate_cnpj'   => 1,
+            ));
+        }
 
     }
     add_action( 'init', 'storms_define_woocommerce_options' );

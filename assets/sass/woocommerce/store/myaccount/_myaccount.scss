@@ -7,11 +7,14 @@
 		}
 
 		.col2-set {
-			@extend .row;
+			@include make-row();
 
 			.col-1,
 			.col-2 {
-				@extend .col-sm-6;
+				@include make-col-ready();
+				@include media-breakpoint-up(sm) {
+					@include make-col(6);
+				}
 
 				.woocommerce-form-login {
 					width: auto;
@@ -19,8 +22,7 @@
 			}
 		}
 
-		.form-row {
-			@extend .form-group;
+		.form-group {
 			width: 80%;
 		}
 
@@ -54,7 +56,8 @@
 		}
 
 		.woocommerce-MyAccount-navigation {
-			@extend .col-3;
+			@include make-col-ready();
+			@include make-col(3);
 
 			ul {
 				@extend .list-unstyled;
@@ -62,8 +65,10 @@
 		}
 
 		.woocommerce-MyAccount-content {
-			@extend .col-9;
+			@include make-col-ready();
+			@include make-col(9);
 		}
+
 	}
 
 }

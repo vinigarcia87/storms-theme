@@ -1,4 +1,5 @@
-.woocommerce {
+.woocommerce,
+.woocommerce-page {
 
   // Contador de resultados na listagem de produtos
   .woocommerce-result-count {
@@ -20,6 +21,15 @@
   // Descriçao de categorias e tags
   .term-description {
     text-align: justify;
+  }
+
+  // Separador de colunas do WooCommerce conflita com a grid do Bootstrap
+  .col2-set {
+    .col-1,
+    .col-2 {
+      max-width: unset;
+      width: 100%;
+    }
   }
 
 }

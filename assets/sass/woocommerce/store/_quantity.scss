@@ -2,7 +2,7 @@
 
   // Input de quantidade
   .quantity {
-    @extend .col-6; // Vamos sobrescrever o width... o extend é soh pra garantir o comportamento de uma col-*-*
+    @include make-col(6); // Vamos sobrescrever o width... o extend é soh pra garantir o comportamento de uma col-*-*
     width: 125px;
 
     .input-text.qty {

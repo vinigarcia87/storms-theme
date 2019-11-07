@@ -1,14 +1,14 @@
 .woocommerce-customer-details {
 	section.col2-set {
-		@extend .row;
+		@include make-row();
 
 		.col-1 {
-			@extend .offset-2;
-			@extend .col-4;
+			@include make-col(4);
+			@include make-col-offset(2);
 			border-right: 2px solid #f5f5f5;
 		}
 		.col-2 {
-			@extend .col-4;
+			@include make-col(4);
 			padding-left: 45px;
 		}
 	}

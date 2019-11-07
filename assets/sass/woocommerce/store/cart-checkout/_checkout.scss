@@ -1,68 +1,42 @@
 
 .woocommerce-checkout {
 
-  p.create-account {
-    //@extend .checkbox;
-  }
-
   .woocommerce-form-login {
     @extend .text-center;
 
-    .form-row {
-      @extend .form-group;
+    .form-group {
 	  margin: 0 auto 15px;
-	  width: 200px;
+	  width: 250px;
     }
 
-    .input-text {
-      @extend .form-control;
-    }
-
-    label.woocommerce-form__label.woocommerce-form__label-for-checkbox.inline {
+    label.woocommerce-form-login__rememberme {
 		display: block;
 		margin-top: 15px;
 	}
+    button.woocommerce-form-login__submit {
+      width: 140px;
+    }
   }
 
   form.checkout_coupon {
     @extend .form-inline;
+    @extend .justify-content-center;
     @extend .text-center;
 
-    .form-row {
-      @extend .form-group;
-
-      .input-text {
-        @extend .form-control;
-      }
-
-      input.button {
-        height: 37px;
-      }
+    > p:first-child {
+      @extend .w-100;
     }
   }
 
   #customer_details {
 
-    .woocommerce-billing-fields {
-
-    }
-
-    .woocommerce-account-fields {
-
-    }
-
     .woocommerce-shipping-fields {
       #ship-to-different-address {
-        //@extend .checkbox;
 
         input.woocommerce-form__input-checkbox {
           margin-top: 10px;
         }
       }
-    }
-
-    .woocommerce-additional-fields {
-
     }
 
   }
@@ -75,6 +49,12 @@
 		  margin: 5px 0 10px;
 		  background-color: #f5f5f5;
 		  padding: 20px 15px;
+
+          li {
+            .payment_box {
+              margin-left: 15px;
+            }
+          }
 
 		  .payment_method_pagseguro {
 			  label {
