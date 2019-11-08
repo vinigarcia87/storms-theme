@@ -45,8 +45,6 @@ The PHP code is licensed with GPLv2. All the CSS, SCSS, JS, images files and oth
 - WooCommerce Correios
 - WooCommerce PagSeguro
 
-- Favorites ( https://br.wordpress.org/plugins/browse/favorites/ )
-
 ## Security Checklist
 
 - https://wpsecuritychecklist.org/br/items/
