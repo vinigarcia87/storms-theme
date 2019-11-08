@@ -21,7 +21,7 @@ function storms_environment_options() {
 
         update_option( 'woocommerce_force_ssl_checkout', 'no' );
 
-		update_option( 'woocommerce_shipping_debug_mode', 'yes');
+		update_option( 'woocommerce_shipping_debug_mode', 'no');
 
         //$wc_pagseguro_options = get_option( 'woocommerce_pagseguro_settings' );
         //$wc_pagseguro_options['sandbox'] = 'yes';
