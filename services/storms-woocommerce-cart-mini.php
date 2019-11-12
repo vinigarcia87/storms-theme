@@ -12,9 +12,6 @@
  * This code creates the shop cart as a shortcode or widget
  */
 
-use StormsFramework\Base,
-	StormsFramework\Storms\Helper;
-
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }

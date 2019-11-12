@@ -12,7 +12,6 @@
  * The content of the header
  */
 
-use \StormsFramework\Storms\Helper;
 ?>
 <div id="page-banner" class="row" role="banner">
 	<div class="col-md-5">
@@ -25,7 +24,7 @@ use \StormsFramework\Storms\Helper;
 			</a>
 		<?php else : ?>
 			<a class="header-brand" href="<?php echo esc_url( get_bloginfo('url') ) ?>">
-				<img class="" style="height: 75px;" src="<?php echo esc_url( Helper::get_asset_url('/img/storms/logo/generic-logo.svg') ) ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
+				<img class="" style="height: 75px;" src="<?php echo esc_url( \StormsFramework\Helper::get_asset_url('/img/storms/logo/generic-logo.svg') ) ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
 			</a>
 		<?php endif; ?>
 	</div>

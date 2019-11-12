@@ -18,7 +18,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  */
 
-use \StormsFramework\Storms\Template;
+use \StormsFramework\Template;
 
 get_header(); ?>
 

@@ -34,15 +34,15 @@
 		- Favicon
 		- Source: http://stackoverflow.com/a/23851464/1003020
 		-->
-		<link rel="icon" href="<?php echo \StormsFramework\Storms\Helper::get_asset_url( '/img/icons/newstormsfav.png' ); ?>">
+		<link rel="icon" href="<?php echo \StormsFramework\Helper::get_asset_url( '/img/icons/newstormsfav.png' ); ?>">
 
 		<!-- Scripts -->
-		<!--[if lt IE 9]><script src="<?php echo \StormsFramework\Storms\Helper::get_asset_url( '/js/libs/html5shiv/3.7.2/html5shiv.js' ); ?>"></script><![endif]-->
-		<!--[if lt IE 9]><script src="<?php echo \StormsFramework\Storms\Helper::get_asset_url( '/js/libs/respond/1.4.2/respond.min.js' ); ?>"></script><![endif]-->
+		<!--[if lt IE 9]><script src="<?php echo \StormsFramework\Helper::get_asset_url( '/js/libs/html5shiv/3.7.2/html5shiv.js' ); ?>"></script><![endif]-->
+		<!--[if lt IE 9]><script src="<?php echo \StormsFramework\Helper::get_asset_url( '/js/libs/respond/1.4.2/respond.min.js' ); ?>"></script><![endif]-->
 
-		<script src="<?php  echo \StormsFramework\Storms\Helper::get_asset_url( '/js/libs/jquery/1.10.2/jquery.min.js' ); ?>"></script>
+		<script src="<?php  echo \StormsFramework\Helper::get_asset_url( '/js/libs/jquery/1.10.2/jquery.min.js' ); ?>"></script>
 
-		<link href="<?php  echo \StormsFramework\Storms\Helper::get_asset_url( '/css/construction.min.css' ); ?>" rel="stylesheet" />
+		<link href="<?php  echo \StormsFramework\Helper::get_asset_url( '/css/construction.min.css' ); ?>" rel="stylesheet" />
 	</head>
 	<body class="under-construction">
 
@@ -57,7 +57,7 @@
 					<strong>Em breve</strong>, mais um grande projeto desenvolvido pela Storms Websolutions. Aguarde nosso lançamento!
 				</p>
 				<a class="header-brand" href="http://www.storms.com.br/">
-					<img class="" src="<?php echo \StormsFramework\Storms\Helper::get_asset_url( '/img/storms/logo/storms/logo-storms-branca.png' ); ?>" alt="Storms Websolutions"/>
+					<img class="" src="<?php echo \StormsFramework\Helper::get_asset_url( '/img/storms/logo/storms/logo-storms-branca.png' ); ?>" alt="Storms Websolutions"/>
 				</a>
 				<p class="login text-center">
 					<a href="<?php echo esc_url( wp_login_url() ); ?>" title="Login">

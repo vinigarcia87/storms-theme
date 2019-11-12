@@ -12,7 +12,7 @@
  * The template for displaying all single posts
  */
 
-use \StormsFramework\Storms\Template;
+use \StormsFramework\Template;
 
 get_header(); ?>
 

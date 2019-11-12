@@ -12,8 +12,6 @@
  * Here we setup all configurations for the theme
  */
 
-use StormsFramework\Storms;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -23,6 +21,8 @@ if( ! function_exists( 'theme_setup' ) ) {
     function storms_theme_setup() {
         // Enable backend support
         add_theme_support( 'style-backend' );
+        // Enable branding support
+        add_theme_support( 'brand-customization' );
         // Enable frontend support
         add_theme_support( 'style-frontend' );
         // Enable layout support

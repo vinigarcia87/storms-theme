@@ -12,7 +12,6 @@
  * The content of the footer
  */
 
-use \StormsFramework\Storms\Helper;
 ?>
 
 <div class="row no-margin-left no-margin-right margin-bottom-row">
@@ -21,7 +20,7 @@ use \StormsFramework\Storms\Helper;
 	</div>
 	<div class="col-md-2 col-sm-2 logo-storms">
 		<a href="<?php echo esc_url('http://www.storms.com.br'); ?>">
-			<img src="<?php echo esc_url( Helper::get_asset_url('/img/storms/logo/bn_storms_white.png') ) ?>" alt="Storms Websolutions"/>
+			<img src="<?php echo esc_url( \StormsFramework\Helper::get_asset_url('/img/storms/logo/bn_storms_white.png') ) ?>" alt="Storms Websolutions"/>
 		</a>
 	</div>
 </div>

@@ -20,7 +20,7 @@
  * @package storms
  */
 
-use \StormsFramework\Storms\Template;
+use \StormsFramework\Template;
 
 get_header(); ?>
 

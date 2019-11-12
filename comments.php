@@ -58,7 +58,7 @@ if ( post_password_required() ) {
                 'style'         => 'ul',
                 'short_ping'    => true,
                 'avatar_size'   => '64',
-                'walker'        => new \StormsFramework\Storms\Bootstrap\WP_Bootstrap_Commentwalker(),
+                'walker'        => new \StormsFramework\Bootstrap\WP_Bootstrap_Commentwalker(),
             ) );
             ?>
         </ul><!-- .comment-list -->

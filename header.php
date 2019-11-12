@@ -13,7 +13,7 @@
  * Includes all the scripts and page definitions
  */
 
-use \StormsFramework\Storms\Template;
+use \StormsFramework\Template;
 
 get_template_part( 'template-parts/head' ); ?>
 

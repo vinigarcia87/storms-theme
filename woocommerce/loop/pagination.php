@@ -30,7 +30,7 @@ if ( $total <= 1 ) {
 ?>
     <nav class="woocommerce-pagination">
         <?php
-        \StormsFramework\Storms\Bootstrap\WP_Bootstrap_Pagination::pagination(
+        \StormsFramework\Bootstrap\WP_Bootstrap_Pagination::pagination(
             apply_filters( 'wp_bootstrap_pagination_args', array( // WPCS: XSS ok.
                 'base' => $base,
                 'format' => $format,

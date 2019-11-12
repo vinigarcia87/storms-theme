@@ -48,7 +48,7 @@ add_action( 'wp_enqueue_scripts', 'storms_dequeue_stylesandscripts_yith_wc_wishl
 function storms_autofill_correios_frontend_scripts() {
 	if ( is_checkout() || is_account_page() ) {
 		wp_dequeue_script('woocommerce-correios-autofill-addresses');
-		wp_enqueue_script( 'storms-woocommerce-correios-autofill-addresses', \StormsFramework\Storms\Helper::get_asset_url( '/js/storms-autofill-address.js' ), array( 'jquery', 'jquery-blockui' ), '3.5.1'/*WC_Correios::VERSION*/, true );
+		wp_enqueue_script( 'storms-woocommerce-correios-autofill-addresses', \StormsFramework\Helper::get_asset_url( '/js/storms-autofill-address.js' ), array( 'jquery', 'jquery-blockui' ), '3.5.1'/*WC_Correios::VERSION*/, true );
 
 		$ajax_endpoint = 'correios_autofill_address';
 

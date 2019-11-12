@@ -12,7 +12,7 @@
  * Contains the closing of the #content div and all content after.
  */
 
-use \StormsFramework\Storms\Template;
+use \StormsFramework\Template;
 
 ?>
 </div><!-- .container -->

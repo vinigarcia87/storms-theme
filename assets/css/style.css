@@ -15870,6 +15870,47 @@ abbr.required {
   max-width: 75%;
 }
 
+.woocommerce-account.interim-login header#header,
+.woocommerce-account.interim-login footer#footer,
+.woocommerce-account.interim-login header.entry-header {
+  display: none;
+}
+
+.woocommerce-account.interim-login .woocommerce {
+  text-align: center;
+}
+
+.woocommerce-account.interim-login .woocommerce .u-columns.col2-set .u-column1.col-1 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+
+.woocommerce-account.interim-login .woocommerce .u-column2.col-2 {
+  display: none;
+}
+
+.woocommerce-account.interim-login .woocommerce .woocommerce-form-login {
+  width: 100%;
+}
+
+.woocommerce-account.interim-login .woocommerce .woocommerce-form-login p.form-group, .woocommerce-account.interim-login .woocommerce .woocommerce-form-login p.form-row {
+  width: 100%;
+}
+
+.woocommerce-account.interim-login .woocommerce .woocommerce-form-login .woocommerce-form-login__submit {
+  width: 100%;
+}
+
+.woocommerce-account.interim-login.interim-login-success {
+  background: url(/wp-content/themes/storms-theme/assets/img/loader.svg) center center no-repeat #ffffff;
+}
+
+.woocommerce-account.interim-login.interim-login-success div#wrap,
+.woocommerce-account.interim-login.interim-login-success div#wpadminbar {
+  display: none;
+}
+
 .woocommerce form.woocommerce-cart-form table.shop_table {
   border: none;
   border-collapse: collapse;

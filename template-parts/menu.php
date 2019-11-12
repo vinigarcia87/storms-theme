@@ -12,8 +12,8 @@
  * The template part for the main menu
  */
 
-use \StormsFramework\Storms\Bootstrap,
-    \StormsFramework\Storms\Helper;
+use \StormsFramework\Bootstrap,
+    \StormsFramework\Helper;
 
 ?>
 <nav id="main-navigation" class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
@@ -37,7 +37,7 @@ use \StormsFramework\Storms\Bootstrap,
 						'depth'          => 2,
 						'container'      => false,
 						'menu_class'     => 'nav navbar-nav mr-auto mt-2 mt-lg-0',
-						'fallback_cb'    => '\\StormsFramework\\Storms\\Bootstrap\\WP_Bootstrap_Navwalker::fallback',
+						'fallback_cb'    => '\\StormsFramework\\Bootstrap\\WP_Bootstrap_Navwalker::fallback',
 						'walker'         => new Bootstrap\WP_Bootstrap_Navwalker()
 					)
 				);

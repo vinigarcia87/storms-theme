@@ -48,7 +48,7 @@ if ( ! comments_open() ) {
 					'short_ping'    => true,
 					'avatar_size'   => '64',
 					'allow_reply'   => false,
-					'walker'        => new \StormsFramework\Storms\Bootstrap\WP_Bootstrap_Commentwalker(),
+					'walker'        => new \StormsFramework\Bootstrap\WP_Bootstrap_Commentwalker(),
 				) ) );
 				?>
 			</ol>
@@ -56,7 +56,7 @@ if ( ! comments_open() ) {
 			<?php
 			if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
 				echo '<nav class="woocommerce-pagination">';
-				\StormsFramework\Storms\Bootstrap\WP_Bootstrap_Pagination::paginate_comments_links(
+				\StormsFramework\Bootstrap\WP_Bootstrap_Pagination::paginate_comments_links(
                     apply_filters( 'wp_bootstrap_comment_pagination_args', array( // WPCS: XSS ok.
                         'prev_text'   => '&larr;',
                         'next_text'   => '&rarr;',

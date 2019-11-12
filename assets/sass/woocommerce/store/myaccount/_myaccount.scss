@@ -71,4 +71,43 @@
 
 	}
 
+	&.interim-login {
+		header#header,
+		footer#footer,
+		header.entry-header {
+			display: none;
+		}
+		.woocommerce {
+			text-align: center;
+
+			.u-columns.col2-set {
+				.u-column1.col-1 {
+					flex: 0 0 100%;
+				}
+			}
+			.u-column2.col-2 {
+				display: none;
+			}
+
+			.woocommerce-form-login {
+				width: 100%;
+
+				p.form-group {
+					width: 100%;
+				}
+				.woocommerce-form-login__submit {
+					width: 100%;
+				}
+			}
+		}
+
+		&.interim-login-success {
+			background: url(/wp-content/themes/storms-theme/assets/img/loader.svg) center center no-repeat #ffffff;
+
+			div#wrap,
+			div#wpadminbar {
+				display: none;
+			}
+		}
+	}
 }

@@ -12,7 +12,7 @@
  * Template part for displaying a message that posts cannot be found
  */
 
-use \StormsFramework\Storms\Bootstrap\Bootstrap;
+use \StormsFramework\Bootstrap\Bootstrap;
 
 ?>
 

@@ -44,5 +44,5 @@
 		    <?php _e('It looks like you&#8217;re using an <strong>outdated</strong> browser. Please, <a href="http://browsehappy.com/">update your browser</a> for the best experience on the web.', 'storms'); ?>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
 		</div>
-        <script src="<?php echo \StormsFramework\Storms\Helper::get_asset_url( '/js/bootstrap/alert.js' ); ?>"></script>
+        <script src="<?php echo \StormsFramework\Helper::get_asset_url( '/js/bootstrap/alert.js' ); ?>"></script>
         <![endif]-->

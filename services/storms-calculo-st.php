@@ -160,7 +160,7 @@ function storms_checkout_enqueue_scripts() {
 		wp_enqueue_script( 'wc-checkout', plugins_url( 'assets/js/frontend/checkout.js', WC_PLUGIN_FILE ), array('jquery', 'woocommerce', 'wc-country-select'), WC_VERSION, true );
 
 		// Adicionamos o script do calculo da ST
-		wp_enqueue_script('storms_calculo_st', StormsFramework\Storms\Helper::get_asset_url('/js/storms-calculo-st.js'), array('jquery'), '1.0', true);
+		wp_enqueue_script('storms_calculo_st', StormsFramework\Helper::get_asset_url('/js/storms-calculo-st.js'), array('jquery'), '1.0', true);
 		wp_localize_script('storms_calculo_st', 'storms_calculo_st', array(
 			'ajax_url' => admin_url('admin-ajax.php'),
 			'ajax_nonce' => wp_create_nonce('storms_calculo_st_address_form'),

@@ -12,7 +12,6 @@
  * The template part for displaying a content of a post
  */
 
-use \StormsFramework\Storms\Helper;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -72,7 +71,7 @@ use \StormsFramework\Storms\Helper;
 
 	<footer class="entry-footer">
 
-		<?php Helper::entry_footer(); ?>
+		<?php \StormsFramework\Helper::entry_footer(); ?>
 
 	</footer>
 

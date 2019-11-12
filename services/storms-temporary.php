@@ -12,8 +12,6 @@
  * Just stuff we gonna delete later
  */
 
-use StormsFramework\Storms;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -27,11 +25,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 if( ! function_exists( 'storms_testing' ) ) {
     function storms_testing() {
 
-        //\StormsFramework\Storms\Helper::debug( $notices );
+        //\StormsFramework\Helper::debug( $notices );
     }
     //add_action( 'init', 'storms_testing' );
 }
-
+/*
 add_action( 'rest_api_init', function () {
     register_rest_route( 'wc-storms/v1', '/clean-user-session', array(
         'methods' => 'POST',
@@ -43,7 +41,7 @@ function clean_user_session( WP_REST_Request $request ) {
     $session_handler = new WC_Session_Handler();
     $session = $session_handler->get_session($user_id);
 
-    \StormsFramework\Storms\Helper::debug( $session, 'SESSION DE OUTRO USUARIO ' . $user_id . '!' );
+    \StormsFramework\Helper::debug( $session, 'SESSION DE OUTRO USUARIO ' . $user_id . '!' );
 
     // TODO Unset any shipping_for_package_ in the session
     unset( $session['shipping_for_package_0'] );
@@ -67,11 +65,11 @@ function storms_save_cache_data( $customer_id, $data ) {
 }
 add_filter( 'woocommerce_package_rates', function( $package_rates, $package ) {
 
-    \StormsFramework\Storms\Helper::debug( 'PEGOU O SHIPPING FORA DO CACHE! woocommerce_shipping_debug_mode = ' . get_option( 'woocommerce_shipping_debug_mode', 'no' ) );
+    \StormsFramework\Helper::debug( 'PEGOU O SHIPPING FORA DO CACHE! woocommerce_shipping_debug_mode = ' . get_option( 'woocommerce_shipping_debug_mode', 'no' ) );
 
     return $package_rates;
 }, 10, 2 );
-
+*/
 
 // @TODO Revisar!!
 require_once 'storms-woocommerce-wishlist.php';

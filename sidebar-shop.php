@@ -12,7 +12,7 @@
  * The sidebar containing the main widget area
  */
 
-use \StormsFramework\Storms\Template;
+use \StormsFramework\Template;
 
 if ( ! is_active_sidebar( 'shop-sidebar' ) ) {
 	return;

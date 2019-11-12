@@ -49,14 +49,14 @@ require_once 'services/storms-temporary.php';
  */
 if( ! function_exists( 'storms_testing' ) ) {
 	function storms_testing() {
-		//\StormsFramework\Storms\Helper::debug( 'Debugging' );
+		//\StormsFramework\Helper::debug( 'Debugging' );
 	}
 	//add_action( 'init', 'storms_testing' );
 }
 
 function storms_inspect_scripts() {
     $wp_scripts = wp_scripts();
-    \StormsFramework\Storms\Helper::debug( $wp_scripts->queue );
+    \StormsFramework\Helper::debug( $wp_scripts->queue );
 }
 //add_action( 'wp_head', 'storms_inspect_scripts', 999 );
 
