@@ -28,7 +28,7 @@
 
 			<div class="entry-meta">
 
-				<?php Helper::posted_on(); ?>
+				<?php \StormsFramework\Helper::posted_on(); ?>
 
 			</div><!-- .entry-meta -->
 
