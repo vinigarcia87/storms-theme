@@ -17,7 +17,7 @@
 
 		thead {
 			th {
-				@extend .text-center;
+				text-align: center;
 				vertical-align: middle;
 				text-transform: uppercase;
 			}
@@ -33,7 +33,7 @@
 			}
 
 			td {
-				@extend .text-right;
+				text-align: right;
 				vertical-align: middle;
 				padding-left: 0;
 			}
@@ -41,7 +41,7 @@
 			tr.order_item {
 				td.product-name,
 				td.product-total {
-					@extend .text-center;
+					text-align: center;
 					padding: 8px;
 					border-top: none !important;
 				}
@@ -57,12 +57,12 @@
 			}
 
 			th {
-				@extend .text-center;
+				text-align: center;
 				border: none;
 			}
 
 			td {
-				@extend .text-center;
+				text-align: center;
 				border: none;
 
 				small.shipped_via {

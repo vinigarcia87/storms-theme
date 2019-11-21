@@ -1,23 +1,5 @@
 .woocommerce,
 .woocommerce-page {
-
-  // Contador de resultados na listagem de produtos
-  .woocommerce-result-count {
-    @extend .pull-left;
-    @extend .form-control-plaintext;
-    margin-bottom: 20px;
-  }
-
-  // Formulario de ordenação de resultados na listagem de produtos
-  .woocommerce-ordering {
-    @extend .pull-right;
-    margin-bottom: 20px;
-
-    .orderby {
-      @extend .form-control;
-    }
-  }
-
   // Descriçao de categorias e tags
   .term-description {
     text-align: justify;
@@ -31,7 +13,24 @@
       width: 100%;
     }
   }
+}
 
+// Contador de resultados na listagem de produtos
+.woocommerce-result-count {
+  @extend .form-control-plaintext;
+  float: left;
+  width: auto;
+  margin-bottom: 20px;
+}
+
+// Formulario de ordenação de resultados na listagem de produtos
+.woocommerce-ordering {
+  float: right;
+  margin-bottom: 20px;
+
+  .orderby {
+    @extend .form-control;
+  }
 }
 
 *:focus {

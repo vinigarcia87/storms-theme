@@ -1,18 +1,25 @@
 /**
  * Main WooCommerce styles
  */
+
+.button,
+#respond input#submit {
+
+  @extend .btn;
+  @extend .btn-secondary;
+
+  &.alt {
+    @extend .btn-primary;
+  }
+}
+
 .woocommerce {
 
   /**
    * Buttons
    */
-  a.button,
-  button.button,
-  input.button,
+  .button,
   #respond input#submit {
-
-    @extend .btn;
-    @extend .btn-secondary;
 
     &.loading {
       opacity: 0.25;
@@ -40,10 +47,6 @@
         margin-left: 0.53em;
         vertical-align: bottom;
       }
-    }
-
-    &.alt {
-      @extend .btn-primary;
     }
   }
 
