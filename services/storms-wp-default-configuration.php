@@ -1,19 +1,17 @@
 <?php
 /**
- * Storms Framework (http://storms.com.br/)
+ * Storms Websolutions (http://storms.com.br/)
  *
  * @author    Vinicius Garcia | vinicius.garcia@storms.com.br
- * @copyright (c) Copyright 2012-2017, Storms Websolutions
+ * @copyright (c) Copyright 2012-2019, Storms Websolutions
  * @license   GPLv2 - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  * @package   Storms
- * @version   1.0.0
+ * @version   4.0.0
  *
  * WordPress Default Configuration file
  * Here we setup the configurations for WordPress that is needed for any website
  * We configure default WooCommerce options here too
  */
-
-use StormsFramework\Storms;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;

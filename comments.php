@@ -1,12 +1,12 @@
 <?php
 /**
- * Storms Framework (http://storms.com.br/)
+ * Storms Websolutions (http://storms.com.br/)
  *
  * @author    Vinicius Garcia | vinicius.garcia@storms.com.br
- * @copyright (c) Copyright 2012-2017, Storms Websolutions
+ * @copyright (c) Copyright 2012-2019, Storms Websolutions
  * @license   GPLv2 - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  * @package   Storms
- * @version   3.0.0
+ * @version   4.0.0
  *
  * Comments Template
  * The template for displaying Comments
@@ -28,7 +28,7 @@ if ( post_password_required() ) {
     <span class="comments-title">
     	<?php esc_html_e( 'Comentários:', 'storms' ); ?>
 	    <?php
-	    	
+
 	    	// This is the original title for comments section
 			//$comment_count = get_comments_number();
 			//if ( 1 === $comment_count ) {
@@ -45,7 +45,7 @@ if ( post_password_required() ) {
 			//		'<span>' . get_the_title() . '</span>'
 			//	);
 			//}
-			
+
 		?>
     </span>
 

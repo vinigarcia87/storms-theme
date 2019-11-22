@@ -1,26 +1,25 @@
 <?php
 /**
- * Storms Framework (http://storms.com.br/)
+ * Storms Websolutions (http://storms.com.br/)
  *
  * @author    Vinicius Garcia | vinicius.garcia@storms.com.br
- * @copyright (c) Copyright 2012-2017, Storms Websolutions
+ * @copyright (c) Copyright 2012-2019, Storms Websolutions
  * @license   GPLv2 - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  * @package   Storms
- * @version   3.0.0
+ * @version   4.0.0
  *
  * Menu Template
  * The template part for the main menu
  */
 
-use \StormsFramework\Bootstrap,
-    \StormsFramework\Helper;
+use \StormsFramework\Bootstrap;
 
 ?>
 <nav id="main-navigation" class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
 	<div class="container">
 
 		<a class="navbar-brand" href="<?php echo esc_url( get_bloginfo('url') ); ?>">
-			<img class="brand" src="<?php echo Helper::get_asset_url('/img/storms/logo/cloud_storms.png') ?>" alt="Storms Websolutions"/>
+			<img class="brand" src="<?php echo \StormsFramework\Helper::get_asset_url('/img/storms/logo/cloud_storms.png') ?>" alt="Storms Websolutions"/>
 		</a>
 
 		<!-- Botao collapse menu para mobile -->
