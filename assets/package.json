@@ -1,18 +1,17 @@
 {
-  "name": "storms",
-  "version": "1.0.0",
+  "name": "Storms Theme",
+  "version": "4.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/vinigarcia87/"
   },
   "dependencies": {
-    "block-ui": "^2.70.1",
-    "bootstrap": "^4.3.1",
-    "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "jquery.cycle2": "^2.1.7",
-    "select2": "^4.0.3",
-    "select2-bootstrap-theme": "0.1.0-beta.10"
+    "popper.js": "^1.16.0",
+    "block-ui": "^2.70.1",
+    "bootstrap": "^4.3.1",
+    "font-awesome": "^4.7.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

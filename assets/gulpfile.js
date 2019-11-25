@@ -4,7 +4,7 @@
  */
 
 // Project configuration
-var project 		= 'storms',                	 // Project name, used for build zip.
+var project 		= 'storms-theme',          	 // Project name, used for build zip.
 	url 			= 'storms.dev.br',           // Local Development URL for BrowserSync. Change as-needed.
     theme_dir		= '../',					 // Theme base dir
 	wp_content		= '../../../';				 // WordPress wp-content/ dir
@@ -80,20 +80,24 @@ gulp.task('styles', function () {
 gulp.task('load-assets', function() {
 	gulp.src([
 		'node_modules/font-awesome/fonts/*',               // Font-Awesome Fonts
-		'node_modules/bootstrap-sass/assets/fonts/**',     // Bootstrap Fonts - We copy this, but by default we don't use it
 		wp_content + '/plugins/woocommerce/assets/fonts/*' // WooCommerce Fonts
 	])
 		.pipe(gulp.dest('fonts'))
 		.pipe(notify({ message: 'Load fonts task complete', onLast: true }));
 
 	gulp.src([
-        'node_modules/jquery/dist/jquery.min.js',						// jQuery
-        'node_modules/jquery.cycle2/src/jquery.cycle2.min.js',			// Cycle2 jQuery plugin
-        'node_modules/bootstrap-sass/assets/javascripts/**',			// Bootstrap 3 jQuery plugin
-        '!node_modules/bootstrap-sass/assets/javascripts/bootstrap-sprockets.js'
+		'node_modules/jquery/dist/jquery.min.js',						// jQuery
+		'node_modules/jquery.cycle2/src/jquery.cycle2.min.js'			// Cycle2 jQuery plugin
 	])
-		.pipe(gulp.dest('js'))
-		.pipe(notify({ message: 'Load scripts task complete', onLast: true }));
+		.pipe(gulp.dest('js/jquery'))
+		.pipe(notify({ message: 'Load jQuery scripts task complete', onLast: true }));
+
+	gulp.src([
+		'node_modules/popper.js/dist/umd/popper.js',					// Bootstrap dropdowns, popovers and tooltips depend on Popper.js
+		'node_modules/bootstrap/js/dist/*.js'							// Bootstrap 4 jQuery plugins
+	])
+		.pipe(gulp.dest('js/bootstrap'))
+		.pipe(notify({ message: 'Load Bootstrap scripts task complete', onLast: true }));
 });
 
 /**
@@ -102,8 +106,16 @@ gulp.task('load-assets', function() {
  */
 gulp.task('scripts', function() {
 	gulp.src([
+
+		/* HERE WE INCLUDE ALL BOOTSTRAP JS FILES WE WANT TO USE */
+		//'./js/bootstrap/popper.js',
+		//'./js/bootstrap/util.js',
+		//'./js/bootstrap/collapse.js',
+		//'./js/bootstrap/dropdown.js',
+
 		'./js/raw/**/*.js' // We could concatenate jquery and woocommerce files here, to have only one asset
 	])
+		//.pipe(debug())
 		.pipe(concat('scripts.js'))
 		.pipe(gulp.dest('./js/'))
 		.pipe(rename( {
