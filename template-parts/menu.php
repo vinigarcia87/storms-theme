@@ -11,14 +11,11 @@
  * Menu Template
  * The template part for the main menu
  */
-
-use \StormsFramework\Bootstrap;
-
 ?>
-<nav id="main-navigation" class="navbar navbar-expand-lg navbar-light bg-light" role="navigation">
+<nav id="main-navigation" class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
 	<div class="container">
 
-		<a class="navbar-brand" href="<?php echo esc_url( get_bloginfo('url') ); ?>">
+		<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<img class="brand" src="<?php echo \StormsFramework\Helper::get_asset_url('/img/storms/logo/cloud_storms.png') ?>" alt="Storms Websolutions"/>
 		</a>
 
@@ -37,7 +34,7 @@ use \StormsFramework\Bootstrap;
 						'container'      => false,
 						'menu_class'     => 'nav navbar-nav mr-auto mt-2 mt-lg-0',
 						'fallback_cb'    => '\\StormsFramework\\Bootstrap\\WP_Bootstrap_Navwalker::fallback',
-						'walker'         => new Bootstrap\WP_Bootstrap_Navwalker()
+						'walker'         => new \StormsFramework\Bootstrap\WP_Bootstrap_Navwalker()
 					)
 				);
 			?>

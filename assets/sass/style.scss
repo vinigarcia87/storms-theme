@@ -12,8 +12,11 @@
  * Storms Starter Theme Style
  */
 
-// Bootstrap 4 - 180KB
+// Storms customization for Bootstrap
+$load-storms-variables: true !default;
 @import "bootstrap/bootstrap-variables";
+
+// Bootstrap 4 - 180KB
 @import "bootstrap/bootstrap-import";
 
 // Font-Awesome - 30KB
