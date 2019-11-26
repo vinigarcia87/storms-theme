@@ -44,6 +44,9 @@ use \StormsFramework\Bootstrap;
 			<div class="nav nav-secondary navbar-right">
 				<!-- Formulario de Busca do Site -->
 				<?php Bootstrap\Bootstrap::get_search_form(); ?>
+
+				<!-- WooCommerce Mini Cart -->
+				<?php the_widget( 'storms_wc_cart_mini' ); ?>
 			</div>
 		</div><!--/.navbar-collapse -->
 	</div>

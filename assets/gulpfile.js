@@ -108,10 +108,10 @@ gulp.task('scripts', function() {
 	gulp.src([
 
 		/* HERE WE INCLUDE ALL BOOTSTRAP JS FILES WE WANT TO USE */
-		//'./js/bootstrap/popper.js',
-		//'./js/bootstrap/util.js',
+		'./js/bootstrap/popper.js',
+		'./js/bootstrap/util.js',
+		'./js/bootstrap/dropdown.js',
 		//'./js/bootstrap/collapse.js',
-		//'./js/bootstrap/dropdown.js',
 
 		'./js/raw/**/*.js' // We could concatenate jquery and woocommerce files here, to have only one asset
 	])

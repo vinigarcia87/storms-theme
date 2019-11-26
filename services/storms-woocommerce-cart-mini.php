@@ -23,7 +23,7 @@ class Storms_WC_Cart_Mini extends WC_Widget
      * Constructor
      */
     public function __construct() {
-        $this->widget_cssclass    = 'Widget_WC_Cart_Mini storms_wc_cart_mini';
+        $this->widget_cssclass    = 'Widget_WC_Cart_Mini storms_wc_cart_mini storms-wc-mini-cart';
         $this->widget_description = __( 'Shows a WooCommerce Mini Cart', 'storms' );
         $this->widget_id          = 'storms_wc_cart_mini';
         $this->widget_name        = __( 'Storms WC Cart Mini', 'storms' );

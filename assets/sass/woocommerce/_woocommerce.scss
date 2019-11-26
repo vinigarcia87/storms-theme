@@ -19,11 +19,14 @@
 @import "core/buttons";
 @import "core/tables";
 @import "core/star-rating";
-//
-//// Blocks styles
+
+// Blocks styles
 @import "blocks/wp-block-woocommerce";
-//
-//// Store default style
+
+// WC Mini Cart
+@import "wc-mini-cart";
+
+// Store default style
 @import "store";
 
 

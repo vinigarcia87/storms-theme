@@ -33,6 +33,7 @@ if ( !defined( 'STORMS_SYSTEM_VERSION' ) ) {
 
 // Require services of this theme
 require_once 'services/storms-theme-setup.php';
+require_once 'services/storms-assets.php';
 require_once 'services/storms-environment-config.php';
 require_once 'services/storms-wp-default-configuration.php';
 
