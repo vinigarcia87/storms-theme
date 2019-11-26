@@ -4,7 +4,7 @@
 // Colors
 $storms: #84C3E3 !default;
 
-@if $loadStormsVariables {
+@if $load-storms-variables {
 
 	$primary: $storms;
 	$theme-colors: (

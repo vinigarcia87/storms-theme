@@ -15,7 +15,7 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #84c3e3;
+  --primary: #007bff;
   --secondary: #6c757d;
   --success: #28a745;
   --info: #17a2b8;
@@ -158,13 +158,13 @@ sup {
 }
 
 a {
-  color: #84c3e3;
+  color: #007bff;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #46a5d5;
+  color: #0056b3;
   text-decoration: underline;
 }
 
@@ -1715,23 +1715,23 @@ table.wishlist_table td {
 .table-primary,
 .table-primary > th,
 .table-primary > td {
-  background-color: #ddeef7;
+  background-color: #b8daff;
 }
 
 .table-primary th,
 .table-primary td,
 .table-primary thead th,
 .table-primary tbody + tbody {
-  border-color: #bfe0f0;
+  border-color: #7abaff;
 }
 
 .table-hover .table-primary:hover {
-  background-color: #c8e4f2;
+  background-color: #9fcdff;
 }
 
 .table-hover .table-primary:hover > td,
 .table-hover .table-primary:hover > th {
-  background-color: #c8e4f2;
+  background-color: #9fcdff;
 }
 
 .table-secondary,
@@ -2042,10 +2042,10 @@ select.state_select:focus,
 .input-text:focus, .woocommerce-ordering .orderby:focus, .woocommerce-account .woocommerce .input-text:focus {
   color: #495057;
   background-color: #fff;
-  border-color: #ecf6fb;
+  border-color: #80bdff;
   outline: 0;
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(132, 195, 227, 0.25);
-          box-shadow: 0 0 0 0.2rem rgba(132, 195, 227, 0.25);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .form-control::-webkit-input-placeholder, select.country_select::-webkit-input-placeholder,
@@ -2694,8 +2694,8 @@ textarea.is-invalid.input-text, .woocommerce-ordering textarea.is-invalid.orderb
 #respond input.focus#submit, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .focus.button, .woocommerce .quantity .qty-ctrl-btn a.focus.plus,
 .woocommerce .quantity .qty-ctrl-btn a.focus.minus {
   outline: 0;
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(132, 195, 227, 0.25);
-          box-shadow: 0 0 0 0.2rem rgba(132, 195, 227, 0.25);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .btn.disabled, .disabled.button,
@@ -2721,31 +2721,31 @@ fieldset:disabled .woocommerce .quantity .qty-ctrl-btn a.minus,
 
 .btn-primary, .button.alt,
 #respond input#submit.alt, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button.checkout, .woocommerce-account .woocommerce .woocommerce-form-login__submit, .woocommerce-account .woocommerce .register .woocommerce-Button[name=register] {
-  color: #212529;
-  background-color: #84c3e3;
-  border-color: #84c3e3;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
 .btn-primary:hover, .button.alt:hover,
 #respond input#submit.alt:hover, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button:hover, .woocommerce-account .woocommerce .woocommerce-form-login__submit:hover, .woocommerce-account .woocommerce .register .woocommerce-Button:hover[name=register] {
-  color: #212529;
-  background-color: #65b4dc;
-  border-color: #5aafda;
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
 }
 
 .btn-primary:focus, .button.alt:focus,
 #respond input#submit.alt:focus, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button:focus, .woocommerce-account .woocommerce .woocommerce-form-login__submit:focus, .woocommerce-account .woocommerce .register .woocommerce-Button:focus[name=register], .btn-primary.focus, .focus.button.alt,
 #respond input.focus#submit.alt, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .focus.button, .woocommerce-account .woocommerce .focus.woocommerce-form-login__submit, .woocommerce-account .woocommerce .register .focus.woocommerce-Button[name=register] {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(117, 171, 199, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(117, 171, 199, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
 }
 
 .btn-primary.disabled, .disabled.button.alt,
 #respond input.disabled#submit.alt, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .disabled.button, .woocommerce-account .woocommerce .disabled.woocommerce-form-login__submit, .woocommerce-account .woocommerce .register .disabled.woocommerce-Button[name=register], .btn-primary:disabled, .button.alt:disabled,
 #respond input#submit.alt:disabled, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button:disabled, .woocommerce-account .woocommerce .woocommerce-form-login__submit:disabled, .woocommerce-account .woocommerce .register .woocommerce-Button:disabled[name=register] {
-  color: #212529;
-  background-color: #84c3e3;
-  border-color: #84c3e3;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .button.alt:not(:disabled):not(.disabled):active,
@@ -2757,9 +2757,9 @@ fieldset:disabled .woocommerce .quantity .qty-ctrl-btn a.minus,
 .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .show > .dropdown-toggle.button,
 .woocommerce-account .woocommerce .show > .dropdown-toggle.woocommerce-form-login__submit,
 .woocommerce-account .woocommerce .register .show > .dropdown-toggle.woocommerce-Button[name=register] {
-  color: #212529;
-  background-color: #5aafda;
-  border-color: #50aad7;
+  color: #fff;
+  background-color: #0062cc;
+  border-color: #005cbf;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus, .button.alt:not(:disabled):not(.disabled):active:focus,
@@ -2771,8 +2771,8 @@ fieldset:disabled .woocommerce .quantity .qty-ctrl-btn a.minus,
 .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .show > .dropdown-toggle.button:focus,
 .woocommerce-account .woocommerce .show > .dropdown-toggle.woocommerce-form-login__submit:focus,
 .woocommerce-account .woocommerce .register .show > .dropdown-toggle.woocommerce-Button:focus[name=register] {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(117, 171, 199, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(117, 171, 199, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
 }
 
 .btn-secondary, .button,
@@ -3042,37 +3042,37 @@ fieldset:disabled .woocommerce .quantity .qty-ctrl-btn a.minus,
 }
 
 .btn-outline-primary {
-  color: #84c3e3;
-  border-color: #84c3e3;
+  color: #007bff;
+  border-color: #007bff;
 }
 
 .btn-outline-primary:hover {
-  color: #212529;
-  background-color: #84c3e3;
-  border-color: #84c3e3;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
 .btn-outline-primary:focus, .btn-outline-primary.focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(132, 195, 227, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(132, 195, 227, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
 }
 
 .btn-outline-primary.disabled, .btn-outline-primary:disabled {
-  color: #84c3e3;
+  color: #007bff;
   background-color: transparent;
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active, .btn-outline-primary:not(:disabled):not(.disabled).active,
 .show > .btn-outline-primary.dropdown-toggle {
-  color: #212529;
-  background-color: #84c3e3;
-  border-color: #84c3e3;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus, .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-primary.dropdown-toggle:focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(132, 195, 227, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(132, 195, 227, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
 }
 
 .btn-outline-secondary {
@@ -3315,12 +3315,12 @@ fieldset:disabled .woocommerce .quantity .qty-ctrl-btn a.minus,
 
 .btn-link {
   font-weight: 400;
-  color: #84c3e3;
+  color: #007bff;
   text-decoration: none;
 }
 
 .btn-link:hover {
-  color: #46a5d5;
+  color: #0056b3;
   text-decoration: underline;
 }
 
@@ -3335,7 +3335,9 @@ fieldset:disabled .woocommerce .quantity .qty-ctrl-btn a.minus,
   pointer-events: none;
 }
 
-.btn-lg {
+.btn-lg, .btn-group-lg > .btn, .btn-group-lg > .button,
+#respond .btn-group-lg > input#submit, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-lg > .button, .woocommerce .quantity .qty-ctrl-btn .btn-group-lg > a.plus,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-lg > a.minus {
   padding: 8px 16px;
   padding: 0.5rem 1rem;
   font-size: 20px;
@@ -3344,7 +3346,9 @@ fieldset:disabled .woocommerce .quantity .qty-ctrl-btn a.minus,
   border-radius: 0.3rem;
 }
 
-.btn-sm {
+.btn-sm, .btn-group-sm > .btn, .btn-group-sm > .button,
+#respond .btn-group-sm > input#submit, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-sm > .button, .woocommerce .quantity .qty-ctrl-btn .btn-group-sm > a.plus,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-sm > a.minus {
   padding: 4px 8px;
   padding: 0.25rem 0.5rem;
   font-size: 14px;
@@ -3641,7 +3645,7 @@ input.checkout-button[type="button"],
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: #84c3e3;
+  background-color: #007bff;
 }
 
 .dropdown-item.disabled, .dropdown-item:disabled {
@@ -3670,6 +3674,693 @@ input.checkout-button[type="button"],
   padding: 4px 24px;
   padding: 0.25rem 1.5rem;
   color: #212529;
+}
+
+.btn-group,
+.btn-group-vertical {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.btn-group > .btn, .btn-group > .button,
+#respond .btn-group > input#submit, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .button, .woocommerce .quantity .qty-ctrl-btn .btn-group > a.plus,
+.woocommerce .quantity .qty-ctrl-btn .btn-group > a.minus,
+.btn-group-vertical > .btn,
+.btn-group-vertical > .button,
+#respond .btn-group-vertical > input#submit,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .button,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > a.plus,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > a.minus {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.btn-group > .btn:hover, .btn-group > .button:hover,
+#respond .btn-group > input#submit:hover, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .button:hover, .woocommerce .quantity .qty-ctrl-btn .btn-group > a.plus:hover,
+.woocommerce .quantity .qty-ctrl-btn .btn-group > a.minus:hover,
+.btn-group-vertical > .btn:hover,
+.btn-group-vertical > .button:hover,
+#respond .btn-group-vertical > input#submit:hover,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .button:hover,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > a.plus:hover,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > a.minus:hover {
+  z-index: 1;
+}
+
+.btn-group > .btn:focus, .btn-group > .button:focus,
+#respond .btn-group > input#submit:focus, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .button:focus, .woocommerce .quantity .qty-ctrl-btn .btn-group > a.plus:focus,
+.woocommerce .quantity .qty-ctrl-btn .btn-group > a.minus:focus, .btn-group > .btn:active, .btn-group > .button:active,
+#respond .btn-group > input#submit:active, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .button:active, .woocommerce .quantity .qty-ctrl-btn .btn-group > a.plus:active,
+.woocommerce .quantity .qty-ctrl-btn .btn-group > a.minus:active, .btn-group > .btn.active, .btn-group > .active.button,
+#respond .btn-group > input.active#submit, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .active.button, .woocommerce .quantity .qty-ctrl-btn .btn-group > a.active.plus,
+.woocommerce .quantity .qty-ctrl-btn .btn-group > a.active.minus,
+.btn-group-vertical > .btn:focus,
+.btn-group-vertical > .button:focus,
+#respond .btn-group-vertical > input#submit:focus,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .button:focus,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > a.plus:focus,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > a.minus:focus,
+.btn-group-vertical > .btn:active,
+.btn-group-vertical > .button:active,
+#respond .btn-group-vertical > input#submit:active,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .button:active,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > a.plus:active,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > a.minus:active,
+.btn-group-vertical > .btn.active,
+.btn-group-vertical > .active.button,
+#respond .btn-group-vertical > input.active#submit,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .active.button,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > a.active.plus,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > a.active.minus {
+  z-index: 1;
+}
+
+.btn-toolbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.btn-toolbar .input-group {
+  width: auto;
+}
+
+.btn-group > .btn:not(:first-child), .btn-group > .button:not(:first-child),
+#respond .btn-group > input#submit:not(:first-child), .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .button:not(:first-child), .woocommerce .quantity .qty-ctrl-btn .btn-group > a.plus:not(:first-child),
+.woocommerce .quantity .qty-ctrl-btn .btn-group > a.minus:not(:first-child),
+.btn-group > .btn-group:not(:first-child) {
+  margin-left: -1px;
+}
+
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .button:not(:last-child):not(.dropdown-toggle),
+#respond .btn-group > input#submit:not(:last-child):not(.dropdown-toggle), .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .button:not(:last-child):not(.dropdown-toggle), .woocommerce .quantity .qty-ctrl-btn .btn-group > a.plus:not(:last-child):not(.dropdown-toggle),
+.woocommerce .quantity .qty-ctrl-btn .btn-group > a.minus:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn-group:not(:last-child) > .btn,
+.btn-group > .btn-group:not(:last-child) > .button,
+#respond .btn-group > .btn-group:not(:last-child) > input#submit,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .btn-group:not(:last-child) > .button,
+.woocommerce .quantity .qty-ctrl-btn .btn-group > .btn-group:not(:last-child) > a.plus,
+.woocommerce .quantity .qty-ctrl-btn .btn-group > .btn-group:not(:last-child) > a.minus {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-group > .btn:not(:first-child), .btn-group > .button:not(:first-child),
+#respond .btn-group > input#submit:not(:first-child), .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .button:not(:first-child), .woocommerce .quantity .qty-ctrl-btn .btn-group > a.plus:not(:first-child),
+.woocommerce .quantity .qty-ctrl-btn .btn-group > a.minus:not(:first-child),
+.btn-group > .btn-group:not(:first-child) > .btn,
+.btn-group > .btn-group:not(:first-child) > .button,
+#respond .btn-group > .btn-group:not(:first-child) > input#submit,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .btn-group:not(:first-child) > .button,
+.woocommerce .quantity .qty-ctrl-btn .btn-group > .btn-group:not(:first-child) > a.plus,
+.woocommerce .quantity .qty-ctrl-btn .btn-group > .btn-group:not(:first-child) > a.minus {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.dropdown-toggle-split {
+  padding-right: 9px;
+  padding-right: 0.5625rem;
+  padding-left: 9px;
+  padding-left: 0.5625rem;
+}
+
+.dropdown-toggle-split::after,
+.dropup .dropdown-toggle-split::after,
+.dropright .dropdown-toggle-split::after {
+  margin-left: 0;
+}
+
+.dropleft .dropdown-toggle-split::before {
+  margin-right: 0;
+}
+
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > .button + .dropdown-toggle-split, #respond .btn-group-sm > input#submit + .dropdown-toggle-split, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-sm > .button + .dropdown-toggle-split, .woocommerce .quantity .qty-ctrl-btn .btn-group-sm > a.plus + .dropdown-toggle-split, .woocommerce .quantity .qty-ctrl-btn .btn-group-sm > a.minus + .dropdown-toggle-split {
+  padding-right: 6px;
+  padding-right: 0.375rem;
+  padding-left: 6px;
+  padding-left: 0.375rem;
+}
+
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > .button + .dropdown-toggle-split, #respond .btn-group-lg > input#submit + .dropdown-toggle-split, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-lg > .button + .dropdown-toggle-split, .woocommerce .quantity .qty-ctrl-btn .btn-group-lg > a.plus + .dropdown-toggle-split, .woocommerce .quantity .qty-ctrl-btn .btn-group-lg > a.minus + .dropdown-toggle-split {
+  padding-right: 12px;
+  padding-right: 0.75rem;
+  padding-left: 12px;
+  padding-left: 0.75rem;
+}
+
+.btn-group-vertical {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+
+.btn-group-vertical > .btn,
+.btn-group-vertical > .button,
+#respond .btn-group-vertical > input#submit,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .button,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > a.plus,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > a.minus,
+.btn-group-vertical > .btn-group {
+  width: 100%;
+}
+
+.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .button:not(:first-child),
+#respond .btn-group-vertical > input#submit:not(:first-child), .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .button:not(:first-child), .woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > a.plus:not(:first-child),
+.woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > a.minus:not(:first-child),
+.btn-group-vertical > .btn-group:not(:first-child) {
+  margin-top: -1px;
+}
+
+.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .button:not(:last-child):not(.dropdown-toggle),
+#respond .btn-group-vertical > input#submit:not(:last-child):not(.dropdown-toggle), .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .button:not(:last-child):not(.dropdown-toggle), .woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > a.plus:not(:last-child):not(.dropdown-toggle),
+.woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > a.minus:not(:last-child):not(.dropdown-toggle),
+.btn-group-vertical > .btn-group:not(:last-child) > .btn,
+.btn-group-vertical > .btn-group:not(:last-child) > .button,
+#respond .btn-group-vertical > .btn-group:not(:last-child) > input#submit,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .btn-group:not(:last-child) > .button,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > .btn-group:not(:last-child) > a.plus,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > .btn-group:not(:last-child) > a.minus {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .button:not(:first-child),
+#respond .btn-group-vertical > input#submit:not(:first-child), .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .button:not(:first-child), .woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > a.plus:not(:first-child),
+.woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > a.minus:not(:first-child),
+.btn-group-vertical > .btn-group:not(:first-child) > .btn,
+.btn-group-vertical > .btn-group:not(:first-child) > .button,
+#respond .btn-group-vertical > .btn-group:not(:first-child) > input#submit,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .btn-group:not(:first-child) > .button,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > .btn-group:not(:first-child) > a.plus,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-vertical > .btn-group:not(:first-child) > a.minus {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.btn-group-toggle > .btn, .btn-group-toggle > .button,
+#respond .btn-group-toggle > input#submit, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-toggle > .button, .woocommerce .quantity .qty-ctrl-btn .btn-group-toggle > a.plus,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-toggle > a.minus,
+.btn-group-toggle > .btn-group > .btn,
+.btn-group-toggle > .btn-group > .button,
+#respond .btn-group-toggle > .btn-group > input#submit,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-toggle > .btn-group > .button,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-toggle > .btn-group > a.plus,
+.woocommerce .quantity .qty-ctrl-btn .btn-group-toggle > .btn-group > a.minus {
+  margin-bottom: 0;
+}
+
+.btn-group-toggle > .btn input[type="radio"], .btn-group-toggle > .button input[type="radio"], #respond .btn-group-toggle > input#submit input[type="radio"], .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-toggle > .button input[type="radio"], .woocommerce .quantity .qty-ctrl-btn .btn-group-toggle > a.plus input[type="radio"], .woocommerce .quantity .qty-ctrl-btn .btn-group-toggle > a.minus input[type="radio"],
+.btn-group-toggle > .btn input[type="checkbox"],
+.btn-group-toggle > .button input[type="checkbox"],
+#respond .btn-group-toggle > input#submit input[type="checkbox"],
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-toggle > .button input[type="checkbox"],
+.woocommerce .quantity .qty-ctrl-btn .btn-group-toggle > a.plus input[type="checkbox"],
+.woocommerce .quantity .qty-ctrl-btn .btn-group-toggle > a.minus input[type="checkbox"],
+.btn-group-toggle > .btn-group > .btn input[type="radio"],
+.btn-group-toggle > .btn-group > .button input[type="radio"],
+#respond .btn-group-toggle > .btn-group > input#submit input[type="radio"],
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-toggle > .btn-group > .button input[type="radio"],
+.woocommerce .quantity .qty-ctrl-btn .btn-group-toggle > .btn-group > a.plus input[type="radio"],
+.woocommerce .quantity .qty-ctrl-btn .btn-group-toggle > .btn-group > a.minus input[type="radio"],
+.btn-group-toggle > .btn-group > .btn input[type="checkbox"],
+.btn-group-toggle > .btn-group > .button input[type="checkbox"],
+#respond .btn-group-toggle > .btn-group > input#submit input[type="checkbox"],
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-toggle > .btn-group > .button input[type="checkbox"],
+.woocommerce .quantity .qty-ctrl-btn .btn-group-toggle > .btn-group > a.plus input[type="checkbox"],
+.woocommerce .quantity .qty-ctrl-btn .btn-group-toggle > .btn-group > a.minus input[type="checkbox"] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+
+.input-group {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  width: 100%;
+}
+
+.input-group > .form-control, .input-group > select.country_select,
+.input-group > select.state_select,
+.input-group > .input-text, .woocommerce-ordering .input-group > .orderby, .woocommerce-account .woocommerce .input-group > .input-text,
+.input-group > .form-control-plaintext,
+.input-group > .woocommerce-result-count,
+.input-group > .custom-select,
+.input-group > .custom-file {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  width: 1%;
+  margin-bottom: 0;
+}
+
+.input-group > .form-control + .form-control, .input-group > select.country_select + .form-control, .input-group > select.state_select + .form-control, .input-group > .input-text + .form-control, .woocommerce-ordering .input-group > .orderby + .form-control, .woocommerce-account .woocommerce .input-group > .input-text + .form-control, .input-group > .form-control + select.country_select, .input-group > select.country_select + select.country_select, .input-group > select.state_select + select.country_select, .input-group > .input-text + select.country_select, .woocommerce-ordering .input-group > .orderby + select.country_select, .woocommerce-account .woocommerce .input-group > .input-text + select.country_select,
+.input-group > .form-control + select.state_select,
+.input-group > select.country_select + select.state_select,
+.input-group > select.state_select + select.state_select,
+.input-group > .input-text + select.state_select,
+.woocommerce-ordering .input-group > .orderby + select.state_select,
+.woocommerce-account .woocommerce .input-group > .input-text + select.state_select,
+.input-group > .form-control + .input-text,
+.input-group > select.country_select + .input-text,
+.input-group > select.state_select + .input-text,
+.input-group > .input-text + .input-text,
+.woocommerce-ordering .input-group > .orderby + .input-text, .woocommerce-ordering .input-group > .form-control + .orderby, .woocommerce-ordering .input-group > select.country_select + .orderby, .woocommerce-ordering .input-group > select.state_select + .orderby, .woocommerce-ordering .input-group > .input-text + .orderby, .woocommerce-ordering .input-group > .orderby + .orderby, .woocommerce-ordering .woocommerce-account .woocommerce .input-group > .input-text + .orderby, .woocommerce-account .woocommerce .input-group > .form-control + .input-text, .woocommerce-account .woocommerce .input-group > select.country_select + .input-text, .woocommerce-account .woocommerce .input-group > select.state_select + .input-text, .woocommerce-ordering .woocommerce-account .woocommerce .input-group > .orderby + .input-text, .woocommerce-account .woocommerce .input-group > .input-text + .input-text,
+.input-group > .form-control + .custom-select,
+.input-group > select.country_select + .custom-select,
+.input-group > select.state_select + .custom-select,
+.input-group > .input-text + .custom-select,
+.woocommerce-ordering .input-group > .orderby + .custom-select,
+.woocommerce-account .woocommerce .input-group > .input-text + .custom-select,
+.input-group > .form-control + .custom-file,
+.input-group > select.country_select + .custom-file,
+.input-group > select.state_select + .custom-file,
+.input-group > .input-text + .custom-file,
+.woocommerce-ordering .input-group > .orderby + .custom-file,
+.woocommerce-account .woocommerce .input-group > .input-text + .custom-file,
+.input-group > .form-control-plaintext + .form-control,
+.input-group > .woocommerce-result-count + .form-control,
+.input-group > .form-control-plaintext + select.country_select,
+.input-group > .woocommerce-result-count + select.country_select,
+.input-group > .form-control-plaintext + select.state_select,
+.input-group > .woocommerce-result-count + select.state_select,
+.input-group > .form-control-plaintext + .input-text,
+.input-group > .woocommerce-result-count + .input-text,
+.woocommerce-ordering .input-group > .form-control-plaintext + .orderby,
+.woocommerce-ordering .input-group > .woocommerce-result-count + .orderby,
+.woocommerce-account .woocommerce .input-group > .form-control-plaintext + .input-text,
+.woocommerce-account .woocommerce .input-group > .woocommerce-result-count + .input-text,
+.input-group > .form-control-plaintext + .custom-select,
+.input-group > .woocommerce-result-count + .custom-select,
+.input-group > .form-control-plaintext + .custom-file,
+.input-group > .woocommerce-result-count + .custom-file,
+.input-group > .custom-select + .form-control,
+.input-group > .custom-select + select.country_select,
+.input-group > .custom-select + select.state_select,
+.input-group > .custom-select + .input-text,
+.woocommerce-ordering .input-group > .custom-select + .orderby,
+.woocommerce-account .woocommerce .input-group > .custom-select + .input-text,
+.input-group > .custom-select + .custom-select,
+.input-group > .custom-select + .custom-file,
+.input-group > .custom-file + .form-control,
+.input-group > .custom-file + select.country_select,
+.input-group > .custom-file + select.state_select,
+.input-group > .custom-file + .input-text,
+.woocommerce-ordering .input-group > .custom-file + .orderby,
+.woocommerce-account .woocommerce .input-group > .custom-file + .input-text,
+.input-group > .custom-file + .custom-select,
+.input-group > .custom-file + .custom-file {
+  margin-left: -1px;
+}
+
+.input-group > .form-control:focus, .input-group > select.country_select:focus,
+.input-group > select.state_select:focus,
+.input-group > .input-text:focus, .woocommerce-ordering .input-group > .orderby:focus, .woocommerce-account .woocommerce .input-group > .input-text:focus,
+.input-group > .custom-select:focus,
+.input-group > .custom-file .custom-file-input:focus ~ .custom-file-label {
+  z-index: 3;
+}
+
+.input-group > .custom-file .custom-file-input:focus {
+  z-index: 4;
+}
+
+.input-group > .form-control:not(:last-child), .input-group > select.country_select:not(:last-child),
+.input-group > select.state_select:not(:last-child),
+.input-group > .input-text:not(:last-child), .woocommerce-ordering .input-group > .orderby:not(:last-child), .woocommerce-account .woocommerce .input-group > .input-text:not(:last-child),
+.input-group > .custom-select:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group > .form-control:not(:first-child), .input-group > select.country_select:not(:first-child),
+.input-group > select.state_select:not(:first-child),
+.input-group > .input-text:not(:first-child), .woocommerce-ordering .input-group > .orderby:not(:first-child), .woocommerce-account .woocommerce .input-group > .input-text:not(:first-child),
+.input-group > .custom-select:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group > .custom-file {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.input-group > .custom-file:not(:last-child) .custom-file-label,
+.input-group > .custom-file:not(:last-child) .custom-file-label::after {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group > .custom-file:not(:first-child) .custom-file-label {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group-prepend,
+.input-group-append {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.input-group-prepend .btn, .input-group-prepend .button,
+.input-group-prepend #respond input#submit, #respond .input-group-prepend input#submit, .input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-prepend .button, .input-group-prepend .woocommerce .quantity .qty-ctrl-btn a.plus, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend a.plus,
+.input-group-prepend .woocommerce .quantity .qty-ctrl-btn a.minus, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend a.minus,
+.input-group-append .btn,
+.input-group-append .button,
+.input-group-append #respond input#submit,
+#respond .input-group-append input#submit,
+.input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-append .button,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn a.plus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append a.plus,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn a.minus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append a.minus {
+  position: relative;
+  z-index: 2;
+}
+
+.input-group-prepend .btn:focus, .input-group-prepend .button:focus,
+.input-group-prepend #respond input#submit:focus, #respond .input-group-prepend input#submit:focus, .input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button:focus, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-prepend .button:focus, .input-group-prepend .woocommerce .quantity .qty-ctrl-btn a.plus:focus, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend a.plus:focus,
+.input-group-prepend .woocommerce .quantity .qty-ctrl-btn a.minus:focus, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend a.minus:focus,
+.input-group-append .btn:focus,
+.input-group-append .button:focus,
+.input-group-append #respond input#submit:focus,
+#respond .input-group-append input#submit:focus,
+.input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button:focus,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-append .button:focus,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn a.plus:focus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append a.plus:focus,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn a.minus:focus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append a.minus:focus {
+  z-index: 3;
+}
+
+.input-group-prepend .btn + .btn, .input-group-prepend .button + .btn, .input-group-prepend #respond input#submit + .btn, #respond .input-group-prepend input#submit + .btn, .input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + .btn, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-prepend .button + .btn, .input-group-prepend .woocommerce .quantity .qty-ctrl-btn a.plus + .btn, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend a.plus + .btn, .input-group-prepend .woocommerce .quantity .qty-ctrl-btn a.minus + .btn, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend a.minus + .btn, .input-group-prepend .btn + .button, .input-group-prepend .button + .button, .input-group-prepend #respond input#submit + .button, #respond .input-group-prepend input#submit + .button, .input-group-prepend .woocommerce .quantity .qty-ctrl-btn a.plus + .button, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend a.plus + .button, .input-group-prepend .woocommerce .quantity .qty-ctrl-btn a.minus + .button, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend a.minus + .button,
+.input-group-prepend #respond .btn + input#submit, #respond .input-group-prepend .btn + input#submit,
+.input-group-prepend #respond .button + input#submit, #respond .input-group-prepend .button + input#submit,
+.input-group-prepend #respond input#submit + input#submit, #respond .input-group-prepend input#submit + input#submit, #respond .input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + input#submit,
+.input-group-prepend .woocommerce .quantity .qty-ctrl-btn #respond a.plus + input#submit, #respond .input-group-prepend .woocommerce .quantity .qty-ctrl-btn a.plus + input#submit, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend #respond a.plus + input#submit, #respond .woocommerce .quantity .qty-ctrl-btn .input-group-prepend a.plus + input#submit,
+.input-group-prepend .woocommerce .quantity .qty-ctrl-btn #respond a.minus + input#submit, #respond .input-group-prepend .woocommerce .quantity .qty-ctrl-btn a.minus + input#submit, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend #respond a.minus + input#submit, #respond .woocommerce .quantity .qty-ctrl-btn .input-group-prepend a.minus + input#submit, .input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn + .button, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-prepend .btn + .button, .input-group-prepend #respond .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons input#submit + .button, #respond .input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons input#submit + .button, .input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + .button, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-prepend .button + .button, .input-group-prepend .woocommerce .quantity .qty-ctrl-btn .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons a.plus + .button, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons a.plus + .button, .input-group-prepend .woocommerce .quantity .qty-ctrl-btn .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons a.minus + .button, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons a.minus + .button, .input-group-prepend .woocommerce .quantity .qty-ctrl-btn .btn + a.plus, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend .btn + a.plus, .input-group-prepend .woocommerce .quantity .qty-ctrl-btn .button + a.plus, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend .button + a.plus, .input-group-prepend #respond .woocommerce .quantity .qty-ctrl-btn input#submit + a.plus, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend #respond input#submit + a.plus, #respond .input-group-prepend .woocommerce .quantity .qty-ctrl-btn input#submit + a.plus, .woocommerce .quantity .qty-ctrl-btn #respond .input-group-prepend input#submit + a.plus, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + a.plus, .input-group-prepend .woocommerce .quantity .qty-ctrl-btn a.plus + a.plus, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend a.plus + a.plus, .input-group-prepend .woocommerce .quantity .qty-ctrl-btn a.minus + a.plus, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend a.minus + a.plus,
+.input-group-prepend .woocommerce .quantity .qty-ctrl-btn .btn + a.minus, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend .btn + a.minus,
+.input-group-prepend .woocommerce .quantity .qty-ctrl-btn .button + a.minus, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend .button + a.minus,
+.input-group-prepend #respond .woocommerce .quantity .qty-ctrl-btn input#submit + a.minus, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend #respond input#submit + a.minus, #respond .input-group-prepend .woocommerce .quantity .qty-ctrl-btn input#submit + a.minus, .woocommerce .quantity .qty-ctrl-btn #respond .input-group-prepend input#submit + a.minus, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + a.minus,
+.input-group-prepend .woocommerce .quantity .qty-ctrl-btn a.plus + a.minus, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend a.plus + a.minus,
+.input-group-prepend .woocommerce .quantity .qty-ctrl-btn a.minus + a.minus, .woocommerce .quantity .qty-ctrl-btn .input-group-prepend a.minus + a.minus,
+.input-group-prepend .btn + .input-group-text,
+.input-group-prepend .button + .input-group-text,
+.input-group-prepend #respond input#submit + .input-group-text,
+#respond .input-group-prepend input#submit + .input-group-text,
+.input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + .input-group-text,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-prepend .button + .input-group-text,
+.input-group-prepend .woocommerce .quantity .qty-ctrl-btn a.plus + .input-group-text,
+.woocommerce .quantity .qty-ctrl-btn .input-group-prepend a.plus + .input-group-text,
+.input-group-prepend .woocommerce .quantity .qty-ctrl-btn a.minus + .input-group-text,
+.woocommerce .quantity .qty-ctrl-btn .input-group-prepend a.minus + .input-group-text,
+.input-group-prepend .input-group-text + .input-group-text,
+.input-group-prepend .input-group-text + .btn,
+.input-group-prepend .input-group-text + .button,
+.input-group-prepend #respond .input-group-text + input#submit,
+#respond .input-group-prepend .input-group-text + input#submit,
+.input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-text + .button,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-prepend .input-group-text + .button,
+.input-group-prepend .woocommerce .quantity .qty-ctrl-btn .input-group-text + a.plus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-prepend .input-group-text + a.plus,
+.input-group-prepend .woocommerce .quantity .qty-ctrl-btn .input-group-text + a.minus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-prepend .input-group-text + a.minus,
+.input-group-append .btn + .btn,
+.input-group-append .button + .btn,
+.input-group-append #respond input#submit + .btn,
+#respond .input-group-append input#submit + .btn,
+.input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + .btn,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-append .button + .btn,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn a.plus + .btn,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append a.plus + .btn,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn a.minus + .btn,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append a.minus + .btn,
+.input-group-append .btn + .button,
+.input-group-append .button + .button,
+.input-group-append #respond input#submit + .button,
+#respond .input-group-append input#submit + .button,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn a.plus + .button,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append a.plus + .button,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn a.minus + .button,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append a.minus + .button,
+.input-group-append #respond .btn + input#submit,
+#respond .input-group-append .btn + input#submit,
+.input-group-append #respond .button + input#submit,
+#respond .input-group-append .button + input#submit,
+.input-group-append #respond input#submit + input#submit,
+#respond .input-group-append input#submit + input#submit,
+#respond .input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + input#submit,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn #respond a.plus + input#submit,
+#respond .input-group-append .woocommerce .quantity .qty-ctrl-btn a.plus + input#submit,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append #respond a.plus + input#submit,
+#respond .woocommerce .quantity .qty-ctrl-btn .input-group-append a.plus + input#submit,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn #respond a.minus + input#submit,
+#respond .input-group-append .woocommerce .quantity .qty-ctrl-btn a.minus + input#submit,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append #respond a.minus + input#submit,
+#respond .woocommerce .quantity .qty-ctrl-btn .input-group-append a.minus + input#submit,
+.input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn + .button,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-append .btn + .button,
+.input-group-append #respond .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons input#submit + .button,
+#respond .input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons input#submit + .button,
+.input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + .button,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-append .button + .button,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons a.plus + .button,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons a.plus + .button,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons a.minus + .button,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons a.minus + .button,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn .btn + a.plus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append .btn + a.plus,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn .button + a.plus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append .button + a.plus,
+.input-group-append #respond .woocommerce .quantity .qty-ctrl-btn input#submit + a.plus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append #respond input#submit + a.plus,
+#respond .input-group-append .woocommerce .quantity .qty-ctrl-btn input#submit + a.plus,
+.woocommerce .quantity .qty-ctrl-btn #respond .input-group-append input#submit + a.plus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + a.plus,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn a.plus + a.plus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append a.plus + a.plus,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn a.minus + a.plus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append a.minus + a.plus,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn .btn + a.minus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append .btn + a.minus,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn .button + a.minus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append .button + a.minus,
+.input-group-append #respond .woocommerce .quantity .qty-ctrl-btn input#submit + a.minus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append #respond input#submit + a.minus,
+#respond .input-group-append .woocommerce .quantity .qty-ctrl-btn input#submit + a.minus,
+.woocommerce .quantity .qty-ctrl-btn #respond .input-group-append input#submit + a.minus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + a.minus,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn a.plus + a.minus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append a.plus + a.minus,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn a.minus + a.minus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append a.minus + a.minus,
+.input-group-append .btn + .input-group-text,
+.input-group-append .button + .input-group-text,
+.input-group-append #respond input#submit + .input-group-text,
+#respond .input-group-append input#submit + .input-group-text,
+.input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + .input-group-text,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-append .button + .input-group-text,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn a.plus + .input-group-text,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append a.plus + .input-group-text,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn a.minus + .input-group-text,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append a.minus + .input-group-text,
+.input-group-append .input-group-text + .input-group-text,
+.input-group-append .input-group-text + .btn,
+.input-group-append .input-group-text + .button,
+.input-group-append #respond .input-group-text + input#submit,
+#respond .input-group-append .input-group-text + input#submit,
+.input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-text + .button,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-append .input-group-text + .button,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn .input-group-text + a.plus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append .input-group-text + a.plus,
+.input-group-append .woocommerce .quantity .qty-ctrl-btn .input-group-text + a.minus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-append .input-group-text + a.minus {
+  margin-left: -1px;
+}
+
+.input-group-prepend {
+  margin-right: -1px;
+}
+
+.input-group-append {
+  margin-left: -1px;
+}
+
+.input-group-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 6px 12px;
+  padding: 0.375rem 0.75rem;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+.input-group-text input[type="radio"],
+.input-group-text input[type="checkbox"] {
+  margin-top: 0;
+}
+
+.input-group-lg > .form-control:not(textarea), .input-group-lg > select.country_select:not(textarea),
+.input-group-lg > select.state_select:not(textarea),
+.input-group-lg > .input-text:not(textarea), .woocommerce-ordering .input-group-lg > .orderby:not(textarea), .woocommerce-account .woocommerce .input-group-lg > .input-text:not(textarea),
+.input-group-lg > .custom-select {
+  height: calc(1.5em + 1rem + 2px);
+}
+
+.input-group-lg > .form-control, .input-group-lg > select.country_select,
+.input-group-lg > select.state_select,
+.input-group-lg > .input-text, .woocommerce-ordering .input-group-lg > .orderby, .woocommerce-account .woocommerce .input-group-lg > .input-text,
+.input-group-lg > .custom-select,
+.input-group-lg > .input-group-prepend > .input-group-text,
+.input-group-lg > .input-group-append > .input-group-text,
+.input-group-lg > .input-group-prepend > .btn,
+.input-group-lg > .input-group-prepend > .button,
+#respond .input-group-lg > .input-group-prepend > input#submit,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-lg > .input-group-prepend > .button,
+.woocommerce .quantity .qty-ctrl-btn .input-group-lg > .input-group-prepend > a.plus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-lg > .input-group-prepend > a.minus,
+.input-group-lg > .input-group-append > .btn,
+.input-group-lg > .input-group-append > .button,
+#respond .input-group-lg > .input-group-append > input#submit,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-lg > .input-group-append > .button,
+.woocommerce .quantity .qty-ctrl-btn .input-group-lg > .input-group-append > a.plus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-lg > .input-group-append > a.minus {
+  padding: 8px 16px;
+  padding: 0.5rem 1rem;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 0.3rem;
+}
+
+.input-group-sm > .form-control:not(textarea), .input-group-sm > select.country_select:not(textarea),
+.input-group-sm > select.state_select:not(textarea),
+.input-group-sm > .input-text:not(textarea), .woocommerce-ordering .input-group-sm > .orderby:not(textarea), .woocommerce-account .woocommerce .input-group-sm > .input-text:not(textarea),
+.input-group-sm > .custom-select {
+  height: calc(1.5em + 0.5rem + 2px);
+}
+
+.input-group-sm > .form-control, .input-group-sm > select.country_select,
+.input-group-sm > select.state_select,
+.input-group-sm > .input-text, .woocommerce-ordering .input-group-sm > .orderby, .woocommerce-account .woocommerce .input-group-sm > .input-text,
+.input-group-sm > .custom-select,
+.input-group-sm > .input-group-prepend > .input-group-text,
+.input-group-sm > .input-group-append > .input-group-text,
+.input-group-sm > .input-group-prepend > .btn,
+.input-group-sm > .input-group-prepend > .button,
+#respond .input-group-sm > .input-group-prepend > input#submit,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-sm > .input-group-prepend > .button,
+.woocommerce .quantity .qty-ctrl-btn .input-group-sm > .input-group-prepend > a.plus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-sm > .input-group-prepend > a.minus,
+.input-group-sm > .input-group-append > .btn,
+.input-group-sm > .input-group-append > .button,
+#respond .input-group-sm > .input-group-append > input#submit,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-sm > .input-group-append > .button,
+.woocommerce .quantity .qty-ctrl-btn .input-group-sm > .input-group-append > a.plus,
+.woocommerce .quantity .qty-ctrl-btn .input-group-sm > .input-group-append > a.minus {
+  padding: 4px 8px;
+  padding: 0.25rem 0.5rem;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+
+.input-group-lg > .custom-select,
+.input-group-sm > .custom-select {
+  padding-right: 28px;
+  padding-right: 1.75rem;
+}
+
+.input-group > .input-group-prepend > .btn, .input-group > .input-group-prepend > .button,
+#respond .input-group > .input-group-prepend > input#submit, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group > .input-group-prepend > .button, .woocommerce .quantity .qty-ctrl-btn .input-group > .input-group-prepend > a.plus,
+.woocommerce .quantity .qty-ctrl-btn .input-group > .input-group-prepend > a.minus,
+.input-group > .input-group-prepend > .input-group-text,
+.input-group > .input-group-append:not(:last-child) > .btn,
+.input-group > .input-group-append:not(:last-child) > .button,
+#respond .input-group > .input-group-append:not(:last-child) > input#submit,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group > .input-group-append:not(:last-child) > .button,
+.woocommerce .quantity .qty-ctrl-btn .input-group > .input-group-append:not(:last-child) > a.plus,
+.woocommerce .quantity .qty-ctrl-btn .input-group > .input-group-append:not(:last-child) > a.minus,
+.input-group > .input-group-append:not(:last-child) > .input-group-text,
+.input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group > .input-group-append:last-child > .button:not(:last-child):not(.dropdown-toggle),
+#respond .input-group > .input-group-append:last-child > input#submit:not(:last-child):not(.dropdown-toggle),
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group > .input-group-append:last-child > .button:not(:last-child):not(.dropdown-toggle),
+.woocommerce .quantity .qty-ctrl-btn .input-group > .input-group-append:last-child > a.plus:not(:last-child):not(.dropdown-toggle),
+.woocommerce .quantity .qty-ctrl-btn .input-group > .input-group-append:last-child > a.minus:not(:last-child):not(.dropdown-toggle),
+.input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group > .input-group-append > .btn, .input-group > .input-group-append > .button,
+#respond .input-group > .input-group-append > input#submit, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group > .input-group-append > .button, .woocommerce .quantity .qty-ctrl-btn .input-group > .input-group-append > a.plus,
+.woocommerce .quantity .qty-ctrl-btn .input-group > .input-group-append > a.minus,
+.input-group > .input-group-append > .input-group-text,
+.input-group > .input-group-prepend:not(:first-child) > .btn,
+.input-group > .input-group-prepend:not(:first-child) > .button,
+#respond .input-group > .input-group-prepend:not(:first-child) > input#submit,
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group > .input-group-prepend:not(:first-child) > .button,
+.woocommerce .quantity .qty-ctrl-btn .input-group > .input-group-prepend:not(:first-child) > a.plus,
+.woocommerce .quantity .qty-ctrl-btn .input-group > .input-group-prepend:not(:first-child) > a.minus,
+.input-group > .input-group-prepend:not(:first-child) > .input-group-text,
+.input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+.input-group > .input-group-prepend:first-child > .button:not(:first-child),
+#respond .input-group > .input-group-prepend:first-child > input#submit:not(:first-child),
+.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group > .input-group-prepend:first-child > .button:not(:first-child),
+.woocommerce .quantity .qty-ctrl-btn .input-group > .input-group-prepend:first-child > a.plus:not(:first-child),
+.woocommerce .quantity .qty-ctrl-btn .input-group > .input-group-prepend:first-child > a.minus:not(:first-child),
+.input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .nav {
@@ -3745,7 +4436,7 @@ input.checkout-button[type="button"],
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
-  background-color: #84c3e3;
+  background-color: #007bff;
 }
 
 .nav-fill .nav-item {
@@ -4285,14 +4976,14 @@ input.checkout-button[type="button"],
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #84c3e3;
+  color: #007bff;
   background-color: #fff;
   border: 1px solid #dee2e6;
 }
 
 .page-link:hover {
   z-index: 2;
-  color: #46a5d5;
+  color: #0056b3;
   text-decoration: none;
   background-color: #e9ecef;
   border-color: #dee2e6;
@@ -4301,8 +4992,8 @@ input.checkout-button[type="button"],
 .page-link:focus {
   z-index: 2;
   outline: 0;
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(132, 195, 227, 0.25);
-          box-shadow: 0 0 0 0.2rem rgba(132, 195, 227, 0.25);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .page-item:first-child .page-link {
@@ -4323,8 +5014,8 @@ input.checkout-button[type="button"],
 .page-item.active .page-link {
   z-index: 1;
   color: #fff;
-  background-color: #84c3e3;
-  border-color: #84c3e3;
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
 .page-item.disabled .page-link {
@@ -4422,19 +5113,19 @@ a.badge:hover, a.badge:focus {
 }
 
 .badge-primary {
-  color: #212529;
-  background-color: #84c3e3;
+  color: #fff;
+  background-color: #007bff;
 }
 
 a.badge-primary:hover, a.badge-primary:focus {
-  color: #212529;
-  background-color: #5aafda;
+  color: #fff;
+  background-color: #0062cc;
 }
 
 a.badge-primary:focus, a.badge-primary.focus {
   outline: 0;
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(132, 195, 227, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(132, 195, 227, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
 }
 
 .badge-secondary {
@@ -4628,8 +5319,8 @@ a.badge-dark:focus, a.badge-dark.focus {
 .list-group-item.active {
   z-index: 2;
   color: #fff;
-  background-color: #84c3e3;
-  border-color: #84c3e3;
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
 .list-group-horizontal {
@@ -4777,19 +5468,19 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .list-group-item-primary {
-  color: #456576;
-  background-color: #ddeef7;
+  color: #004085;
+  background-color: #b8daff;
 }
 
 .list-group-item-primary.list-group-item-action:hover, .list-group-item-primary.list-group-item-action:focus {
-  color: #456576;
-  background-color: #c8e4f2;
+  color: #004085;
+  background-color: #9fcdff;
 }
 
 .list-group-item-primary.list-group-item-action.active {
   color: #fff;
-  background-color: #456576;
-  border-color: #456576;
+  background-color: #004085;
+  border-color: #004085;
 }
 
 .list-group-item-secondary {
@@ -4962,13 +5653,13 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #84c3e3 !important;
+  background-color: #007bff !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #5aafda !important;
+  background-color: #0062cc !important;
 }
 
 .bg-secondary {
@@ -5090,7 +5781,7 @@ button.bg-dark:focus {
 }
 
 .border-primary {
-  border-color: #84c3e3 !important;
+  border-color: #007bff !important;
 }
 
 .border-secondary {
@@ -8506,11 +9197,11 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #84c3e3 !important;
+  color: #007bff !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
-  color: #46a5d5 !important;
+  color: #0056b3 !important;
 }
 
 .text-secondary {
@@ -11945,7 +12636,7 @@ td.product-quantity {
 
 .star-rating::before {
   content: '\73\73\73\73\73';
-  color: #5aafda;
+  color: #0062cc;
   float: left;
   top: 0;
   left: 0;
@@ -12403,8 +13094,8 @@ abbr.required {
 .woocommerce table.wishlist_table > tbody > tr td.actions .button,
 .woocommerce table.wishlist_table > tbody > tr td.product-add-to-cart .button {
   color: #fff;
-  background-color: #84c3e3;
-  border-color: #84c3e3;
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
 .woocommerce-account .woocommerce .woocommerce-form-login {
@@ -12591,8 +13282,8 @@ abbr.required {
 
 .woocommerce form.woocommerce-cart-form table.shop_table > tbody > tr td.actions .button {
   color: #fff;
-  background-color: #84c3e3;
-  border-color: #84c3e3;
+  background-color: #007bff;
+  border-color: #007bff;
 }
 
 .woocommerce .cart_totals h2, .woocommerce .cart_totals .h2, .woocommerce .cart_totals h3#order_review_heading,
