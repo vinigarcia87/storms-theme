@@ -56,7 +56,7 @@ if( ! function_exists( 'storms_define_theme_options' ) ) {
 
         // Define WooCommerce product and shop pages layout
         update_option( 'product_layout', '2c-r' );
-        update_option( 'shop_layout', '1c-r' );
+        update_option( 'shop_layout', '2c-r' );
     }
     add_action( 'init', 'storms_define_theme_options' );
 }
