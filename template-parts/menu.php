@@ -43,7 +43,9 @@
 				<?php \StormsFramework\Bootstrap\Bootstrap::get_search_form(); ?>
 
 				<!-- WooCommerce Mini Cart -->
-				<?php the_widget( 'storms_wc_cart_mini' ); ?>
+				<?php if( is_active_widget(false, false, 'storms_wc_cart_mini', true) ) {
+					the_widget( 'storms_wc_cart_mini' );
+				} ?>
 			</div>
 		</div><!--/.navbar-collapse -->
 	</div>
