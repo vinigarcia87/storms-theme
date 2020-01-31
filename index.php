@@ -27,9 +27,6 @@ get_header(); ?>
         <!-- Website content -->
         <main id="content" class="main <?php echo Template::main_layout(); ?>" role="main">
 
-            <!--  -->
-            <?php  ?>
-
             <?php
 
             if ( have_posts() ) :

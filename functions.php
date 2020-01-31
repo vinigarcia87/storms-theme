@@ -38,7 +38,7 @@ require_once 'services/storms-environment-config.php';
 require_once 'services/storms-wp-default-configuration.php';
 
 
-require_once 'services/storms-temporary.php';
+//require_once 'services/storms-temporary.php';
 
 /**
  * =====================================================================================================================
@@ -50,7 +50,7 @@ require_once 'services/storms-temporary.php';
  */
 if( ! function_exists( 'storms_testing' ) ) {
 	function storms_testing() {
-		//\StormsFramework\Helper::debug( 'Debugging' );
+		\StormsFramework\Helper::debug( 'Debugging' );
 	}
 	//add_action( 'init', 'storms_testing' );
 }
