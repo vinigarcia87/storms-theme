@@ -38,7 +38,7 @@ require_once 'services/storms-environment-config.php';
 require_once 'services/storms-wp-default-configuration.php';
 
 
-//require_once 'services/storms-temporary.php';
+require_once 'services/storms-temporary.php';
 
 /**
  * =====================================================================================================================
