@@ -34,7 +34,7 @@ get_template_part( 'template-parts/head' ); ?>
 
         <?php
         if ( is_front_page() && is_home() ) : ?>
-            <div class="row">
+            <div class="st-grid-row row">
                 <div class="col-12">
                     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
                 </div>

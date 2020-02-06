@@ -36,7 +36,7 @@ require_once 'services/storms-theme-setup.php';
 require_once 'services/storms-assets.php';
 require_once 'services/storms-environment-config.php';
 require_once 'services/storms-wp-default-configuration.php';
-
+require_once 'services/storms-woocommerce-cart-mini.php';
 
 require_once 'services/storms-temporary.php';
 

@@ -16,7 +16,7 @@ use \StormsFramework\Template;
 
 get_header(); ?>
 
-    <div class="row">
+    <div class="st-grid-row row">
 
         <!-- Website content -->
         <main id="content" class="main <?php echo Template::main_layout(); ?>" role="main">

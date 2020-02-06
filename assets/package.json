@@ -1,10 +1,8 @@
 {
-  "name": "Storms Theme",
+  "name": "StormsTheme",
   "version": "4.0.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/vinigarcia87/"
-  },
+  "author": "Storms Websolutions",
+  "license": "ISC",
   "dependencies": {
     "jquery": "^3.2.1",
     "jquery.cycle2": "^2.1.7",
@@ -14,7 +12,7 @@
     "font-awesome": "^4.7.0"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-debug": "^3.1.0",

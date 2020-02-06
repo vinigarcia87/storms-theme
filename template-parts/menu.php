@@ -13,7 +13,7 @@
  */
 ?>
 <nav id="main-navigation" class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
-	<div class="container">
+	<div class="st-grid-container container">
 
 		<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<img class="brand" src="<?php echo \StormsFramework\Helper::get_asset_url('/img/storms/logo/cloud_storms.png') ?>" alt="Storms Websolutions"/>
@@ -43,7 +43,7 @@
 				<?php \StormsFramework\Bootstrap\Bootstrap::get_search_form(); ?>
 
 				<!-- WooCommerce Mini Cart -->
-				<?php if( is_active_widget(false, false, 'storms_wc_cart_mini', true) ) {
+				<?php if( class_exists( 'Storms_WC_Cart_Mini' ) ) {
 					the_widget( 'storms_wc_cart_mini' );
 				} ?>
 			</div>

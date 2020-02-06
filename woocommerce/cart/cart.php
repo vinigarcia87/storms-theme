@@ -19,8 +19,8 @@ defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_cart' ); ?>
 
-<div class="container">
-	<div class="row">
+<div class="st-grid-container container">
+	<div class="st-grid-row row">
 
 <form class="woocommerce-cart-form col-md-8 table-responsive" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 	<?php do_action( 'woocommerce_before_cart_table' ); ?>

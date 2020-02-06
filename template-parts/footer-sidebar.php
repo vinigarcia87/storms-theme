@@ -21,7 +21,7 @@ for( $i = 1; $i <= $numFooterSidebars; $i++ ) {
         $numActiveFooterSidebars++;
 }
 if ( ( $numFooterSidebars > 0 ) && ( $numActiveFooterSidebars > 0 ) ) : ?>
-    <div class="footer-sidebar row no-margin-left no-margin-right" role="complementary">
+    <div class="footer-sidebar st-grid-row row" role="complementary">
         <?php for( $i = 1; $i <= $numFooterSidebars; $i++ ): ?>
             <?php if ( is_active_sidebar( 'footer-sidebar-' . $i ) ) : ?>
 
@@ -78,7 +78,7 @@ if ( ( $numFooterSidebars > 0 ) && ( $numActiveFooterSidebars > 0 ) ) : ?>
                             }
                 }
 
-                $col_size_css = get_option( 'footer_size_col_' . intval( $i ), 'col-md-' . $col_size );
+                $col_size_css = 'footer-col-'. intval( $i ) . ' ' . get_option( 'footer_size_col_' . intval( $i ), 'col-md-' . $col_size );
                 ?>
 
                 <div class="<?php echo $col_size_css; ?>">

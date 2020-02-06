@@ -49,7 +49,7 @@ var getStamp = function() {
  * Looking at src/sass and compiling the files into Expanded format, Autoprefixing and sending the files to the build folder
  * Sass output styles: https://web-design-weekly.com/2014/06/15/different-sass-output-styles/
  */
-gulp.task('styles', function () {
+gulp.task('styles', async function () {
 	gulp.src('./sass/*.scss')
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
@@ -77,7 +77,7 @@ gulp.task('styles', function () {
  * Load assets
  * Copy the fonts, js and styles from used libs to the correct public place
  */
-gulp.task('load-assets', function() {
+gulp.task('load-assets', async function() {
 	gulp.src([
 		'node_modules/font-awesome/fonts/*',               // Font-Awesome Fonts
 		wp_content + '/plugins/woocommerce/assets/fonts/*' // WooCommerce Fonts
@@ -104,7 +104,7 @@ gulp.task('load-assets', function() {
  * Scripts
  * Look at /js/raw files and concatenate those files, send them to /js where we then minimize the concatenated file.
  */
-gulp.task('scripts', function() {
+gulp.task('scripts', async function() {
 	gulp.src([
 
 		/* HERE WE INCLUDE ALL BOOTSTRAP JS FILES WE WANT TO USE */
@@ -131,7 +131,7 @@ gulp.task('scripts', function() {
  * Images
  * Look at /img/raw, optimize the images and send them to /img
  */
-gulp.task('images', function() {
+gulp.task('images', async function() {
 	gulp.src([
 		'./img/raw/**/*.{png,jpg,gif,svg}'
 	])
@@ -146,7 +146,7 @@ gulp.task('images', function() {
  * Zip
  * Zip all theme for deploy
  */
-gulp.task('zip', function() {
+gulp.task('zip', async function() {
 	gulp.src([
 		theme_dir + '**/*',
 		theme_dir + '*.zip',
@@ -166,12 +166,10 @@ gulp.task('zip', function() {
  */
 
 // Default Task
-gulp.task('default', ['load-assets', 'styles', 'scripts', 'images'], function () {
-
-});
+gulp.task('default', gulp.series(['load-assets', 'styles', 'scripts', 'images']));
 
 // Watch Task
-gulp.task('watch', ['styles', 'scripts', 'images'], function () {
+gulp.task('watch', gulp.series(['styles', 'scripts', 'images'], function () {
 	gulp.watch('./sass/*.scss', ['styles']);
 	gulp.watch('./js/raw/**/*.js', ['scripts']);
-});
+}));

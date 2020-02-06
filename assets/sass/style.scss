@@ -23,6 +23,10 @@ $load-storms-variables: true !default;
 @import "fontawesome/fontawesome-variables";
 @import "fontawesome/fontawesome-import";
 
+// Bootstrap 4 - Custom styles for grid
+@import "bootstrap/bootstrap-grid";
+
+
 // Select2
 //@import "../node_modules/select2/src/scss/core";
 //@import "../node_modules/select2-bootstrap-theme/src/select2-bootstrap";

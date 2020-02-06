@@ -37,7 +37,7 @@
 	</head>
 	<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" <?php body_class(); ?>>
 		<!-- Skip navigation for accessibility -->
-		<a id="skippy" class="sr-only sr-only-focusable" href="#main-container"><div class="container"><span class="skiplink-text"><?php _e( 'Skip to main content', 'storms' ); ?></span></div></a>
+		<a id="skippy" class="sr-only sr-only-focusable" href="#main-container"><div class="st-grid-container container"><span class="skiplink-text"><?php _e( 'Skip to main content', 'storms' ); ?></span></div></a>
 
         <!--[if lte IE 9]>
 		<div class="alert alert-warning affix text-center alert-dismissible fade in" style="margin-bottom: 0; width: 100%; z-index: 2147483647;">

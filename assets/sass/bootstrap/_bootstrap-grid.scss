@@ -1,0 +1,305 @@
+
+@if not $enable-grid-classes {
+
+	.st-grid-container {
+		@include make-container();
+		@include make-container-max-widths;
+	}
+
+	.st-grid-container-fluid {
+		@include make-container();
+	}
+
+	.st-grid-row {
+		@include make-row();
+	}
+
+	.col-12 {
+		@include make-col-ready;
+		@include make-col(12);
+	}
+
+	/**
+	 * Storms Theme Custom Gid Columns
+	 */
+
+	// .col-12
+	.comment-block.media {
+		@include make-col-ready;
+		@include make-col(12);
+	}
+
+	// .col-md-9 .order-1
+	.main-layout-left {
+		@include make-col-ready;
+		@include make-col(12);
+		@include media-breakpoint-up(md) {
+			@include make-col(9);
+		}
+
+		order: 1;
+	}
+
+	// .col-md-9 .order-2
+	.main-layout-right {
+		@include make-col-ready;
+		@include make-col(12);
+		@include media-breakpoint-up(md) {
+			@include make-col(9);
+		}
+
+		order: 2;
+	}
+
+	// .col-md-12
+	.main-layout-full {
+		@include make-col-ready;
+		@include make-col(12);
+		@include media-breakpoint-up(md) {
+			@include make-col(12);
+		}
+	}
+
+	// .col-md-3 .order-2
+	.sidebar-layout-right {
+		@include make-col-ready;
+		@include make-col(12);
+		@include media-breakpoint-up(md) {
+			@include make-col(3);
+		}
+
+		order: 2;
+	}
+
+	// .col-md-3 .order-1
+	.sidebar-layout-left {
+		@include make-col-ready;
+		@include make-col(12);
+		@include media-breakpoint-up(md) {
+			@include make-col(3);
+		}
+
+		order: 1;
+	}
+
+	// .col-6 .col-sm-3 .col-md-2
+	.st-product-col-1 {
+		@include make-col-ready;
+		@include make-col(6);
+		@include media-breakpoint-up(sm) {
+			@include make-col(3);
+		}
+		@include media-breakpoint-up(md) {
+			@include make-col(2);
+		}
+	}
+
+	// .col-12 .col-sm-6 .col-md-3
+	.st-product-col-2 {
+		@include make-col-ready;
+		@include make-col(12);
+		@include media-breakpoint-up(sm) {
+			@include make-col(6);
+		}
+		@include media-breakpoint-up(md) {
+			@include make-col(3);
+		}
+	}
+
+	// .col-12 .col-sm-4 .col-md-4
+	.st-product-col-3 {
+		@include make-col-ready;
+		@include make-col(12);
+		@include media-breakpoint-up(sm) {
+			@include make-col(4);
+		}
+		@include media-breakpoint-up(md) {
+			@include make-col(4);
+		}
+	}
+
+	// .col-12 .col-sm-6 .col-md-4
+	.st-product-col-4 {
+		@include make-col-ready;
+		@include make-col(12);
+		@include media-breakpoint-up(sm) {
+			@include make-col(6);
+		}
+		@include media-breakpoint-up(md) {
+			@include make-col(4);
+		}
+	}
+
+	// .col-12 .col-sm-6 .col-md-6
+	.st-product-col-5 {
+		@include make-col-ready;
+		@include make-col(12);
+		@include media-breakpoint-up(sm) {
+			@include make-col(6);
+		}
+		@include media-breakpoint-up(md) {
+			@include make-col(6);
+		}
+	}
+
+	// .col-12 .col-sm-12 .col-md-12
+	.st-product-col-6 {
+		@include make-col-ready;
+		@include make-col(12);
+		@include media-breakpoint-up(sm) {
+			@include make-col(12);
+		}
+		@include media-breakpoint-up(md) {
+			@include make-col(12);
+		}
+	}
+
+	#page-banner {
+		// .col-md-5
+		.page-banner-content {
+			@include make-col-ready;
+			@include make-col(12);
+			@include media-breakpoint-up(md) {
+				@include make-col(5);
+			}
+		}
+
+		// .col-md-4 .offset-md-3
+		.page-banner-sidebar {
+			@include make-col-ready;
+			@include make-col(12);
+			@include media-breakpoint-up(md) {
+				@include make-col(4);
+				@include make-col-offset(3);
+			}
+		}
+	}
+
+	#footer {
+		// .col-sm-12
+		.footer-1-sidebar-top,
+		.footer-1-sidebar-bottom {
+			@include make-col-ready;
+			@include make-col(12);
+			@include media-breakpoint-up(sm) {
+				@include make-col(12);
+			}
+		}
+
+		// .col-sm-4
+		.footer-1-sidebar-left,
+		.footer-1-sidebar-middle,
+		.footer-1-sidebar-right {
+			@include make-col-ready;
+			@include make-col(12);
+			@include media-breakpoint-up(sm) {
+				@include make-col(4);
+			}
+		}
+
+		// .col-md-8 .offset-md-2 .col-sm-7 .offset-sm-2
+		.copyright-storms {
+			@include make-col-ready;
+			@include make-col(12);
+			@include media-breakpoint-up(sm) {
+				@include make-col(7);
+				@include make-col-offset(2);
+			}
+			@include media-breakpoint-up(md) {
+				@include make-col(8);
+				@include make-col-offset(2);
+			}
+		}
+
+		// .col-md-2 .col-sm-2
+		.logo-storms {
+			@include make-col-ready;
+			@include make-col(12);
+			@include media-breakpoint-up(sm) {
+				@include make-col(2);
+			}
+			@include media-breakpoint-up(md) {
+				@include make-col(2);
+			}
+		}
+
+		// .col-md-3 - Must change if different than 4 columns
+		.footer-col- * {
+			@include make-col-ready;
+			@include make-col(12);
+			@include media-breakpoint-up(md) {
+				@include make-col(3);
+			}
+		}
+	}
+
+	.woocommerce-mini-cart-item {
+		// .col-md-3
+		.product-image {
+			@include make-col-ready;
+			@include make-col(12);
+			@include media-breakpoint-up(md) {
+				@include make-col(3);
+			}
+		}
+
+		// .col-md-7
+		.product-description {
+			@include make-col-ready;
+			@include make-col(12);
+			@include media-breakpoint-up(md) {
+				@include make-col(7);
+			}
+		}
+
+		// .col-md-2
+		.product-actions {
+			@include make-col-ready;
+			@include make-col(12);
+			@include media-breakpoint-up(md) {
+				@include make-col(2);
+			}
+		}
+	}
+
+	// .col-md-8
+	.woocommerce-cart-form {
+		@include make-col-ready;
+		@include make-col(12);
+		@include media-breakpoint-up(md) {
+			@include make-col(8);
+		}
+	}
+
+	// .col-md-4
+	.cart-collaterals {
+		@include make-col-ready;
+		@include make-col(12);
+		@include media-breakpoint-up(md) {
+			@include make-col(4);
+		}
+	}
+
+	.woocommerce {
+		.checkout {
+			// .col-sm-7
+			.checkout-form-panel {
+				@include make-col-ready;
+				@include make-col(12);
+				@include media-breakpoint-up(sm) {
+					@include make-col(7);
+				}
+			}
+
+			// .col-sm-5
+			.checkout-order-review-panel {
+				@include make-col-ready;
+				@include make-col(12);
+				@include media-breakpoint-up(sm) {
+					@include make-col(5);
+				}
+			}
+		}
+	}
+}
+

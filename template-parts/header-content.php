@@ -13,8 +13,8 @@
  */
 
 ?>
-<div id="page-banner" class="row" role="banner">
-	<div class="col-md-5">
+<div id="page-banner" class="st-grid-row row" role="banner">
+	<div class="page-banner-content col-md-5">
 		<?php
 		$header_image = get_header_image();
 		if ( ! empty( $header_image ) ) :
@@ -29,7 +29,7 @@
 		<?php endif; ?>
 	</div>
 
-	<div class="col-md-4 offset-md-3">
+	<div class="page-banner-sidebar col-md-4 offset-md-3">
         <?php get_sidebar( 'header' ); ?>
 	</div>
 </div>
