@@ -33,7 +33,8 @@
 
 			a.plus,
 			a.minus {
-				@extend .btn;
+				// Not using plus/minus buttons on Storms Theme
+				//@extend .btn;
 
 				float: none;
 				display: block;

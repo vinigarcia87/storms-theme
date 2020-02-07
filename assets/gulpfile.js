@@ -18,7 +18,7 @@ var gulp          = require('gulp'),
 	autoprefixer  = require('gulp-autoprefixer'), // Autoprefixing magic
 	plumber       = require('gulp-plumber'),      // Helps prevent stream crashing on errors
 	sourcemaps    = require('gulp-sourcemaps'),
-	minifycss     = require('gulp-uglifycss'),
+	cleanCSS 	  = require('gulp-clean-css'),	  // Used to minify the CSS
 	stripcomments = require('gulp-strip-css-comments'),
 	filter        = require('gulp-filter'),
 	rename        = require('gulp-rename'),
@@ -51,6 +51,7 @@ var getStamp = function() {
  */
 gulp.task('styles', async function () {
 	gulp.src('./sass/*.scss')
+		//.pipe(debug())						 // Debug Vinyl file streams to see what files are run through your Gulp pipeline
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
 		.pipe(sass({
@@ -63,11 +64,12 @@ gulp.task('styles', async function () {
 		.pipe(stripcomments({ preserve : /^# sourceMappingURL=/ })) // Strip comments from CSS - except for sourceMappingUrl
 		.pipe(sourcemaps.write('./maps'))
 		.pipe(gulp.dest('./css/'))
+
 		.pipe(filter('**/*.css'))                // Filtering stream to only css files
 		//.pipe(debug())						 // Debug Vinyl file streams to see what files are run through your Gulp pipeline
 		.pipe(sourcemaps.init())
 		.pipe(rename({ suffix: '.min' }))
-		.pipe(minifycss())
+		.pipe(cleanCSS())
 		.pipe(sourcemaps.write('./maps'))
 		.pipe(gulp.dest('./css/'))
 		.pipe(notify({ message: 'Styles task complete', onLast: true }))
@@ -111,7 +113,7 @@ gulp.task('scripts', async function() {
 		'./js/bootstrap/popper.js',
 		'./js/bootstrap/util.js',
 		'./js/bootstrap/dropdown.js',
-		//'./js/bootstrap/collapse.js',
+		'./js/bootstrap/collapse.js',
 
 		'./js/raw/**/*.js' // We could concatenate jquery and woocommerce files here, to have only one asset
 	])

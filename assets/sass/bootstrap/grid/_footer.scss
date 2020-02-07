@@ -1,0 +1,63 @@
+
+@if not $enable-grid-classes {
+
+	#footer {
+		// .col-sm-12
+		.footer-1-sidebar-top,
+		.footer-1-sidebar-bottom {
+			@include make-col-ready;
+			@include make-col(12);
+			@include media-breakpoint-up(sm) {
+				@include make-col(12);
+			}
+		}
+
+		// .col-sm-4
+		.footer-1-sidebar-left,
+		.footer-1-sidebar-middle,
+		.footer-1-sidebar-right {
+			@include make-col-ready;
+			@include make-col(12);
+			@include media-breakpoint-up(sm) {
+				@include make-col(4);
+			}
+		}
+
+		// .col-md-8 .offset-md-2 .col-sm-7 .offset-sm-2
+		.copyright-storms {
+			@include make-col-ready;
+			@include make-col(12);
+			@include media-breakpoint-up(sm) {
+				@include make-col(7);
+				@include make-col-offset(2);
+			}
+			@include media-breakpoint-up(md) {
+				@include make-col(8);
+				@include make-col-offset(2);
+			}
+		}
+
+		// .col-md-2 .col-sm-2
+		.logo-storms {
+			@include make-col-ready;
+			@include make-col(12);
+			@include media-breakpoint-up(sm) {
+				@include make-col(2);
+			}
+			@include media-breakpoint-up(md) {
+				@include make-col(2);
+			}
+		}
+
+		// .col-md-3 - Must change if different than 4 columns
+		.footer-col- * {
+			@include make-col-ready;
+			@include make-col(12);
+			@include media-breakpoint-up(md) {
+				@include make-col(3);
+			}
+		}
+	}
+
+}
+

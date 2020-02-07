@@ -42,10 +42,10 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
                         <div class="st-grid-row row">
                             <div class="product-image col-md-3">
 								<?php if ( empty( $product_permalink ) ) : ?>
-									<?php echo $thumbnail . $product_name; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+									<?php echo $thumbnail /*. $product_name*/; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 								<?php else : ?>
 									<a href="<?php echo esc_url( $product_permalink ); ?>">
-										<?php echo $thumbnail . $product_name; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+										<?php echo $thumbnail /*. $product_name*/; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 									</a>
 								<?php endif; ?>
                             </div>
