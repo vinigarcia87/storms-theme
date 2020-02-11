@@ -17,7 +17,14 @@
 
 	<header class="entry-header">
 
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php
+		if ( ! is_home() && is_front_page() ) :
+			the_title( '<h1 class="entry-title sr-only">', '</h1>' );
+		else :
+			echo '<h1>CU DE COBRA</h1>';
+			the_title( '<h1 class="entry-title">', '</h1>' );
+		endif;
+		?>
 
 	</header><!-- .entry-header -->
 
