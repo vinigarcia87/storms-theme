@@ -72,9 +72,9 @@ add_filter( 'woocommerce_package_rates', function( $package_rates, $package ) {
 */
 
 // @TODO Revisar!!
-require_once 'storms-woocommerce-wishlist.php';
-require_once 'storms-woocommerce-changes.php';
-require_once 'storms-woocommerce-searchbar.php';
+//require_once 'storms-woocommerce-wishlist.php';
+//require_once 'storms-woocommerce-changes.php';
+//require_once 'storms-woocommerce-searchbar.php';
 //require_once 'storms-calculo-st.php';
 
 // Remove Wordpress oembed

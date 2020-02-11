@@ -38,7 +38,9 @@ require_once 'services/storms-environment-config.php';
 require_once 'services/storms-wp-default-configuration.php';
 require_once 'services/storms-woocommerce-cart-mini.php';
 
-require_once 'services/storms-temporary.php';
+//require_once 'services/storms-action-trace.php';
+
+//require_once 'services/storms-temporary.php';
 
 /**
  * =====================================================================================================================
@@ -60,4 +62,11 @@ function storms_inspect_scripts() {
     \StormsFramework\Helper::debug( $wp_scripts->queue );
 }
 //add_action( 'wp_head', 'storms_inspect_scripts', 999 );
+
+function storms_log_hook_calls() {
+	if ( WP_DEBUG_LOG ) {
+		error_log( date("d-m-Y, H:i:s") . ": " . current_filter() . " - " . did_action( current_filter() ) . "\n", 3, WP_CONTENT_DIR . '/storms-hook-calls-log.log' );
+	}
+}
+//add_action( 'all', 'storms_log_hook_calls' );
 

@@ -24,29 +24,41 @@ use \StormsFramework\Template;
 
 get_header(); ?>
 
-    <div class="st-grid-row row">
+	<div class="st-grid-row row">
 
-        <!-- Website content -->
-        <main id="content" class="main <?php echo Template::main_layout(); ?>" role="main">
+		<!-- Website content -->
+		<main id="content" class="main <?php echo Template::main_layout(); ?>" role="main">
 
-                <?php
-                while ( have_posts() ) : the_post();
+			<?php
+			if ( have_posts() ) :
 
-                    get_template_part( 'template-parts/content', 'page' );
+				/* Start the Loop */
+				while ( have_posts() ) : the_post();
 
-                    // If comments are open or we have at least one comment, load up the comment template.
-                    if ( comments_open() || get_comments_number() ) :
-                        comments_template();
-                    endif;
+					/*
+					 * Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'template-parts/content', get_post_format() );
 
-                endwhile; // End of the loop.
-                ?>
+				endwhile; // End of the loop.
 
-        </main><!-- /.main -->
+				the_posts_navigation();
 
-        <!-- Sidebar -->
-        <?php get_sidebar(); ?>
+			else :
 
-    </div>
+				get_template_part( 'template-parts/content', 'none' );
+
+			endif;
+			?>
+
+		</main><!-- /.main -->
+
+		<!-- Sidebar -->
+		<?php get_sidebar(); ?>
+
+	</div>
+
 <?php
 get_footer();

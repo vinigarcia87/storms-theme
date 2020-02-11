@@ -16,17 +16,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if( ! function_exists( 'theme_setup' ) ) {
+if( ! function_exists( 'storms_frontend_scripts' ) ) {
 
 	// Incluindo os scripts do theme
 	function storms_frontend_scripts() {
+
 		// Adiciona o script principal - /js/scripts.js
-		wp_enqueue_script('main-script-theme');
+		wp_enqueue_script( 'main-script',
+			\StormsFramework\Helper::get_asset_url('/js/scripts' . ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min' ) . '.js'), array('jquery'),
+			STORMS_FRAMEWORK_VERSION, true );
 
 		// Add WordPress data to a Javascript file
-		wp_localize_script('main-script-theme', 'storms_vars', ['ajax_url' => admin_url('admin-ajax.php'), 'wc_ajax_url' => WC_AJAX::get_endpoint("%%endpoint%%")]);
+		wp_localize_script( 'main-script', 'storms_vars', ['ajax_url' => admin_url('admin-ajax.php'), 'wc_ajax_url' => WC_AJAX::get_endpoint("%%endpoint%%")] );
 	}
 
-	add_action('wp_enqueue_scripts', 'storms_frontend_scripts', 90);
+	add_action( 'wp_enqueue_scripts', 'storms_frontend_scripts' );
 
 }

@@ -16,55 +16,49 @@
  * E.g., it puts together the home page when no home.php file exists.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package storms
  */
 
 use \StormsFramework\Template;
 
 get_header(); ?>
 
-    <div class="st-grid-row row">
+	<div class="st-grid-row row">
 
-        <!-- Website content -->
-        <main id="content" class="main <?php echo Template::main_layout(); ?>" role="main">
+		<!-- Website content -->
+		<main id="content" class="main <?php echo Template::main_layout(); ?>" role="main">
 
-            <?php
+			<?php
+			if ( have_posts() ) :
 
-            if ( have_posts() ) :
+				/* Start the Loop */
+				while ( have_posts() ) : the_post();
 
-                if ( is_home() && ! is_front_page() ) : ?>
+					/*
+					 * Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'template-parts/content', get_post_format() );
 
-                    <header>
-                        <h1 class="page-title sr-only"><?php single_post_title(); ?></h1>
-                    </header>
+				endwhile; // End of the loop.
 
-                <?php
-                endif;
+				the_posts_navigation();
 
-                /* Start the Loop */
-                while ( have_posts() ) : the_post();
+			else :
 
-                    /*
-                     * Include the Post-Format-specific template for the content.
-                     * If you want to override this in a child theme, then include a file
-                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                     */
-                    get_template_part( 'template-parts/content', get_post_format() );
+				get_template_part( 'template-parts/content', 'none' );
 
-                endwhile;
+			endif;
+			?>
 
-                the_posts_navigation();
+		</main><!-- /.main -->
 
-            else :
+		<!-- Sidebar -->
+		<?php get_sidebar(); ?>
 
-                get_template_part( 'template-parts/content', 'none' );
+	</div>
 
-            endif; ?>
-
-        </main><!-- /.main -->
-
-        <!-- Sidebar -->
-        <?php get_sidebar(); ?>
-
-    </div>
 <?php
 get_footer();

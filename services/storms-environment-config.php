@@ -52,7 +52,7 @@ function storms_environment_options() {
 	}
 
 }
-add_filter( 'init', 'storms_environment_options' );
+add_action( 'init', 'storms_environment_options' );
 
 function storms_environment_deactivate_plugins() {
 
