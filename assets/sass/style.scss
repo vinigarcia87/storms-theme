@@ -31,6 +31,9 @@ $load-storms-variables: true !default;
 //@import "storms/storms";
 
 // WooCommerce
+@import "theme/theme";
+
+// WooCommerce
 @import "woocommerce/woocommerce";
 
 // ==========================================================================

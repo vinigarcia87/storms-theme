@@ -15,6 +15,8 @@
 
 use \StormsFramework\Template;
 
+defined( 'ABSPATH' ) || exit;
+
 get_template_part( 'template-parts/head' ); ?>
 
 <header id="header" role="banner">

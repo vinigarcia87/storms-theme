@@ -11,6 +11,8 @@
  * Page Content Template
  * Template part for displaying page content in page.php
  */
+
+defined( 'ABSPATH' ) || exit;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -21,7 +23,6 @@
 		if ( ! is_home() && is_front_page() ) :
 			the_title( '<h1 class="entry-title sr-only">', '</h1>' );
 		else :
-			echo '<h1>CU DE COBRA</h1>';
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		endif;
 		?>

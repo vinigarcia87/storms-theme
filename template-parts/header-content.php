@@ -12,6 +12,7 @@
  * The content of the header
  */
 
+defined( 'ABSPATH' ) || exit;
 ?>
 <div id="page-banner" class="st-grid-row row" role="banner">
 	<div class="page-banner-content col-md-5">

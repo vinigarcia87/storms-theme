@@ -12,6 +12,8 @@
  * The Head part of the website
  * Includes all the scripts and page definitions
  */
+
+defined( 'ABSPATH' ) || exit;
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->

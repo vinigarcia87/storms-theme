@@ -12,6 +12,7 @@
  * The sidebar containing the main widget area
  */
 
+defined( 'ABSPATH' ) || exit;
 ?>
 
 <aside id="sidebar" class="sidebar header-sidebar" role="complementary">

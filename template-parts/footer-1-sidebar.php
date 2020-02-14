@@ -11,6 +11,8 @@
  * Footer 1 sidebar Template
  * The content of the footer 1 sidebar
  */
+
+defined( 'ABSPATH' ) || exit;
 ?>
 <?php if ( is_active_sidebar( 'footer-1-sidebar-top' ) ) : ?>
     <div class="st-grid-row row" role="complementary">

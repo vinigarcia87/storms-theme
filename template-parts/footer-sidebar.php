@@ -12,6 +12,8 @@
  * The content of the footer
  */
 
+defined( 'ABSPATH' ) || exit;
+
 // Get how many footer sidebars are defined for this website
 $numFooterSidebars = get_option( 'number_of_footer_sidebars', 4 );
 // Get how many sidebars are active

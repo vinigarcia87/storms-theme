@@ -12,6 +12,7 @@
  * The content of the footer
  */
 
+defined( 'ABSPATH' ) || exit;
 ?>
 
 <div class="st-grid-row row no-margin-left">

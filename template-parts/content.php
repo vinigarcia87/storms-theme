@@ -12,6 +12,7 @@
  * The template part for displaying a content of a post
  */
 
+defined( 'ABSPATH' ) || exit;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

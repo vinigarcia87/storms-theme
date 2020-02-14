@@ -14,6 +14,8 @@
 
 use \StormsFramework\Template;
 
+defined( 'ABSPATH' ) || exit;
+
 if ( ! is_active_sidebar( 'product-sidebar' ) &&
 	 ! is_active_sidebar( 'shop-sidebar' ) ) {
 	return;

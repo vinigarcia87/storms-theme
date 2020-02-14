@@ -11,12 +11,17 @@
  * Search Form Template
  * The template part for the search form
  */
+
+defined( 'ABSPATH' ) || exit;
 ?>
 
-<?php $search_terms = get_search_query(); ?>
-<form role="search" class="form-inline my-2 my-lg-0" action="<?php echo esc_url( get_bloginfo('url') ); ?>/" id="searchform" method="get">
-	<input type="search" class="form-control mr-sm-2" id="s" name="s"
-		   placeholder="<?php echo __( 'Search' ); ?>" <?php if ( $search_terms !== '' ) { echo ' value="' . $search_terms . '"'; } ?> />
+<form id="searchform" role="search" class="search-form form-inline" action="<?php echo esc_url( home_url( '/' ) ); ?>/" method="get">
 
-	<button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><span class="fa fa-search"></span></button>
+	<div class="input-group">
+		<label for="s" class="sr-only"><?php echo __( 'Search' ); ?></label>
+		<input type="search" class="search-field form-control" id="s" name="s" placeholder="<?php esc_attr_e( 'Search' ); ?>" value="<?php echo get_search_query(); ?>" />
+
+		<button class="btn" type="submit"><span class="fa fa-search" aria-hidden="true"></span></button>
+	</div>
+
 </form>

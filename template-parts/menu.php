@@ -11,6 +11,8 @@
  * Menu Template
  * The template part for the main menu
  */
+
+defined( 'ABSPATH' ) || exit;
 ?>
 <nav id="main-navigation" class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
 	<div class="st-grid-container container">
@@ -40,7 +42,7 @@
 			?>
 			<div class="nav nav-secondary navbar-right">
 				<!-- Formulario de Busca do Site -->
-				<?php \StormsFramework\Bootstrap\Bootstrap::get_search_form(); ?>
+				<?php \StormsFramework\Helper::get_search_form(); ?>
 
 				<!-- WooCommerce Mini Cart -->
 				<?php if( class_exists( 'Storms_WC_Cart_Mini' ) ) {

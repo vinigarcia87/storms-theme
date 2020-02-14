@@ -12,8 +12,7 @@
  * Template part for displaying a message that posts cannot be found
  */
 
-use \StormsFramework\Bootstrap\Bootstrap;
-
+defined( 'ABSPATH' ) || exit;
 ?>
 
 <section class="no-results not-found">
@@ -44,13 +43,13 @@ use \StormsFramework\Bootstrap\Bootstrap;
 
 			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'storms' ); ?></p>
 			<?php
-				Bootstrap::get_search_form();
+				\StormsFramework\Helper::get_search_form();
 
 		else : ?>
 
 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'storms' ); ?></p>
 			<?php
-				Bootstrap::get_search_form();
+			\StormsFramework\Helper::get_search_form();
 
 		endif; ?>
 	</div><!-- .page-content -->

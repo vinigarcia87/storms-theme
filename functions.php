@@ -12,6 +12,8 @@
  * Here we load all code we gonna need
  */
 
+defined( 'ABSPATH' ) || exit;
+
 /*********************************
  *  Configuração Storms Framework
  *********************************/
@@ -41,6 +43,18 @@ require_once 'services/storms-woocommerce-cart-mini.php';
 //require_once 'services/storms-action-trace.php';
 
 //require_once 'services/storms-temporary.php';
+
+// Remove CSS and/or JS for Select2 used by WooCommerce, see https://gist.github.com/Willem-Siebe/c6d798ccba249d5bf080.
+function storms_dequeue_stylesandscripts_select2() {
+	if ( class_exists( 'woocommerce' ) ) {
+		wp_dequeue_style( 'selectWoo' );
+		wp_deregister_style( 'selectWoo' );
+
+		wp_dequeue_script( 'selectWoo');
+		wp_deregister_script('selectWoo');
+	}
+}
+add_action( 'wp_enqueue_scripts', 'storms_dequeue_stylesandscripts_select2', 100 );
 
 /**
  * =====================================================================================================================

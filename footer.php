@@ -14,6 +14,8 @@
 
 use \StormsFramework\Template;
 
+defined( 'ABSPATH' ) || exit;
+
 ?>
 </div><!-- .container -->
 </div><!-- #wrap -->

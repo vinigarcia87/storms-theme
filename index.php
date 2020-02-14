@@ -22,6 +22,8 @@
 
 use \StormsFramework\Template;
 
+defined( 'ABSPATH' ) || exit;
+
 get_header(); ?>
 
 	<div class="st-grid-row row">
