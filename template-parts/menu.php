@@ -40,14 +40,13 @@ defined( 'ABSPATH' ) || exit;
 					)
 				);
 			?>
-			<div class="nav nav-secondary navbar-right">
-				<!-- Formulario de Busca do Site -->
-				<?php \StormsFramework\Helper::get_search_form(); ?>
 
-				<!-- WooCommerce Mini Cart -->
-				<?php if( class_exists( 'Storms_WC_Cart_Mini' ) ) {
-					the_widget( 'storms_wc_cart_mini' );
-				} ?>
+
+				<?php if ( is_active_sidebar( 'header-menu-sidebar-right' ) ) : ?>
+					<div class="header-menu-sidebar-right nav nav-secondary navbar-right">
+						<?php dynamic_sidebar( 'header-menu-sidebar-right' ); ?>
+					</div>
+				<?php endif; ?>
 			</div>
 		</div><!--/.navbar-collapse -->
 	</div>

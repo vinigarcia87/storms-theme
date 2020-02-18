@@ -15,7 +15,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<form id="searchform" role="search" class="search-form form-inline" action="<?php echo esc_url( home_url( '/' ) ); ?>/" method="get">
+<form id="searchform" role="search" class="search-form form-inline" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
 
 	<div class="input-group">
 		<label for="s" class="sr-only"><?php echo __( 'Search' ); ?></label>

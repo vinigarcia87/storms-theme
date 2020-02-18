@@ -54,14 +54,16 @@ get_header(); ?>
 				?>
 			</div>
 
-			<?php
-			/**
-			 * Hook: storms_after_404_content.
-			 *
-			 * @hooked storms_{{ Shortcodes para produtos relacionados etc }} - 10
-			 */
-			do_action( 'storms_after_404_content' );
-			?>
+			<div class="page404-extra-info">
+				<?php
+				/**
+				 * Hook: storms_after_404_content.
+				 *
+				 * @hooked storms_{{ Shortcodes para produtos relacionados etc }} - 10
+				 */
+				do_action( 'storms_after_404_content' );
+				?>
+			</div>
 
 		</main><!-- /.main -->
 

@@ -39,11 +39,25 @@ defined( 'ABSPATH' ) || exit;
 				);
 			?></p>
 
-		<?php elseif ( is_search() ) : ?>
+		<?php elseif ( is_search() ) :
+
+			/**
+			* Hook: storms_before_search_empty_content.
+			*
+			* @hooked storms_{{ Shortcodes para produtos relacionados etc }} - 10
+			*/
+			do_action('storms_before_search_empty_content');
+			?>
 
 			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'storms' ); ?></p>
 			<?php
 				\StormsFramework\Helper::get_search_form();
+
+
+			/**
+			 * Hook: storms_after_search_empty_content.
+			 */
+			do_action('storms_after_search_empty_content');
 
 		else : ?>
 
