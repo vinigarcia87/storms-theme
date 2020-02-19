@@ -12,19 +12,6 @@
  * {{ Why this file is here? }}
  */
 
-// Remove CSS and/or JS for Select2 (SelectWoo) used by WooCommerce
-// @see https://gist.github.com/Willem-Siebe/c6d798ccba249d5bf080
-function storms_dequeue_stylesandscripts_select2() {
-	if ( class_exists( 'woocommerce' ) ) {
-		wp_dequeue_style( 'selectWoo' );
-		wp_deregister_style( 'selectWoo' );
-
-		wp_dequeue_script( 'selectWoo');
-		wp_deregister_script('selectWoo');
-	}
-}
-add_action( 'wp_enqueue_scripts', 'storms_dequeue_stylesandscripts_select2', 100 );
-
 // Remove CSS e JS para o plugin yith wc wishlist
 function storms_dequeue_stylesandscripts_yith_wc_wishlist() {
 	wp_dequeue_style('yith-wcwl-main');

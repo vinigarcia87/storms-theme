@@ -16,19 +16,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// @TODO Revisar!!
+//require_once 'storms-woocommerce-wishlist.php';
+//require_once 'storms-woocommerce-changes.php';
+//require_once 'storms-woocommerce-searchbar.php';
+
 /**
  * 					REVISAR ESSES CODIGOS!
  * =====================================================================================================================
  */
 
-
-if( ! function_exists( 'storms_testing' ) ) {
-    function storms_testing() {
-
-        //\StormsFramework\Helper::debug( $notices );
-    }
-    //add_action( 'init', 'storms_testing' );
-}
 /*
 add_action( 'rest_api_init', function () {
     register_rest_route( 'wc-storms/v1', '/clean-user-session', array(
@@ -70,30 +67,6 @@ add_filter( 'woocommerce_package_rates', function( $package_rates, $package ) {
     return $package_rates;
 }, 10, 2 );
 */
-
-// @TODO Revisar!!
-//require_once 'storms-woocommerce-wishlist.php';
-//require_once 'storms-woocommerce-changes.php';
-//require_once 'storms-woocommerce-searchbar.php';
-//require_once 'storms-calculo-st.php';
-
-// Remove Wordpress oembed
-// @see https://www.isitwp.com/remove-everything-oembed/
-
-//Remove the REST API endpoint.
-remove_action('rest_api_init', 'wp_oembed_register_route');
-
-// Turn off oEmbed auto discovery.
-add_filter( 'embed_oembed_discover', '__return_false' );
-
-//Don't filter oEmbed results.
-remove_filter('oembed_dataparse', 'wp_filter_oembed_result', 10);
-
-//Remove oEmbed discovery links.
-remove_action('wp_head', 'wp_oembed_add_discovery_links');
-
-//Remove oEmbed JavaScript from the front-end and back-end.
-remove_action('wp_head', 'wp_oembed_add_host_js');
 
 /**
  * =====================================================================================================================
