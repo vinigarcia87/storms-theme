@@ -56,11 +56,15 @@
 		margin: 0;
 	}
 
-	div.radioform-row-wide.storms-tipo-compra,
-	div.radioform-row-wide.storms-is-contribuinte {
+	div#st-msg-box {
+		overflow: auto;
+	}
+
+	div.storms-tipo-compra,
+	div.storms-is-contribuinte {
 		@include make-col-ready();
 		@include make-col(12);
 		padding: 0;
-		margin-bottom: 15px;
+		margin-bottom: 1rem;
 	}
 }

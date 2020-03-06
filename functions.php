@@ -42,6 +42,9 @@ require_once 'services/storms-wp-default-configuration.php';
 //require_once 'services/storms-debug.php';
 //require_once 'services/storms-temporary.php';
 
+// Removemos o aviso de cupons, pois alteramos sua posiçao para ficar no review order
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+
 /**
  * Add wc recent products shortcode in 404 page and on search page when nothing is found
  */
@@ -71,7 +74,12 @@ add_action( 'woocommerce_no_products_found', 'storms_show_recent_products', 20 )
 if( ! function_exists( 'storms_testing' ) ) {
 	function storms_testing() {
 		\StormsFramework\Helper::debug( 'Debugging' );
+
+		\StormsFramework\Helper::debug( array(
+			'ajax_url'    => WC()->ajax_url(),
+			'wc_ajax_url' => WC_AJAX::get_endpoint( '%%endpoint%%' ),
+		) );
 	}
-	//add_action( 'init', 'storms_testing' );
+	add_action( 'init', 'storms_testing' );
 }
 
