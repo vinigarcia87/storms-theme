@@ -45,6 +45,8 @@ require_once 'services/storms-woocommerce-checkout-coupon.php';
 //require_once 'services/storms-debug.php';
 //require_once 'services/storms-temporary.php';
 
+// JS files yet not included on this theme: storms-autofill-address.js, storms-yith-wishlist.js
+
 /**
  * Add wc recent products shortcode in 404 page and on search page when nothing is found
  */
@@ -74,12 +76,7 @@ add_action( 'woocommerce_no_products_found', 'storms_show_recent_products', 20 )
 if( ! function_exists( 'storms_testing' ) ) {
 	function storms_testing() {
 		\StormsFramework\Helper::debug( 'Debugging' );
-
-		\StormsFramework\Helper::debug( array(
-			'ajax_url'    => WC()->ajax_url(),
-			'wc_ajax_url' => WC_AJAX::get_endpoint( '%%endpoint%%' ),
-		) );
 	}
-	add_action( 'init', 'storms_testing' );
+	//add_action( 'init', 'storms_testing' );
 }
 
