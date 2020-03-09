@@ -56,7 +56,7 @@
 				<p>
 					<strong>Em breve</strong>, mais um grande projeto desenvolvido pela Storms Websolutions. Aguarde nosso lançamento!
 				</p>
-				<a class="header-brand" href="http://www.storms.com.br/">
+				<a class="header-brand" href="http://www.storms.com.br/" rel="noopener noreferrer" target="_blank">
 					<img class="" src="<?php echo \StormsFramework\Helper::get_asset_url( '/img/storms/logo/storms/logo-storms-branca.png' ); ?>" alt="Storms Websolutions"/>
 				</a>
 				<p class="login text-center">

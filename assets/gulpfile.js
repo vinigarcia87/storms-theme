@@ -50,29 +50,29 @@ var getStamp = function() {
  * Sass output styles: https://web-design-weekly.com/2014/06/15/different-sass-output-styles/
  */
 gulp.task('styles', async function () {
-	gulp.src('./sass/*.scss')
-		//.pipe(debug())						 // Debug Vinyl file streams to see what files are run through your Gulp pipeline
-		.pipe(plumber())
-		.pipe(sourcemaps.init())
-		.pipe(sass({
+	gulp.src( './sass/*.scss' )
+		//.pipe( debug() )						 // Debug Vinyl file streams to see what files are run through your Gulp pipeline
+		.pipe( plumber() )
+		.pipe( sourcemaps.init() )
+		.pipe( sass( {
 			errLogToConsole: true,
 			outputStyle: 'expanded', // 'compressed', 'compact', 'nested', 'expanded'
 			precision: 10
-		}))
-		.pipe(pixrem())
-		.pipe(autoprefixer('last 2 version', '> 1%', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-		.pipe(stripcomments({ preserve : /^# sourceMappingURL=/ })) // Strip comments from CSS - except for sourceMappingUrl
-		.pipe(sourcemaps.write('./maps'))
-		.pipe(gulp.dest('./css/'))
+		} ) )
+		.pipe( pixrem() )
+		.pipe( autoprefixer( 'last 2 version', '> 1%', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4' ) )
+		.pipe( stripcomments({ preserve : /^# sourceMappingURL=/ } ) ) // Strip comments from CSS - except for sourceMappingUrl
+		.pipe( sourcemaps.write( './maps' ) )
+		.pipe( gulp.dest( './css/' ) )
 
-		.pipe(filter('**/*.css'))                // Filtering stream to only css files
-		//.pipe(debug())						 // Debug Vinyl file streams to see what files are run through your Gulp pipeline
-		.pipe(sourcemaps.init())
-		.pipe(rename({ suffix: '.min' }))
-		.pipe(cleanCSS())
-		.pipe(sourcemaps.write('./maps'))
-		.pipe(gulp.dest('./css/'))
-		.pipe(notify({ message: 'Styles task complete', onLast: true }))
+		.pipe( filter( '**/*.css' ) )       // Filtering stream to only css files
+		//.pipe( debug() )						 	// Debug Vinyl file streams to see what files are run through your Gulp pipeline
+		.pipe( sourcemaps.init() )
+		.pipe( rename({ suffix: '.min' } ) )
+		.pipe( cleanCSS() )
+		.pipe( sourcemaps.write( './maps' ) )
+		.pipe( gulp.dest( './css/' ) )
+		.pipe( notify( { message: 'Styles task complete', onLast: true } ) )
 });
 
 /**
@@ -108,25 +108,31 @@ gulp.task('load-assets', async function() {
  */
 gulp.task('scripts', async function() {
 	gulp.src([
-
 		/* HERE WE INCLUDE ALL BOOTSTRAP JS FILES WE WANT TO USE */
 		'./js/bootstrap/popper.js',
 		'./js/bootstrap/util.js',
 		'./js/bootstrap/dropdown.js',
-		'./js/bootstrap/collapse.js',
-
-		'./js/raw/**/*.js' // We could concatenate jquery and woocommerce files here, to have only one asset
+		'./js/bootstrap/collapse.js'
 	])
 		//.pipe(debug())
-		.pipe(concat('scripts.js'))
-		.pipe(gulp.dest('./js/'))
-		.pipe(rename( {
-			basename: 'scripts',
-			suffix: '.min'
-		}))
-		.pipe(uglify())
-		.pipe(gulp.dest('./js/'))
-		.pipe(notify({ message: 'Scripts task complete', onLast: true }));
+		.pipe( concat( 'scripts.js' ) )
+		.pipe( gulp.dest( './js/' ) )
+		.pipe( rename( { suffix: '.min' } ) )
+		.pipe( uglify() )
+		.pipe( gulp.dest( './js/' ) )
+		.pipe( notify( { message: 'Scripts task complete', onLast: true } ) );
+
+	gulp.src( [
+		'./js/src/**/*.js' // All our custom scripts
+	] )
+		//.pipe( debug() )
+		.pipe( gulp.dest( './js/' ) )
+		.pipe( sourcemaps.init() )
+		.pipe( rename({ suffix: '.min' } ) )
+		.pipe( uglify() )
+		.pipe( sourcemaps.write( './maps' ) )
+		.pipe( gulp.dest( './js/' ) )
+		.pipe( notify( { message: 'Scripts task complete', onLast: true } ) );
 });
 
 /**

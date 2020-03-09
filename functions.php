@@ -39,11 +39,11 @@ require_once 'services/storms-assets.php';
 require_once 'services/storms-environment-config.php';
 require_once 'services/storms-wp-default-configuration.php';
 
+// Theme customizations
+require_once 'services/storms-woocommerce-checkout-coupon.php';
+
 //require_once 'services/storms-debug.php';
 //require_once 'services/storms-temporary.php';
-
-// Removemos o aviso de cupons, pois alteramos sua posiçao para ficar no review order
-remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
 
 /**
  * Add wc recent products shortcode in 404 page and on search page when nothing is found
