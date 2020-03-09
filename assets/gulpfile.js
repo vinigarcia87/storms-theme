@@ -5,7 +5,6 @@
 
 // Project configuration
 var project 		= 'storms-theme',          	 // Project name, used for build zip.
-	url 			= 'storms.dev.br',           // Local Development URL for BrowserSync. Change as-needed.
     theme_dir		= '../',					 // Theme base dir
 	wp_content		= '../../../';				 // WordPress wp-content/ dir
 
@@ -81,22 +80,23 @@ gulp.task('styles', async function () {
  */
 gulp.task('load-assets', async function() {
 	gulp.src([
-		'node_modules/font-awesome/fonts/*',               // Font-Awesome Fonts
-		wp_content + '/plugins/woocommerce/assets/fonts/*' // WooCommerce Fonts
+		'node_modules/font-awesome/fonts/*',              		// Font-Awesome Fonts
+		wp_content + '/plugins/woocommerce/assets/fonts/*'		// WooCommerce Fonts
 	])
 		.pipe(gulp.dest('fonts'))
 		.pipe(notify({ message: 'Load fonts task complete', onLast: true }));
 
 	gulp.src([
-		'node_modules/jquery/dist/jquery.min.js',						// jQuery
-		'node_modules/jquery.cycle2/src/jquery.cycle2.min.js'			// Cycle2 jQuery plugin
+		'node_modules/jquery/dist/jquery.min.js',				// jQuery
+		'node_modules/jquery.cycle2/src/jquery.cycle2.min.js',	// Cycle2 jQuery plugin
+		'node_modules/block-ui/jquery.blockUI.js'				// BlockUI jQuery plugin
 	])
 		.pipe(gulp.dest('js/jquery'))
 		.pipe(notify({ message: 'Load jQuery scripts task complete', onLast: true }));
 
 	gulp.src([
-		'node_modules/popper.js/dist/umd/popper.js',					// Bootstrap dropdowns, popovers and tooltips depend on Popper.js
-		'node_modules/bootstrap/js/dist/*.js'							// Bootstrap 4 jQuery plugins
+		'node_modules/popper.js/dist/umd/popper.js',			// Bootstrap dropdowns, popovers and tooltips depend on Popper.js
+		'node_modules/bootstrap/js/dist/*.js'					// Bootstrap 4 jQuery plugins
 	])
 		.pipe(gulp.dest('js/bootstrap'))
 		.pipe(notify({ message: 'Load Bootstrap scripts task complete', onLast: true }));
@@ -104,7 +104,7 @@ gulp.task('load-assets', async function() {
 
 /**
  * Scripts
- * Look at /js/raw files and concatenate those files, send them to /js where we then minimize the concatenated file.
+ * Look at /js/src files and concatenate those files, send them to /js where we then minimize the concatenated file.
  */
 gulp.task('scripts', async function() {
 	gulp.src([
@@ -117,8 +117,10 @@ gulp.task('scripts', async function() {
 		//.pipe(debug())
 		.pipe( concat( 'scripts.js' ) )
 		.pipe( gulp.dest( './js/' ) )
+		.pipe( sourcemaps.init() )
 		.pipe( rename( { suffix: '.min' } ) )
 		.pipe( uglify() )
+		.pipe( sourcemaps.write( './maps' ) )
 		.pipe( gulp.dest( './js/' ) )
 		.pipe( notify( { message: 'Scripts task complete', onLast: true } ) );
 
@@ -179,5 +181,5 @@ gulp.task('default', gulp.series(['load-assets', 'styles', 'scripts', 'images'])
 // Watch Task
 gulp.task('watch', gulp.series(['styles', 'scripts', 'images'], function () {
 	gulp.watch('./sass/*.scss', ['styles']);
-	gulp.watch('./js/raw/**/*.js', ['scripts']);
+	gulp.watch('./js/src/**/*.js', ['scripts']);
 }));
