@@ -34,36 +34,19 @@ if ( !defined( 'STORMS_SYSTEM_VERSION' ) ) {
 }
 
 // Require services of this theme
-require_once 'services/storms-theme-setup.php';
-require_once 'services/storms-assets.php';
-require_once 'services/storms-environment-config.php';
-require_once 'services/storms-wp-default-configuration.php';
+require_once 'services/config/storms-theme-setup.php';
+require_once 'services/config/storms-environment-config.php';
+require_once 'services/config/storms-wp-default-configuration.php';
 
 // Theme customizations
-require_once 'services/storms-woocommerce-checkout-coupon.php';
+require_once 'services/customization/storms-assets.php';
+require_once 'services/woocommerce/storms-woocommerce-pages.php';
+require_once 'services/woocommerce/storms-woocommerce-checkout-coupon.php';
+require_once 'services/woocommerce/storms-woocommerce-wishlist.php';
 
 //require_once 'services/storms-debug.php';
 //require_once 'services/storms-temporary.php';
-
-// JS files yet not included on this theme: storms-autofill-address.js, storms-yith-wishlist.js
-
-/**
- * Add wc recent products shortcode in 404 page and on search page when nothing is found
- */
-if( ! function_exists( 'storms_show_recent_products' ) ) {
-	function storms_show_recent_products()
-	{
-		echo apply_filters('storms_show_recent_products_title', '<h2>' . __('Recent Products', 'storms') . '</h2>');
-		echo WC_Shortcodes::recent_products(array(
-			'limit' => '8',
-			'columns' => '4',
-			'orderby' => 'date',
-			'order' => 'DESC',
-		));
-	}
-}
-add_action( 'storms_after_404_content', 'storms_show_recent_products', 10 );
-add_action( 'woocommerce_no_products_found', 'storms_show_recent_products', 20 );
+// JS files yet not included on this theme: storms-autofill-address.js
 
 /**
  * =====================================================================================================================

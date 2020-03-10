@@ -25,14 +25,19 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 	// Incluindo os scripts de manipulaçao do coupon no checkout
 	function storms_wc_checkout_coupon_scripts() {
 
-		if( is_checkout() ) {
+		if( is_cart() || is_checkout() ) {
 
 			wp_enqueue_script('storms-wc-checkout-coupon-script',
 				\StormsFramework\Helper::get_asset_url( '/js/storms-wc-checkout-coupon' . ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min' ) . '.js' ),
 					array( 'jquery' ), STORMS_FRAMEWORK_VERSION, true );
 
 			// Add WordPress data to a Javascript file
-			wp_localize_script( 'storms-wc-checkout-coupon-script', 'storms_vars', [
+			wp_localize_script( 'storms-wc-checkout-coupon-script', 'storms_wc_checkout_coupon_vars', [
+
+				// Probably, will get trouble when using caching for assets... full js approach is better
+				//'is_cart' => ( is_cart() ? 'yes' : 'no' ),
+				//'is_checkout' => ( is_checkout() ? 'yes' : 'no' ),
+
 				'ajax_url' => admin_url( 'admin-ajax.php' ),
 				'wc_ajax_url' => WC_AJAX::get_endpoint( "%%endpoint%%" ),
 				'apply_coupon_nonce' => wp_create_nonce( 'apply-coupon' ),

@@ -27,7 +27,10 @@ if( ! function_exists( 'storms_frontend_scripts' ) ) {
 			STORMS_FRAMEWORK_VERSION, true );
 
 		// Add WordPress data to a Javascript file
-		wp_localize_script( 'main-script', 'storms_vars', ['ajax_url' => admin_url('admin-ajax.php'), 'wc_ajax_url' => WC_AJAX::get_endpoint("%%endpoint%%")] );
+//		wp_localize_script( 'main-script', 'storms_main_vars', [
+//			'ajax_url' => admin_url('admin-ajax.php'),
+//			'wc_ajax_url' => WC_AJAX::get_endpoint("%%endpoint%%")
+//		] );
 	}
 
 	add_action( 'wp_enqueue_scripts', 'storms_frontend_scripts' );
