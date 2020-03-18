@@ -1,29 +1,16 @@
 <?php
 /**
- * 8KDesign (http://storms.com.br/)
+ * Storms Websolutions (http://storms.com.br/)
  *
- * @author    Vinicius Garcia | storms@storms.com.br
- * @copyright (c) Copyright 2012-2018, Storms Websolutions
+ * @author    Vinicius Garcia | vinicius.garcia@storms.com.br
+ * @copyright (c) Copyright 2012-2019, Storms Websolutions
  * @license   GPLv2 - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  * @package   Storms
- * @version   1.0.0
+ * @version   4.0.0
  *
  * storms-checkout-changes.php
  * {{ Why this file is here? }}
  */
-
-// Remove CSS and/or JS for Select2 (SelectWoo) used by WooCommerce
-// @see https://gist.github.com/Willem-Siebe/c6d798ccba249d5bf080
-function storms_dequeue_stylesandscripts_select2() {
-	if ( class_exists( 'woocommerce' ) ) {
-		wp_dequeue_style( 'selectWoo' );
-		wp_deregister_style( 'selectWoo' );
-
-		wp_dequeue_script( 'selectWoo');
-		wp_deregister_script('selectWoo');
-	}
-}
-add_action( 'wp_enqueue_scripts', 'storms_dequeue_stylesandscripts_select2', 100 );
 
 // Remove CSS e JS para o plugin yith wc wishlist
 function storms_dequeue_stylesandscripts_yith_wc_wishlist() {
@@ -48,7 +35,7 @@ add_action( 'wp_enqueue_scripts', 'storms_dequeue_stylesandscripts_yith_wc_wishl
 function storms_autofill_correios_frontend_scripts() {
 	if ( is_checkout() || is_account_page() ) {
 		wp_dequeue_script('woocommerce-correios-autofill-addresses');
-		wp_enqueue_script( 'storms-woocommerce-correios-autofill-addresses', \StormsFramework\Storms\Helper::get_asset_url( '/js/storms-autofill-address.js' ), array( 'jquery', 'jquery-blockui' ), '3.5.1'/*WC_Correios::VERSION*/, true );
+		wp_enqueue_script( 'storms-woocommerce-correios-autofill-addresses', \StormsFramework\Helper::get_asset_url( '/js/storms-autofill-address.js' ), array( 'jquery', 'jquery-blockui' ), '3.5.1'/*WC_Correios::VERSION*/, true );
 
 		$ajax_endpoint = 'correios_autofill_address';
 

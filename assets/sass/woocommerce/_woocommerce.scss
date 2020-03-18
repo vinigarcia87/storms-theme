@@ -1,5 +1,18 @@
 @charset "UTF-8";
 
+@mixin iconbefore( $glyph: '\e001' ) {
+  font-family: 'WooCommerce';
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  margin-right: 0.618em;
+  content: $glyph;
+  text-decoration: none;
+}
+
 @import "core/general";
 @import "core/fonts";
 @import "core/forms";
@@ -9,6 +22,9 @@
 
 // Blocks styles
 @import "blocks/wp-block-woocommerce";
+
+// WC Mini Cart
+@import "wc-mini-cart";
 
 // Store default style
 @import "store";

@@ -1,12 +1,12 @@
 <?php
 /**
- * Storms Framework (http://storms.com.br/)
+ * Storms Websolutions (http://storms.com.br/)
  *
  * @author    Vinicius Garcia | vinicius.garcia@storms.com.br
- * @copyright (c) Copyright 2012-2016, Storms Websolutions
+ * @copyright (c) Copyright 2012-2019, Storms Websolutions
  * @license   GPLv2 - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  * @package   Storms
- * @version   3.0.0
+ * @version   4.0.0
  *
  * Under Construction Page
  * Page to show while the website is on construction
@@ -34,15 +34,15 @@
 		- Favicon
 		- Source: http://stackoverflow.com/a/23851464/1003020
 		-->
-		<link rel="icon" href="<?php echo \StormsFramework\Storms\Helper::get_asset_url( '/img/icons/newstormsfav.png' ); ?>">
+		<link rel="icon" href="<?php echo \StormsFramework\Helper::get_asset_url( '/img/icons/newstormsfav.png' ); ?>">
 
 		<!-- Scripts -->
-		<!--[if lt IE 9]><script src="<?php echo \StormsFramework\Storms\Helper::get_asset_url( '/js/libs/html5shiv/3.7.2/html5shiv.js' ); ?>"></script><![endif]-->
-		<!--[if lt IE 9]><script src="<?php echo \StormsFramework\Storms\Helper::get_asset_url( '/js/libs/respond/1.4.2/respond.min.js' ); ?>"></script><![endif]-->
+		<!--[if lt IE 9]><script src="<?php echo \StormsFramework\Helper::get_asset_url( '/js/libs/html5shiv/3.7.2/html5shiv.js' ); ?>"></script><![endif]-->
+		<!--[if lt IE 9]><script src="<?php echo \StormsFramework\Helper::get_asset_url( '/js/libs/respond/1.4.2/respond.min.js' ); ?>"></script><![endif]-->
 
-		<script src="<?php  echo \StormsFramework\Storms\Helper::get_asset_url( '/js/libs/jquery/1.10.2/jquery.min.js' ); ?>"></script>
+		<script src="<?php  echo \StormsFramework\Helper::get_asset_url( '/js/libs/jquery/1.10.2/jquery.min.js' ); ?>"></script>
 
-		<link href="<?php  echo \StormsFramework\Storms\Helper::get_asset_url( '/css/construction.min.css' ); ?>" rel="stylesheet" />
+		<link href="<?php  echo \StormsFramework\Helper::get_asset_url( '/css/construction.min.css' ); ?>" rel="stylesheet" />
 	</head>
 	<body class="under-construction">
 
@@ -51,13 +51,13 @@
 				<h1><?php bloginfo('name'); ?></h1>
 				<h2>Mais um website produzido por Storms Websolutions</h2>
 			</div>
-			<div class="content col-sm-offset-3 col-sm-6 text-center">
+			<div class="content offset-sm-3 col-sm-6 text-center">
 				<h3>Nosso site está quase pronto!</h3>
 				<p>
 					<strong>Em breve</strong>, mais um grande projeto desenvolvido pela Storms Websolutions. Aguarde nosso lançamento!
 				</p>
-				<a class="header-brand" href="http://www.storms.com.br/">
-					<img class="" src="<?php echo \StormsFramework\Storms\Helper::get_asset_url( '/img/storms/logo/storms/logo-storms-branca.png' ); ?>" alt="Storms Websolutions"/>
+				<a class="header-brand" href="http://www.storms.com.br/" rel="noopener noreferrer" target="_blank">
+					<img class="" src="<?php echo \StormsFramework\Helper::get_asset_url( '/img/storms/logo/storms/logo-storms-branca.png' ); ?>" alt="Storms Websolutions"/>
 				</a>
 				<p class="login text-center">
 					<a href="<?php echo esc_url( wp_login_url() ); ?>" title="Login">

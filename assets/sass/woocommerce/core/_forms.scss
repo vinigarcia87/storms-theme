@@ -4,18 +4,23 @@
 	label {
 		font-weight: normal;
 	}
+
+	span.woocommerce-input-wrapper {
+		width: 100%;
+	}
 }
 .form-group {
 	label {
 		font-weight: normal;
 
-		&.control-label {
+		&.col-form-label {
 			width: 100%;
 		}
 	}
 }
 
 select.country_select,
-select.state_select {
+select.state_select,
+.input-text {
 	@extend .form-control;
 }

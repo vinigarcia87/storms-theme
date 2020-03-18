@@ -1,12 +1,12 @@
 <?php
 /**
- * Storms Framework (http://storms.com.br/)
+ * Storms Websolutions (http://storms.com.br/)
  *
  * @author    Vinicius Garcia | vinicius.garcia@storms.com.br
- * @copyright (c) Copyright 2012-2017, Storms Websolutions
+ * @copyright (c) Copyright 2012-2019, Storms Websolutions
  * @license   GPLv2 - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  * @package   Storms
- * @version   3.0.0
+ * @version   4.0.0
  *
  * WC_SearchBar
  * This code creates the shop searchbar as a widget
@@ -108,43 +108,38 @@ class Storms_WC_SearchBar extends WC_Widget
 		<form method="get" id="storms-wc-searchbar-form" class="<?php echo esc_attr( implode( ' ', $class ) );?>" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 
             <div class="input-group">
-                <input class="form-control search-input" type="text" value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="<?php echo esc_attr( $label_input ); ?>" />
+                <input class="form-control search-input" type="text" aria-label="<?php _e( 'Search our products', 'storms' ); ?>"
+					   value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="<?php echo esc_attr( $label_input ); ?>" />
 
-                <div class="input-group-btn">
-                    <button type="button" class="btn btn-default dropdown-toggle categories-dropdown-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="input-group-append">
+					<button class="btn btn-outline-secondary dropdown-toggle categories-dropdown-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <?php echo esc_attr( $label_dropdown ); ?> <span class="caret"></span>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-right categories-dropdown">
-                        <li value="">
-                            <a href="">
-                                <?php echo esc_attr( $label_dropdown ); ?>
-                            </a>
-                        </li>
+                    <div class="dropdown-menu" role="menu">
+						<a class="dropdown-item" href="">
+							<?php echo esc_attr( $label_dropdown ); ?>
+						</a>
                         <?php
                         if ( $count > 0 ) {
                             foreach ( $product_categories as $product_category ) { ?>
-                                <li class="parent-cat">
-                                    <a href="<?php echo esc_attr( $product_category->slug ); ?>">
-                                        <?php echo esc_attr( $product_category->name); ?>
-                                    </a>
-                                </li>
+								<a class="dropdown-item parent-cat" href="<?php echo esc_attr( $product_category->slug ); ?>">
+									<?php echo esc_attr( $product_category->name); ?>
+								</a>
                                 <?php
                                 foreach ( $product_category->children as $child ) { ?>
-                                    <li class="child-cat">
-                                        <a href="<?php echo esc_attr( $child->slug ); ?>">
-                                            <?php echo esc_attr( $child->name); ?>
-                                        </a>
-                                    </li>
+									<a class="dropdown-item child-cat" href="<?php echo esc_attr( $child->slug ); ?>">
+										<?php echo esc_attr( $child->name); ?>
+									</a>
                                     <?php
                                 }
                             }
                         }
                         ?>
-                    </ul>
+                    </div>
 
-                    <button type="submit" id="searchsubmit" class="btn btn-default search-submit-button">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
+					<button type="submit" id="searchsubmit" class="btn btn-outline-secondary search-submit-button">
+						<i class="fa fa-search" aria-hidden="true"></i>
+					</button>
                 </div>
             </div>
 

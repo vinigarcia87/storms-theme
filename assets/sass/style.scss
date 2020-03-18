@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /*!
  * Storms Framework (http://storms.com.br/)
  *
@@ -5,32 +7,68 @@
  * @copyright (c) Copyright 2012-2017, Storms Websolutions
  * @license   Licensed under MIT
  * @package   Storms
- * @version   3.0.0
+ * @version   4.0.0
  *
  * Storms Starter Theme Style
  */
 
-@charset "UTF-8";
-
-// Bootstrap 3
+// Storms customization for Bootstrap
+$load-storms-variables: true !default;
 @import "bootstrap/bootstrap-variables";
+
+// Bootstrap 4 - 180KB
 @import "bootstrap/bootstrap-import";
 
-// Font-Awesome
+// Font-Awesome - 30KB
 @import "fontawesome/fontawesome-variables";
 @import "fontawesome/fontawesome-import";
 
-// Select2
-@import "../node_modules/select2/src/scss/core";
-@import "../node_modules/select2-bootstrap-theme/src/select2-bootstrap";
+// Bootstrap 4 - Custom styles for grid
+@import "bootstrap/bootstrap-grid";
 
 // Storms CSS Helpers
-@import "storms/gutenberg";
-@import "storms/storms";
+//@import "storms/gutenberg";
+//@import "storms/storms";
+
+// WooCommerce
+@import "theme/theme";
 
 // WooCommerce
 @import "woocommerce/woocommerce";
 
+// ==========================================================================
+// Body
+// ==========================================================================
+
 body {
 	background-color: #FFFFFF;
+}
+
+// ==========================================================================
+// Footer
+// ==========================================================================
+
+//
+// Sticky footer styles
+// Using HTML5 Flexbox
+// Sources: http://stackoverflow.com/questions/10825879/how-can-a-variable-height-sticky-footer-be-defined-in-pure-css/26558049#26558049
+// 			http://stackoverflow.com/questions/4347133/css-sticky-footers-with-unknown-height/20432777#20432777
+//
+html, body {
+	height: 100%;
+	margin: 0; padding: 0;  /* to avoid scrollbars */
+}
+html:not(.ie):not(.edge) {
+	body {
+		display: flex; /* use the flex model */
+		min-height: 100vh;
+		flex-direction: column; /* learn more: http://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ */
+	}
+
+	.wrap {
+		flex: 1;
+	}
+}
+#footer {
+	width:100%;
 }

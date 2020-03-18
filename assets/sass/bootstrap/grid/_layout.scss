@@ -1,0 +1,86 @@
+
+@if not $enable-grid-classes {
+
+	.st-grid-container {
+		@include make-container();
+		@include make-container-max-widths;
+	}
+
+	.st-grid-container-fluid {
+		@include make-container();
+	}
+
+	.st-grid-row {
+		@include make-row();
+	}
+
+	.col-12 {
+		@include make-col-ready;
+		@include make-col(12);
+	}
+
+	/**
+	 * Storms Theme Custom Gid Columns
+	 */
+
+	// .col-12
+	.comment-block.media {
+		@include make-col-ready;
+		@include make-col(12);
+	}
+
+	// .col-md-9 .order-1
+	.main-layout-left {
+		@include make-col-ready;
+		@include make-col(12);
+		@include media-breakpoint-up(md) {
+			@include make-col(9);
+		}
+
+		order: 1;
+	}
+
+	// .col-md-9 .order-2
+	.main-layout-right {
+		@include make-col-ready;
+		@include make-col(12);
+		@include media-breakpoint-up(md) {
+			@include make-col(9);
+		}
+
+		order: 2;
+	}
+
+	// .col-md-12
+	.main-layout-full {
+		@include make-col-ready;
+		@include make-col(12);
+		@include media-breakpoint-up(md) {
+			@include make-col(12);
+		}
+	}
+
+	// .col-md-3 .order-2
+	.sidebar-layout-right {
+		@include make-col-ready;
+		@include make-col(12);
+		@include media-breakpoint-up(md) {
+			@include make-col(3);
+		}
+
+		order: 2;
+	}
+
+	// .col-md-3 .order-1
+	.sidebar-layout-left {
+		@include make-col-ready;
+		@include make-col(12);
+		@include media-breakpoint-up(md) {
+			@include make-col(3);
+		}
+
+		order: 1;
+	}
+
+}
+

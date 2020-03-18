@@ -8,8 +8,12 @@
 	p#shipping_neighborhood_field,
 	p#shipping_city_field,
 	p#shipping_phone_field {
-		@extend .col-sm-6;
-		padding-left: 0;
+		@include media-breakpoint-up(sm) {
+			@include make-col-ready();
+			@include make-col(6);
+			float: left !important;
+			padding-left: 0;
+		}
 	}
 
 	p#shipping_last_name_field,
@@ -18,18 +22,30 @@
 	p#shipping_postcode_field,
 	p#shipping_city_field,
 	p#shipping_cellphone_field {
-		@extend .col-sm-6;
-		padding-right: 0;
+		@include media-breakpoint-up(sm) {
+			@include make-col-ready();
+			@include make-col(6);
+			float: right !important;
+			padding-right: 0;
+		}
 	}
 
 	p#shipping_address_1_field {
-		@extend .col-sm-9;
-		padding-left: 0;
+		@include media-breakpoint-up(sm) {
+			@include make-col-ready();
+			@include make-col(9);
+			float: left !important;
+			padding-left: 0;
+		}
 	}
 
 	p#shipping_number_field {
-		@extend .col-sm-3;
-		padding-right: 0;
+		@include media-breakpoint-up(sm) {
+			@include make-col-ready();
+			@include make-col(3);
+			float: right !important;
+			padding-right: 0;
+		}
 	}
 
 }

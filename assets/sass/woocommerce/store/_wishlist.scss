@@ -5,9 +5,6 @@
 	}
 
 	table.wishlist_table {
-		@extend .table;
-		@extend .table-responsive;
-		@extend .table-striped;
 
 		border: none;
 		border-collapse: collapse;
@@ -16,7 +13,7 @@
 			text-align: center;
 			vertical-align: middle;
 			text-transform: uppercase;
-			border-bottom: 1px solid $gray-lighter;
+			border-bottom: 1px solid theme-color("light");
 		}
 
 		& > tbody > tr {
@@ -44,14 +41,14 @@
 			}
 
 			td.product-name {
-				@extend .text-left;
+				text-align: left;
 			}
 
 			td.product-price,
 			td.product-quantity,
 			td.product-subtotal {
 				width: 155px;
-				@extend .text-center;
+				text-align: center;
 			}
 
 			td.go-back {
@@ -60,12 +57,12 @@
 
 			td.actions,
 			td.product-add-to-cart {
-				@extend .text-center;
+				text-align: center;
 
 				.button {
 					color: #fff;
-					background-color: $brand-primary;
-					border-color: $btn-primary-border;
+					background-color: theme-color("primary");
+					border-color: theme-color("primary");
 				}
 
 			}

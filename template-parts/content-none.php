@@ -1,19 +1,18 @@
 <?php
 /**
- * Storms Framework (http://storms.com.br/)
+ * Storms Websolutions (http://storms.com.br/)
  *
  * @author    Vinicius Garcia | vinicius.garcia@storms.com.br
- * @copyright (c) Copyright 2012-2017, Storms Websolutions
+ * @copyright (c) Copyright 2012-2019, Storms Websolutions
  * @license   GPLv2 - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  * @package   Storms
- * @version   3.0.0
+ * @version   4.0.0
  *
  * Content None Template
  * Template part for displaying a message that posts cannot be found
  */
 
-use \StormsFramework\Storms\Bootstrap\Bootstrap;
-
+defined( 'ABSPATH' ) || exit;
 ?>
 
 <section class="no-results not-found">
@@ -40,17 +39,31 @@ use \StormsFramework\Storms\Bootstrap\Bootstrap;
 				);
 			?></p>
 
-		<?php elseif ( is_search() ) : ?>
+		<?php elseif ( is_search() ) :
+
+			/**
+			* Hook: storms_before_search_empty_content.
+			*
+			* @hooked storms_{{ Shortcodes para produtos relacionados etc }} - 10
+			*/
+			do_action('storms_before_search_empty_content');
+			?>
 
 			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'storms' ); ?></p>
 			<?php
-				Bootstrap::get_search_form();
+				\StormsFramework\Helper::get_search_form();
+
+
+			/**
+			 * Hook: storms_after_search_empty_content.
+			 */
+			do_action('storms_after_search_empty_content');
 
 		else : ?>
 
 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'storms' ); ?></p>
 			<?php
-				Bootstrap::get_search_form();
+			\StormsFramework\Helper::get_search_form();
 
 		endif; ?>
 	</div><!-- .page-content -->

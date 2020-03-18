@@ -13,7 +13,7 @@
 
   &::before {
     content: '\73\73\73\73\73';
-    color: darken( $brand-primary, 10% );
+    color: darken( $primary, 10% );
     float: left;
     top: 0;
     left: 0;
@@ -59,8 +59,8 @@
 }
 
 /**
-	 * Rating Filter Widget
-	 */
+ * Rating Filter Widget
+ */
 .widget_rating_filter {
   ul {
     margin: 0;
@@ -88,7 +88,7 @@
       a {
         &::before {
           @include iconbefore( '\e013' );
-          color: $brand-success;
+          color: theme-color("success");
         }
       }
     }

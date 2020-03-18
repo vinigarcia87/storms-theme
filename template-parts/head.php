@@ -1,17 +1,19 @@
 <?php
 /**
- * Storms Framework (http://storms.com.br/)
+ * Storms Websolutions (http://storms.com.br/)
  *
  * @author    Vinicius Garcia | vinicius.garcia@storms.com.br
- * @copyright (c) Copyright 2012-2017, Storms Websolutions
+ * @copyright (c) Copyright 2012-2019, Storms Websolutions
  * @license   GPLv2 - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  * @package   Storms
- * @version   3.0.0
+ * @version   4.0.0
  *
  * Head
  * The Head part of the website
  * Includes all the scripts and page definitions
  */
+
+defined( 'ABSPATH' ) || exit;
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>> <![endif]-->
@@ -37,12 +39,12 @@
 	</head>
 	<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" <?php body_class(); ?>>
 		<!-- Skip navigation for accessibility -->
-		<a id="skippy" class="sr-only sr-only-focusable" href="#main-container"><div class="container"><span class="skiplink-text"><?php _e( 'Skip to main content', 'storms' ); ?></span></div></a>
+		<a id="skippy" class="sr-only sr-only-focusable" href="#main-container"><div class="st-grid-container container"><span class="skiplink-text"><?php _e( 'Skip to main content', 'storms' ); ?></span></div></a>
 
         <!--[if lte IE 9]>
 		<div class="alert alert-warning affix text-center alert-dismissible fade in" style="margin-bottom: 0; width: 100%; z-index: 2147483647;">
 		    <?php _e('It looks like you&#8217;re using an <strong>outdated</strong> browser. Please, <a href="http://browsehappy.com/">update your browser</a> for the best experience on the web.', 'storms'); ?>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
 		</div>
-        <script src="<?php echo \StormsFramework\Storms\Helper::get_asset_url( '/js/bootstrap/alert.js' ); ?>"></script>
+        <script src="<?php echo \StormsFramework\Helper::get_asset_url( '/js/bootstrap/alert.js' ); ?>"></script>
         <![endif]-->

@@ -1,0 +1,37 @@
+.search-form,
+.woocommerce-product-search {
+
+	margin-top: 0.5rem !important;
+	margin-bottom: 0.5rem !important;
+
+	@include media-breakpoint-up(md) {
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+	}
+
+	> .input-group {
+		border: 1px gray solid;
+		padding: 5px;
+
+		input {
+			border:none;
+			background-color: transparent;
+
+			@include media-breakpoint-up(sm) {
+				margin-right: 0.5rem !important;
+			}
+		}
+
+		input:focus,
+		select:focus,
+		textarea:focus,
+		button:focus {
+			outline: none;
+		}
+
+		.fa {
+			color: gray;
+		}
+	}
+
+}

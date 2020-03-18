@@ -1,24 +1,26 @@
 <?php
 /**
- * Storms Framework (http://storms.com.br/)
+ * Storms Websolutions (http://storms.com.br/)
  *
  * @author    Vinicius Garcia | vinicius.garcia@storms.com.br
- * @copyright (c) Copyright 2012-2017, Storms Websolutions
+ * @copyright (c) Copyright 2012-2019, Storms Websolutions
  * @license   GPLv2 - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  * @package   Storms
- * @version   3.0.0
+ * @version   4.0.0
  *
  * The header for our theme
  * This is the template that displays the head, menu and layout open tag
  * Includes all the scripts and page definitions
  */
 
-use \StormsFramework\Storms\Front\Layout;
+use \StormsFramework\Template;
+
+defined( 'ABSPATH' ) || exit;
 
 get_template_part( 'template-parts/head' ); ?>
 
 <header id="header" role="banner">
-    <div class="<?php echo Layout::header_container(); ?>">
+    <div class="<?php echo Template::header_container(); ?>">
         <!-- Header content -->
         <?php get_template_part('template-parts/header', 'content'); ?>
     </div>
@@ -30,14 +32,14 @@ get_template_part( 'template-parts/head' ); ?>
 
 <!-- Wrap all page content here -->
 <div id="wrap" class="wrap" role="document">
-    <div class="<?php echo Layout::wrap_container(); ?>">
+    <div class="<?php echo Template::wrap_container(); ?>">
 
-        <div class="row">
-            <div class="col-xs-12">
-                <?php
-                if ( is_front_page() && is_home() ) : ?>
+        <?php
+        if ( is_front_page() && is_home() ) : ?>
+            <div class="st-grid-row row">
+                <div class="col-12">
                     <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                <?php
-                endif; ?>
+                </div>
             </div>
-        </div>
+        <?php
+        endif; ?>

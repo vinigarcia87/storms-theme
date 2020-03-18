@@ -1,12 +1,12 @@
 <?php
 /**
- * Storms Framework (http://storms.com.br/)
+ * Storms Websolutions (http://storms.com.br/)
  *
  * @author    Vinicius Garcia | vinicius.garcia@storms.com.br
- * @copyright (c) Copyright 2012-2016, Storms Websolutions
+ * @copyright (c) Copyright 2012-2019, Storms Websolutions
  * @license   GPLv2 - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  * @package   Storms
- * @version   3.0.0
+ * @version   4.0.0
  *
  * The main template file
  *
@@ -16,63 +16,51 @@
  * E.g., it puts together the home page when no home.php file exists.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package storms
  */
 
-use \StormsFramework\Storms\Front\Layout,
-    \StormsFramework\Storms\Bootstrap\Functions,
-    \StormsFramework\Storms\Bootstrap\Breadcrumb,
-    \StormsFramework\Storms\Bootstrap\Pagination;
+use \StormsFramework\Template;
+
+defined( 'ABSPATH' ) || exit;
 
 get_header(); ?>
 
-    <div class="row">
+	<div class="st-grid-row row">
 
-        <!-- Website content -->
-        <main id="content" class="main <?php echo Layout::main_layout(); ?>" role="main">
+		<!-- Website content -->
+		<main id="content" class="main <?php echo Template::main_layout(); ?>" role="main">
 
-            <!-- Breadcrumbs -->
-            <?php //echo Breadcrumb::breadcrumb(); ?>
+			<?php
+			if ( have_posts() ) :
 
-            <?php
-            if ( have_posts() ) :
+				/* Start the Loop */
+				while ( have_posts() ) : the_post();
 
-                if ( is_home() && ! is_front_page() ) : ?>
+					/*
+					 * Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'template-parts/content', get_post_format() );
 
-                    <header>
-                        <h1 class="page-title sr-only"><?php single_post_title(); ?></h1>
-                    </header>
+				endwhile; // End of the loop.
 
-                <?php
-                endif;
+				the_posts_navigation();
 
-                /* Start the Loop */
-                while ( have_posts() ) : the_post();
+			else :
 
-                    /*
-                     * Include the Post-Format-specific template for the content.
-                     * If you want to override this in a child theme, then include a file
-                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                     */
-                    get_template_part( 'template-parts/content', get_post_format() );
+				get_template_part( 'template-parts/content', 'none' );
 
-                endwhile;
+			endif;
+			?>
 
-                the_posts_navigation(); // @TODO Verificar no Helper so SF, se nao ha uma solucao para isso
+		</main><!-- /.main -->
 
-                // Posts navigation
-                //echo Pagination::loop_pagination( array( 'type' => 'list', 'before' => '', 'after' => '', ) );
+		<!-- Sidebar -->
+		<?php get_sidebar(); ?>
 
-            else :
+	</div>
 
-                get_template_part( 'template-parts/content', 'none' );
-
-            endif; ?>
-
-        </main><!-- /.main -->
-
-        <!-- Sidebar -->
-        <?php get_sidebar(); ?>
-
-    </div>
 <?php
 get_footer();

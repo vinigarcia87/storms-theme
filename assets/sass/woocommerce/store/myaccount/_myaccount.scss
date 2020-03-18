@@ -7,11 +7,14 @@
 		}
 
 		.col2-set {
-			@extend .row;
+			@include make-row();
 
 			.col-1,
 			.col-2 {
-				@extend .col-sm-6;
+				@include make-col-ready();
+				@include media-breakpoint-up(sm) {
+					@include make-col(6);
+				}
 
 				.woocommerce-form-login {
 					width: auto;
@@ -19,8 +22,7 @@
 			}
 		}
 
-		.form-row {
-			@extend .form-group;
+		.form-group {
 			width: 80%;
 		}
 
@@ -54,7 +56,8 @@
 		}
 
 		.woocommerce-MyAccount-navigation {
-			@extend .col-xs-3;
+			@include make-col-ready();
+			@include make-col(3);
 
 			ul {
 				@extend .list-unstyled;
@@ -62,8 +65,49 @@
 		}
 
 		.woocommerce-MyAccount-content {
-			@extend .col-xs-9;
+			@include make-col-ready();
+			@include make-col(9);
 		}
+
 	}
 
+	&.interim-login {
+		header#header,
+		footer#footer,
+		header.entry-header {
+			display: none;
+		}
+		.woocommerce {
+			text-align: center;
+
+			.u-columns.col2-set {
+				.u-column1.col-1 {
+					flex: 0 0 100%;
+				}
+			}
+			.u-column2.col-2 {
+				display: none;
+			}
+
+			.woocommerce-form-login {
+				width: 100%;
+
+				p.form-group {
+					width: 100%;
+				}
+				.woocommerce-form-login__submit {
+					width: 100%;
+				}
+			}
+		}
+
+		&.interim-login-success {
+			background: url(/wp-content/themes/storms-theme/assets/img/loader.svg) center center no-repeat #ffffff;
+
+			div#wrap,
+			div#wpadminbar {
+				display: none;
+			}
+		}
+	}
 }

@@ -1,53 +1,57 @@
+.quantity {
+	@include make-col(6);
+}
+.input-text.qty {
+	@extend .form-control;
+}
+
 .woocommerce {
+	// Input de quantidade
+	.quantity {
+		width: 125px; // Vamos sobrescrever o width... o extend é soh pra garantir o comportamento de uma col-*-*
 
-  // Input de quantidade
-  .quantity {
-    @extend .col-xs-6; // Vamos sobrescrever o width... o extend é soh pra garantir o comportamento de uma col-*-*
-    //@extend .col-sm-2; @extend .col-md-4;
-    width: 125px;
+		.input-text.qty {
+			float: left;
+			text-align: center;
+			max-width: 55px;
 
-    .input-text.qty {
-      @extend .form-control;
+			// Removemos os spin buttons do input[type="number"]
+			-moz-appearance: textfield;
+			&::-webkit-outer-spin-button,
+			&::-webkit-inner-spin-button {
+				margin: 0;
+				-webkit-appearance: none;
+			}
+		}
 
-      float: left;
-      max-width: 55px;
+		.qty-ctrl-btn {
+			top: 0;
+			right: 0;
+			width: 30px;
+			float: left;
+			position: relative;
 
-      // Removemos os spin buttons do input[type="number"]
-      -moz-appearance: textfield;
-      &::-webkit-outer-spin-button,
-      &::-webkit-inner-spin-button {
-        margin: 0;
-        -webkit-appearance: none;
-      }
-    }
+			a.plus,
+			a.minus {
+				// Not using plus/minus buttons on Storms Theme
+				//@extend .btn;
 
-    .qty-ctrl-btn {
-      top: 0;
-      right: 0;
-      width: 30px;
-      float: left;
-      position: relative;
-
-      a.plus,
-      a.minus {
-        @extend .btn;
-
-        float: none;
-        display: block;
-        position: absolute;
-        text-align: center;
-        height: 19px;
-        line-height: 17px;
-        color: #646464;
-        padding: 0 10px;
-        border-top: 1px solid $gray-lighter;
-        border-right: 1px solid $gray-lighter;
-      }
-      a.minus {
-        bottom: -37px;
-        border-bottom: 1px solid $gray-lighter;
-      }
-    }
-  }
+				float: none;
+				display: block;
+				position: absolute;
+				text-align: center;
+				height: 19px;
+				line-height: 17px;
+				color: #646464;
+				padding: 0 10px;
+				border-top: 1px solid theme-color("light");
+				border-right: 1px solid theme-color("light");
+			}
+			a.minus {
+				bottom: -37px;
+				border-bottom: 1px solid theme-color("light");
+			}
+		}
+	}
 
 }

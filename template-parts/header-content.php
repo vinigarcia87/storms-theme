@@ -1,21 +1,21 @@
 <?php
 /**
- * Storms Framework (http://storms.com.br/)
+ * Storms Websolutions (http://storms.com.br/)
  *
  * @author    Vinicius Garcia | vinicius.garcia@storms.com.br
- * @copyright (c) Copyright 2012-2017, Storms Websolutions
+ * @copyright (c) Copyright 2012-2019, Storms Websolutions
  * @license   GPLv2 - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  * @package   Storms
- * @version   3.0.0
+ * @version   4.0.0
  *
  * Header Content Template
  * The content of the header
  */
 
-use \StormsFramework\Storms\Helper;
+defined( 'ABSPATH' ) || exit;
 ?>
-<div id="page-banner" class="row" role="banner">
-	<div class="col-md-5">
+<div id="page-banner" class="st-grid-row row" role="banner">
+	<div class="page-banner-content col-md-5">
 		<?php
 		$header_image = get_header_image();
 		if ( ! empty( $header_image ) ) :
@@ -25,12 +25,12 @@ use \StormsFramework\Storms\Helper;
 			</a>
 		<?php else : ?>
 			<a class="header-brand" href="<?php echo esc_url( get_bloginfo('url') ) ?>">
-				<img class="" style="height: 75px;" src="<?php echo esc_url( Helper::get_asset_url('/img/storms/logo/generic-logo.svg') ) ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
+				<img class="" style="height: 75px;" src="<?php echo esc_url( \StormsFramework\Helper::get_asset_url('/img/storms/logo/generic-logo.svg') ) ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
 			</a>
 		<?php endif; ?>
 	</div>
 
-	<div class="col-md-4 col-md-offset-3">
+	<div class="page-banner-sidebar col-md-4 offset-md-3">
         <?php get_sidebar( 'header' ); ?>
 	</div>
 </div>
