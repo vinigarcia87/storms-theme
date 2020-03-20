@@ -12,6 +12,9 @@
  * This file makes sure that some configurations exclusive from some environment, will not be able on another environment
  * For example, 'WooCommerce Force HTTPS on Checkout' must be TRUE on Production and Testing, but FALSE on Development
  */
+
+defined( 'ABSPATH' ) || exit;
+
 function storms_environment_options() {
 
     if( SF_ENV == 'DEV' ) {
