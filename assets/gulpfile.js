@@ -87,9 +87,10 @@ gulp.task('load-assets', async function() {
 		.pipe(notify({ message: 'Load fonts task complete', onLast: true }));
 
 	gulp.src([
-		'node_modules/jquery/dist/jquery.min.js',				// jQuery
-		'node_modules/jquery.cycle2/src/jquery.cycle2.min.js',	// Cycle2 jQuery plugin
-		'node_modules/block-ui/jquery.blockUI.js'				// BlockUI jQuery plugin
+		'node_modules/jquery/dist/jquery.min.js',					// jQuery
+		'node_modules/jquery.cycle2/src/jquery.cycle2.min.js',		// Cycle2 jQuery plugin
+		'node_modules/block-ui/jquery.blockUI.js',					// BlockUI jQuery plugin
+		'node_modules/jquery-mask-plugin/dist/jquery.mask.min.js'	// Jquery Mask plugin
 	])
 		.pipe(gulp.dest('js/jquery'))
 		.pipe(notify({ message: 'Load jQuery scripts task complete', onLast: true }));

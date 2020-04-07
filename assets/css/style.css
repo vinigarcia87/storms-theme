@@ -462,7 +462,8 @@ mark,
 }
 
 .list-unstyled, .woocommerce-error, .woocommerce-account .woocommerce .woocommerce-MyAccount-navigation ul, .woocommerce .cart_totals .shipping ul#shipping_method,
-.woocommerce .woocommerce-checkout-review-order .shipping ul#shipping_method, .woocommerce-checkout .woocommerce-checkout-payment ul.wc_payment_methods, ul.woocommerce-order-overview,
+.woocommerce .woocommerce-checkout-review-order .shipping ul#shipping_method,
+.woocommerce .woocommerce-shipping-calculator .shipping ul#shipping_method, .woocommerce-checkout #payment.woocommerce-checkout-payment ul.wc_payment_methods, ul.woocommerce-order-overview,
 ul.order_details {
   padding-left: 0;
   list-style: none;
@@ -5911,7 +5912,9 @@ button.bg-dark:focus {
 .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart_list .mini_cart_item .product-description .quantity::after, .woocommerce .cart_totals table.shop_table tbody tr.cart_item td.product .product-info .variation::after,
 .woocommerce .cart_totals table.shop_table tfoot tr.cart_item td.product .product-info .variation::after,
 .woocommerce .woocommerce-checkout-review-order table.shop_table tbody tr.cart_item td.product .product-info .variation::after,
-.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.cart_item td.product .product-info .variation::after {
+.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.cart_item td.product .product-info .variation::after,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tbody tr.cart_item td.product .product-info .variation::after,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tfoot tr.cart_item td.product .product-info .variation::after {
   display: block;
   clear: both;
   content: "";
@@ -13423,19 +13426,24 @@ abbr.required {
 .woocommerce .cart_totals h2, .woocommerce .cart_totals .h2, .woocommerce .cart_totals h3#order_review_heading,
 .woocommerce .woocommerce-checkout-review-order h2,
 .woocommerce .woocommerce-checkout-review-order .h2,
-.woocommerce .woocommerce-checkout-review-order h3#order_review_heading {
+.woocommerce .woocommerce-checkout-review-order h3#order_review_heading,
+.woocommerce .woocommerce-shipping-calculator h2,
+.woocommerce .woocommerce-shipping-calculator .h2,
+.woocommerce .woocommerce-shipping-calculator h3#order_review_heading {
   margin-top: 0;
   text-align: center;
   text-transform: capitalize;
 }
 
 .woocommerce .cart_totals table.shop_table,
-.woocommerce .woocommerce-checkout-review-order table.shop_table {
+.woocommerce .woocommerce-checkout-review-order table.shop_table,
+.woocommerce .woocommerce-shipping-calculator table.shop_table {
   border-radius: 0;
 }
 
 .woocommerce .cart_totals table.shop_table thead th,
-.woocommerce .woocommerce-checkout-review-order table.shop_table thead th {
+.woocommerce .woocommerce-checkout-review-order table.shop_table thead th,
+.woocommerce .woocommerce-shipping-calculator table.shop_table thead th {
   text-align: center;
   vertical-align: middle;
   text-transform: uppercase;
@@ -13444,7 +13452,9 @@ abbr.required {
 .woocommerce .cart_totals table.shop_table tbody th,
 .woocommerce .cart_totals table.shop_table tfoot th,
 .woocommerce .woocommerce-checkout-review-order table.shop_table tbody th,
-.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot th {
+.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot th,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tbody th,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tfoot th {
   font-weight: 100;
   padding-right: 0;
   vertical-align: middle;
@@ -13454,7 +13464,9 @@ abbr.required {
 .woocommerce .cart_totals table.shop_table tbody td,
 .woocommerce .cart_totals table.shop_table tfoot td,
 .woocommerce .woocommerce-checkout-review-order table.shop_table tbody td,
-.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot td {
+.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot td,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tbody td,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tfoot td {
   text-align: right;
   vertical-align: middle;
   padding-left: 0;
@@ -13463,14 +13475,18 @@ abbr.required {
 .woocommerce .cart_totals table.shop_table tbody tr.coupon > td .input-text,
 .woocommerce .cart_totals table.shop_table tfoot tr.coupon > td .input-text,
 .woocommerce .woocommerce-checkout-review-order table.shop_table tbody tr.coupon > td .input-text,
-.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.coupon > td .input-text {
+.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.coupon > td .input-text,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tbody tr.coupon > td .input-text,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tfoot tr.coupon > td .input-text {
   margin-bottom: 5px;
 }
 
 .woocommerce .cart_totals table.shop_table tbody tr.cart_item td.product,
 .woocommerce .cart_totals table.shop_table tfoot tr.cart_item td.product,
 .woocommerce .woocommerce-checkout-review-order table.shop_table tbody tr.cart_item td.product,
-.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.cart_item td.product {
+.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.cart_item td.product,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tbody tr.cart_item td.product,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tfoot tr.cart_item td.product {
   text-align: left;
   padding: 8px;
   border-top: none !important;
@@ -13479,35 +13495,46 @@ abbr.required {
 .woocommerce .cart_totals table.shop_table tbody tr.cart_item td.product .product-info,
 .woocommerce .cart_totals table.shop_table tfoot tr.cart_item td.product .product-info,
 .woocommerce .woocommerce-checkout-review-order table.shop_table tbody tr.cart_item td.product .product-info,
-.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.cart_item td.product .product-info {
+.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.cart_item td.product .product-info,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tbody tr.cart_item td.product .product-info,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tfoot tr.cart_item td.product .product-info {
   float: left;
 }
 
 .woocommerce .cart_totals table.shop_table tbody tr.cart_item td.product .product-info .variation,
 .woocommerce .cart_totals table.shop_table tfoot tr.cart_item td.product .product-info .variation,
 .woocommerce .woocommerce-checkout-review-order table.shop_table tbody tr.cart_item td.product .product-info .variation,
-.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.cart_item td.product .product-info .variation {
+.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.cart_item td.product .product-info .variation,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tbody tr.cart_item td.product .product-info .variation,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tfoot tr.cart_item td.product .product-info .variation {
   font-size: 14px;
 }
 
 .woocommerce .cart_totals table.shop_table tbody tr.cart_item td.product .product-total,
 .woocommerce .cart_totals table.shop_table tfoot tr.cart_item td.product .product-total,
 .woocommerce .woocommerce-checkout-review-order table.shop_table tbody tr.cart_item td.product .product-total,
-.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.cart_item td.product .product-total {
+.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.cart_item td.product .product-total,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tbody tr.cart_item td.product .product-total,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tfoot tr.cart_item td.product .product-total {
   float: right;
 }
 
 .woocommerce .cart_totals table.shop_table tbody tr.shipping > td,
 .woocommerce .cart_totals table.shop_table tfoot tr.shipping > td,
 .woocommerce .woocommerce-checkout-review-order table.shop_table tbody tr.shipping > td,
-.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.shipping > td {
+.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.shipping > td,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tbody tr.shipping > td,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tfoot tr.shipping > td {
   text-align: left;
+  padding-left: 12px;
 }
 
 .woocommerce .cart_totals table.shop_table tbody tr.shipping > td > p,
 .woocommerce .cart_totals table.shop_table tfoot tr.shipping > td > p,
 .woocommerce .woocommerce-checkout-review-order table.shop_table tbody tr.shipping > td > p,
-.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.shipping > td > p {
+.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.shipping > td > p,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tbody tr.shipping > td > p,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tfoot tr.shipping > td > p {
   text-align: justify;
   font-style: italic;
 }
@@ -13519,7 +13546,11 @@ abbr.required {
 .woocommerce .woocommerce-checkout-review-order table.shop_table tbody tr.cart-subtotal,
 .woocommerce .woocommerce-checkout-review-order table.shop_table tbody tr.order-total,
 .woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.cart-subtotal,
-.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.order-total {
+.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.order-total,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tbody tr.cart-subtotal,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tbody tr.order-total,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tfoot tr.cart-subtotal,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tfoot tr.order-total {
   text-align: left;
 }
 
@@ -13530,72 +13561,112 @@ abbr.required {
 .woocommerce .woocommerce-checkout-review-order table.shop_table tbody tr.cart-subtotal > td,
 .woocommerce .woocommerce-checkout-review-order table.shop_table tbody tr.order-total > td,
 .woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.cart-subtotal > td,
-.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.order-total > td {
+.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.order-total > td,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tbody tr.cart-subtotal > td,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tbody tr.order-total > td,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tfoot tr.cart-subtotal > td,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tfoot tr.order-total > td {
   text-align: right;
 }
 
 .woocommerce .cart_totals table.shop_table tbody tr.order-total,
 .woocommerce .cart_totals table.shop_table tfoot tr.order-total,
 .woocommerce .woocommerce-checkout-review-order table.shop_table tbody tr.order-total,
-.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.order-total {
+.woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.order-total,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tbody tr.order-total,
+.woocommerce .woocommerce-shipping-calculator table.shop_table tfoot tr.order-total {
   font-size: 20px;
   background-color: #f8f9fa;
 }
 
 .woocommerce .cart_totals .shipping,
-.woocommerce .woocommerce-checkout-review-order .shipping {
+.woocommerce .woocommerce-checkout-review-order .shipping,
+.woocommerce .woocommerce-shipping-calculator .shipping {
   text-align: left;
+}
+
+.woocommerce .cart_totals .shipping > td,
+.woocommerce .woocommerce-checkout-review-order .shipping > td,
+.woocommerce .woocommerce-shipping-calculator .shipping > td {
+  text-align: left;
+  padding-left: 12px;
+}
+
+.woocommerce .cart_totals .shipping > td > p,
+.woocommerce .woocommerce-checkout-review-order .shipping > td > p,
+.woocommerce .woocommerce-shipping-calculator .shipping > td > p {
+  text-align: justify;
+  font-style: italic;
+}
+
+.woocommerce .cart_totals .shipping > td > span.title,
+.woocommerce .woocommerce-checkout-review-order .shipping > td > span.title,
+.woocommerce .woocommerce-shipping-calculator .shipping > td > span.title {
+  font-weight: 100;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: inline-block;
 }
 
 .woocommerce .cart_totals .shipping .amount,
 .woocommerce .cart_totals .shipping .storms-free-shipping,
 .woocommerce .woocommerce-checkout-review-order .shipping .amount,
-.woocommerce .woocommerce-checkout-review-order .shipping .storms-free-shipping {
+.woocommerce .woocommerce-checkout-review-order .shipping .storms-free-shipping,
+.woocommerce .woocommerce-shipping-calculator .shipping .amount,
+.woocommerce .woocommerce-shipping-calculator .shipping .storms-free-shipping {
   float: right;
   font-weight: 600;
 }
 
 .woocommerce .cart_totals .shipping ul#shipping_method,
-.woocommerce .woocommerce-checkout-review-order .shipping ul#shipping_method {
+.woocommerce .woocommerce-checkout-review-order .shipping ul#shipping_method,
+.woocommerce .woocommerce-shipping-calculator .shipping ul#shipping_method {
   text-align: left;
 }
 
+.woocommerce .cart_totals .shipping ul#shipping_method input,
+.woocommerce .woocommerce-checkout-review-order .shipping ul#shipping_method input,
+.woocommerce .woocommerce-shipping-calculator .shipping ul#shipping_method input {
+  margin-right: 10px;
+}
+
 .woocommerce .cart_totals .shipping ul#shipping_method label,
-.woocommerce .woocommerce-checkout-review-order .shipping ul#shipping_method label {
-  width: 90%;
+.woocommerce .woocommerce-checkout-review-order .shipping ul#shipping_method label,
+.woocommerce .woocommerce-shipping-calculator .shipping ul#shipping_method label {
+  display: contents;
   font-weight: 100;
-  padding-left: 5px;
 }
 
 .woocommerce .cart_totals .shipping ul#shipping_method label .amount,
 .woocommerce .cart_totals .shipping ul#shipping_method label .storms-free-shipping,
 .woocommerce .woocommerce-checkout-review-order .shipping ul#shipping_method label .amount,
-.woocommerce .woocommerce-checkout-review-order .shipping ul#shipping_method label .storms-free-shipping {
+.woocommerce .woocommerce-checkout-review-order .shipping ul#shipping_method label .storms-free-shipping,
+.woocommerce .woocommerce-shipping-calculator .shipping ul#shipping_method label .amount,
+.woocommerce .woocommerce-shipping-calculator .shipping ul#shipping_method label .storms-free-shipping {
   float: right;
   font-weight: 600;
 }
 
-.woocommerce .cart_totals .shipping .woocommerce-shipping-calculator,
-.woocommerce .woocommerce-checkout-review-order .shipping .woocommerce-shipping-calculator {
+.woocommerce .woocommerce-shipping-calculator tr.shipping {
+  background-color: transparent !important;
+}
+
+.woocommerce .woocommerce-shipping-calculator {
   text-align: right;
 }
 
-.woocommerce .cart_totals .shipping .woocommerce-shipping-calculator a.shipping-calculator-button,
-.woocommerce .woocommerce-checkout-review-order .shipping .woocommerce-shipping-calculator a.shipping-calculator-button {
+.woocommerce .woocommerce-shipping-calculator a.shipping-calculator-button {
   text-align: center;
   width: 100%;
   display: inline-block;
 }
 
-.woocommerce .cart_totals .shipping .woocommerce-shipping-calculator .shipping-calculator-form #calc_shipping_state_field span,
-.woocommerce .woocommerce-checkout-review-order .shipping .woocommerce-shipping-calculator .shipping-calculator-form #calc_shipping_state_field span {
+.woocommerce .woocommerce-shipping-calculator .shipping-calculator-form #calc_shipping_state_field span {
   width: 100%;
 }
 
-.woocommerce .cart_totals .shipping .woocommerce-shipping-calculator .shipping-calculator-form #calc_shipping_country_field,
-.woocommerce .cart_totals .shipping .woocommerce-shipping-calculator .shipping-calculator-form #calc_shipping_state_field,
-.woocommerce .woocommerce-checkout-review-order .shipping .woocommerce-shipping-calculator .shipping-calculator-form #calc_shipping_country_field,
-.woocommerce .woocommerce-checkout-review-order .shipping .woocommerce-shipping-calculator .shipping-calculator-form #calc_shipping_state_field {
+.woocommerce .woocommerce-shipping-calculator .shipping-calculator-form #calc_shipping_country_field,
+.woocommerce .woocommerce-shipping-calculator .shipping-calculator-form #calc_shipping_state_field {
   text-align: left;
 }
 
@@ -13657,22 +13728,32 @@ abbr.required {
   margin-top: 10px;
 }
 
-.woocommerce-checkout .woocommerce-checkout-payment ul.wc_payment_methods {
+.woocommerce-checkout #payment.woocommerce-checkout-payment ul.wc_payment_methods {
   margin: 5px 0 10px;
   background-color: #f5f5f5;
   padding: 20px 15px;
 }
 
-.woocommerce-checkout .woocommerce-checkout-payment ul.wc_payment_methods li .payment_box {
-  margin-left: 15px;
+.woocommerce-checkout #payment.woocommerce-checkout-payment ul.wc_payment_methods li .payment_box {
+  
 }
 
-.woocommerce-checkout .woocommerce-checkout-payment ul.wc_payment_methods .payment_method_pagseguro label {
-  width: 100%;
+.woocommerce-checkout #payment.woocommerce-checkout-payment ul.wc_payment_methods li.payment_method_pagseguro > label {
+  display: contents;
 }
 
-.woocommerce-checkout .woocommerce-checkout-payment ul.wc_payment_methods .payment_method_pagseguro label img {
+.woocommerce-checkout #payment.woocommerce-checkout-payment ul.wc_payment_methods li.payment_method_pagseguro > label img {
   float: right;
+}
+
+.woocommerce-checkout #payment.woocommerce-checkout-payment ul.wc_payment_methods li.payment_method_pagseguro #pagseguro-payment-methods li label {
+  padding: 5px 8px;
+}
+
+.woocommerce-checkout #payment.woocommerce-checkout-payment ul.wc_payment_methods li.payment_method_pagseguro #pagseguro-credit-card-form,
+.woocommerce-checkout #payment.woocommerce-checkout-payment ul.wc_payment_methods li.payment_method_pagseguro #pagseguro-bank-transfer-form,
+.woocommerce-checkout #payment.woocommerce-checkout-payment ul.wc_payment_methods li.payment_method_pagseguro #pagseguro-banking-ticket-form {
+  padding: 0 10px;
 }
 
 @media (min-width: 576px) {

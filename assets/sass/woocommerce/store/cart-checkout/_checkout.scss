@@ -44,7 +44,7 @@
 
 	}
 
-	.woocommerce-checkout-payment {
+	#payment.woocommerce-checkout-payment {
 
 		ul.wc_payment_methods {
 			@extend .list-unstyled;
@@ -55,17 +55,32 @@
 
 			li {
 				.payment_box {
-					margin-left: 15px;
+					/*margin-left: 15px;*/
 				}
 			}
 
-			.payment_method_pagseguro {
-				label {
-					width: 100%;
+			li.payment_method_pagseguro {
+
+				> label {
+					display: contents;
 
 					img {
 						float: right;
 					}
+				}
+
+				#pagseguro-payment-methods {
+					li {
+						label {
+							padding: 5px 8px;
+						}
+					}
+				}
+
+				#pagseguro-credit-card-form,
+				#pagseguro-bank-transfer-form,
+				#pagseguro-banking-ticket-form {
+					padding: 0 10px;
 				}
 			}
 		}
