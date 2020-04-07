@@ -21,6 +21,54 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 	// Required plugin: YITH Wishlist
 	if( defined( 'YITH_WCWL' ) ) {
 
+		if( ! function_exists( 'storms_define_wishlist_options' ) ) {
+
+			// Define WordPress options
+			function storms_define_wishlist_options() {
+
+				// YITH Wishlist configuration
+				update_option( 'yith_wcwl_ajax_enable', 'no' );
+
+				update_option( 'yith_wcwl_show_on_loop', 'yes' );
+				update_option( 'yith_wcwl_loop_position', 'after_add_to_cart' );
+				update_option( 'yith_wcwl_button_position', 'shortcode' );
+				update_option( 'yith_wcwl_add_to_wishlist_text', __( 'Adicionar aos favoritas', 'storms' ) );
+				update_option( 'yith_wcwl_product_added_text', __( 'Produto adicionado!', 'storms' ) );
+				update_option( 'yith_wcwl_browse_wishlist_text', __( 'Ver favoritos', 'storms' ) );
+				update_option( 'yith_wcwl_already_in_wishlist_text', __( 'Este produto já é favorito', 'storms' ) );
+				update_option( 'yith_wcwl_add_to_wishlist_style', 'link' );
+				update_option( 'yith_wcwl_add_to_wishlist_icon', 'fa-heart-o' );
+				update_option( 'yith_wcwl_added_to_wishlist_icon', 'fa-heart' );
+
+				update_option( 'yith_wcwl_variation_show', 'yes' );
+				update_option( 'yith_wcwl_price_show', 'yes' );
+				update_option( 'yith_wcwl_stock_show', 'yes' );
+				update_option( 'yith_wcwl_show_dateadded', 'yes' );
+				update_option( 'yith_wcwl_add_to_cart_show', 'yes' );
+				update_option( 'yith_wcwl_show_remove', 'yes' );
+				update_option( 'yith_wcwl_repeat_remove_button', 'no' );
+
+				update_option( 'yith_wcwl_redirect_cart', 'no' );
+				update_option( 'yith_wcwl_remove_after_add_to_cart', 'yes' );
+				update_option( 'yith_wcwl_enable_share', 'yes' );
+
+				update_option( 'yith_wcwl_share_fb', 'yes' );
+				update_option( 'yith_wcwl_share_twitter', 'yes' );
+				update_option( 'yith_wcwl_share_pinterest', 'yes' );
+				update_option( 'yith_wcwl_share_email', 'no' );
+				update_option( 'yith_wcwl_share_whatsapp', 'yes' );
+				update_option( 'yith_wcwl_share_url', 'no' );
+
+				update_option( 'yith_wcwl_socials_title', __( 'Minha lista de desejos em ' . get_bloginfo( 'name' ), 'storms' ) );
+				update_option( 'yith_wcwl_wishlist_title', __( 'Minha lista de desejos em ' . get_bloginfo( 'name' ), 'storms' ) );
+				update_option( 'yith_wcwl_add_to_cart_text', __( 'Adicionar ao carrinho', 'storms' ) );
+
+				update_option( 'yith_wcwl_add_to_cart_style', 'link' );
+			}
+			add_action( 'init', 'storms_define_wishlist_options' );
+
+		}
+
 		// Incluindo os scripts de manipulaçao do YITH Wishlist
 		function storms_wc_yith_wishlist_scripts() {
 
@@ -51,6 +99,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 		}
 		add_action( 'wp_ajax_yith_wcwl_update_wishlist_count', 'storms_wc_yith_wcwl_ajax_update_count' );
 		add_action( 'wp_ajax_nopriv_yith_wcwl_update_wishlist_count', 'storms_wc_yith_wcwl_ajax_update_count' );
+
 	}
 
 }
