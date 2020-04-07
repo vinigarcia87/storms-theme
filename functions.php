@@ -66,6 +66,6 @@ if( ! function_exists( 'storms_testing' ) ) {
 	function storms_testing() {
 		\StormsFramework\Helper::debug( 'Debugging Storms Theme', 'Storms Theme' );
 	}
-	//add_action( 'init', 'storms_testing' );
+	//add_action( 'wp', 'storms_testing' );
 }
 
