@@ -1,0 +1,14 @@
+.woocommerce.single-product {
+	main > .product {
+		@include make-row();
+
+		.woocommerce-product-gallery,
+		.summary {
+			@include make-col-ready;
+			@include make-col(12);
+			@include media-breakpoint-up(sm) {
+				@include make-col(6);
+			}
+		}
+	}
+}

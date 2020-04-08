@@ -32,7 +32,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 				update_option( 'yith_wcwl_show_on_loop', 'yes' );
 				update_option( 'yith_wcwl_loop_position', 'after_add_to_cart' );
 				update_option( 'yith_wcwl_button_position', 'shortcode' );
-				update_option( 'yith_wcwl_add_to_wishlist_text', __( 'Adicionar aos favoritas', 'storms' ) );
+				update_option( 'yith_wcwl_add_to_wishlist_text', __( 'Adicionar aos meus favoritos', 'storms' ) );
 				update_option( 'yith_wcwl_product_added_text', __( 'Produto adicionado!', 'storms' ) );
 				update_option( 'yith_wcwl_browse_wishlist_text', __( 'Ver favoritos', 'storms' ) );
 				update_option( 'yith_wcwl_already_in_wishlist_text', __( 'Este produto já é favorito', 'storms' ) );

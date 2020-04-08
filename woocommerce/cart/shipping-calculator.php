@@ -23,6 +23,8 @@ do_action( 'woocommerce_before_shipping_calculator' ); ?>
 
 	<?php if( ! is_product() ): ?>
 		<?php printf( '<a href="#" class="shipping-calculator-button">%s</a>', esc_html( ! empty( $button_text ) ? $button_text : __( 'Calculate shipping', 'woocommerce' ) ) ); ?>
+	<?php else: ?>
+		<p class="shipping-calculator-text"><?php _e( 'Estime o frete deste produto para seu destino', 'storms' ); ?></p>
 	<?php endif; ?>
 
 	<section class="shipping-calculator-form" <?php echo ! is_product() ? 'style="display:none;"' : ''; ?> >
@@ -85,7 +87,7 @@ do_action( 'woocommerce_before_shipping_calculator' ); ?>
 			</p>
 		<?php endif; ?>
 
-		<p><button type="submit" name="calc_shipping" value="1" class="button">
+		<p class="shipping-calculator-action"><button type="submit" name="calc_shipping" value="1" class="button">
 				<?php if( ! is_product() ): ?>
 					<?php esc_html_e( 'Update', 'woocommerce' ); ?>
 				<?php else: ?>
@@ -93,7 +95,7 @@ do_action( 'woocommerce_before_shipping_calculator' ); ?>
 				<?php endif; ?>
 			</button>
 			<?php if( is_product() ): ?>
-				<a href="https://www.buscacep.correios.com.br/sistemas/buscacep/" target="_blank" rel="nofollow noopener"><?php esc_attr_e( 'Não sei meu CEP', 'storms' ); ?></a>
+				<a class="correios-buscacep-link" href="https://www.buscacep.correios.com.br/sistemas/buscacep/" target="_blank" rel="nofollow noopener"><?php esc_attr_e( 'Não sei meu CEP', 'storms' ); ?></a>
 			<?php endif; ?>
 		</p>
 		<?php if( ! is_product() ): ?>

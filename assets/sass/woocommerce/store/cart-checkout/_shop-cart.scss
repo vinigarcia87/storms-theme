@@ -159,6 +159,10 @@ table.shop_table {
 							text-align: justify;
 							font-style: italic;
 						}
+
+						p.woocommerce-shipping-destination {
+							text-align: center;
+						}
 					}
 				}
 
@@ -233,12 +237,22 @@ table.shop_table {
 	}
 
 	.woocommerce-shipping-calculator {
-		text-align: right;
 
 		a.shipping-calculator-button {
 			text-align: center;
 			width: 100%;
 			display: inline-block;
+		}
+
+		.shipping-calculator-action {
+			text-align: right;
+			button {
+
+			}
+
+			.correios-buscacep-link {
+
+			}
 		}
 
 		.shipping-calculator-form {

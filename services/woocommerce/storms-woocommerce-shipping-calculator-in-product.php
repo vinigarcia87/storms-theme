@@ -25,18 +25,19 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 			add_action( 'wp_enqueue_scripts', 'storms_wc_shipping_calculator_in_product_register_scripts' );
 
 			$position_options = array(
+				'woocommerce_single_product_summary',	 // 'Dentro do bloco de summary do produto'
 				'woocommerce_before_add_to_cart_button', // 'Antes do botão de Compra'
-				'woocommerce_after_add_to_cart_button' , //  'Depois do botão de Compra'
-				'woocommerce_short_description'        , //  'Antes da descrição curta'
-				'woocommerce_before_add_to_cart_form'  , //  'Depois da descrição curta'
-				'woocommerce_product_meta_end'         , //  'Depois das metas (tags, categorias, etc)'
-				'shortcode'                            , //  'Shortcode'
+				'woocommerce_after_add_to_cart_button' , // 'Depois do botão de Compra'
+				'woocommerce_short_description'        , // 'Antes da descrição curta'
+				'woocommerce_before_add_to_cart_form'  , // 'Depois da descrição curta'
+				'woocommerce_product_meta_end'         , // 'Depois das metas (tags, categorias, etc)'
+				'shortcode'                            , // 'Shortcode'
 			);
-			$position = get_option( 'storms_wc_scip_position', 'woocommerce_after_add_to_cart_form' );
+			$position = get_option( 'storms_wc_scip_position', 'woocommerce_single_product_summary' );
 			if( ! in_array( $position, $position_options )  ) {
-				$position = 'woocommerce_after_add_to_cart_form';
+				$position = 'woocommerce_single_product_summary';
 			}
-			add_action( $position, 'storms_wc_shipping_calculator_in_product_load_form_shipping', 20 );
+			add_action( $position, 'storms_wc_shipping_calculator_in_product_load_form_shipping', 90 );
 
 			add_shortcode( 'shipping_calculator_on_product_page', 'storms_wc_shipping_calculator_in_product_add_shortcode' );
 		}
