@@ -17,6 +17,10 @@
 			width: 100%;
 		}
 	}
+
+	.description {
+		@extend .form-text;
+	}
 }
 
 select.country_select,

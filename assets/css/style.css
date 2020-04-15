@@ -1072,7 +1072,7 @@ textarea.input-text, .woocommerce-ordering textarea.orderby, textarea.input-text
   margin-bottom: 1rem;
 }
 
-.form-text {
+.form-text, .form-group .description, .form-row .description {
   display: block;
   margin-top: 4px;
   margin-top: 0.25rem;
