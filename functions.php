@@ -49,10 +49,10 @@ require_once 'services/woocommerce/storms-woocommerce-checkout-coupon.php';
 require_once 'services/woocommerce/storms-woocommerce-wishlist.php';
 require_once 'services/woocommerce/storms-woocommerce-cart.php';
 require_once 'services/woocommerce/storms-woocommerce-shipping-calculator-in-product.php';
+require_once 'services/woocommerce/storms-woocommerce-searchbar.php';
 
 //require_once 'services/storms-debug.php';
 //require_once 'services/storms-temporary.php';
-// JS files yet not included on this theme: storms-autofill-address.js
 
 /**
  * =====================================================================================================================

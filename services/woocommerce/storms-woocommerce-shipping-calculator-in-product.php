@@ -237,6 +237,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 
 	/**
 	 * Calculate the shipping costs to the selected product and address
+	 * @TODO We should cache this request, to avoid trouble
 	 *
 	 * @param array $request
 	 * @return array|string|void
