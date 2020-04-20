@@ -40,6 +40,10 @@ $load-storms-variables: true !default;
 // Body
 // ==========================================================================
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background-color: #FFFFFF;
 }

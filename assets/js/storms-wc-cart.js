@@ -1,8 +1,8 @@
+"use strict";
+
 /**
  *
  */
-jQuery( function( $ ) {
-
-	$( '#calc_shipping_postcode' ).mask( '00000-000' ).attr( 'type', 'tel' );
-
-} );
+jQuery(function ($) {
+  $('#calc_shipping_postcode').mask('00000-000').attr('type', 'tel');
+});

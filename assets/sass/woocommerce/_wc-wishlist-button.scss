@@ -1,0 +1,18 @@
+.storms-wc-wishlist {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px 0;
+
+	.storms-wishlist {
+		a {
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+
+			.st-ic-heart-o {
+				@extend .fa-heart-o;
+			}
+		}
+	}
+}

@@ -100,6 +100,68 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 		add_action( 'wp_ajax_yith_wcwl_update_wishlist_count', 'storms_wc_yith_wcwl_ajax_update_count' );
 		add_action( 'wp_ajax_nopriv_yith_wcwl_update_wishlist_count', 'storms_wc_yith_wcwl_ajax_update_count' );
 
+		function storms_wc_yith_wcwl_wishlist_shortcode( $atts ) {
+
+			$atts = shortcode_atts( array(
+				'extra_classes' => '',
+			), $atts );
+
+			$wishlist  = '<div class="storms-wishlist ' . $atts['extra_classes'] . '">';
+			$wishlist .= '	<a href="' . YITH_WCWL()->get_wishlist_url() . '">';
+			$wishlist .= '		<i class="fa st-ic-heart-o" aria-hidden="true"></i>';
+			$wishlist .= '		<span class="wishlist-counter">' . yith_wcwl_count_all_products() .'</span>';
+			$wishlist .= '		<span class="wishlist-text">Minha Lista</span>';
+			$wishlist .= '	</a>';
+			$wishlist .= '</div>';
+
+			return $wishlist;
+		}
+		add_shortcode( 'storms_wc_wishlist', 'storms_wc_yith_wcwl_wishlist_shortcode' );
+
+		/**
+		 * Wishlist for WooCommerce
+		 *
+		 * Class Storms_WC_Wishlist
+		 */
+		class Storms_WC_Wishlist extends WC_Widget {
+
+			function __construct() {
+				$this->widget_cssclass    = 'Storms_WC_Wishlist storms_wc_wishlist storms-wc-wishlist';
+				$this->widget_id          = 'storms_wc_wishlist';
+				$this->widget_name        = __( 'Storms WC Wishlist', 'storms' );
+				$this->widget_description = __( 'Shows a button to access WC Wishlist', 'storms' );
+
+				$this->settings = array(
+					'extra_classes' => array(
+						'type'  => 'text',
+						'std'   => '',
+						'label' => __( 'Extra class', 'storms' ),
+					),
+				);
+
+				parent::__construct();
+			}
+
+			public function widget( $args, $instance ) {
+
+				$atts = array(
+					'extra_classes' => esc_attr( $instance['extra_classes'] ?? '' ),
+				);
+
+				$this->widget_start( $args, $instance );
+
+				echo storms_wc_yith_wcwl_wishlist_shortcode( $atts );
+
+				$this->widget_end( $args );
+			}
+
+		}
+
+		function storms_wc_yith_wcwl_wishlist_register_widget() {
+			register_widget( 'storms_wc_wishlist' );
+		}
+		add_action( 'widgets_init', 'storms_wc_yith_wcwl_wishlist_register_widget' );
+
 	}
 
 }

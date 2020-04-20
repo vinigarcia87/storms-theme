@@ -21,10 +21,28 @@ if( ! function_exists( 'storms_frontend_scripts' ) ) {
 	// Incluindo os scripts do theme
 	function storms_frontend_scripts() {
 
-		// Adiciona o script principal - /js/scripts.js
-		wp_enqueue_script( 'main-script',
-			\StormsFramework\Helper::get_asset_url('/js/scripts' . ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min' ) . '.js'), array('jquery'),
+		wp_enqueue_script( 'storms-sticky-nav-observer-script',
+			\StormsFramework\Helper::get_asset_url('/js/storms-sticky-nav-observer' . ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min' ) . '.js'), array('jquery'),
 			STORMS_FRAMEWORK_VERSION, true );
+
+		/*
+		// Adiciona o script que monitora se o nav do menu principal esta 'grudado' no topo
+		wp_enqueue_script( 'storms-sticky-header-script',
+			\StormsFramework\Helper::get_asset_url('/js/storms-sticky-header' . ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min' ) . '.js'), array('jquery'),
+			STORMS_FRAMEWORK_VERSION, true );
+
+		// Add WordPress data to a Javascript file
+		wp_localize_script( 'storms-sticky-header-script', 'storms_sticky_header_vars', [
+			'alturaHeader'  => 160, // Informar a altura do header - elemento que contem o menu
+			'alturaMenu'    => 65,  // Informar a altura do menu - elemento que sera sticky no top
+			'wrapMarginTop' => 75,	// Informar a margin adequada para o wrap - o valor precisa compensar o scroll do menu
+		] );
+		*/
+
+		// Adiciona o script principal - /js/scripts.js
+//		wp_enqueue_script( 'main-script',
+//			\StormsFramework\Helper::get_asset_url('/js/scripts' . ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min' ) . '.js'), array('jquery'),
+//			STORMS_FRAMEWORK_VERSION, true );
 
 		// Add WordPress data to a Javascript file
 //		wp_localize_script( 'main-script', 'storms_main_vars', [

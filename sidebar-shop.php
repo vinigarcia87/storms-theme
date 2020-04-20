@@ -21,7 +21,7 @@ if ( ! is_active_sidebar( 'shop-sidebar' ) ) {
 }
 ?>
 
-<aside id="sidebar" class="sidebar shop-sidebar <?php echo Template::sidebar_layout(); ?>" role="complementary">
+<aside id="shop-sidebar" class="sidebar shop-sidebar <?php echo Template::sidebar_layout(); ?>" role="complementary">
 	<?php
 		/*
 		* When we call the dynamic_sidebar() function, it'll spit out

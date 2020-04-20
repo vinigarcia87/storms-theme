@@ -20,13 +20,14 @@ defined( 'ABSPATH' ) || exit;
 get_template_part( 'template-parts/head' ); ?>
 
 <header id="header" role="banner">
+
     <div class="<?php echo Template::header_container(); ?>">
         <!-- Header content -->
         <?php get_template_part('template-parts/header', 'content'); ?>
     </div>
 
-        <!-- Page navigation -->
-        <?php get_template_part('template-parts/menu'); ?>
+	<!-- Page navigation -->
+	<?php get_template_part('template-parts/menu'); ?>
 
 </header>
 

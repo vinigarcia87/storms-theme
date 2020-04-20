@@ -10,6 +10,7 @@ var project 		= 'storms-theme',          	 // Project name, used for build zip.
 
 // Load plugins
 var gulp          = require('gulp'),
+	pipeline 	  = require('readable-stream').pipeline,
 	debug         = require('gulp-debug'),
 	notify        = require('gulp-notify'),
 
@@ -24,6 +25,7 @@ var gulp          = require('gulp'),
 	sass          = require('gulp-sass'),
 
 	concat        = require('gulp-concat'),
+	babel 		  = require('gulp-babel'),
 	uglify        = require('gulp-uglify'),
 
 	imagemin      = require('gulp-imagemin'),
@@ -107,36 +109,45 @@ gulp.task('load-assets', async function() {
  * Scripts
  * Look at /js/src files and concatenate those files, send them to /js where we then minimize the concatenated file.
  */
-gulp.task('scripts', async function() {
-	gulp.src([
-		/* HERE WE INCLUDE ALL BOOTSTRAP JS FILES WE WANT TO USE */
-		'./js/bootstrap/popper.js',
-		'./js/bootstrap/util.js',
-		'./js/bootstrap/dropdown.js',
-		'./js/bootstrap/collapse.js'
-	])
-		//.pipe(debug())
-		.pipe( concat( 'scripts.js' ) )
-		.pipe( gulp.dest( './js/' ) )
-		.pipe( sourcemaps.init() )
-		.pipe( rename( { suffix: '.min' } ) )
-		.pipe( uglify() )
-		.pipe( sourcemaps.write( './maps' ) )
-		.pipe( gulp.dest( './js/' ) )
-		.pipe( notify( { message: 'Scripts task complete', onLast: true } ) );
-
-	gulp.src( [
-		'./js/src/**/*.js' // All our custom scripts
-	] )
-		//.pipe( debug() )
-		.pipe( gulp.dest( './js/' ) )
-		.pipe( sourcemaps.init() )
-		.pipe( rename({ suffix: '.min' } ) )
-		.pipe( uglify() )
-		.pipe( sourcemaps.write( './maps' ) )
-		.pipe( gulp.dest( './js/' ) )
-		.pipe( notify( { message: 'Scripts task complete', onLast: true } ) );
-});
+function scripts_3rd_party() {
+	return pipeline(
+		gulp.src( [
+			/* HERE WE INCLUDE ALL BOOTSTRAP JS FILES WE WANT TO USE */
+			'./js/bootstrap/popper.js',
+			'./js/bootstrap/util.js',
+			'./js/bootstrap/dropdown.js',
+			'./js/bootstrap/collapse.js'
+		] ),
+		//debug(),
+		concat( 'scripts.js' ),
+		gulp.dest( './js/' ),
+		sourcemaps.init(),
+		rename({ suffix: '.min' } ),
+		uglify(),
+		sourcemaps.write( './maps' ),
+		gulp.dest( './js/' ),
+		notify( { message: '3rd-party scripts task complete', onLast: true } )
+	);
+}
+function scripts_source() {
+	return pipeline(
+		gulp.src( [
+			'./js/src/**/*.js' // All our custom scripts
+		] ),
+		babel({
+			presets: ['@babel/env']
+		}),
+		//debug(),
+		gulp.dest( './js/' ),
+		sourcemaps.init(),
+		rename({ suffix: '.min' } ),
+		uglify(),
+		sourcemaps.write( './maps' ),
+		gulp.dest( './js/' ),
+		notify( { message: 'Source scripts task complete', onLast: true } )
+	);
+}
+gulp.task('scripts', gulp.parallel(scripts_3rd_party, scripts_source));
 
 /**
  * Images
@@ -146,6 +157,7 @@ gulp.task('images', async function() {
 	gulp.src([
 		'./img/raw/**/*.{png,jpg,gif,svg}'
 	])
+		//.pipe( debug() )
 		.pipe(newer('./img/'))
 		.pipe(rimraf({ force: true }))
 		.pipe(imagemin({ optimizationLevel: 7, progressive: true, interlaced: true }))
@@ -181,6 +193,7 @@ gulp.task('default', gulp.series(['load-assets', 'styles', 'scripts', 'images'])
 
 // Watch Task
 gulp.task('watch', gulp.series(['styles', 'scripts', 'images'], function () {
-	gulp.watch('./sass/*.scss', ['styles']);
-	gulp.watch('./js/src/**/*.js', ['scripts']);
+	gulp.watch('./sass/*.scss', gulp.series('styles'));
+	gulp.watch('./js/src/**/*.js', gulp.series('scripts'));
+	gulp.watch('./img/raw/**/*.{png,jpg,gif,svg}', gulp.series('images'));
 }));

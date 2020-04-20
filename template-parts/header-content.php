@@ -3,7 +3,7 @@
  * Storms Websolutions (http://storms.com.br/)
  *
  * @author    Vinicius Garcia | vinicius.garcia@storms.com.br
- * @copyright (c) Copyright 2012-2019, Storms Websolutions
+ * @copyright (c) Copyright 2012-2020, Storms Websolutions
  * @license   GPLv2 - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  * @package   Storms
  * @version   4.0.0
@@ -15,13 +15,13 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 <div id="page-banner" class="st-grid-row row" role="banner">
-	<div class="page-banner-content col-md-5">
+	<div class="page-banner-content col-md-8 col-lg-6">
 		<?php
-		$header_image = get_header_image();
+		$header_image = get_custom_header();
 		if ( ! empty( $header_image ) ) :
 		?>
 			<a class="header-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<img class="" src="<?php echo esc_url( $header_image ); ?>" height="<?php echo esc_attr( $header_image->height ); ?>" width="<?php esc_attr_e( $header_image->width ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+				<img class="" src="<?php echo esc_url( $header_image->url ); ?>" height="<?php esc_attr_e( $header_image->height ); ?>" width="<?php esc_attr_e( $header_image->width ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 			</a>
 		<?php else : ?>
 			<a class="header-brand" href="<?php echo esc_url( get_bloginfo('url') ) ?>">
@@ -30,7 +30,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php endif; ?>
 	</div>
 
-	<div class="page-banner-sidebar col-md-4 offset-md-3">
+	<div class="page-banner-sidebar col-md-4 offset-lg-2">
         <?php get_sidebar( 'header' ); ?>
 	</div>
 </div>

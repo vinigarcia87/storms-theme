@@ -1,4 +1,7 @@
+"use strict";
+
 /* global WCCorreiosAutofillAddressParams */
+
 /*!
  * WooCommerce Correios Autofill Brazilian 2016.
  *
@@ -6,131 +9,114 @@
  *
  * Version: 3.0.0
  */
+jQuery(function ($) {
+  /**
+   * Autofill address class.
+   *
+   * @type {Object}
+   */
+  var WCCorreiosAutofillAddress = {
+    /**
+     * Initialize actions.
+     */
+    init: function init() {
+      // Initial load.
+      this.autofill('billing', true);
+      $(document.body).on('blur', '#billing_postcode', function () {
+        WCCorreiosAutofillAddress.autofill('billing');
+      });
+      $(document.body).on('blur', '#shipping_postcode', function () {
+        WCCorreiosAutofillAddress.autofill('shipping');
+      });
+    },
 
-jQuery( function( $ ) {
+    /**
+     * Block checkout.
+     */
+    block: function block() {
+      $('form.checkout, form#order_review').addClass('processing').block({
+        message: null,
+        overlayCSS: {
+          background: '#fff',
+          opacity: 0.6
+        }
+      });
+    },
 
-	/**
-	 * Autofill address class.
-	 *
-	 * @type {Object}
-	 */
-	var WCCorreiosAutofillAddress = {
+    /**
+     * Unblock checkout.
+     */
+    unblock: function unblock() {
+      $('form.checkout, form#order_review').removeClass('processing').unblock();
+    },
 
-		/**
-		 * Initialize actions.
-		 */
-		init: function() {
-			// Initial load.
-			this.autofill( 'billing', true );
+    /**
+     * Autocomplate address.
+     *
+     * @param {String} field Target.
+     * @param {Boolean} copy
+     */
+    autofill: function autofill(field, copy) {
+      copy = copy || false; // Checks with *_postcode field exist.
 
-			$( document.body ).on( 'blur', '#billing_postcode', function() {
-				WCCorreiosAutofillAddress.autofill( 'billing' );
-			});
-			$( document.body ).on( 'blur', '#shipping_postcode', function() {
-				WCCorreiosAutofillAddress.autofill( 'shipping' );
-			});
-		},
+      if ($('#' + field + '_postcode').length) {
+        // Valid CEP.
+        var cep = $('#' + field + '_postcode').val().replace('.', '').replace('-', ''),
+            country = $('#' + field + '_country').val(),
+            address_1 = $('#' + field + '_address_1').val(),
+            override = 'yes' === WCCorreiosAutofillAddressParams.force ? true : 0 === address_1.length; // Check country is BR.
 
-		/**
-		 * Block checkout.
-		 */
-		block: function() {
-			$( 'form.checkout, form#order_review' )
-				.addClass( 'processing' )
-				.block({
-					message: null,
-					overlayCSS: {
-						background: '#fff',
-						opacity: 0.6
-					}
-				});
-		},
+        if (cep !== '' && 8 === cep.length && 'BR' === country && override) {
+          WCCorreiosAutofillAddress.block(); // Gets the address.
 
-		/**
-		 * Unblock checkout.
-		 */
-		unblock: function() {
-			$( 'form.checkout, form#order_review' )
-				.removeClass( 'processing' )
-				.unblock();
-		},
+          $.ajax({
+            type: 'GET',
+            url: WCCorreiosAutofillAddressParams.url + '&postcode=' + cep,
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function success(address) {
+              if (address.success) {
+                WCCorreiosAutofillAddress.fillFields(field, address.data);
 
-		/**
-		 * Autocomplate address.
-		 *
-		 * @param {String} field Target.
-		 * @param {Boolean} copy
-		 */
-		autofill: function( field, copy ) {
-			copy = copy || false;
+                if (copy) {
+                  var newField = 'billing' === field ? 'shipping' : 'billing';
+                  WCCorreiosAutofillAddress.fillFields(newField, address.data);
+                }
+              }
 
-			// Checks with *_postcode field exist.
-			if ( $( '#' + field + '_postcode' ).length ) {
+              WCCorreiosAutofillAddress.unblock();
+            }
+          });
+        }
+      }
+    },
 
-				// Valid CEP.
-				var cep       = $( '#' + field + '_postcode' ).val().replace( '.', '' ).replace( '-', '' ),
-					country   = $( '#' + field + '_country' ).val(),
-					address_1 = $( '#' + field + '_address_1' ).val(),
-					override  =  ( 'yes' === WCCorreiosAutofillAddressParams.force ) ? true : ( 0 === address_1.length );
+    /**
+     * Fill fields.
+     *
+     * @param {String} field
+     * @param {Object} data
+     */
+    fillFields: function fillFields(field, data) {
+      // Address.
+      $('#' + field + '_address_1').val(data.address).change(); // Neighborhood.
 
-				// Check country is BR.
-				if ( cep !== '' && 8 === cep.length && 'BR' === country && override ) {
+      if ($('#' + field + '_neighborhood').length) {
+        $('#' + field + '_neighborhood').val(data.neighborhood).change();
+      } else {
+        $('#' + field + '_address_2').val(data.neighborhood).change();
+      } // City.
 
-					WCCorreiosAutofillAddress.block();
 
-					// Gets the address.
-					$.ajax({
-						type: 'GET',
-						url: WCCorreiosAutofillAddressParams.url + '&postcode=' + cep,
-						dataType: 'json',
-						contentType: 'application/json',
-						success: function( address ) {
-							if ( address.success ) {
-								WCCorreiosAutofillAddress.fillFields( field, address.data );
+      $('#' + field + '_city').val(data.city).change(); // State.
 
-								if ( copy ) {
-									var newField = 'billing' === field ? 'shipping' : 'billing';
+      $('#' + field + '_state option:selected').attr('selected', false).change();
+      $('#' + field + '_state option[value="' + data.state + '"]').attr('selected', 'selected').change();
+      $('#' + field + '_state').trigger('liszt:updated').trigger('chosen:updated'); // Chosen support.
+      // Storms added this!
 
-									WCCorreiosAutofillAddress.fillFields( newField, address.data );
-								}
-							}
-
-							WCCorreiosAutofillAddress.unblock();
-						}
-					});
-				}
-			}
-		},
-
-		/**
-		 * Fill fields.
-		 *
-		 * @param {String} field
-		 * @param {Object} data
-		 */
-		fillFields: function( field, data ) {
-			// Address.
-			$( '#' + field + '_address_1' ).val( data.address ).change();
-
-			// Neighborhood.
-			if ( $( '#' + field + '_neighborhood' ).length ) {
-				$( '#' + field + '_neighborhood' ).val( data.neighborhood ).change();
-			} else {
-				$( '#' + field + '_address_2' ).val( data.neighborhood ).change();
-			}
-
-			// City.
-			$( '#' + field + '_city' ).val( data.city ).change();
-
-			// State.
-			$( '#' + field + '_state option:selected' ).attr( 'selected', false ).change();
-			$( '#' + field + '_state option[value="' + data.state + '"]' ).attr( 'selected', 'selected' ).change();
-			$( '#' + field + '_state' ).trigger( 'liszt:updated' ).trigger( 'chosen:updated' ); // Chosen support.
-
-			// Storms added this!
-			$( '#' + field + '_state' ).val( data.state ).trigger('change'); // Select2 support
-		}
-	};
-
-	WCCorreiosAutofillAddress.init();
+      $('#' + field + '_state').val(data.state).trigger('change'); // Select2 support
+    }
+  };
+  WCCorreiosAutofillAddress.init();
 });

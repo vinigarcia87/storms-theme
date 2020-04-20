@@ -15,7 +15,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<aside id="sidebar" class="sidebar header-sidebar" role="complementary">
+<aside id="header-sidebar" class="sidebar header-sidebar" role="complementary">
 	<?php
 		/*
 		* When we call the dynamic_sidebar() function, it'll spit out

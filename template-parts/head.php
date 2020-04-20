@@ -3,7 +3,7 @@
  * Storms Websolutions (http://storms.com.br/)
  *
  * @author    Vinicius Garcia | vinicius.garcia@storms.com.br
- * @copyright (c) Copyright 2012-2019, Storms Websolutions
+ * @copyright (c) Copyright 2012-2020, Storms Websolutions
  * @license   GPLv2 - GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  * @package   Storms
  * @version   4.0.0
@@ -37,7 +37,7 @@ defined( 'ABSPATH' ) || exit;
 	wp_head();
 	?>
 	</head>
-	<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" <?php body_class(); ?>>
+	<body id="page-top" <?php body_class(); ?>>
 		<!-- Skip navigation for accessibility -->
 		<a id="skippy" class="sr-only sr-only-focusable" href="#main-container"><div class="st-grid-container container"><span class="skiplink-text"><?php _e( 'Skip to main content', 'storms' ); ?></span></div></a>
 
