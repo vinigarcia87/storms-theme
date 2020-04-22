@@ -16,10 +16,10 @@ defined( 'ABSPATH' ) || exit;
 ?>
 
 <div class="st-grid-row row no-margin-left">
-	<div class="copyright-storms col-sm-7 offset-sm-2 col-md-8 offset-md-2 text-center">
-		<p>&copy; <?php printf( esc_html__( '2012 - %1$s by %2$s - All rights reserved.', 'storms' ), date('Y'), '<strong>Storms Websolutions</strong>' ); ?></p>
+	<div class="copyright-storms col-md-8 offset-md-2 text-center">
+		<p>&copy; <?php printf( esc_html__( '2012 - %1$s by %2$s - All rights reserved.', 'storms' ), date('Y'), '<a href="http://storms.com.br/" target="_blank" rel="noopener noreferrer"><strong>Storms Websolutions</strong></a>' ); ?></p>
 	</div>
-	<div class="logo-storms col-md-2 col-sm-2">
+	<div class="logo-storms col-md-2 text-center">
 		<a href="<?php echo esc_url('http://www.storms.com.br'); ?>" rel="noopener noreferrer" target="_blank">
 			<img src="<?php echo esc_url( \StormsFramework\Helper::get_asset_url('/img/storms/logo/bn_storms_white.png') ) ?>" alt="Storms Websolutions"/>
 		</a>

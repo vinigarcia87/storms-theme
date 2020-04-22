@@ -23,27 +23,22 @@
 			}
 		}
 
-		// .col-md-8 .offset-md-2 .col-sm-7 .offset-sm-2
+		// .col-md-8 .offset-md-2
 		.copyright-storms {
 			@include make-col-ready;
 			@include make-col(12);
-			@include media-breakpoint-up(sm) {
-				@include make-col(7);
-				@include make-col-offset(2);
-			}
+
 			@include media-breakpoint-up(md) {
 				@include make-col(8);
 				@include make-col-offset(2);
 			}
 		}
 
-		// .col-md-2 .col-sm-2
+		// .col-md-2
 		.logo-storms {
 			@include make-col-ready;
 			@include make-col(12);
-			@include media-breakpoint-up(sm) {
-				@include make-col(2);
-			}
+
 			@include media-breakpoint-up(md) {
 				@include make-col(2);
 			}
@@ -53,6 +48,7 @@
 		.footer-col- * {
 			@include make-col-ready;
 			@include make-col(12);
+
 			@include media-breakpoint-up(md) {
 				@include make-col(3);
 			}

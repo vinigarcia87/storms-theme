@@ -15,7 +15,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 <div id="page-banner" class="st-grid-row row" role="banner">
-	<div class="page-banner-content col-md-8 col-lg-6">
+	<div class="page-banner-content col-sm-7 col-md-8 col-lg-6">
 		<?php
 		$header_image = get_custom_header();
 		if ( ! empty( $header_image ) ) :
@@ -30,7 +30,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php endif; ?>
 	</div>
 
-	<div class="page-banner-sidebar col-md-4 offset-lg-2">
+	<div class="page-banner-sidebar col-sm-5 col-md-4 offset-lg-2">
         <?php get_sidebar( 'header' ); ?>
 	</div>
 </div>

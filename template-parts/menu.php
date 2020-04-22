@@ -48,7 +48,7 @@ defined( 'ABSPATH' ) || exit;
 						'theme_location' => 'main_menu',
 						'depth'          => 2,
 						'container'      => false,
-						'menu_class'     => 'nav navbar-nav mr-auto mt-2 mt-lg-0',
+						'menu_class'     => 'nav navbar-nav',
 						'fallback_cb'    => '\\StormsFramework\\Bootstrap\\WP_Bootstrap_Navwalker::fallback',
 						'walker'         => new \StormsFramework\Bootstrap\WP_Bootstrap_Navwalker()
 					)
