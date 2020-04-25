@@ -17,45 +17,44 @@ defined( 'ABSPATH' ) || exit;
 
 function storms_environment_options() {
 
-    if( SF_ENV == 'DEV' ) {
+	if (SF_ENV == 'DEV') {
 
 		// '1' if site visible by search engine, and '0' if site not visible by search engine
-		update_option( 'blog_public', '0' );
+		update_option('blog_public', '0');
 
-        update_option( 'woocommerce_force_ssl_checkout', 'no' );
+		update_option('woocommerce_force_ssl_checkout', 'no');
 
-		update_option( 'woocommerce_shipping_debug_mode', 'no');
-
-        //$wc_pagseguro_options = get_option( 'woocommerce_pagseguro_settings' );
-        //$wc_pagseguro_options['sandbox'] = 'yes';
-        //update_option( 'woocommerce_pagseguro_settings', $wc_pagseguro_options );
-
-    } elseif( SF_ENV == 'TST' ) {
-
-		// '1' if site visible by search engine, and '0' if site not visible by search engine
-		update_option( 'blog_public', '0' );
-
-		update_option( 'woocommerce_force_ssl_checkout', 'no' );
-
-		update_option( 'woocommerce_shipping_debug_mode', 'yes');
+		update_option('woocommerce_shipping_debug_mode', 'no');
 
 		//$wc_pagseguro_options = get_option( 'woocommerce_pagseguro_settings' );
 		//$wc_pagseguro_options['sandbox'] = 'yes';
 		//update_option( 'woocommerce_pagseguro_settings', $wc_pagseguro_options );
 
-    } else {
+	} elseif (SF_ENV == 'TST') {
 
 		// '1' if site visible by search engine, and '0' if site not visible by search engine
-		update_option( 'blog_public', '1' );
+		update_option('blog_public', '0');
 
-		update_option( 'woocommerce_force_ssl_checkout', 'yes' );
+		update_option('woocommerce_force_ssl_checkout', 'no');
 
-		update_option( 'woocommerce_shipping_debug_mode', 'no');
+		update_option('woocommerce_shipping_debug_mode', 'yes');
+
+		//$wc_pagseguro_options = get_option( 'woocommerce_pagseguro_settings' );
+		//$wc_pagseguro_options['sandbox'] = 'yes';
+		//update_option( 'woocommerce_pagseguro_settings', $wc_pagseguro_options );
+
+	} else {
+
+		// '1' if site visible by search engine, and '0' if site not visible by search engine
+		update_option('blog_public', '1');
+
+		update_option('woocommerce_force_ssl_checkout', 'yes');
+
+		update_option('woocommerce_shipping_debug_mode', 'no');
 
 	}
-
 }
-add_action( 'init', 'storms_environment_options' );
+add_action( 'admin_init', 'storms_environment_options' );
 
 function storms_environment_deactivate_plugins() {
 

@@ -13,6 +13,7 @@ if( 'IntersectionObserver' in window ) {
 		// Check if the WP adminbar is present
 		const has_wp_adminbar = document.querySelector('body').classList.contains('admin-bar');
 
+		const body = document.querySelector('body');
 		const header_el = document.querySelector('header > div'); // This is the element right on top of the menu we wanna stick
 		const wrap_el = document.querySelector('#wrap'); // This is the element right after the menu we wanna stick
 
@@ -29,7 +30,7 @@ if( 'IntersectionObserver' in window ) {
 				entries.forEach(entry => {
 
 					// Try to identify what size is the user's device
-					const body_class_list = document.querySelector('body').classList;
+					const body_class_list = body.classList;
 					const is_device_xs = body_class_list.contains('sts-media-xs');
 					const is_device_sm = body_class_list.contains('sts-media-sm');
 					const is_device_md = body_class_list.contains('sts-media-md');
@@ -42,6 +43,8 @@ if( 'IntersectionObserver' in window ) {
 						sticky_el.classList.add('position-static');
 						sticky_el.classList.remove('fixed-top');
 
+						body.classList.remove('has-fixed-menu');
+
 						wrap_el.style.marginTop = "0";
 
 						return;
@@ -53,12 +56,17 @@ if( 'IntersectionObserver' in window ) {
 						sticky_el.classList.remove('position-static');
 						sticky_el.classList.add('fixed-top');
 
+						// Add class to body, informing that we have a fixed element
+						body.classList.add('has-fixed-menu');
+
 						// Fix the position of the wrap element, so the screen don't "jump"
 						wrap_el.style.marginTop = margin.toString() + 'px';
 					} else {
 						// When the element right on top the menu is back, whe unstick the menu
 						sticky_el.classList.add('position-static');
 						sticky_el.classList.remove('fixed-top');
+
+						body.classList.remove('has-fixed-menu');
 
 						wrap_el.style.marginTop = "0";
 					}

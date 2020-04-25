@@ -56,10 +56,9 @@ defined( 'ABSPATH' ) || exit;
 			?>
 
 
+			<div class="header-menu-sidebar-right nav nav-secondary navbar-right">
 				<?php if ( is_active_sidebar( 'header-menu-sidebar-right' ) ) : ?>
-					<div class="header-menu-sidebar-right nav nav-secondary navbar-right">
-						<?php dynamic_sidebar( 'header-menu-sidebar-right' ); ?>
-					</div>
+					<?php dynamic_sidebar( 'header-menu-sidebar-right' ); ?>
 				<?php endif; ?>
 			</div>
 		</div><!--/.navbar-collapse -->

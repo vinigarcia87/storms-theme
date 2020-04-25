@@ -33,6 +33,17 @@ get_template_part( 'template-parts/head' ); ?>
 
 <!-- Wrap all page content here -->
 <div id="wrap" class="wrap" role="document">
+
+	<?php if ( is_active_sidebar( 'header-bottom-sidebar' ) ) : ?>
+		<div class="st-grid-container container">
+			<div class="st-grid-row row">
+				<div class="header-bottom-sidebar-box col-12">
+					<?php dynamic_sidebar( 'header-bottom-sidebar' ); ?>
+				</div>
+			</div>
+		</div>
+	<?php endif; ?>
+
     <div class="<?php echo Template::wrap_container(); ?>">
 
         <?php

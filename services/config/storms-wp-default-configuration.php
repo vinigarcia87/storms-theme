@@ -22,13 +22,12 @@ if( ! function_exists( 'storms_define_wordpress_options' ) ) {
     // Define WordPress options
     function storms_define_wordpress_options() {
 
-        // Comments configuration
-        update_option( 'comment_registration', 'no' );
-        update_option( 'page_comments', 'yes' );
-        update_option( 'comments_per_page', 5 );
-
+		// Comments configuration
+		update_option('comment_registration', 'no');
+		update_option('page_comments', 'yes');
+		update_option('comments_per_page', 5);
     }
-    add_action( 'init', 'storms_define_wordpress_options' );
+    add_action( 'admin_init', 'storms_define_wordpress_options' );
 
 }
 
@@ -37,44 +36,43 @@ if( ! function_exists( 'storms_define_woocommerce_options' ) ) {
     // Define WooCommerce options
     function storms_define_woocommerce_options() {
 
-    	// Avançado > WooCommerce.com - Não permitir que o uso do WooCommerce seja rastreado
-		update_option( 'woocommerce_allow_tracking', 'no' );
-    	// Avançado > WooCommerce.com - Não exibir sugestões dentro do WooCommerce
-		update_option( 'woocommerce_show_marketplace_suggestions', 'no' );
+		// Avançado > WooCommerce.com - Não permitir que o uso do WooCommerce seja rastreado
+		update_option('woocommerce_allow_tracking', 'no');
+		// Avançado > WooCommerce.com - Não exibir sugestões dentro do WooCommerce
+		update_option('woocommerce_show_marketplace_suggestions', 'no');
 
-        // Image and thumbnail sizes
-        update_option( 'woocommerce_single_image_width', 527);
-        update_option( 'woocommerce_thumbnail_image_width', 400);
+		// Image and thumbnail sizes
+		update_option('woocommerce_single_image_width', 527);
+		update_option('woocommerce_thumbnail_image_width', 400);
 
-        // Permitir que seus clientes efetuem pedidos sem uma conta
-        update_option( 'woocommerce_enable_guest_checkout', 'yes' );
-        // Permitir que seus clientes criem uma conta na página "Minha Conta"
-        update_option( 'woocommerce_enable_myaccount_registration', 'yes' );
-        // Permitir que seus clientes criem uma conta durante a finalização da compra
-        update_option( 'woocommerce_enable_signup_and_login_from_checkout', 'yes' );
-        // Permitir que seus clientes façam login em uma conta existente durante a finalização da compra
-        update_option( 'woocommerce_enable_checkout_login_reminder', 'yes' );
-        // Quando uma conta for criada, gerar automaticamente uma senha para a conta
-        update_option( 'woocommerce_registration_generate_password', 'no' );
+		// Permitir que seus clientes efetuem pedidos sem uma conta
+		update_option('woocommerce_enable_guest_checkout', 'yes');
+		// Permitir que seus clientes criem uma conta na página "Minha Conta"
+		update_option('woocommerce_enable_myaccount_registration', 'yes');
+		// Permitir que seus clientes criem uma conta durante a finalização da compra
+		update_option('woocommerce_enable_signup_and_login_from_checkout', 'yes');
+		// Permitir que seus clientes façam login em uma conta existente durante a finalização da compra
+		update_option('woocommerce_enable_checkout_login_reminder', 'yes');
+		// Quando uma conta for criada, gerar automaticamente uma senha para a conta
+		update_option('woocommerce_registration_generate_password', 'no');
 
-        // Check for woocommerce-extra-checkout-fields-for-brazil plugin
-        if( in_array( 'woocommerce-extra-checkout-fields-for-brazil/woocommerce-extra-checkout-fields-for-brazil.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+		// Check for woocommerce-extra-checkout-fields-for-brazil plugin
+		if (in_array('woocommerce-extra-checkout-fields-for-brazil/woocommerce-extra-checkout-fields-for-brazil.php', apply_filters('active_plugins', get_option('active_plugins')))) {
 
-            update_option( 'wcbcf_settings', array(
-                'person_type'     => 1,
-                'only_brazil'     => 1,
-                'ie'              => 1,
-                'birthdate_sex'   => 1,
-                'cell_phone'      => 1,
-                'mailcheck'       => 1,
-                'maskedinput'     => 1,
-                'addresscomplete' => 1,
-                'validate_cpf'    => 1,
-                'validate_cnpj'   => 1,
-            ));
-        }
-
+			update_option('wcbcf_settings', array(
+				'person_type' => 1,
+				'only_brazil' => 1,
+				'ie' => 1,
+				'birthdate_sex' => 1,
+				'cell_phone' => 1,
+				'mailcheck' => 1,
+				'maskedinput' => 1,
+				'addresscomplete' => 1,
+				'validate_cpf' => 1,
+				'validate_cnpj' => 1,
+			));
+		}
     }
-    add_action( 'init', 'storms_define_woocommerce_options' );
+    add_action( 'admin_init', 'storms_define_woocommerce_options' );
 
 }
