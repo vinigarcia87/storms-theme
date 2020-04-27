@@ -16,3 +16,21 @@
 		}
 	}
 }
+
+// Popup que aparece qndo vc adiciona um produto na wishlist
+#yith-wcwl-popup-message {
+	font-weight: 700;
+	line-height: 50px;
+	text-align: center;
+
+	background: white;
+	-webkit-box-shadow: 0 0 15px rgba(0,0,0,.3);
+	-moz-box-shadow: 0 0 15px rgba(0,0,0,.3);
+	box-shadow: 0 0 15px rgba(0,0,0,.3);
+
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	padding: 7px 40px;
+	z-index: 10000; /* Thanks WP -.- */
+}
