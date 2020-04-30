@@ -461,10 +461,7 @@ mark,
   background-color: #fcf8e3;
 }
 
-.list-unstyled, .woocommerce-error, .woocommerce-account .woocommerce .woocommerce-MyAccount-navigation ul, .woocommerce .cart_totals .shipping ul#shipping_method,
-.woocommerce .woocommerce-checkout-review-order .shipping ul#shipping_method,
-.woocommerce .woocommerce-shipping-calculator .shipping ul#shipping_method, .woocommerce-checkout #payment.woocommerce-checkout-payment ul.wc_payment_methods, ul.woocommerce-order-overview,
-ul.order_details {
+.list-unstyled {
   padding-left: 0;
   list-style: none;
 }
@@ -13141,6 +13138,8 @@ abbr.required {
 }
 
 .woocommerce-error {
+  padding-left: 0;
+  list-style: none;
   border-left-color: #dc3545;
 }
 
@@ -13332,6 +13331,11 @@ abbr.required {
   max-width: 25%;
 }
 
+.woocommerce-account .woocommerce .woocommerce-MyAccount-navigation ul {
+  padding-left: 0;
+  list-style: none;
+}
+
 .woocommerce-account .woocommerce .woocommerce-MyAccount-content {
   position: relative;
   width: 100%;
@@ -13345,7 +13349,8 @@ abbr.required {
 
 .woocommerce-account.interim-login header#header,
 .woocommerce-account.interim-login footer#footer,
-.woocommerce-account.interim-login header.entry-header {
+.woocommerce-account.interim-login header.entry-header,
+.woocommerce-account.interim-login .header-bottom-sidebar-box {
   display: none;
 }
 
@@ -13654,6 +13659,8 @@ abbr.required {
 .woocommerce .cart_totals .shipping ul#shipping_method,
 .woocommerce .woocommerce-checkout-review-order .shipping ul#shipping_method,
 .woocommerce .woocommerce-shipping-calculator .shipping ul#shipping_method {
+  padding-left: 0;
+  list-style: none;
   text-align: left;
 }
 
@@ -13762,6 +13769,7 @@ abbr.required {
 }
 
 .woocommerce-checkout #payment.woocommerce-checkout-payment ul.wc_payment_methods {
+  list-style: none;
   margin: 5px 0 10px;
   background-color: #f5f5f5;
   padding: 20px 15px;
@@ -14008,6 +14016,7 @@ abbr.required {
 
 ul.woocommerce-order-overview,
 ul.order_details {
+  list-style: none;
   display: table;
   width: 100%;
   padding: 15px 0;
@@ -14169,6 +14178,12 @@ ul.order_details li strong {
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
   max-width: 100%;
+}
+
+.woocommerce.single-product main > .product .woocommerce-tabs div.products,
+.woocommerce.single-product main > .product section.products div.products {
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 a.woocommerce-product-gallery__trigger {

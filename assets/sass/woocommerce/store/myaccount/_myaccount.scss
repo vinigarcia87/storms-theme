@@ -75,7 +75,8 @@
 	&.interim-login {
 		header#header,
 		footer#footer,
-		header.entry-header {
+		header.entry-header,
+		.header-bottom-sidebar-box {
 			display: none;
 		}
 		.woocommerce {
