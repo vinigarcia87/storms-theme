@@ -60,7 +60,8 @@
 			@include make-col(3);
 
 			ul {
-				@extend .list-unstyled;
+				padding-left: 0;
+				list-style: none;
 			}
 		}
 

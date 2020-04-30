@@ -6,9 +6,30 @@
 		.summary {
 			@include make-col-ready;
 			@include make-col(12);
+
 			@include media-breakpoint-up(sm) {
 				@include make-col(6);
 			}
 		}
+
+		.woocommerce-tabs,
+		section.products {
+			@include make-col-ready;
+			@include make-col(12);
+
+			div.products {
+				padding-right: 15px;
+				padding-left: 15px;
+			}
+		}
 	}
+}
+
+// Don't show that weird icon for lightbox...
+a.woocommerce-product-gallery__trigger {
+	display: none;
+}
+// ... let's make the image clickable, instead
+figure.woocommerce-product-gallery__wrapper {
+	cursor: pointer;
 }

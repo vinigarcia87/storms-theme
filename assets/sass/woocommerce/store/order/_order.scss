@@ -19,7 +19,7 @@
 
 ul.woocommerce-order-overview,
 ul.order_details {
-	@extend .list-unstyled;
+	list-style: none;
 	display: table;
 	width: 100%;
 	padding: 15px 0;

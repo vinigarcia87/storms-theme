@@ -35,7 +35,6 @@ if( ! function_exists( 'storms_frontend_scripts' ) ) {
 			\StormsFramework\Helper::get_asset_url('/js/storms-sticky-nav-observer' . ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min' ) . '.js'), array('jquery', 'storms-media-query-breakpoints-script'),
 			STORMS_FRAMEWORK_VERSION, true );
 
-
 		/*
 		// Adiciona o script que monitora se o nav do menu principal esta 'grudado' no topo
 		wp_enqueue_script( 'storms-sticky-header-script',
@@ -50,15 +49,22 @@ if( ! function_exists( 'storms_frontend_scripts' ) ) {
 		] );
 		*/
 
+		// Adiciona o script que torna a imagem do produto clickavel
+		if( \StormsFramework\Helper::is_woocommerce_activated() && is_product() ) {
+			wp_enqueue_script('storms-improve-product-image-script',
+				\StormsFramework\Helper::get_asset_url('/js/storms-improve-product-image' . ((defined('WP_DEBUG') && WP_DEBUG) ? '' : '.min') . '.js'), array('jquery'),
+				STORMS_FRAMEWORK_VERSION, true);
+		}
+
 		// Adiciona o script principal - /js/scripts.js
-//		wp_enqueue_script( 'main-script',
-//			\StormsFramework\Helper::get_asset_url('/js/scripts' . ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min' ) . '.js'), array('jquery'),
-//			STORMS_FRAMEWORK_VERSION, true );
+		wp_enqueue_script( 'main-script',
+			\StormsFramework\Helper::get_asset_url('/js/scripts' . ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min' ) . '.js'), array('jquery'),
+			STORMS_FRAMEWORK_VERSION, true );
 		// Add WordPress data to a Javascript file
-//		wp_localize_script( 'main-script', 'storms_main_vars', [
-//			'ajax_url' => admin_url('admin-ajax.php'),
-//			'wc_ajax_url' => WC_AJAX::get_endpoint("%%endpoint%%")
-//		] );
+		wp_localize_script( 'main-script', 'storms_main_vars', [
+			'ajax_url' => admin_url('admin-ajax.php'),
+			'wc_ajax_url' => WC_AJAX::get_endpoint("%%endpoint%%")
+		] );
 	}
 
 	add_action( 'wp_enqueue_scripts', 'storms_frontend_scripts' );

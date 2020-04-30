@@ -209,7 +209,8 @@ table.shop_table {
 			}
 
 			ul#shipping_method {
-				@extend .list-unstyled;
+				padding-left: 0;
+				list-style: none;
 				text-align: left;
 
 				input {

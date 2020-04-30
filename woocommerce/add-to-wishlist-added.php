@@ -36,12 +36,14 @@ global $product;
 
 <!-- ADDED TO WISHLIST MESSAGE -->
 <div class="yith-wcwl-wishlistaddedbrowse">
-	<a href="<?php echo esc_url( $wishlist_url ); ?>" rel="nofollow" data-title="<?php echo esc_attr( $browse_wishlist_text ); ?>">
+	<a href="<?php echo esc_url( $wishlist_url ); ?>" rel="nofollow"
+	   title="<?php echo esc_attr( $browse_wishlist_text ); ?>"
+	   data-title="<?php echo esc_attr( $browse_wishlist_text ); ?>">
 		<span class="feedback">
 			<?php echo $icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-			<?php echo wp_kses_post( $product_added_text ); ?>
+			<?php if( $is_single ) { echo wp_kses_post( $product_added_text ); } ?>
 		</span>
 		<?php echo ( ! $is_single && 'before_image' === $loop_position ) ? $icon : false; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-		<?php echo wp_kses_post( apply_filters( 'yith-wcwl-browse-wishlist-label', $browse_wishlist_text, $product_id, $icon ) ); ?>
+		<?php if( $is_single ) { echo wp_kses_post( apply_filters( 'yith-wcwl-browse-wishlist-label', $browse_wishlist_text, $product_id, $icon ) ); } ?>
 	</a>
 </div>

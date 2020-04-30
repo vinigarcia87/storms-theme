@@ -23,7 +23,8 @@
 }
 
 .woocommerce-error {
-	@extend .list-unstyled;
+	padding-left: 0;
+	list-style: none;
 	border-left-color: theme-color("danger");
 }
 

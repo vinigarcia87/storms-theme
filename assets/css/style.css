@@ -469,16 +469,17 @@ ul.order_details {
   list-style: none;
 }
 
-.list-inline, .storms-wc-mini-cart ul.header-items, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart_list {
+.list-inline, .widget_shopping_cart .cart_list,
+.storms-cart-contents .cart_list {
   padding-left: 0;
   list-style: none;
 }
 
-.list-inline-item, .storms-wc-mini-cart ul.header-items li {
+.list-inline-item {
   display: inline-block;
 }
 
-.list-inline-item:not(:last-child), .storms-wc-mini-cart ul.header-items li:not(:last-child) {
+.list-inline-item:not(:last-child) {
   margin-right: 8px;
   margin-right: 0.5rem;
 }
@@ -2791,7 +2792,7 @@ textarea.is-invalid.input-text, .woocommerce-ordering textarea.is-invalid.orderb
 }
 
 .btn, .button,
-#respond input#submit, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button {
+#respond input#submit {
   display: inline-block;
   font-weight: 400;
   color: #212529;
@@ -2818,57 +2819,55 @@ textarea.is-invalid.input-text, .woocommerce-ordering textarea.is-invalid.orderb
 
 @media (prefers-reduced-motion: reduce) {
   .btn, .button,
-  #respond input#submit, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button {
+  #respond input#submit {
     -webkit-transition: none;
     transition: none;
   }
 }
 
 .btn:hover, .button:hover,
-#respond input#submit:hover, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button:hover {
+#respond input#submit:hover {
   color: #212529;
   text-decoration: none;
 }
 
 .btn:focus, .button:focus,
-#respond input#submit:focus, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button:focus, .btn.focus, .focus.button,
-#respond input.focus#submit, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .focus.button {
+#respond input#submit:focus, .btn.focus, .focus.button,
+#respond input.focus#submit {
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
           box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .btn.disabled, .disabled.button,
-#respond input.disabled#submit, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .disabled.button, .btn:disabled, .button:disabled,
-#respond input#submit:disabled, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button:disabled {
+#respond input.disabled#submit, .btn:disabled, .button:disabled,
+#respond input#submit:disabled {
   opacity: 0.65;
 }
 
-a.btn.disabled, a.disabled.button, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons a.disabled.button,
+a.btn.disabled, a.disabled.button,
 fieldset:disabled a.btn,
-fieldset:disabled a.button,
-fieldset:disabled .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons a.button,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons fieldset:disabled a.button {
+fieldset:disabled a.button {
   pointer-events: none;
 }
 
 .btn-primary, .button.alt,
-#respond input#submit.alt, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button.checkout, .woocommerce-account .woocommerce .woocommerce-form-login__submit, .woocommerce-account .woocommerce .register .woocommerce-Button[name=register] {
+#respond input#submit.alt, .woocommerce-account .woocommerce .woocommerce-form-login__submit, .woocommerce-account .woocommerce .register .woocommerce-Button[name=register] {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
 }
 
 .btn-primary:hover, .button.alt:hover,
-#respond input#submit.alt:hover, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button:hover, .woocommerce-account .woocommerce .woocommerce-form-login__submit:hover, .woocommerce-account .woocommerce .register .woocommerce-Button:hover[name=register] {
+#respond input#submit.alt:hover, .woocommerce-account .woocommerce .woocommerce-form-login__submit:hover, .woocommerce-account .woocommerce .register .woocommerce-Button:hover[name=register] {
   color: #fff;
   background-color: #0069d9;
   border-color: #0062cc;
 }
 
 .btn-primary:focus, .button.alt:focus,
-#respond input#submit.alt:focus, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button:focus, .woocommerce-account .woocommerce .woocommerce-form-login__submit:focus, .woocommerce-account .woocommerce .register .woocommerce-Button:focus[name=register], .btn-primary.focus, .focus.button.alt,
-#respond input.focus#submit.alt, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .focus.button, .woocommerce-account .woocommerce .focus.woocommerce-form-login__submit, .woocommerce-account .woocommerce .register .focus.woocommerce-Button[name=register] {
+#respond input#submit.alt:focus, .woocommerce-account .woocommerce .woocommerce-form-login__submit:focus, .woocommerce-account .woocommerce .register .woocommerce-Button:focus[name=register], .btn-primary.focus, .focus.button.alt,
+#respond input.focus#submit.alt, .woocommerce-account .woocommerce .focus.woocommerce-form-login__submit, .woocommerce-account .woocommerce .register .focus.woocommerce-Button[name=register] {
   color: #fff;
   background-color: #0069d9;
   border-color: #0062cc;
@@ -2877,20 +2876,19 @@ fieldset:disabled .storms-wc-mini-cart .storms-cart-contents .shopping_cart_drop
 }
 
 .btn-primary.disabled, .disabled.button.alt,
-#respond input.disabled#submit.alt, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .disabled.button, .woocommerce-account .woocommerce .disabled.woocommerce-form-login__submit, .woocommerce-account .woocommerce .register .disabled.woocommerce-Button[name=register], .btn-primary:disabled, .button.alt:disabled,
-#respond input#submit.alt:disabled, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button:disabled, .woocommerce-account .woocommerce .woocommerce-form-login__submit:disabled, .woocommerce-account .woocommerce .register .woocommerce-Button:disabled[name=register] {
+#respond input.disabled#submit.alt, .woocommerce-account .woocommerce .disabled.woocommerce-form-login__submit, .woocommerce-account .woocommerce .register .disabled.woocommerce-Button[name=register], .btn-primary:disabled, .button.alt:disabled,
+#respond input#submit.alt:disabled, .woocommerce-account .woocommerce .woocommerce-form-login__submit:disabled, .woocommerce-account .woocommerce .register .woocommerce-Button:disabled[name=register] {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .button.alt:not(:disabled):not(.disabled):active,
-#respond input#submit.alt:not(:disabled):not(.disabled):active, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button:not(:disabled):not(.disabled):active, .woocommerce-account .woocommerce .woocommerce-form-login__submit:not(:disabled):not(.disabled):active, .woocommerce-account .woocommerce .register .woocommerce-Button:not(:disabled):not(.disabled):active[name=register], .btn-primary:not(:disabled):not(.disabled).active, .button.alt:not(:disabled):not(.disabled).active,
-#respond input#submit.alt:not(:disabled):not(.disabled).active, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button:not(:disabled):not(.disabled).active, .woocommerce-account .woocommerce .woocommerce-form-login__submit:not(:disabled):not(.disabled).active, .woocommerce-account .woocommerce .register .woocommerce-Button:not(:disabled):not(.disabled).active[name=register],
+#respond input#submit.alt:not(:disabled):not(.disabled):active, .woocommerce-account .woocommerce .woocommerce-form-login__submit:not(:disabled):not(.disabled):active, .woocommerce-account .woocommerce .register .woocommerce-Button:not(:disabled):not(.disabled):active[name=register], .btn-primary:not(:disabled):not(.disabled).active, .button.alt:not(:disabled):not(.disabled).active,
+#respond input#submit.alt:not(:disabled):not(.disabled).active, .woocommerce-account .woocommerce .woocommerce-form-login__submit:not(:disabled):not(.disabled).active, .woocommerce-account .woocommerce .register .woocommerce-Button:not(:disabled):not(.disabled).active[name=register],
 .show > .btn-primary.dropdown-toggle,
 .show > .dropdown-toggle.button.alt,
 #respond .show > input.dropdown-toggle#submit.alt,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .show > .dropdown-toggle.button,
 .woocommerce-account .woocommerce .show > .dropdown-toggle.woocommerce-form-login__submit,
 .woocommerce-account .woocommerce .register .show > .dropdown-toggle.woocommerce-Button[name=register] {
   color: #fff;
@@ -2899,12 +2897,11 @@ fieldset:disabled .storms-wc-mini-cart .storms-cart-contents .shopping_cart_drop
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus, .button.alt:not(:disabled):not(.disabled):active:focus,
-#respond input#submit.alt:not(:disabled):not(.disabled):active:focus, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button:not(:disabled):not(.disabled):active:focus, .woocommerce-account .woocommerce .woocommerce-form-login__submit:not(:disabled):not(.disabled):active:focus, .woocommerce-account .woocommerce .register .woocommerce-Button:not(:disabled):not(.disabled):active:focus[name=register], .btn-primary:not(:disabled):not(.disabled).active:focus, .button.alt:not(:disabled):not(.disabled).active:focus,
-#respond input#submit.alt:not(:disabled):not(.disabled).active:focus, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button:not(:disabled):not(.disabled).active:focus, .woocommerce-account .woocommerce .woocommerce-form-login__submit:not(:disabled):not(.disabled).active:focus, .woocommerce-account .woocommerce .register .woocommerce-Button:not(:disabled):not(.disabled).active:focus[name=register],
+#respond input#submit.alt:not(:disabled):not(.disabled):active:focus, .woocommerce-account .woocommerce .woocommerce-form-login__submit:not(:disabled):not(.disabled):active:focus, .woocommerce-account .woocommerce .register .woocommerce-Button:not(:disabled):not(.disabled):active:focus[name=register], .btn-primary:not(:disabled):not(.disabled).active:focus, .button.alt:not(:disabled):not(.disabled).active:focus,
+#respond input#submit.alt:not(:disabled):not(.disabled).active:focus, .woocommerce-account .woocommerce .woocommerce-form-login__submit:not(:disabled):not(.disabled).active:focus, .woocommerce-account .woocommerce .register .woocommerce-Button:not(:disabled):not(.disabled).active:focus[name=register],
 .show > .btn-primary.dropdown-toggle:focus,
 .show > .dropdown-toggle.button.alt:focus,
 #respond .show > input.dropdown-toggle#submit.alt:focus,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .show > .dropdown-toggle.button:focus,
 .woocommerce-account .woocommerce .show > .dropdown-toggle.woocommerce-form-login__submit:focus,
 .woocommerce-account .woocommerce .register .show > .dropdown-toggle.woocommerce-Button:focus[name=register] {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
@@ -3493,7 +3490,7 @@ fieldset:disabled .storms-wc-mini-cart .storms-cart-contents .shopping_cart_drop
 }
 
 .btn-lg, .btn-group-lg > .btn, .btn-group-lg > .button,
-#respond .btn-group-lg > input#submit, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-lg > .button {
+#respond .btn-group-lg > input#submit {
   padding: 8px 16px;
   padding: 0.5rem 1rem;
   font-size: 20px;
@@ -3503,7 +3500,7 @@ fieldset:disabled .storms-wc-mini-cart .storms-cart-contents .shopping_cart_drop
 }
 
 .btn-sm, .btn-group-sm > .btn, .btn-group-sm > .button,
-#respond .btn-group-sm > input#submit, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-sm > .button {
+#respond .btn-group-sm > input#submit {
   padding: 4px 8px;
   padding: 0.25rem 0.5rem;
   font-size: 14px;
@@ -3512,24 +3509,22 @@ fieldset:disabled .storms-wc-mini-cart .storms-cart-contents .shopping_cart_drop
   border-radius: 0.2rem;
 }
 
-.btn-block, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button, table.shop_table tr.coupon > td .button, .checkout-button, .place-order #place_order {
+.btn-block, table.shop_table tr.coupon > td .button, .checkout-button, .place-order #place_order {
   display: block;
   width: 100%;
 }
 
-.btn-block + .btn-block, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + .btn-block, table.shop_table tr.coupon > td .button + .btn-block, .checkout-button + .btn-block, .place-order #place_order + .btn-block, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-block + .button, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + .button, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .checkout-button + .button, .place-order .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons #place_order + .button, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .place-order #place_order + .button, table.shop_table tr.coupon > td .btn-block + .button, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons table.shop_table tr.coupon > td .button + .button, table.shop_table tr.coupon > td .button + .button, table.shop_table tr.coupon > td .checkout-button + .button, .place-order table.shop_table tr.coupon > td #place_order + .button, table.shop_table tr.coupon > td .place-order #place_order + .button, .btn-block + .checkout-button, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + .checkout-button, table.shop_table tr.coupon > td .button + .checkout-button, .checkout-button + .checkout-button, .place-order #place_order + .checkout-button, .place-order .btn-block + #place_order, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .place-order .button + #place_order, .place-order .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + #place_order, table.shop_table tr.coupon > td .place-order .button + #place_order, .place-order table.shop_table tr.coupon > td .button + #place_order, .place-order .checkout-button + #place_order, .place-order #place_order + #place_order {
+.btn-block + .btn-block, table.shop_table tr.coupon > td .button + .btn-block, .checkout-button + .btn-block, .place-order #place_order + .btn-block, table.shop_table tr.coupon > td .btn-block + .button, table.shop_table tr.coupon > td .button + .button, table.shop_table tr.coupon > td .checkout-button + .button, .place-order table.shop_table tr.coupon > td #place_order + .button, table.shop_table tr.coupon > td .place-order #place_order + .button, .btn-block + .checkout-button, table.shop_table tr.coupon > td .button + .checkout-button, .checkout-button + .checkout-button, .place-order #place_order + .checkout-button, .place-order .btn-block + #place_order, table.shop_table tr.coupon > td .place-order .button + #place_order, .place-order table.shop_table tr.coupon > td .button + #place_order, .place-order .checkout-button + #place_order, .place-order #place_order + #place_order {
   margin-top: 8px;
   margin-top: 0.5rem;
 }
 
-input[type="submit"].btn-block, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons input.button[type="submit"], table.shop_table tr.coupon > td input.button[type="submit"], input.checkout-button[type="submit"], .place-order input#place_order[type="submit"],
+input[type="submit"].btn-block, table.shop_table tr.coupon > td input.button[type="submit"], input.checkout-button[type="submit"], .place-order input#place_order[type="submit"],
 input[type="reset"].btn-block,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons input.button[type="reset"],
 table.shop_table tr.coupon > td input.button[type="reset"],
 input.checkout-button[type="reset"],
 .place-order input#place_order[type="reset"],
 input[type="button"].btn-block,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons input.button[type="button"],
 table.shop_table tr.coupon > td input.button[type="button"],
 input.checkout-button[type="button"],
 .place-order input#place_order[type="button"] {
@@ -3841,11 +3836,10 @@ input.checkout-button[type="button"],
 }
 
 .btn-group > .btn, .btn-group > .button,
-#respond .btn-group > input#submit, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .button,
+#respond .btn-group > input#submit,
 .btn-group-vertical > .btn,
 .btn-group-vertical > .button,
-#respond .btn-group-vertical > input#submit,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .button {
+#respond .btn-group-vertical > input#submit {
   position: relative;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -3853,30 +3847,26 @@ input.checkout-button[type="button"],
 }
 
 .btn-group > .btn:hover, .btn-group > .button:hover,
-#respond .btn-group > input#submit:hover, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .button:hover,
+#respond .btn-group > input#submit:hover,
 .btn-group-vertical > .btn:hover,
 .btn-group-vertical > .button:hover,
-#respond .btn-group-vertical > input#submit:hover,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .button:hover {
+#respond .btn-group-vertical > input#submit:hover {
   z-index: 1;
 }
 
 .btn-group > .btn:focus, .btn-group > .button:focus,
-#respond .btn-group > input#submit:focus, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .button:focus, .btn-group > .btn:active, .btn-group > .button:active,
-#respond .btn-group > input#submit:active, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .button:active, .btn-group > .btn.active, .btn-group > .active.button,
-#respond .btn-group > input.active#submit, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .active.button,
+#respond .btn-group > input#submit:focus, .btn-group > .btn:active, .btn-group > .button:active,
+#respond .btn-group > input#submit:active, .btn-group > .btn.active, .btn-group > .active.button,
+#respond .btn-group > input.active#submit,
 .btn-group-vertical > .btn:focus,
 .btn-group-vertical > .button:focus,
 #respond .btn-group-vertical > input#submit:focus,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .button:focus,
 .btn-group-vertical > .btn:active,
 .btn-group-vertical > .button:active,
 #respond .btn-group-vertical > input#submit:active,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .button:active,
 .btn-group-vertical > .btn.active,
 .btn-group-vertical > .active.button,
-#respond .btn-group-vertical > input.active#submit,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .active.button {
+#respond .btn-group-vertical > input.active#submit {
   z-index: 1;
 }
 
@@ -3896,27 +3886,25 @@ input.checkout-button[type="button"],
 }
 
 .btn-group > .btn:not(:first-child), .btn-group > .button:not(:first-child),
-#respond .btn-group > input#submit:not(:first-child), .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .button:not(:first-child),
+#respond .btn-group > input#submit:not(:first-child),
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px;
 }
 
 .btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .button:not(:last-child):not(.dropdown-toggle),
-#respond .btn-group > input#submit:not(:last-child):not(.dropdown-toggle), .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .button:not(:last-child):not(.dropdown-toggle),
+#respond .btn-group > input#submit:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn-group:not(:last-child) > .btn,
 .btn-group > .btn-group:not(:last-child) > .button,
-#respond .btn-group > .btn-group:not(:last-child) > input#submit,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .btn-group:not(:last-child) > .button {
+#respond .btn-group > .btn-group:not(:last-child) > input#submit {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
 .btn-group > .btn:not(:first-child), .btn-group > .button:not(:first-child),
-#respond .btn-group > input#submit:not(:first-child), .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .button:not(:first-child),
+#respond .btn-group > input#submit:not(:first-child),
 .btn-group > .btn-group:not(:first-child) > .btn,
 .btn-group > .btn-group:not(:first-child) > .button,
-#respond .btn-group > .btn-group:not(:first-child) > input#submit,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group > .btn-group:not(:first-child) > .button {
+#respond .btn-group > .btn-group:not(:first-child) > input#submit {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -3938,14 +3926,14 @@ input.checkout-button[type="button"],
   margin-right: 0;
 }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > .button + .dropdown-toggle-split, #respond .btn-group-sm > input#submit + .dropdown-toggle-split, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-sm > .button + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > .button + .dropdown-toggle-split, #respond .btn-group-sm > input#submit + .dropdown-toggle-split {
   padding-right: 6px;
   padding-right: 0.375rem;
   padding-left: 6px;
   padding-left: 0.375rem;
 }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > .button + .dropdown-toggle-split, #respond .btn-group-lg > input#submit + .dropdown-toggle-split, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-lg > .button + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > .button + .dropdown-toggle-split, #respond .btn-group-lg > input#submit + .dropdown-toggle-split {
   padding-right: 12px;
   padding-right: 0.75rem;
   padding-left: 12px;
@@ -3969,59 +3957,52 @@ input.checkout-button[type="button"],
 .btn-group-vertical > .btn,
 .btn-group-vertical > .button,
 #respond .btn-group-vertical > input#submit,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .button,
 .btn-group-vertical > .btn-group {
   width: 100%;
 }
 
 .btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .button:not(:first-child),
-#respond .btn-group-vertical > input#submit:not(:first-child), .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .button:not(:first-child),
+#respond .btn-group-vertical > input#submit:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
   margin-top: -1px;
 }
 
 .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .button:not(:last-child):not(.dropdown-toggle),
-#respond .btn-group-vertical > input#submit:not(:last-child):not(.dropdown-toggle), .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .button:not(:last-child):not(.dropdown-toggle),
+#respond .btn-group-vertical > input#submit:not(:last-child):not(.dropdown-toggle),
 .btn-group-vertical > .btn-group:not(:last-child) > .btn,
 .btn-group-vertical > .btn-group:not(:last-child) > .button,
-#respond .btn-group-vertical > .btn-group:not(:last-child) > input#submit,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .btn-group:not(:last-child) > .button {
+#respond .btn-group-vertical > .btn-group:not(:last-child) > input#submit {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 .btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .button:not(:first-child),
-#respond .btn-group-vertical > input#submit:not(:first-child), .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .button:not(:first-child),
+#respond .btn-group-vertical > input#submit:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) > .btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .button,
-#respond .btn-group-vertical > .btn-group:not(:first-child) > input#submit,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-vertical > .btn-group:not(:first-child) > .button {
+#respond .btn-group-vertical > .btn-group:not(:first-child) > input#submit {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
 .btn-group-toggle > .btn, .btn-group-toggle > .button,
-#respond .btn-group-toggle > input#submit, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-toggle > .button,
+#respond .btn-group-toggle > input#submit,
 .btn-group-toggle > .btn-group > .btn,
 .btn-group-toggle > .btn-group > .button,
-#respond .btn-group-toggle > .btn-group > input#submit,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-toggle > .btn-group > .button {
+#respond .btn-group-toggle > .btn-group > input#submit {
   margin-bottom: 0;
 }
 
-.btn-group-toggle > .btn input[type="radio"], .btn-group-toggle > .button input[type="radio"], #respond .btn-group-toggle > input#submit input[type="radio"], .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-toggle > .button input[type="radio"],
+.btn-group-toggle > .btn input[type="radio"], .btn-group-toggle > .button input[type="radio"], #respond .btn-group-toggle > input#submit input[type="radio"],
 .btn-group-toggle > .btn input[type="checkbox"],
 .btn-group-toggle > .button input[type="checkbox"],
 #respond .btn-group-toggle > input#submit input[type="checkbox"],
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-toggle > .button input[type="checkbox"],
 .btn-group-toggle > .btn-group > .btn input[type="radio"],
 .btn-group-toggle > .btn-group > .button input[type="radio"],
 #respond .btn-group-toggle > .btn-group > input#submit input[type="radio"],
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-toggle > .btn-group > .button input[type="radio"],
 .btn-group-toggle > .btn-group > .btn input[type="checkbox"],
 .btn-group-toggle > .btn-group > .button input[type="checkbox"],
-#respond .btn-group-toggle > .btn-group > input#submit input[type="checkbox"],
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn-group-toggle > .btn-group > .button input[type="checkbox"] {
+#respond .btn-group-toggle > .btn-group > input#submit input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
@@ -4170,51 +4151,41 @@ input.checkout-button[type="button"],
 }
 
 .input-group-prepend .btn, .input-group-prepend .button,
-.input-group-prepend #respond input#submit, #respond .input-group-prepend input#submit, .input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-prepend .button,
+.input-group-prepend #respond input#submit, #respond .input-group-prepend input#submit,
 .input-group-append .btn,
 .input-group-append .button,
 .input-group-append #respond input#submit,
-#respond .input-group-append input#submit,
-.input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-append .button {
+#respond .input-group-append input#submit {
   position: relative;
   z-index: 2;
 }
 
 .input-group-prepend .btn:focus, .input-group-prepend .button:focus,
-.input-group-prepend #respond input#submit:focus, #respond .input-group-prepend input#submit:focus, .input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button:focus, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-prepend .button:focus,
+.input-group-prepend #respond input#submit:focus, #respond .input-group-prepend input#submit:focus,
 .input-group-append .btn:focus,
 .input-group-append .button:focus,
 .input-group-append #respond input#submit:focus,
-#respond .input-group-append input#submit:focus,
-.input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button:focus,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-append .button:focus {
+#respond .input-group-append input#submit:focus {
   z-index: 3;
 }
 
-.input-group-prepend .btn + .btn, .input-group-prepend .button + .btn, .input-group-prepend #respond input#submit + .btn, #respond .input-group-prepend input#submit + .btn, .input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + .btn, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-prepend .button + .btn, .input-group-prepend .btn + .button, .input-group-prepend .button + .button, .input-group-prepend #respond input#submit + .button, #respond .input-group-prepend input#submit + .button,
+.input-group-prepend .btn + .btn, .input-group-prepend .button + .btn, .input-group-prepend #respond input#submit + .btn, #respond .input-group-prepend input#submit + .btn, .input-group-prepend .btn + .button, .input-group-prepend .button + .button, .input-group-prepend #respond input#submit + .button, #respond .input-group-prepend input#submit + .button,
 .input-group-prepend #respond .btn + input#submit, #respond .input-group-prepend .btn + input#submit,
 .input-group-prepend #respond .button + input#submit, #respond .input-group-prepend .button + input#submit,
-.input-group-prepend #respond input#submit + input#submit, #respond .input-group-prepend input#submit + input#submit, #respond .input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + input#submit, .input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn + .button, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-prepend .btn + .button, .input-group-prepend #respond .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons input#submit + .button, #respond .input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons input#submit + .button, .input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + .button, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-prepend .button + .button,
+.input-group-prepend #respond input#submit + input#submit, #respond .input-group-prepend input#submit + input#submit,
 .input-group-prepend .btn + .input-group-text,
 .input-group-prepend .button + .input-group-text,
 .input-group-prepend #respond input#submit + .input-group-text,
 #respond .input-group-prepend input#submit + .input-group-text,
-.input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + .input-group-text,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-prepend .button + .input-group-text,
 .input-group-prepend .input-group-text + .input-group-text,
 .input-group-prepend .input-group-text + .btn,
 .input-group-prepend .input-group-text + .button,
 .input-group-prepend #respond .input-group-text + input#submit,
 #respond .input-group-prepend .input-group-text + input#submit,
-.input-group-prepend .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-text + .button,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-prepend .input-group-text + .button,
 .input-group-append .btn + .btn,
 .input-group-append .button + .btn,
 .input-group-append #respond input#submit + .btn,
 #respond .input-group-append input#submit + .btn,
-.input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + .btn,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-append .button + .btn,
 .input-group-append .btn + .button,
 .input-group-append .button + .button,
 .input-group-append #respond input#submit + .button,
@@ -4225,26 +4196,15 @@ input.checkout-button[type="button"],
 #respond .input-group-append .button + input#submit,
 .input-group-append #respond input#submit + input#submit,
 #respond .input-group-append input#submit + input#submit,
-#respond .input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + input#submit,
-.input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .btn + .button,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-append .btn + .button,
-.input-group-append #respond .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons input#submit + .button,
-#respond .input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons input#submit + .button,
-.input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + .button,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-append .button + .button,
 .input-group-append .btn + .input-group-text,
 .input-group-append .button + .input-group-text,
 .input-group-append #respond input#submit + .input-group-text,
 #respond .input-group-append input#submit + .input-group-text,
-.input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button + .input-group-text,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-append .button + .input-group-text,
 .input-group-append .input-group-text + .input-group-text,
 .input-group-append .input-group-text + .btn,
 .input-group-append .input-group-text + .button,
 .input-group-append #respond .input-group-text + input#submit,
-#respond .input-group-append .input-group-text + input#submit,
-.input-group-append .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-text + .button,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-append .input-group-text + .button {
+#respond .input-group-append .input-group-text + input#submit {
   margin-left: -1px;
 }
 
@@ -4299,11 +4259,9 @@ input.checkout-button[type="button"],
 .input-group-lg > .input-group-prepend > .btn,
 .input-group-lg > .input-group-prepend > .button,
 #respond .input-group-lg > .input-group-prepend > input#submit,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-lg > .input-group-prepend > .button,
 .input-group-lg > .input-group-append > .btn,
 .input-group-lg > .input-group-append > .button,
-#respond .input-group-lg > .input-group-append > input#submit,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-lg > .input-group-append > .button {
+#respond .input-group-lg > .input-group-append > input#submit {
   padding: 8px 16px;
   padding: 0.5rem 1rem;
   font-size: 20px;
@@ -4328,11 +4286,9 @@ input.checkout-button[type="button"],
 .input-group-sm > .input-group-prepend > .btn,
 .input-group-sm > .input-group-prepend > .button,
 #respond .input-group-sm > .input-group-prepend > input#submit,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-sm > .input-group-prepend > .button,
 .input-group-sm > .input-group-append > .btn,
 .input-group-sm > .input-group-append > .button,
-#respond .input-group-sm > .input-group-append > input#submit,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group-sm > .input-group-append > .button {
+#respond .input-group-sm > .input-group-append > input#submit {
   padding: 4px 8px;
   padding: 0.25rem 0.5rem;
   font-size: 14px;
@@ -4348,34 +4304,30 @@ input.checkout-button[type="button"],
 }
 
 .input-group > .input-group-prepend > .btn, .input-group > .input-group-prepend > .button,
-#respond .input-group > .input-group-prepend > input#submit, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group > .input-group-prepend > .button,
+#respond .input-group > .input-group-prepend > input#submit,
 .input-group > .input-group-prepend > .input-group-text,
 .input-group > .input-group-append:not(:last-child) > .btn,
 .input-group > .input-group-append:not(:last-child) > .button,
 #respond .input-group > .input-group-append:not(:last-child) > input#submit,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group > .input-group-append:not(:last-child) > .button,
 .input-group > .input-group-append:not(:last-child) > .input-group-text,
 .input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
 .input-group > .input-group-append:last-child > .button:not(:last-child):not(.dropdown-toggle),
 #respond .input-group > .input-group-append:last-child > input#submit:not(:last-child):not(.dropdown-toggle),
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group > .input-group-append:last-child > .button:not(:last-child):not(.dropdown-toggle),
 .input-group > .input-group-append:last-child > .input-group-text:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
 .input-group > .input-group-append > .btn, .input-group > .input-group-append > .button,
-#respond .input-group > .input-group-append > input#submit, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group > .input-group-append > .button,
+#respond .input-group > .input-group-append > input#submit,
 .input-group > .input-group-append > .input-group-text,
 .input-group > .input-group-prepend:not(:first-child) > .btn,
 .input-group > .input-group-prepend:not(:first-child) > .button,
 #respond .input-group > .input-group-prepend:not(:first-child) > input#submit,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group > .input-group-prepend:not(:first-child) > .button,
 .input-group > .input-group-prepend:not(:first-child) > .input-group-text,
 .input-group > .input-group-prepend:first-child > .btn:not(:first-child),
 .input-group > .input-group-prepend:first-child > .button:not(:first-child),
 #respond .input-group > .input-group-prepend:first-child > input#submit:not(:first-child),
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .input-group > .input-group-prepend:first-child > .button:not(:first-child),
 .input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -5119,7 +5071,7 @@ a.badge:hover, a.badge:focus {
   display: none;
 }
 
-.btn .badge, .button .badge, #respond input#submit .badge, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button .badge {
+.btn .badge, .button .badge, #respond input#submit .badge {
   position: relative;
   top: -1px;
 }
@@ -5908,8 +5860,11 @@ button.bg-dark:focus {
   border-radius: 0 !important;
 }
 
-.clearfix::after, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart_list .mini_cart_item .product-description a::after, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart_list .mini_cart_item .product-description .variation::after,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart_list .mini_cart_item .product-description .quantity::after, .woocommerce .cart_totals table.shop_table tbody tr.cart_item td.product .product-info .variation::after,
+.clearfix::after, .widget_shopping_cart .cart_list .mini_cart_item .product-description a::after,
+.storms-cart-contents .cart_list .mini_cart_item .product-description a::after, .widget_shopping_cart .cart_list .mini_cart_item .product-description .variation::after,
+.widget_shopping_cart .cart_list .mini_cart_item .product-description .quantity::after,
+.storms-cart-contents .cart_list .mini_cart_item .product-description .variation::after,
+.storms-cart-contents .cart_list .mini_cart_item .product-description .quantity::after, .woocommerce .cart_totals table.shop_table tbody tr.cart_item td.product .product-info .variation::after,
 .woocommerce .cart_totals table.shop_table tfoot tr.cart_item td.product .product-info .variation::after,
 .woocommerce .woocommerce-checkout-review-order table.shop_table tbody tr.cart_item td.product .product-info .variation::after,
 .woocommerce .woocommerce-checkout-review-order table.shop_table tfoot tr.cart_item td.product .product-info .variation::after,
@@ -7139,7 +7094,7 @@ button.bg-dark:focus {
           box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
-.shadow, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown {
+.shadow, .storms-wc-mini-cart .shopping_cart_dropdown {
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
@@ -9139,15 +9094,15 @@ button.bg-dark:focus {
   white-space: nowrap;
 }
 
-.text-left, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .total .total-title {
+.text-left {
   text-align: left !important;
 }
 
-.text-right, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart_list .mini_cart_item .product-actions, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .total .total-value {
+.text-right {
   text-align: right !important;
 }
 
-.text-center, .storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart_list .mini_cart_item .product-image {
+.text-center {
   text-align: center !important;
 }
 
@@ -12874,7 +12829,6 @@ td.product-quantity {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 5px 0;
-  
 }
 
 @media (max-width: 575.98px) {
@@ -12883,47 +12837,20 @@ td.product-quantity {
   }
 }
 
-.storms-wc-mini-cart ul.header-items {
-  margin: 0;
-}
-
-.storms-wc-mini-cart ul.header-items .storms-search-full-screen {
-  display: none;
-}
-
-.storms-wc-mini-cart ul.header-items .fa {
-  font-size: 18px;
-}
-
-.storms-wc-mini-cart .storms-cart-contents {
-  position: relative;
-}
-
-.storms-wc-mini-cart .storms-cart-contents .cart-link {
-  width: 100%;
-  display: inline-block;
-  text-align: center;
-}
-
-.storms-wc-mini-cart .storms-cart-contents .cart-link .cart-contents-total {
-  font-weight: 900;
-}
-
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown {
+.storms-wc-mini-cart .shopping_cart_dropdown {
   visibility: hidden;
   opacity: 0;
   z-index: 1060;
   position: absolute;
-  top: 30px;
   right: 0;
-  width: 300px;
+  width: 330px;
   background-color: #fff;
   border: solid 1px #ccc;
   -webkit-transition: all .1s linear;
   transition: all .1s linear;
 }
 
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown:before {
+.storms-wc-mini-cart .shopping_cart_dropdown:before {
   content: '';
   display: inline-block;
   width: 0;
@@ -12939,7 +12866,7 @@ td.product-quantity {
   text-align: center;
 }
 
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown:after {
+.storms-wc-mini-cart .shopping_cart_dropdown:after {
   content: '';
   display: inline-block;
   width: 0;
@@ -12955,85 +12882,9 @@ td.product-quantity {
   text-align: center;
 }
 
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown.active {
+.storms-wc-mini-cart .shopping_cart_dropdown.active {
   visibility: visible;
   opacity: 1;
-}
-
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart_list {
-  margin-left: 0;
-  margin-top: 10px;
-  max-height: 205px;
-  overflow: hidden;
-  overflow-y: auto;
-}
-
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart_list .mini_cart_item {
-  overflow: hidden;
-  border-bottom: none;
-  padding: 12px 0 12px;
-  height: 95px;
-  text-align: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: all .1s linear;
-  transition: all .1s linear;
-}
-
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart_list .mini_cart_item .product-description {
-  text-align: left;
-  padding: 3px 0;
-}
-
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart_list .mini_cart_item .product-description .variation,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart_list .mini_cart_item .product-description .quantity {
-  max-width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  position: relative;
-  min-height: 1px;
-  float: left;
-  font-size: 14px;
-}
-
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart_list .mini_cart_item .product-description .variation p,
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart_list .mini_cart_item .product-description .quantity p {
-  margin: 0;
-}
-
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart_list .mini_cart_item .product-actions .storms_remove_from_cart_button {
-  display: none;
-  position: static;
-  font-size: 10px;
-  color: #858585;
-  cursor: pointer;
-  margin-top: 12px;
-}
-
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart_list .mini_cart_item:hover {
-  background-color: #ECECEC;
-}
-
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart_list .mini_cart_item:hover .product-actions .storms_remove_from_cart_button {
-  display: block;
-}
-
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer {
-  padding: 10px 28px 20px;
-  text-align: center;
-}
-
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .total {
-  padding: 10px 0 25px;
-}
-
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown .cart-footer .buttons .button {
-  margin-bottom: 5px;
-}
-
-.storms-wc-mini-cart .storms-cart-contents .shopping_cart_dropdown p.cart-empty {
-  text-align: center;
-  padding: 30px 0;
 }
 
 .storms-wc-mini-cart span.cart-contents-count:after {
@@ -13050,6 +12901,135 @@ td.product-quantity {
   
   -webkit-filter: invert(71%) sepia(36%) saturate(370%) hue-rotate(156deg) brightness(96%) contrast(93%);
           filter: invert(71%) sepia(36%) saturate(370%) hue-rotate(156deg) brightness(96%) contrast(93%);
+}
+
+.widget_shopping_cart,
+.storms-cart-contents {
+  position: relative;
+}
+
+.widget_shopping_cart .cart-link,
+.storms-cart-contents .cart-link {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+
+.widget_shopping_cart .cart-link .cart-contents-total,
+.storms-cart-contents .cart-link .cart-contents-total {
+  font-weight: 900;
+}
+
+.widget_shopping_cart .widget_shopping_cart_content,
+.storms-cart-contents .widget_shopping_cart_content {
+  padding: 0 15px;
+}
+
+.widget_shopping_cart .widget_shopping_cart_content .total .amount,
+.storms-cart-contents .widget_shopping_cart_content .total .amount {
+  float: right;
+}
+
+.widget_shopping_cart .widget_shopping_cart_content .buttons a,
+.storms-cart-contents .widget_shopping_cart_content .buttons a {
+  width: 48%;
+}
+
+.widget_shopping_cart .widget_shopping_cart_content .buttons a:first-child,
+.storms-cart-contents .widget_shopping_cart_content .buttons a:first-child {
+  margin: 0 10px 0 0;
+}
+
+.widget_shopping_cart .widget_shopping_cart_content a.remove.remove_from_cart_button:hover,
+.storms-cart-contents .widget_shopping_cart_content a.remove.remove_from_cart_button:hover {
+  padding-left: 0 !important;
+}
+
+.widget_shopping_cart .cart_list,
+.storms-cart-contents .cart_list {
+  margin-left: 0;
+  margin-top: 10px;
+  max-height: 205px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.widget_shopping_cart .cart_list .mini_cart_item,
+.storms-cart-contents .cart_list .mini_cart_item {
+  overflow: hidden;
+  border-bottom: none;
+  padding: 12px 0 12px;
+  height: 95px;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all .1s linear;
+  transition: all .1s linear;
+}
+
+.widget_shopping_cart .cart_list .mini_cart_item .product-image,
+.storms-cart-contents .cart_list .mini_cart_item .product-image {
+  text-align: center;
+}
+
+.widget_shopping_cart .cart_list .mini_cart_item .product-description,
+.storms-cart-contents .cart_list .mini_cart_item .product-description {
+  text-align: left;
+  padding: 3px 0;
+}
+
+.widget_shopping_cart .cart_list .mini_cart_item .product-description .variation,
+.widget_shopping_cart .cart_list .mini_cart_item .product-description .quantity,
+.storms-cart-contents .cart_list .mini_cart_item .product-description .variation,
+.storms-cart-contents .cart_list .mini_cart_item .product-description .quantity {
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  min-height: 1px;
+  float: left;
+  font-size: 14px;
+}
+
+.widget_shopping_cart .cart_list .mini_cart_item .product-description .variation p,
+.widget_shopping_cart .cart_list .mini_cart_item .product-description .quantity p,
+.storms-cart-contents .cart_list .mini_cart_item .product-description .variation p,
+.storms-cart-contents .cart_list .mini_cart_item .product-description .quantity p {
+  margin: 0;
+}
+
+.widget_shopping_cart .cart_list .mini_cart_item .product-actions .storms_remove_from_cart_button,
+.storms-cart-contents .cart_list .mini_cart_item .product-actions .storms_remove_from_cart_button {
+  display: none;
+  position: static;
+  font-size: 10px;
+  color: #858585;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.widget_shopping_cart .cart_list .mini_cart_item:hover,
+.storms-cart-contents .cart_list .mini_cart_item:hover {
+  background-color: #ECECEC;
+}
+
+.widget_shopping_cart .cart_list .mini_cart_item:hover .product-actions .storms_remove_from_cart_button,
+.storms-cart-contents .cart_list .mini_cart_item:hover .product-actions .storms_remove_from_cart_button {
+  display: block;
+}
+
+.widget_shopping_cart p.cart-empty,
+.storms-cart-contents p.cart-empty {
+  text-align: center;
+  padding: 30px 0;
+}
+
+.widget_shopping_cart .widget_shopping_cart_content .buttons a {
+  width: 100%;
+}
+
+.widget_shopping_cart .widget_shopping_cart_content .buttons a:first-child {
+  margin: 0 0 5px;
 }
 
 .storms-wc-wishlist {
@@ -13069,6 +13049,21 @@ td.product-quantity {
   display: inline-block;
   width: 100%;
   text-align: center;
+}
+
+#yith-wcwl-popup-message {
+  font-weight: 700;
+  line-height: 50px;
+  text-align: center;
+  background: white;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 7px 40px;
+  z-index: 10000;
+  
 }
 
 .woocommerce .term-description,
@@ -14162,6 +14157,26 @@ ul.order_details li strong {
             flex: 0 0 50%;
     max-width: 50%;
   }
+}
+
+.woocommerce.single-product main > .product .woocommerce-tabs,
+.woocommerce.single-product main > .product section.products {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-width: 100%;
+}
+
+a.woocommerce-product-gallery__trigger {
+  display: none;
+}
+
+figure.woocommerce-product-gallery__wrapper {
+  cursor: pointer;
 }
 
 .woocommerce p.woocommerce-noreviews {
