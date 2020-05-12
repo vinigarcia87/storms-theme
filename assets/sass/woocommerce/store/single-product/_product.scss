@@ -33,3 +33,9 @@ a.woocommerce-product-gallery__trigger {
 figure.woocommerce-product-gallery__wrapper {
 	cursor: pointer;
 }
+
+table.variations {
+	select {
+		@extend .form-control;
+	}
+}

@@ -95,7 +95,7 @@ jQuery( function( $ ) {
 
 		event.preventDefault();
 
-		$wrapper = $(this).parents( '.shipping-calculator-form' );
+		var $wrapper = $(this).parents( '.shipping-calculator-form' );
 
 		var $country_field = $( '#calc_shipping_country' );
 		var country = $country_field.val();

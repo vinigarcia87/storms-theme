@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_shipping_calculator' ); ?>
 
-<form class="woocommerce-shipping-calculator" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
+<form class="woocommerce-shipping-calculator <?php echo is_product() ? 'woocommerce-product-shipping-calculator' : ''; ?>" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 
 	<?php if( ! is_product() ): ?>
 		<?php printf( '<a href="#" class="shipping-calculator-button">%s</a>', esc_html( ! empty( $button_text ) ? $button_text : __( 'Calculate shipping', 'woocommerce' ) ) ); ?>

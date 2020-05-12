@@ -101,7 +101,7 @@ jQuery(function ($) {
   $('#calc_shipping_postcode').mask('00000-000').attr('type', 'tel');
   $(document.body).on('click', 'button[name="calc_shipping"]', function (event) {
     event.preventDefault();
-    $wrapper = $(this).parents('.shipping-calculator-form');
+    var $wrapper = $(this).parents('.shipping-calculator-form');
     var $country_field = $('#calc_shipping_country');
     var country = $country_field.val();
     var $state_field = $('#calc_shipping_state');
