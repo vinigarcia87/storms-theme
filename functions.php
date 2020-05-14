@@ -36,7 +36,8 @@ if ( !defined( 'STORMS_SYSTEM_VERSION' ) ) {
 // Require services of this theme
 require_once 'services/config/storms-theme-setup.php';
 require_once 'services/config/storms-environment-config.php';
-require_once 'services/config/storms-wp-default-configuration.php';
+require_once 'services/config/storms-wordpress-configuration.php';
+require_once 'services/config/storms-woocommerce-configuration.php';
 
 /*********************************
  *  Configuração Storms Theme
