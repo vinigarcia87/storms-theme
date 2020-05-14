@@ -48,14 +48,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'b}P3%D9dUtK^j7!~+a%dvfuwZTAww3vmT&Jdg,z/!.#:TM2G{xE_oHcm.`+S}h^~');
-define('SECURE_AUTH_KEY',  '_9:}a0BrDz{@tSz12DV#?yum^:s1h i_ka^D39T7hN#UNrV)D1.K_zp=j7YiNd%B');
-define('LOGGED_IN_KEY',    'AUKT<,1t=c]y-J&n>dJEL0U2oi/Hv0&M,eMzY;0|JcT+f{^~UA}]O#z8a/#v+u4U');
-define('NONCE_KEY',        '7pcKr{Ne:alL!09m7ofUbeg@v<Lv<;g&Iq@L?0%~e}3doAl0o;;K?_CiEwE,=+S=');
-define('AUTH_SALT',        'nsbuM-/W;e0<a[!o{hUO7t&q/HB m;EgI~`-Quep~y5kV.#2;| }MRtnAS0-<r2L');
-define('SECURE_AUTH_SALT', 'of@pZcmLVv eti])gLR@p/WF4tML{{Wuk7N_6e4o>scuN]NY}*zmd<p*_rPDk6p:');
-define('LOGGED_IN_SALT',   '%+Tx$TnG}dA]$^;>E7pBLR3(NeNgSx)]l,N_+I/yv|yue+tOfH)k]`ie0!?vk*y]');
-define('NONCE_SALT',       '&,xctI?a2*:Nb6?qBnL#?eeBW-r7$WSC,Ab?0dVCl<l1t,p:?x]b8y.$Hi96C9y0');
+define('AUTH_KEY',         '(Io[:%GKJK9/A=lc[A}j9uV;x,Xv/CQ vyke~nb%KvfZZy-oVaAy:Q&|{0%.[ JL');
+define('SECURE_AUTH_KEY',  '5NEztJ]k22-3,%Zv{wu2]l6|tm4I#] tN;59Dj$BsZL`jNYB*{R|VDm>[6{wwFK6');
+define('LOGGED_IN_KEY',    'rXz.6i1ta-Xi)qQk@r81&Osmx2(+w68&r}UB_HxCUF ]X|9P?P-Lu.y4cc~wh(BO');
+define('NONCE_KEY',        'lMUrmPrr+mrZi8}1eB.Fh[NQ=KC+reEbFnRvighenF<tX/+pYcnM o+Gku4%jt}d');
+define('AUTH_SALT',        ']f3M9-7#|Xy3@V9%%4A)tAP/O{md/)vE|1aH-5P-hwF~mC+pu6a;mbNZx=_gK-jP');
+define('SECURE_AUTH_SALT', 'EMe1|KFef|&Ix},W0qEy ]J*Zm;Vgdhu|Pf5P[EFU_rV:bZhUb{|g`zz$%EP24Y5');
+define('LOGGED_IN_SALT',   '+<|NNNKM-eEI&kUo.L9+VX0K&&Fh`C>$/MExq&-nQnpNK|Pvx#rT5*U~@&N$a(dj');
+define('NONCE_SALT',       '%:w*OxYW)4rG6<_s!K^Z|T~nhi-l|m$z!Ryy.p9}Mfs+cjekJtdLZu<)|-H:t/.@');
 
 /**#@-*/
 
@@ -65,7 +65,7 @@ define('NONCE_SALT',       '&,xctI?a2*:Nb6?qBnL#?eeBW-r7$WSC,Ab?0dVCl<l1t,p:?x]b
  * Você pode ter várias instalações em um único banco de dados se você der para cada um um único
  * prefixo. Somente números, letras e sublinhados!
  */
-$table_prefix  = 'ststhemeddMM_';
+$table_prefix  = 'ststhemeMMYY_';
 
 
 /**
