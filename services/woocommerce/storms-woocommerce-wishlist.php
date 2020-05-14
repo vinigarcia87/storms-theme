@@ -60,8 +60,8 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 				update_option('yith_wcwl_share_whatsapp', 'yes');
 				update_option('yith_wcwl_share_url', 'no');
 
-				update_option('yith_wcwl_socials_title', __('Minha lista de desejos em ' . get_bloginfo('name'), 'storms'));
-				update_option('yith_wcwl_wishlist_title', __('Minha lista de desejos em ' . get_bloginfo('name'), 'storms'));
+				update_option('yith_wcwl_socials_title', __('Meu produtos favoritos em ' . get_bloginfo('name'), 'storms'));
+				update_option('yith_wcwl_wishlist_title', __('Meu produtos favoritos em ' . get_bloginfo('name'), 'storms'));
 				update_option('yith_wcwl_add_to_cart_text', __('Adicionar ao carrinho', 'storms'));
 
 				update_option('yith_wcwl_add_to_cart_style', 'link');
