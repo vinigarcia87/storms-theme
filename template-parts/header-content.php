@@ -18,7 +18,8 @@ defined( 'ABSPATH' ) || exit;
 	<div class="page-banner-content col-sm-7 col-md-8 col-lg-6">
 		<?php
 		$header_image = get_custom_header();
-		if ( ! empty( $header_image ) ) :
+
+		if ( ! empty( $header_image ) && ! empty( $header_image->url ) ) :
 		?>
 			<a class="header-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<img class="" src="<?php echo esc_url( $header_image->url ); ?>" height="<?php esc_attr_e( $header_image->height ); ?>" width="<?php esc_attr_e( $header_image->width ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />

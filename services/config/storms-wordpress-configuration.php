@@ -22,8 +22,11 @@ if( ! function_exists( 'storms_define_wordpress_options' ) ) {
     function storms_define_wordpress_options() {
 
 		// Comments configuration
+		update_option('default_pingback_flag', 'no');
+		update_option('default_ping_status', 'no');
+		update_option('default_comment_status', 'no');
 		update_option('comment_registration', 'no');
-		update_option('page_comments', 'yes');
+		update_option('page_comments', '1');
 		update_option('comments_per_page', 5);
     }
     add_action( 'admin_init', 'storms_define_wordpress_options' );
