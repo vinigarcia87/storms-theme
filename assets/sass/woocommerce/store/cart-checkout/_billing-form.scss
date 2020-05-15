@@ -67,4 +67,10 @@
 		padding: 0;
 		margin-bottom: 1rem;
 	}
+
+	p#billing_country_field {
+		span.woocommerce-input-wrapper {
+			@extend .form-control-plaintext;
+		}
+	}
 }

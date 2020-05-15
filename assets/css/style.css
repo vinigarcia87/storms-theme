@@ -2205,7 +2205,7 @@ table.wishlist_table td {
 
 .form-control, select.country_select,
 select.state_select,
-.input-text, .woocommerce-ordering .orderby, .input-text.qty, .woocommerce-account .woocommerce .input-text {
+.input-text, .woocommerce-ordering .orderby, .input-text.qty, .woocommerce-account .woocommerce .input-text, table.variations select {
   display: block;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
@@ -2229,7 +2229,7 @@ select.state_select,
 @media (prefers-reduced-motion: reduce) {
   .form-control, select.country_select,
   select.state_select,
-  .input-text, .woocommerce-ordering .orderby, .input-text.qty, .woocommerce-account .woocommerce .input-text {
+  .input-text, .woocommerce-ordering .orderby, .input-text.qty, .woocommerce-account .woocommerce .input-text, table.variations select {
     -webkit-transition: none;
     transition: none;
   }
@@ -2237,21 +2237,21 @@ select.state_select,
 
 .form-control::-ms-expand, select.country_select::-ms-expand,
 select.state_select::-ms-expand,
-.input-text::-ms-expand, .woocommerce-ordering .orderby::-ms-expand, .input-text.qty::-ms-expand, .woocommerce-account .woocommerce .input-text::-ms-expand {
+.input-text::-ms-expand, .woocommerce-ordering .orderby::-ms-expand, .input-text.qty::-ms-expand, .woocommerce-account .woocommerce .input-text::-ms-expand, table.variations select::-ms-expand {
   background-color: transparent;
   border: 0;
 }
 
 .form-control:-moz-focusring, select.country_select:-moz-focusring,
 select.state_select:-moz-focusring,
-.input-text:-moz-focusring, .woocommerce-ordering .orderby:-moz-focusring, .woocommerce-account .woocommerce .input-text:-moz-focusring {
+.input-text:-moz-focusring, .woocommerce-ordering .orderby:-moz-focusring, .woocommerce-account .woocommerce .input-text:-moz-focusring, table.variations select:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #495057;
 }
 
 .form-control:focus, select.country_select:focus,
 select.state_select:focus,
-.input-text:focus, .woocommerce-ordering .orderby:focus, .woocommerce-account .woocommerce .input-text:focus {
+.input-text:focus, .woocommerce-ordering .orderby:focus, .woocommerce-account .woocommerce .input-text:focus, table.variations select:focus {
   color: #495057;
   background-color: #fff;
   border-color: #80bdff;
@@ -2262,44 +2262,44 @@ select.state_select:focus,
 
 .form-control::-webkit-input-placeholder, select.country_select::-webkit-input-placeholder,
 select.state_select::-webkit-input-placeholder,
-.input-text::-webkit-input-placeholder, .woocommerce-ordering .orderby::-webkit-input-placeholder, .input-text.qty::-webkit-input-placeholder, .woocommerce-account .woocommerce .input-text::-webkit-input-placeholder {
+.input-text::-webkit-input-placeholder, .woocommerce-ordering .orderby::-webkit-input-placeholder, .input-text.qty::-webkit-input-placeholder, .woocommerce-account .woocommerce .input-text::-webkit-input-placeholder, table.variations select::-webkit-input-placeholder {
   color: #6c757d;
   opacity: 1;
 }
 
 .form-control::-moz-placeholder, select.country_select::-moz-placeholder,
 select.state_select::-moz-placeholder,
-.input-text::-moz-placeholder, .woocommerce-ordering .orderby::-moz-placeholder, .input-text.qty::-moz-placeholder, .woocommerce-account .woocommerce .input-text::-moz-placeholder {
+.input-text::-moz-placeholder, .woocommerce-ordering .orderby::-moz-placeholder, .input-text.qty::-moz-placeholder, .woocommerce-account .woocommerce .input-text::-moz-placeholder, table.variations select::-moz-placeholder {
   color: #6c757d;
   opacity: 1;
 }
 
 .form-control::-ms-input-placeholder, select.country_select::-ms-input-placeholder,
 select.state_select::-ms-input-placeholder,
-.input-text::-ms-input-placeholder, .woocommerce-ordering .orderby::-ms-input-placeholder, .input-text.qty::-ms-input-placeholder, .woocommerce-account .woocommerce .input-text::-ms-input-placeholder {
+.input-text::-ms-input-placeholder, .woocommerce-ordering .orderby::-ms-input-placeholder, .input-text.qty::-ms-input-placeholder, .woocommerce-account .woocommerce .input-text::-ms-input-placeholder, table.variations select::-ms-input-placeholder {
   color: #6c757d;
   opacity: 1;
 }
 
 .form-control::placeholder, select.country_select::placeholder,
 select.state_select::placeholder,
-.input-text::placeholder, .woocommerce-ordering .orderby::placeholder, .input-text.qty::placeholder, .woocommerce-account .woocommerce .input-text::placeholder {
+.input-text::placeholder, .woocommerce-ordering .orderby::placeholder, .input-text.qty::placeholder, .woocommerce-account .woocommerce .input-text::placeholder, table.variations select::placeholder {
   color: #6c757d;
   opacity: 1;
 }
 
 .form-control:disabled, select.country_select:disabled,
 select.state_select:disabled,
-.input-text:disabled, .woocommerce-ordering .orderby:disabled, .woocommerce-account .woocommerce .input-text:disabled, .form-control[readonly], select.country_select[readonly],
+.input-text:disabled, .woocommerce-ordering .orderby:disabled, .woocommerce-account .woocommerce .input-text:disabled, table.variations select:disabled, .form-control[readonly], select.country_select[readonly],
 select.state_select[readonly],
-.input-text[readonly], .woocommerce-ordering .orderby[readonly], .woocommerce-account .woocommerce .input-text[readonly] {
+.input-text[readonly], .woocommerce-ordering .orderby[readonly], .woocommerce-account .woocommerce .input-text[readonly], table.variations select[readonly] {
   background-color: #e9ecef;
   opacity: 1;
 }
 
 select.form-control:focus::-ms-value, select.country_select:focus::-ms-value,
 select.state_select:focus::-ms-value,
-select.input-text:focus::-ms-value, .woocommerce-ordering select.orderby:focus::-ms-value, .woocommerce-account .woocommerce select.input-text:focus::-ms-value {
+select.input-text:focus::-ms-value, .woocommerce-ordering select.orderby:focus::-ms-value, .woocommerce-account .woocommerce select.input-text:focus::-ms-value, table.variations select:focus::-ms-value {
   color: #495057;
   background-color: #fff;
 }
@@ -2334,7 +2334,8 @@ select.input-text:focus::-ms-value, .woocommerce-ordering select.orderby:focus::
   line-height: 1.5;
 }
 
-.form-control-plaintext, .woocommerce-result-count {
+.form-control-plaintext, .woocommerce-result-count, .woocommerce-billing-fields p#billing_country_field span.woocommerce-input-wrapper,
+.woocommerce-address-fields p#billing_country_field span.woocommerce-input-wrapper {
   display: block;
   width: 100%;
   padding: 6px 0;
@@ -2349,7 +2350,9 @@ select.input-text:focus::-ms-value, .woocommerce-ordering select.orderby:focus::
   border-width: 1px 0;
 }
 
-.form-control-plaintext.form-control-sm, .form-control-sm.woocommerce-result-count, .form-control-plaintext.form-control-lg, .form-control-lg.woocommerce-result-count {
+.form-control-plaintext.form-control-sm, .form-control-sm.woocommerce-result-count, .woocommerce-billing-fields p#billing_country_field span.form-control-sm.woocommerce-input-wrapper,
+.woocommerce-address-fields p#billing_country_field span.form-control-sm.woocommerce-input-wrapper, .form-control-plaintext.form-control-lg, .form-control-lg.woocommerce-result-count, .woocommerce-billing-fields p#billing_country_field span.form-control-lg.woocommerce-input-wrapper,
+.woocommerce-address-fields p#billing_country_field span.form-control-lg.woocommerce-input-wrapper {
   padding-right: 0;
   padding-left: 0;
 }
@@ -2376,9 +2379,9 @@ select.input-text:focus::-ms-value, .woocommerce-ordering select.orderby:focus::
 
 select.form-control[size], select.country_select[size],
 select.state_select[size],
-select.input-text[size], .woocommerce-ordering select.orderby[size], .woocommerce-account .woocommerce select.input-text[size], select.form-control[multiple], select.country_select[multiple],
+select.input-text[size], .woocommerce-ordering select.orderby[size], .woocommerce-account .woocommerce select.input-text[size], table.variations select[size], select.form-control[multiple], select.country_select[multiple],
 select.state_select[multiple],
-select.input-text[multiple], .woocommerce-ordering select.orderby[multiple], .woocommerce-account .woocommerce select.input-text[multiple] {
+select.input-text[multiple], .woocommerce-ordering select.orderby[multiple], .woocommerce-account .woocommerce select.input-text[multiple], table.variations select[multiple] {
   height: auto;
 }
 
@@ -2494,9 +2497,9 @@ textarea.input-text, .woocommerce-ordering textarea.orderby, textarea.input-text
 
 .was-validated .form-control:valid, .was-validated select.country_select:valid,
 .was-validated select.state_select:valid,
-.was-validated .input-text:valid, .was-validated .woocommerce-ordering .orderby:valid, .woocommerce-ordering .was-validated .orderby:valid, .form-control.is-valid, select.is-valid.country_select,
+.was-validated .input-text:valid, .was-validated .woocommerce-ordering .orderby:valid, .woocommerce-ordering .was-validated .orderby:valid, .was-validated table.variations select:valid, table.variations .was-validated select:valid, .form-control.is-valid, select.is-valid.country_select,
 select.is-valid.state_select,
-.is-valid.input-text, .woocommerce-ordering .is-valid.orderby, .woocommerce-account .woocommerce .is-valid.input-text {
+.is-valid.input-text, .woocommerce-ordering .is-valid.orderby, .woocommerce-account .woocommerce .is-valid.input-text, table.variations select.is-valid {
   border-color: #28a745;
   padding-right: calc(1.5em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
@@ -2507,9 +2510,9 @@ select.is-valid.state_select,
 
 .was-validated .form-control:valid:focus, .was-validated select.country_select:valid:focus,
 .was-validated select.state_select:valid:focus,
-.was-validated .input-text:valid:focus, .was-validated .woocommerce-ordering .orderby:valid:focus, .woocommerce-ordering .was-validated .orderby:valid:focus, .form-control.is-valid:focus, select.is-valid.country_select:focus,
+.was-validated .input-text:valid:focus, .was-validated .woocommerce-ordering .orderby:valid:focus, .woocommerce-ordering .was-validated .orderby:valid:focus, .was-validated table.variations select:valid:focus, table.variations .was-validated select:valid:focus, .form-control.is-valid:focus, select.is-valid.country_select:focus,
 select.is-valid.state_select:focus,
-.is-valid.input-text:focus, .woocommerce-ordering .is-valid.orderby:focus {
+.is-valid.input-text:focus, .woocommerce-ordering .is-valid.orderby:focus, table.variations select.is-valid:focus {
   border-color: #28a745;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
           box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
@@ -2612,9 +2615,9 @@ textarea.is-valid.input-text, .woocommerce-ordering textarea.is-valid.orderby, .
 
 .was-validated .form-control:invalid, .was-validated select.country_select:invalid,
 .was-validated select.state_select:invalid,
-.was-validated .input-text:invalid, .was-validated .woocommerce-ordering .orderby:invalid, .woocommerce-ordering .was-validated .orderby:invalid, .form-control.is-invalid, select.is-invalid.country_select,
+.was-validated .input-text:invalid, .was-validated .woocommerce-ordering .orderby:invalid, .woocommerce-ordering .was-validated .orderby:invalid, .was-validated table.variations select:invalid, table.variations .was-validated select:invalid, .form-control.is-invalid, select.is-invalid.country_select,
 select.is-invalid.state_select,
-.is-invalid.input-text, .woocommerce-ordering .is-invalid.orderby, .woocommerce-account .woocommerce .is-invalid.input-text {
+.is-invalid.input-text, .woocommerce-ordering .is-invalid.orderby, .woocommerce-account .woocommerce .is-invalid.input-text, table.variations select.is-invalid {
   border-color: #dc3545;
   padding-right: calc(1.5em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
@@ -2625,9 +2628,9 @@ select.is-invalid.state_select,
 
 .was-validated .form-control:invalid:focus, .was-validated select.country_select:invalid:focus,
 .was-validated select.state_select:invalid:focus,
-.was-validated .input-text:invalid:focus, .was-validated .woocommerce-ordering .orderby:invalid:focus, .woocommerce-ordering .was-validated .orderby:invalid:focus, .form-control.is-invalid:focus, select.is-invalid.country_select:focus,
+.was-validated .input-text:invalid:focus, .was-validated .woocommerce-ordering .orderby:invalid:focus, .woocommerce-ordering .was-validated .orderby:invalid:focus, .was-validated table.variations select:invalid:focus, table.variations .was-validated select:invalid:focus, .form-control.is-invalid:focus, select.is-invalid.country_select:focus,
 select.is-invalid.state_select:focus,
-.is-invalid.input-text:focus, .woocommerce-ordering .is-invalid.orderby:focus {
+.is-invalid.input-text:focus, .woocommerce-ordering .is-invalid.orderby:focus, table.variations select.is-invalid:focus {
   border-color: #dc3545;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
           box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
@@ -2742,12 +2745,13 @@ textarea.is-invalid.input-text, .woocommerce-ordering textarea.is-invalid.orderb
   }
   .form-inline .form-control, .form-inline select.country_select,
   .form-inline select.state_select,
-  .form-inline .input-text, .form-inline .woocommerce-ordering .orderby, .woocommerce-ordering .form-inline .orderby, .form-inline .woocommerce-account .woocommerce .input-text, .woocommerce-account .woocommerce .form-inline .input-text {
+  .form-inline .input-text, .form-inline .woocommerce-ordering .orderby, .woocommerce-ordering .form-inline .orderby, .form-inline .woocommerce-account .woocommerce .input-text, .woocommerce-account .woocommerce .form-inline .input-text, .form-inline table.variations select, table.variations .form-inline select {
     display: inline-block;
     width: auto;
     vertical-align: middle;
   }
-  .form-inline .form-control-plaintext, .form-inline .woocommerce-result-count {
+  .form-inline .form-control-plaintext, .form-inline .woocommerce-result-count, .form-inline .woocommerce-billing-fields p#billing_country_field span.woocommerce-input-wrapper, .woocommerce-billing-fields p#billing_country_field .form-inline span.woocommerce-input-wrapper,
+  .form-inline .woocommerce-address-fields p#billing_country_field span.woocommerce-input-wrapper, .woocommerce-address-fields p#billing_country_field .form-inline span.woocommerce-input-wrapper {
     display: inline-block;
   }
   .form-inline .input-group,
@@ -4020,9 +4024,11 @@ input.checkout-button[type="button"],
 
 .input-group > .form-control, .input-group > select.country_select,
 .input-group > select.state_select,
-.input-group > .input-text, .woocommerce-ordering .input-group > .orderby, .woocommerce-account .woocommerce .input-group > .input-text,
+.input-group > .input-text, .woocommerce-ordering .input-group > .orderby, .woocommerce-account .woocommerce .input-group > .input-text, table.variations .input-group > select,
 .input-group > .form-control-plaintext,
 .input-group > .woocommerce-result-count,
+.woocommerce-billing-fields p#billing_country_field .input-group > span.woocommerce-input-wrapper,
+.woocommerce-address-fields p#billing_country_field .input-group > span.woocommerce-input-wrapper,
 .input-group > .custom-select,
 .input-group > .custom-file {
   position: relative;
@@ -4033,52 +4039,81 @@ input.checkout-button[type="button"],
   margin-bottom: 0;
 }
 
-.input-group > .form-control + .form-control, .input-group > select.country_select + .form-control, .input-group > select.state_select + .form-control, .input-group > .input-text + .form-control, .woocommerce-ordering .input-group > .orderby + .form-control, .woocommerce-account .woocommerce .input-group > .input-text + .form-control, .input-group > .form-control + select.country_select, .input-group > select.country_select + select.country_select, .input-group > select.state_select + select.country_select, .input-group > .input-text + select.country_select, .woocommerce-ordering .input-group > .orderby + select.country_select, .woocommerce-account .woocommerce .input-group > .input-text + select.country_select,
+.input-group > .form-control + .form-control, .input-group > select.country_select + .form-control, .input-group > select.state_select + .form-control, .input-group > .input-text + .form-control, .woocommerce-ordering .input-group > .orderby + .form-control, .woocommerce-account .woocommerce .input-group > .input-text + .form-control, table.variations .input-group > select + .form-control, .input-group > .form-control + select.country_select, .input-group > select.country_select + select.country_select, .input-group > select.state_select + select.country_select, .input-group > .input-text + select.country_select, .woocommerce-ordering .input-group > .orderby + select.country_select, .woocommerce-account .woocommerce .input-group > .input-text + select.country_select, table.variations .input-group > select + select.country_select,
 .input-group > .form-control + select.state_select,
 .input-group > select.country_select + select.state_select,
 .input-group > select.state_select + select.state_select,
 .input-group > .input-text + select.state_select,
 .woocommerce-ordering .input-group > .orderby + select.state_select,
 .woocommerce-account .woocommerce .input-group > .input-text + select.state_select,
+table.variations .input-group > select + select.state_select,
 .input-group > .form-control + .input-text,
 .input-group > select.country_select + .input-text,
 .input-group > select.state_select + .input-text,
 .input-group > .input-text + .input-text,
-.woocommerce-ordering .input-group > .orderby + .input-text, .woocommerce-ordering .input-group > .form-control + .orderby, .woocommerce-ordering .input-group > select.country_select + .orderby, .woocommerce-ordering .input-group > select.state_select + .orderby, .woocommerce-ordering .input-group > .input-text + .orderby, .woocommerce-ordering .input-group > .orderby + .orderby, .woocommerce-ordering .woocommerce-account .woocommerce .input-group > .input-text + .orderby, .woocommerce-account .woocommerce .input-group > .form-control + .input-text, .woocommerce-account .woocommerce .input-group > select.country_select + .input-text, .woocommerce-account .woocommerce .input-group > select.state_select + .input-text, .woocommerce-ordering .woocommerce-account .woocommerce .input-group > .orderby + .input-text, .woocommerce-account .woocommerce .input-group > .input-text + .input-text,
+.woocommerce-ordering .input-group > .orderby + .input-text,
+table.variations .input-group > select + .input-text, .woocommerce-ordering .input-group > .form-control + .orderby, .woocommerce-ordering .input-group > select.country_select + .orderby, .woocommerce-ordering .input-group > select.state_select + .orderby, .woocommerce-ordering .input-group > .input-text + .orderby, .woocommerce-ordering .input-group > .orderby + .orderby, .woocommerce-ordering .woocommerce-account .woocommerce .input-group > .input-text + .orderby, table.variations .woocommerce-ordering .input-group > select + .orderby, .woocommerce-ordering table.variations .input-group > select + .orderby, .woocommerce-account .woocommerce .input-group > .form-control + .input-text, .woocommerce-account .woocommerce .input-group > select.country_select + .input-text, .woocommerce-account .woocommerce .input-group > select.state_select + .input-text, .woocommerce-ordering .woocommerce-account .woocommerce .input-group > .orderby + .input-text, .woocommerce-account .woocommerce .input-group > .input-text + .input-text, table.variations .woocommerce-account .woocommerce .input-group > select + .input-text, table.variations .input-group > .form-control + select, table.variations .input-group > select.country_select + select, table.variations .input-group > select.state_select + select, table.variations .input-group > .input-text + select, .woocommerce-ordering table.variations .input-group > .orderby + select, table.variations .woocommerce-ordering .input-group > .orderby + select, table.variations .woocommerce-account .woocommerce .input-group > .input-text + select, table.variations .input-group > select + select,
 .input-group > .form-control + .custom-select,
 .input-group > select.country_select + .custom-select,
 .input-group > select.state_select + .custom-select,
 .input-group > .input-text + .custom-select,
 .woocommerce-ordering .input-group > .orderby + .custom-select,
 .woocommerce-account .woocommerce .input-group > .input-text + .custom-select,
+table.variations .input-group > select + .custom-select,
 .input-group > .form-control + .custom-file,
 .input-group > select.country_select + .custom-file,
 .input-group > select.state_select + .custom-file,
 .input-group > .input-text + .custom-file,
 .woocommerce-ordering .input-group > .orderby + .custom-file,
 .woocommerce-account .woocommerce .input-group > .input-text + .custom-file,
+table.variations .input-group > select + .custom-file,
 .input-group > .form-control-plaintext + .form-control,
 .input-group > .woocommerce-result-count + .form-control,
+.woocommerce-billing-fields p#billing_country_field .input-group > span.woocommerce-input-wrapper + .form-control,
+.woocommerce-address-fields p#billing_country_field .input-group > span.woocommerce-input-wrapper + .form-control,
 .input-group > .form-control-plaintext + select.country_select,
 .input-group > .woocommerce-result-count + select.country_select,
+.woocommerce-billing-fields p#billing_country_field .input-group > span.woocommerce-input-wrapper + select.country_select,
+.woocommerce-address-fields p#billing_country_field .input-group > span.woocommerce-input-wrapper + select.country_select,
 .input-group > .form-control-plaintext + select.state_select,
 .input-group > .woocommerce-result-count + select.state_select,
+.woocommerce-billing-fields p#billing_country_field .input-group > span.woocommerce-input-wrapper + select.state_select,
+.woocommerce-address-fields p#billing_country_field .input-group > span.woocommerce-input-wrapper + select.state_select,
 .input-group > .form-control-plaintext + .input-text,
 .input-group > .woocommerce-result-count + .input-text,
+.woocommerce-billing-fields p#billing_country_field .input-group > span.woocommerce-input-wrapper + .input-text,
+.woocommerce-address-fields p#billing_country_field .input-group > span.woocommerce-input-wrapper + .input-text,
 .woocommerce-ordering .input-group > .form-control-plaintext + .orderby,
 .woocommerce-ordering .input-group > .woocommerce-result-count + .orderby,
+.woocommerce-billing-fields p#billing_country_field .woocommerce-ordering .input-group > span.woocommerce-input-wrapper + .orderby,
+.woocommerce-ordering .woocommerce-billing-fields p#billing_country_field .input-group > span.woocommerce-input-wrapper + .orderby,
+.woocommerce-address-fields p#billing_country_field .woocommerce-ordering .input-group > span.woocommerce-input-wrapper + .orderby,
+.woocommerce-ordering .woocommerce-address-fields p#billing_country_field .input-group > span.woocommerce-input-wrapper + .orderby,
 .woocommerce-account .woocommerce .input-group > .form-control-plaintext + .input-text,
 .woocommerce-account .woocommerce .input-group > .woocommerce-result-count + .input-text,
+.woocommerce-billing-fields p#billing_country_field .woocommerce-account .woocommerce .input-group > span.woocommerce-input-wrapper + .input-text,
+.woocommerce-address-fields p#billing_country_field .woocommerce-account .woocommerce .input-group > span.woocommerce-input-wrapper + .input-text,
+table.variations .input-group > .form-control-plaintext + select,
+table.variations .input-group > .woocommerce-result-count + select,
+.woocommerce-billing-fields p#billing_country_field table.variations .input-group > span.woocommerce-input-wrapper + select,
+table.variations .woocommerce-billing-fields p#billing_country_field .input-group > span.woocommerce-input-wrapper + select,
+.woocommerce-address-fields p#billing_country_field table.variations .input-group > span.woocommerce-input-wrapper + select,
+table.variations .woocommerce-address-fields p#billing_country_field .input-group > span.woocommerce-input-wrapper + select,
 .input-group > .form-control-plaintext + .custom-select,
 .input-group > .woocommerce-result-count + .custom-select,
+.woocommerce-billing-fields p#billing_country_field .input-group > span.woocommerce-input-wrapper + .custom-select,
+.woocommerce-address-fields p#billing_country_field .input-group > span.woocommerce-input-wrapper + .custom-select,
 .input-group > .form-control-plaintext + .custom-file,
 .input-group > .woocommerce-result-count + .custom-file,
+.woocommerce-billing-fields p#billing_country_field .input-group > span.woocommerce-input-wrapper + .custom-file,
+.woocommerce-address-fields p#billing_country_field .input-group > span.woocommerce-input-wrapper + .custom-file,
 .input-group > .custom-select + .form-control,
 .input-group > .custom-select + select.country_select,
 .input-group > .custom-select + select.state_select,
 .input-group > .custom-select + .input-text,
 .woocommerce-ordering .input-group > .custom-select + .orderby,
 .woocommerce-account .woocommerce .input-group > .custom-select + .input-text,
+table.variations .input-group > .custom-select + select,
 .input-group > .custom-select + .custom-select,
 .input-group > .custom-select + .custom-file,
 .input-group > .custom-file + .form-control,
@@ -4087,6 +4122,7 @@ input.checkout-button[type="button"],
 .input-group > .custom-file + .input-text,
 .woocommerce-ordering .input-group > .custom-file + .orderby,
 .woocommerce-account .woocommerce .input-group > .custom-file + .input-text,
+table.variations .input-group > .custom-file + select,
 .input-group > .custom-file + .custom-select,
 .input-group > .custom-file + .custom-file {
   margin-left: -1px;
@@ -4094,7 +4130,7 @@ input.checkout-button[type="button"],
 
 .input-group > .form-control:focus, .input-group > select.country_select:focus,
 .input-group > select.state_select:focus,
-.input-group > .input-text:focus, .woocommerce-ordering .input-group > .orderby:focus, .woocommerce-account .woocommerce .input-group > .input-text:focus,
+.input-group > .input-text:focus, .woocommerce-ordering .input-group > .orderby:focus, .woocommerce-account .woocommerce .input-group > .input-text:focus, table.variations .input-group > select:focus,
 .input-group > .custom-select:focus,
 .input-group > .custom-file .custom-file-input:focus ~ .custom-file-label {
   z-index: 3;
@@ -4106,7 +4142,7 @@ input.checkout-button[type="button"],
 
 .input-group > .form-control:not(:last-child), .input-group > select.country_select:not(:last-child),
 .input-group > select.state_select:not(:last-child),
-.input-group > .input-text:not(:last-child), .woocommerce-ordering .input-group > .orderby:not(:last-child), .woocommerce-account .woocommerce .input-group > .input-text:not(:last-child),
+.input-group > .input-text:not(:last-child), .woocommerce-ordering .input-group > .orderby:not(:last-child), .woocommerce-account .woocommerce .input-group > .input-text:not(:last-child), table.variations .input-group > select:not(:last-child),
 .input-group > .custom-select:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -4114,7 +4150,7 @@ input.checkout-button[type="button"],
 
 .input-group > .form-control:not(:first-child), .input-group > select.country_select:not(:first-child),
 .input-group > select.state_select:not(:first-child),
-.input-group > .input-text:not(:first-child), .woocommerce-ordering .input-group > .orderby:not(:first-child), .woocommerce-account .woocommerce .input-group > .input-text:not(:first-child),
+.input-group > .input-text:not(:first-child), .woocommerce-ordering .input-group > .orderby:not(:first-child), .woocommerce-account .woocommerce .input-group > .input-text:not(:first-child), table.variations .input-group > select:not(:first-child),
 .input-group > .custom-select:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -4242,14 +4278,14 @@ input.checkout-button[type="button"],
 
 .input-group-lg > .form-control:not(textarea), .input-group-lg > select.country_select:not(textarea),
 .input-group-lg > select.state_select:not(textarea),
-.input-group-lg > .input-text:not(textarea), .woocommerce-ordering .input-group-lg > .orderby:not(textarea), .woocommerce-account .woocommerce .input-group-lg > .input-text:not(textarea),
+.input-group-lg > .input-text:not(textarea), .woocommerce-ordering .input-group-lg > .orderby:not(textarea), .woocommerce-account .woocommerce .input-group-lg > .input-text:not(textarea), table.variations .input-group-lg > select:not(textarea),
 .input-group-lg > .custom-select {
   height: calc(1.5em + 1rem + 2px);
 }
 
 .input-group-lg > .form-control, .input-group-lg > select.country_select,
 .input-group-lg > select.state_select,
-.input-group-lg > .input-text, .woocommerce-ordering .input-group-lg > .orderby, .woocommerce-account .woocommerce .input-group-lg > .input-text,
+.input-group-lg > .input-text, .woocommerce-ordering .input-group-lg > .orderby, .woocommerce-account .woocommerce .input-group-lg > .input-text, table.variations .input-group-lg > select,
 .input-group-lg > .custom-select,
 .input-group-lg > .input-group-prepend > .input-group-text,
 .input-group-lg > .input-group-append > .input-group-text,
@@ -4269,14 +4305,14 @@ input.checkout-button[type="button"],
 
 .input-group-sm > .form-control:not(textarea), .input-group-sm > select.country_select:not(textarea),
 .input-group-sm > select.state_select:not(textarea),
-.input-group-sm > .input-text:not(textarea), .woocommerce-ordering .input-group-sm > .orderby:not(textarea), .woocommerce-account .woocommerce .input-group-sm > .input-text:not(textarea),
+.input-group-sm > .input-text:not(textarea), .woocommerce-ordering .input-group-sm > .orderby:not(textarea), .woocommerce-account .woocommerce .input-group-sm > .input-text:not(textarea), table.variations .input-group-sm > select:not(textarea),
 .input-group-sm > .custom-select {
   height: calc(1.5em + 0.5rem + 2px);
 }
 
 .input-group-sm > .form-control, .input-group-sm > select.country_select,
 .input-group-sm > select.state_select,
-.input-group-sm > .input-text, .woocommerce-ordering .input-group-sm > .orderby, .woocommerce-account .woocommerce .input-group-sm > .input-text,
+.input-group-sm > .input-text, .woocommerce-ordering .input-group-sm > .orderby, .woocommerce-account .woocommerce .input-group-sm > .input-text, table.variations .input-group-sm > select,
 .input-group-sm > .custom-select,
 .input-group-sm > .input-group-prepend > .input-group-text,
 .input-group-sm > .input-group-append > .input-group-text,
@@ -12749,13 +12785,15 @@ td.product-quantity {
 }
 
 .woocommerce-product-rating .star-rating {
-  margin: 0.5em 4px 0 0;
+  margin: 4.8px 4px 0 0;
+  margin: 0.3rem 4px 0 0;
   float: left;
 }
 
 .products .star-rating {
   display: block;
-  margin: 0 0 0.5em;
+  margin: 0 0 8px;
+  margin: 0 0 0.5rem;
   float: none;
 }
 
@@ -12914,7 +12952,7 @@ td.product-quantity {
 
 .widget_shopping_cart .cart-link .cart-contents-total,
 .storms-cart-contents .cart-link .cart-contents-total {
-  font-weight: 900;
+  font-weight: 500;
 }
 
 .widget_shopping_cart .widget_shopping_cart_content,
@@ -13197,7 +13235,8 @@ abbr.required {
   border-bottom: 1px solid #f8f9fa;
 }
 
-.woocommerce div.wishlist-title {
+.woocommerce div.wishlist-title,
+.woocommerce div.hidden-title-form {
   display: none;
 }
 
@@ -13211,6 +13250,15 @@ abbr.required {
   vertical-align: middle;
   text-transform: uppercase;
   border-bottom: 1px solid #f8f9fa;
+}
+
+.woocommerce table.wishlist_table th.product-name {
+  min-width: 583px;
+}
+
+.woocommerce table.wishlist_table th.product-price,
+.woocommerce table.wishlist_table th.product-stock-status {
+  max-width: 120px;
 }
 
 .woocommerce table.wishlist_table > tbody > tr > td {
@@ -13246,6 +13294,18 @@ abbr.required {
   text-align: center;
 }
 
+.woocommerce table.wishlist_table > tbody > tr td.product-stock-status span.wishlist-in-stock {
+  display: inline-block;
+  width: 100%;
+}
+
+.woocommerce table.wishlist_table > tbody > tr span.dateadded {
+  color: #adb5bd;
+  font-size: 12.8px;
+  font-size: 0.8rem;
+  display: block;
+}
+
 .woocommerce table.wishlist_table > tbody > tr td.actions,
 .woocommerce table.wishlist_table > tbody > tr td.product-add-to-cart {
   text-align: center;
@@ -13258,8 +13318,35 @@ abbr.required {
   border-color: #007bff;
 }
 
+.woocommerce .yith-wcwl-share ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.woocommerce .yith-wcwl-share ul li {
+  display: inline-block;
+  font-size: 32px;
+  font-size: 2rem;
+}
+
+.woocommerce .yith-wcwl-share ul li:not(:last-child) {
+  margin-right: 16px;
+  margin-right: 1rem;
+}
+
+.woocommerce .yith-wcwl-share ul li a:hover {
+  padding-left: 0 !important;
+  color: #6c757d;
+}
+
 .woocommerce-account .woocommerce .woocommerce-form-login {
   width: 40%;
+}
+
+.woocommerce-account .woocommerce .woocommerce-form-login .form-group, .woocommerce-account .woocommerce .woocommerce-form-login .form-row,
+.woocommerce-account .woocommerce .woocommerce-form-register .form-group,
+.woocommerce-account .woocommerce .woocommerce-form-register .form-row {
+  width: 80%;
 }
 
 .woocommerce-account .woocommerce .col2-set {
@@ -13293,10 +13380,6 @@ abbr.required {
 .woocommerce-account .woocommerce .col2-set .col-1 .woocommerce-form-login,
 .woocommerce-account .woocommerce .col2-set .col-2 .woocommerce-form-login {
   width: auto;
-}
-
-.woocommerce-account .woocommerce .form-group, .woocommerce-account .woocommerce .form-row {
-  width: 80%;
 }
 
 .woocommerce-account .woocommerce .woocommerce-privacy-policy-text {

@@ -6,6 +6,13 @@
 			width: 40%;
 		}
 
+		.woocommerce-form-login,
+		.woocommerce-form-register {
+			.form-group {
+				width: 80%;
+			}
+		}
+
 		.col2-set {
 			@include make-row();
 
@@ -20,10 +27,6 @@
 					width: auto;
 				}
 			}
-		}
-
-		.form-group {
-			width: 80%;
 		}
 
 		.woocommerce-privacy-policy-text {
