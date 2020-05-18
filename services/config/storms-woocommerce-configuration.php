@@ -49,6 +49,7 @@ if( ! function_exists( 'storms_define_woocommerce_options' ) ) {
 		update_option( 'woocommerce_checkout_privacy_policy_text', 'Os seus dados pessoais serão utilizados para processar a sua compra, apoiar a sua experiência em todo este site e para outros fins descritos na nossa [privacy_policy].' );
 
 		// Endpoints da conta
+		// If you see a 404 error, go to WordPress Admin > Settings > Permalinks and Save. This ensures that rewrite rules for endpoints exist and are ready to be used
 		update_option( 'woocommerce_myaccount_orders_endpoint', 'pedidos' );
 		update_option( 'woocommerce_myaccount_view_order_endpoint', 'visualizar-pedidos' );
 		update_option( 'woocommerce_myaccount_downloads_endpoint', 'downloads' );
