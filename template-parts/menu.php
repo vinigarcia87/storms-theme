@@ -19,9 +19,11 @@ defined( 'ABSPATH' ) || exit;
 <nav id="main-navigation" class="main-menu navbar navbar-expand-md navbar-light bg-light" role="navigation" data-toggle="sticky-onscroll">
 	<div class="<?php echo Template::menu_container(); ?>">
 
+		<?php if( 'yes' === get_option( 'storms_show_menu_image', 'yes' ) ) : ?>
+
 		<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<?php
-				$image_id = get_theme_mod( "storms_menu_image" );
+				$image_id = get_theme_mod( 'storms_menu_image' );
 				if ( ! empty( $image_id ) ) :
 					$url          = esc_url_raw( wp_get_attachment_url( $image_id ) );
 
@@ -34,6 +36,8 @@ defined( 'ABSPATH' ) || exit;
 				<img class="brand" src="<?php echo \StormsFramework\Helper::get_asset_url('/img/storms/logo/cloud_storms.png') ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
 			<?php endif; ?>
 		</a>
+
+		<?php endif; ?>
 
 		<!-- Botao collapse menu para mobile -->
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -56,7 +60,7 @@ defined( 'ABSPATH' ) || exit;
 			?>
 
 
-			<div class="header-menu-sidebar-right nav nav-secondary navbar-right">
+			<div class="header-menu-sidebar-right">
 				<?php if ( is_active_sidebar( 'header-menu-sidebar-right' ) ) : ?>
 					<?php dynamic_sidebar( 'header-menu-sidebar-right' ); ?>
 				<?php endif; ?>

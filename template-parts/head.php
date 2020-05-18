@@ -39,12 +39,4 @@ defined( 'ABSPATH' ) || exit;
 	</head>
 	<body id="page-top" <?php body_class(); ?>>
 		<!-- Skip navigation for accessibility -->
-		<a id="skippy" class="sr-only sr-only-focusable" href="#main-container"><div class="st-grid-container container"><span class="skiplink-text"><?php _e( 'Skip to main content', 'storms' ); ?></span></div></a>
-
-        <!--[if lte IE 9]>
-		<div class="alert alert-warning affix text-center alert-dismissible fade in" style="margin-bottom: 0; width: 100%; z-index: 2147483647;">
-		    <?php _e('It looks like you&#8217;re using an <strong>outdated</strong> browser. Please, <a href="http://browsehappy.com/">update your browser</a> for the best experience on the web.', 'storms'); ?>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-		</div>
-        <script src="<?php echo \StormsFramework\Helper::get_asset_url( '/js/bootstrap/alert.js' ); ?>"></script>
-        <![endif]-->
+		<a id="skippy" class="sr-only sr-only-focusable" href="#wrap"><div class="st-grid-container container"><span class="skiplink-text"><?php _e( 'Skip to main content', 'storms' ); ?></span></div></a>

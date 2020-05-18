@@ -47,6 +47,7 @@ require_once 'services/config/storms-woocommerce-configuration.php';
 require_once 'services/customization/storms-assets.php';
 require_once 'services/customization/storms-theme-customization-options.php';
 require_once 'services/woocommerce/storms-woocommerce-pages.php';
+require_once 'services/woocommerce/storms-woocommerce-checkout-fields.php';
 require_once 'services/woocommerce/storms-woocommerce-checkout-coupon.php';
 require_once 'services/woocommerce/storms-woocommerce-wishlist.php';
 require_once 'services/woocommerce/storms-woocommerce-cart.php';
