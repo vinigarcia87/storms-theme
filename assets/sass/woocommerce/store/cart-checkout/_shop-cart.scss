@@ -109,7 +109,7 @@ table.shop_table {
 			tbody,
 			tfoot {
 				th {
-					font-weight: 100;
+					font-weight: 400;
 					padding-right: 0;
 					vertical-align: middle;
 					text-transform: uppercase;
@@ -195,7 +195,7 @@ table.shop_table {
 				}
 
 				& > span.title {
-					font-weight: 100;
+					font-weight: 400;
 					text-transform: uppercase;
 					margin-bottom: 8px;
 					display: inline-block;
@@ -205,7 +205,7 @@ table.shop_table {
 			.amount,
 			.storms-free-shipping {
 				float: right;
-				font-weight: 600;
+				font-weight: 700;
 			}
 
 			ul#shipping_method {
@@ -219,12 +219,12 @@ table.shop_table {
 
 				label {
 					display: contents;
-					font-weight: 100;
+					font-weight: 400;
 
 					.amount,
 					.storms-free-shipping {
 						float: right;
-						font-weight: 600;
+						font-weight: 700;
 					}
 				}
 			}

@@ -1,7 +1,7 @@
 
-@if not $enable-grid-classes {
+@if not $enable-grid-classes and $use-grid-footer {
 
-	#footer {
+	footer#footer {
 		// .col-sm-12
 		.footer-1-sidebar-top,
 		.footer-1-sidebar-bottom {
@@ -45,7 +45,7 @@
 		}
 
 		// .col-md-3 - Must change if different than 4 columns
-		.footer-col- * {
+		div[class^="footer-col-"] {
 			@include make-col-ready;
 			@include make-col(12);
 

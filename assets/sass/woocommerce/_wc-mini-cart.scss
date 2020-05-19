@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .storms-wc-mini-cart {
 
 	display: flex;
@@ -19,7 +21,7 @@
 
 		//top: 30px;
 		right: 0;
-		width: 330px;
+		width: 340px;
 		background-color: #fff;
 		border: solid 1px #ccc;
 		transition: all .1s linear;
@@ -102,7 +104,7 @@
 		text-align: center;
 
 		.cart-contents-total {
-			font-weight: 500;
+			font-weight: 400;
 		}
 	}
 

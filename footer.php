@@ -32,14 +32,14 @@ defined( 'ABSPATH' ) || exit;
     <div class="footer-2">
         <div class="<?php echo Template::footer_container(); ?>">
             <!-- Footer sidebars -->
-            <?php get_template_part( 'template-parts/footer', 'sidebar' ); ?>
+            <?php get_template_part( 'template-parts/footer-2', 'sidebar' ); ?>
         </div>
     </div>
 
     <div class="footer-3">
         <div class="<?php echo Template::footer_container(); ?>">
             <!-- Footer content -->
-            <?php get_template_part( 'template-parts/footer', 'content' ); ?>
+            <?php get_template_part( 'template-parts/footer-3', 'sidebar' ); ?>
         </div>
     </div>
 

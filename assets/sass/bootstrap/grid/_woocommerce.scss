@@ -1,5 +1,5 @@
 
-@if not $enable-grid-classes {
+@if not $enable-grid-classes and $use-grid-woocommerce {
 
 	// .col-6 .col-sm-3 .col-md-2
 	.st-product-col-1 {

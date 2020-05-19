@@ -12878,7 +12878,7 @@ td.product-quantity {
   z-index: 1060;
   position: absolute;
   right: 0;
-  width: 330px;
+  width: 340px;
   background-color: #fff;
   border: solid 1px #ccc;
   -webkit-transition: all .1s linear;
@@ -12952,7 +12952,7 @@ td.product-quantity {
 
 .widget_shopping_cart .cart-link .cart-contents-total,
 .storms-cart-contents .cart-link .cart-contents-total {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .widget_shopping_cart .widget_shopping_cart_content,
@@ -13567,7 +13567,7 @@ abbr.required {
 .woocommerce .woocommerce-checkout-review-order table.shop_table tfoot th,
 .woocommerce .woocommerce-shipping-calculator table.shop_table tbody th,
 .woocommerce .woocommerce-shipping-calculator table.shop_table tfoot th {
-  font-weight: 100;
+  font-weight: 400;
   padding-right: 0;
   vertical-align: middle;
   text-transform: uppercase;
@@ -13723,7 +13723,7 @@ abbr.required {
 .woocommerce .cart_totals .shipping > td > span.title,
 .woocommerce .woocommerce-checkout-review-order .shipping > td > span.title,
 .woocommerce .woocommerce-shipping-calculator .shipping > td > span.title {
-  font-weight: 100;
+  font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 8px;
   display: inline-block;
@@ -13736,7 +13736,7 @@ abbr.required {
 .woocommerce .woocommerce-shipping-calculator .shipping .amount,
 .woocommerce .woocommerce-shipping-calculator .shipping .storms-free-shipping {
   float: right;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .woocommerce .cart_totals .shipping ul#shipping_method,
@@ -13757,7 +13757,7 @@ abbr.required {
 .woocommerce .woocommerce-checkout-review-order .shipping ul#shipping_method label,
 .woocommerce .woocommerce-shipping-calculator .shipping ul#shipping_method label {
   display: contents;
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .woocommerce .cart_totals .shipping ul#shipping_method label .amount,
@@ -13767,7 +13767,7 @@ abbr.required {
 .woocommerce .woocommerce-shipping-calculator .shipping ul#shipping_method label .amount,
 .woocommerce .woocommerce-shipping-calculator .shipping ul#shipping_method label .storms-free-shipping {
   float: right;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .woocommerce .woocommerce-shipping-calculator tr.shipping {
@@ -14142,7 +14142,7 @@ ul.order_details li strong {
 
 .woocommerce-order-details table.order_details tbody th,
 .woocommerce-order-details table.order_details tfoot th {
-  font-weight: 100;
+  font-weight: 400;
   padding-right: 0;
   vertical-align: middle;
   text-transform: uppercase;
@@ -14286,7 +14286,7 @@ figure.woocommerce-product-gallery__wrapper {
 .woocommerce .comment-form-rating label {
   float: left;
   width: 130px;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .woocommerce p.stars {
@@ -14372,7 +14372,7 @@ figure.woocommerce-product-gallery__wrapper {
 
 .widget_price_filter .price_slider_amount .price_label .from,
 .widget_price_filter .price_slider_amount .price_label .to {
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .widget_price_filter .ui-slider {

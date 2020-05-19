@@ -72,7 +72,10 @@ function storms_environment_deactivate_plugins() {
     } elseif( SF_ENV == 'TST' ) {
 
         deactivate_plugins( 'google-analytics-for-wordpress/googleanalytics.php' );
+		deactivate_plugins( 'query-monitor/query-monitor.php' );
 
+	} elseif( SF_ENV == 'PRD' ) {
+		deactivate_plugins( 'query-monitor/query-monitor.php' );
     }
 }
 //add_action( 'admin_init', 'storms_environment_deactivate_plugins' );
