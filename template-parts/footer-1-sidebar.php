@@ -15,37 +15,43 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 <?php if ( is_active_sidebar( 'footer-1-sidebar-top' ) ) : ?>
-    <div class="st-grid-row row" role="complementary">
-        <section class="footer-1-sidebar-top col-sm-12">
-            <?php dynamic_sidebar( 'footer-1-sidebar-top' ); ?>
-        </section>
-    </div>
+	<div class="st-grid-row row" role="complementary">
+		<section class="footer-1-sidebar-top col-sm-12">
+			<?php dynamic_sidebar( 'footer-1-sidebar-top' ); ?>
+		</section>
+	</div>
 <?php endif; ?>
 
 <div class="st-grid-row row" role="complementary">
-    <?php if ( is_active_sidebar( 'footer-1-sidebar-left' ) ) : ?>
-        <section class="footer-1-sidebar-left col-sm-4">
-            <?php dynamic_sidebar( 'footer-1-sidebar-left' ); ?>
-        </section>
-    <?php endif; ?>
+	<?php if ( is_active_sidebar( 'footer-1-sidebar-left' ) ) : ?>
+		<section class="footer-1-sidebar-left col-sm-3">
+			<?php dynamic_sidebar( 'footer-1-sidebar-left' ); ?>
+		</section>
+	<?php endif; ?>
 
-    <?php if ( is_active_sidebar( 'footer-1-sidebar-middle' ) ) : ?>
-        <section class="footer-1-sidebar-middle col-sm-4">
-            <?php dynamic_sidebar( 'footer-1-sidebar-middle' ); ?>
-        </section>
-    <?php endif; ?>
+	<?php if ( is_active_sidebar( 'footer-1-sidebar-middle-1' ) ) : ?>
+		<section class="footer-1-sidebar-middle-1 col-sm-3">
+			<?php dynamic_sidebar( 'footer-1-sidebar-middle-1' ); ?>
+		</section>
+	<?php endif; ?>
 
-    <?php if ( is_active_sidebar( 'footer-1-sidebar-right' ) ) : ?>
-        <section class="footer-1-sidebar-right col-sm-4">
-            <?php dynamic_sidebar( 'footer-1-sidebar-right' ); ?>
-        </section>
-    <?php endif; ?>
+	<?php if ( is_active_sidebar( 'footer-1-sidebar-middle-2' ) ) : ?>
+		<section class="footer-1-sidebar-middle-2 col-sm-3">
+			<?php dynamic_sidebar( 'footer-1-sidebar-middle-2' ); ?>
+		</section>
+	<?php endif; ?>
+
+	<?php if ( is_active_sidebar( 'footer-1-sidebar-right' ) ) : ?>
+		<section class="footer-1-sidebar-right col-sm-3">
+			<?php dynamic_sidebar( 'footer-1-sidebar-right' ); ?>
+		</section>
+	<?php endif; ?>
 </div>
 
 <?php if ( is_active_sidebar( 'footer-1-sidebar-bottom' ) ) : ?>
-    <div class="st-grid-row row" role="complementary">
-        <section class="footer-1-sidebar-bottom col-sm-12">
-            <?php dynamic_sidebar( 'footer-1-sidebar-bottom' ); ?>
-        </section>
-    </div>
+	<div class="st-grid-row row" role="complementary">
+		<section class="footer-1-sidebar-bottom col-sm-12">
+			<?php dynamic_sidebar( 'footer-1-sidebar-bottom' ); ?>
+		</section>
+	</div>
 <?php endif; ?>
