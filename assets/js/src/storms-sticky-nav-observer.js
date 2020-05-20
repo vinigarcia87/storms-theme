@@ -22,7 +22,7 @@ if( 'IntersectionObserver' in window ) {
 		const offsetTop = sticky_el.offsetTop;
 
 		const headerObserverOptions = {
-			rootMargin: (has_wp_adminbar ? "-" + offsetTop + "px" : "0px")
+			//rootMargin: (has_wp_adminbar ? '-' + offsetTop + 'px' : '0px')
 		};
 
 		const headerObserver = new IntersectionObserver(
@@ -68,7 +68,7 @@ if( 'IntersectionObserver' in window ) {
 
 						body.classList.remove('has-fixed-menu');
 
-						wrap_el.style.marginTop = "0";
+						wrap_el.style.marginTop = '0';
 					}
 				});
 			},

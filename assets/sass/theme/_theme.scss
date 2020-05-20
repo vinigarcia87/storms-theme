@@ -1,5 +1,23 @@
 @charset "UTF-8";
 
+// Sticky Menu - fix for wp admin-bar
+#main-navigation {
+	&.fixed-top {
+		box-shadow: 0 0 16px #000000;
+
+		// Descontamos a barra de admin do wp, qndo ela estiver presente
+		body.admin-bar & {
+			top: 32px;
+
+			// The wp adminbar change height from 46px to 32px on 782px
+			@media screen and (max-width: 782px) {
+				top: 46px;
+			}
+		}
+
+	}
+}
+
 // Search form style
 @import "search-form";
 

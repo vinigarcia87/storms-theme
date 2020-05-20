@@ -19,8 +19,7 @@ if ('IntersectionObserver' in window) {
 
     var margin = sticky_el.offsetHeight;
     var offsetTop = sticky_el.offsetTop;
-    var headerObserverOptions = {
-      rootMargin: has_wp_adminbar ? "-" + offsetTop + "px" : "0px"
+    var headerObserverOptions = {//rootMargin: (has_wp_adminbar ? '-' + offsetTop + 'px' : '0px')
     };
     var headerObserver = new IntersectionObserver(function (entries, headerObserver) {
       entries.forEach(function (entry) {
@@ -56,7 +55,7 @@ if ('IntersectionObserver' in window) {
           sticky_el.classList.add('position-static');
           sticky_el.classList.remove('fixed-top');
           body.classList.remove('has-fixed-menu');
-          wrap_el.style.marginTop = "0";
+          wrap_el.style.marginTop = '0';
         }
       });
     }, headerObserverOptions);
