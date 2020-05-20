@@ -30,17 +30,7 @@
 		<!-- Title -->
 		<title>Em breve | <?php bloginfo('name'); ?></title>
 
-		<!--
-		- Favicon
-		- Source: http://stackoverflow.com/a/23851464/1003020
-		-->
-		<link rel="icon" href="<?php echo \StormsFramework\Helper::get_asset_url( '/img/icons/newstormsfav.png' ); ?>">
-
-		<!-- Scripts -->
-		<!--[if lt IE 9]><script src="<?php echo \StormsFramework\Helper::get_asset_url( '/js/libs/html5shiv/3.7.2/html5shiv.js' ); ?>"></script><![endif]-->
-		<!--[if lt IE 9]><script src="<?php echo \StormsFramework\Helper::get_asset_url( '/js/libs/respond/1.4.2/respond.min.js' ); ?>"></script><![endif]-->
-
-		<script src="<?php  echo \StormsFramework\Helper::get_asset_url( '/js/libs/jquery/1.10.2/jquery.min.js' ); ?>"></script>
+		<link rel="icon" href="<?php echo \StormsFramework\Helper::get_asset_url( '/img/storms/icons/storms_favicon.png' ); ?>">
 
 		<link href="<?php  echo \StormsFramework\Helper::get_asset_url( '/css/construction.min.css' ); ?>" rel="stylesheet" />
 	</head>
@@ -51,7 +41,7 @@
 				<h1><?php bloginfo('name'); ?></h1>
 				<h2>Mais um website produzido por Storms Websolutions</h2>
 			</div>
-			<div class="content offset-sm-3 col-sm-6 text-center">
+			<div class="content col text-center">
 				<h3>Nosso site está quase pronto!</h3>
 				<p>
 					<strong>Em breve</strong>, mais um grande projeto desenvolvido pela Storms Websolutions. Aguarde nosso lançamento!

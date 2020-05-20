@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+// Importing Open Sans
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic,300italic);
+
+// Bootstrap 4 - 180KB
+@import "bootstrap/bootstrap-import";
+
+// Font-Awesome - 30KB
+@import "fontawesome/fontawesome-variables";
+@import "fontawesome/fontawesome-import";
+
+// ==========================================================================
+// Under Construction Template
+// ==========================================================================
+
+html {
+	background: url(/wp-content/plugins/storms-framework/assets/img/storms/wallpaper/under_construction.jpg) no-repeat center center fixed;
+	background-size: cover;
+}
+body {
+	background: none;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.header {
+	padding: 80px 0;
+	pointer-events: none;
+	text-align: center;
+	vertical-align: middle;
+
+	h1 {
+		font-size: 8em;
+		font-family: "Oswald",sans-serif;
+	}
+	h1, h2 {
+		color: #fff;
+		margin: 0 auto;
+		opacity: 1;
+		pointer-events: auto;
+		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+	}
+
+	@media (max-width: 767px) {
+		h1 {
+			font-size: 4em;
+		}
+		h2 {
+			font-size: 1.5em;
+		}
+	}
+}
+.content {
+	color: #fff;
+
+	p, img {
+		padding: 10px 0;
+	}
+	.login {
+		padding: 0;
+		margin: 0;
+
+		a {
+			color: rgba(130, 130, 130, 0.6);
+			font-size: 20px;
+
+			&:hover {
+				color: rgba(130, 130, 130, 1);
+			}
+		}
+	}
+}
