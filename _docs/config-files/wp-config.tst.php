@@ -99,7 +99,7 @@ define( 'WP_ENV', 'testing' );
 define( 'SF_ENV', 'TST' );
 
 // This sets the maximum amount of memory in bytes that a script is allowed to allocate
-define( 'WP_MEMORY_LIMIT', '256M' );
+define( 'WP_MEMORY_LIMIT', '512M' );
 
 // Bigger execution time
 ini_set( 'max_execution_time', 1200 ); // 1200 seconds = 20 minutes

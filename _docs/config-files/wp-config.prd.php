@@ -75,7 +75,7 @@ $table_prefix  = 'ststhemeMMYY_';
  * é altamente recomendável que os desenvolvedores de plugins e temas usem o WP_DEBUG
  * em seus ambientes de desenvolvimento.
  */
-//define('WP_DEBUG', false);
+define('WP_DEBUG', false);
 
 /**
  * Storms Websolutions Configurations
@@ -83,13 +83,15 @@ $table_prefix  = 'ststhemeMMYY_';
  */
 
 // Turns WordPress debugging on
-define('WP_DEBUG', true );
+//define('WP_DEBUG', true );
 // Tells WordPress to log everything to the /wp-content/debug.log file
-define( 'WP_DEBUG_LOG', true );
+//define( 'WP_DEBUG_LOG', true );
+// Force WordPress to use the "dev" versions of CSS and JavaScript files rather than the minified versions
+//define( 'SCRIPT_DEBUG', true );
 // Doesn't force the PHP 'display_errors' variable to be on
-define( 'WP_DEBUG_DISPLAY', false ); // Set it back to false!
+//define( 'WP_DEBUG_DISPLAY', false ); // Set it back to false!
 // Hides errors from being displayed on-screen
-@ini_set( 'display_errors', 0 );
+//@ini_set( 'display_errors', 0 );
 
 // Enable the new WooCommerce logging system
 define( 'WC_LOG_HANDLER', 'WC_Log_Handler_DB' );
@@ -99,7 +101,7 @@ define( 'WP_ENV', 'production' );
 define( 'SF_ENV', 'PRD' );
 
 // This sets the maximum amount of memory in bytes that a script is allowed to allocate
-define( 'WP_MEMORY_LIMIT', '256M' );
+define( 'WP_MEMORY_LIMIT', '512M' );
 
 // Bigger execution time
 ini_set( 'max_execution_time', 1200 ); // 1200 seconds = 20 minutes
