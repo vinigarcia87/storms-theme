@@ -21,6 +21,11 @@ if( ! function_exists( 'storms_define_wordpress_options' ) ) {
     // Define WordPress options
     function storms_define_wordpress_options() {
 
+		// Only setup if user is an admin
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
 		// Comments configuration
 		update_option('default_pingback_flag', 'no');
 		update_option('default_ping_status', 'no');

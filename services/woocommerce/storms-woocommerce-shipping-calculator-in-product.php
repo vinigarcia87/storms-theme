@@ -16,11 +16,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+use \StormsFramework\Helper;
+
 if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 
 	function storms_wc_shipping_calculator_in_product_init() {
 
-		if( is_product() && 'yes' == get_option( 'storms_wc_scip_show_shipping_calculator_in_product', 'yes' ) ) {
+		if( is_product() && 'yes' == Helper::get_option( 'storms_wc_scip_show_shipping_calculator_in_product', 'yes' ) ) {
 
 			add_action( 'wp_enqueue_scripts', 'storms_wc_shipping_calculator_in_product_register_scripts' );
 
@@ -33,7 +35,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 				'woocommerce_product_meta_end'         , // 'Depois das metas (tags, categorias, etc)'
 				'shortcode'                            , // 'Shortcode'
 			);
-			$position = get_option( 'storms_wc_scip_position', 'woocommerce_single_product_summary' );
+			$position = Helper::get_option( 'storms_wc_scip_position', 'woocommerce_single_product_summary' );
 			if( ! in_array( $position, $position_options )  ) {
 				$position = 'woocommerce_single_product_summary';
 			}

@@ -17,12 +17,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Check for wp-maintenance-mode plugin
-if (in_array('wp-maintenance-mode/wp-maintenance-mode.php', apply_filters('active_plugins', get_option('active_plugins')))) {
+if ( \StormsFramework\Helper::is_plugin_activated( 'wp-maintenance-mode/wp-maintenance-mode.php' ) ) {
 
 	if( ! function_exists( 'storms_define_wp_maintenance_mode_options' ) ) {
 
 		// Define WordPress options
 		function storms_define_wp_maintenance_mode_options() {
+
+			// Only setup if user is an admin
+			if ( ! current_user_can( 'manage_options' ) ) {
+				return;
+			}
 
 			$wpmm_settings = get_option('wpmm_settings');
 

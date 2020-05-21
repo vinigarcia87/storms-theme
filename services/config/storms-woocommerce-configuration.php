@@ -21,8 +21,12 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 	if (!function_exists('storms_define_woocommerce_options')) {
 
 		// Define WooCommerce options
-		function storms_define_woocommerce_options()
-		{
+		function storms_define_woocommerce_options() {
+
+			// Only setup if user is an admin
+			if ( ! current_user_can( 'manage_options' ) ) {
+				return;
+			}
 
 			// Avançado > WooCommerce.com - Não permitir que o uso do WooCommerce seja rastreado
 			update_option('woocommerce_allow_tracking', 'no');
@@ -63,7 +67,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 			update_option('woocommerce_logout_endpoint', 'sair');
 
 			// Check for woocommerce-extra-checkout-fields-for-brazil plugin
-			if (in_array('woocommerce-extra-checkout-fields-for-brazil/woocommerce-extra-checkout-fields-for-brazil.php', apply_filters('active_plugins', get_option('active_plugins')))) {
+			if ( \StormsFramework\Helper::is_plugin_activated( 'woocommerce-extra-checkout-fields-for-brazil/woocommerce-extra-checkout-fields-for-brazil.php' ) ) {
 
 				update_option('wcbcf_settings', array(
 					'person_type' => 1,

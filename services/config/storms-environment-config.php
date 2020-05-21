@@ -17,6 +17,11 @@ defined( 'ABSPATH' ) || exit;
 
 function storms_environment_options() {
 
+	// Only setup if user is an admin
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
+
 	if (SF_ENV == 'DEV') {
 
 		// '1' if site visible by search engine, and '0' if site not visible by search engine
@@ -48,7 +53,7 @@ function storms_environment_options() {
 		// '1' if site visible by search engine, and '0' if site not visible by search engine
 		update_option('blog_public', '1');
 
-		update_option('woocommerce_force_ssl_checkout', 'yes');
+		update_option('woocommerce_force_ssl_checkout', 'no');
 
 		update_option('woocommerce_shipping_debug_mode', 'no');
 
@@ -57,6 +62,11 @@ function storms_environment_options() {
 add_action( 'admin_init', 'storms_environment_options' );
 
 function storms_environment_deactivate_plugins() {
+
+	// Only setup if user is an admin
+	if ( ! current_user_can( 'manage_options' ) ) {
+		return;
+	}
 
     if( SF_ENV == 'DEV' ) {
 

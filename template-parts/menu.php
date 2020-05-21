@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 <nav id="main-navigation" class="main-menu navbar navbar-expand-md navbar-light bg-light" role="navigation" data-toggle="sticky-onscroll">
 	<div class="<?php echo Template::menu_container(); ?>">
 
-		<?php if( 'yes' === get_option( 'storms_show_menu_image', 'yes' ) ) : ?>
+		<?php if( 'yes' === \StormsFramework\Helper::get_option( 'storms_show_menu_image', 'yes' ) ) : ?>
 
 		<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<?php
