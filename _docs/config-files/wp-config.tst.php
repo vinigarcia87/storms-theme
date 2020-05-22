@@ -94,6 +94,18 @@ define( 'WP_DEBUG_DISPLAY', false ); // Set it back to false!
 // Enable the new WooCommerce logging system
 define( 'WC_LOG_HANDLER', 'WC_Log_Handler_DB' );
 
+// Reduce the number of revisions that are saved
+define( 'WP_POST_REVISIONS', 2 );
+
+// Number of days before trash is emptied
+define( 'EMPTY_TRASH_DAYS', 2 ); // 2 days
+
+// Increase your autosave interval
+define('AUTOSAVE_INTERVAL', 300 ); // 300 seconds - 5 min
+
+// Repair and optimize your database - Access: wp-admin/maint/repair.php
+//define( 'WP_ALLOW_REPAIR', true ); // Keep this disabled when not using
+
 // Define environment of this project
 define( 'WP_ENV', 'testing' );
 define( 'SF_ENV', 'TST' );
