@@ -19,12 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 if( ! function_exists( 'theme_setup' ) ) {
     // Theme setup
     function storms_theme_setup() {
-
-    	// Only setup if user is an admin
-		if ( ! current_user_can( 'manage_options' ) ) {
-			return;
-		}
-
         // Enable backend support
         add_theme_support( 'style-backend' );
         // Enable branding support
