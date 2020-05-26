@@ -23,7 +23,7 @@ if( ! function_exists( 'storms_frontend_scripts' ) ) {
 
 		// Adiciona o script que verifica qual media-query esta ativa e inclui uma classe informando
 		wp_enqueue_script( 'storms-media-query-breakpoints-script',
-			\StormsFramework\Helper::get_asset_url('/js/src/storms-media-query-breakpoints' . ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min' ) . '.js'), array('jquery'),
+			\StormsFramework\Helper::get_asset_url('/js/storms-media-query-breakpoints' . ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min' ) . '.js'), array('jquery'),
 			STORMS_FRAMEWORK_VERSION, true );
 		// Add WordPress data to a Javascript file
 		wp_localize_script( 'storms-media-query-breakpoints-script', 'storms_media_query_breakpoints_vars', [
