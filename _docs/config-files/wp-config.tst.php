@@ -128,6 +128,12 @@ if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) &&
 	$_SERVER['HTTPS'] = 'on';
 }
 
+// Cookie with HTTPOnly and Secure flag in WordPress
+// @see https://geekflare.com/wordpress-x-frame-options-httponly-cookie/
+@ini_set('session.cookie_httponly', true);
+@ini_set('session.cookie_secure', true);
+@ini_set('session.use_only_cookies', true);
+
 /* Isto é tudo, pode parar de editar! :) */
 
 /** Caminho absoluto para o diretório WordPress. */
