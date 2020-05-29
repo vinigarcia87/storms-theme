@@ -20,19 +20,36 @@ if( ! function_exists( 'storms_define_wordpress_options' ) ) {
 
     // Define WordPress options
     function storms_define_wordpress_options() {
+    	/** @var \WP_Rewrite $wp_rewrite */
+		global $wp_rewrite;
 
 		// Only setup if user is an admin
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return;
 		}
 
+		// Permalink configuration
+		// @ see https://wordpress.stackexchange.com/a/206222/54025
+		$permalink = get_option( 'permalink_structure' );
+ 		if( empty( $permalink ) ) {
+
+			// Add default wp permalink structure
+			$wp_rewrite->set_permalink_structure( '/%postname%/' );
+
+			// Needed to force htaccess to be rewrite
+			update_option( 'rewrite_rules', false );
+
+			// Flush the rules and tell it to write htaccess
+			$wp_rewrite->flush_rules( true );
+		}
+
 		// Comments configuration
-		update_option('default_pingback_flag', 'no');
-		update_option('default_ping_status', 'no');
-		update_option('default_comment_status', 'no');
-		update_option('comment_registration', 'no');
-		update_option('page_comments', '1');
-		update_option('comments_per_page', 5);
+		update_option( 'default_pingback_flag', 'no' );
+		update_option( 'default_ping_status', 'no' );
+		update_option( 'default_comment_status', 'no' );
+		update_option( 'comment_registration', 'no' );
+		update_option( 'page_comments', '1' );
+		update_option( 'comments_per_page', 5 );
     }
     add_action( 'admin_init', 'storms_define_wordpress_options' );
 

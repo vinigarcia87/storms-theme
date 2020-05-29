@@ -35,24 +35,18 @@ if( ! function_exists( 'storms_frontend_scripts' ) ) {
 			\StormsFramework\Helper::get_asset_url('/js/storms-sticky-nav-observer' . ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min' ) . '.js'), array('jquery', 'storms-media-query-breakpoints-script'),
 			STORMS_FRAMEWORK_VERSION, true );
 
-		/*
-		// Adiciona o script que monitora se o nav do menu principal esta 'grudado' no topo
-		wp_enqueue_script( 'storms-sticky-header-script',
-			\StormsFramework\Helper::get_asset_url('/js/storms-sticky-header' . ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min' ) . '.js'), array('jquery'),
-			STORMS_FRAMEWORK_VERSION, true );
+		if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 
-		// Add WordPress data to a Javascript file
-		wp_localize_script( 'storms-sticky-header-script', 'storms_sticky_header_vars', [
-			'alturaHeader'  => 160, // Informar a altura do header - elemento que contem o menu
-			'alturaMenu'    => 65,  // Informar a altura do menu - elemento que sera sticky no top
-			'wrapMarginTop' => 75,	// Informar a margin adequada para o wrap - o valor precisa compensar o scroll do menu
-		] );
-		*/
+			if( is_product() ) {
+				// Adiciona o script que torna a imagem do produto clickavel na pagina do produto
+				wp_enqueue_script('storms-wc-improve-product-image-script',
+					\StormsFramework\Helper::get_asset_url('/js/storms-wc-improve-product-image' . ((defined('WP_DEBUG') && WP_DEBUG) ? '' : '.min') . '.js'), array('jquery'),
+					STORMS_FRAMEWORK_VERSION, true);
+			}
 
-		// Adiciona o script que torna a imagem do produto clickavel
-		if( \StormsFramework\Helper::is_woocommerce_activated() && is_product() ) {
-			wp_enqueue_script('storms-improve-product-image-script',
-				\StormsFramework\Helper::get_asset_url('/js/storms-improve-product-image' . ((defined('WP_DEBUG') && WP_DEBUG) ? '' : '.min') . '.js'), array('jquery'),
+			// Adiciona funcionalidade de collapse para o widget de lista de categorias de produtos
+			wp_enqueue_script('storms-wc-widget-product-categories-script',
+				\StormsFramework\Helper::get_asset_url('/js/storms-wc-widget-product-categories' . ((defined('WP_DEBUG') && WP_DEBUG) ? '' : '.min') . '.js'), array('jquery'),
 				STORMS_FRAMEWORK_VERSION, true);
 		}
 

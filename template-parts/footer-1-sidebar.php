@@ -13,10 +13,12 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+
+use  StormsFramework\Helper;
 ?>
 <?php if ( is_active_sidebar( 'footer-1-sidebar-top' ) ) : ?>
 	<div class="st-grid-row row" role="complementary">
-		<section class="footer-1-sidebar-top col-sm-12">
+		<section class="footer-1-sidebar-top <?php echo Helper::get_option( 'storms_footer_1_size_sidebar_top', 'col-sm-12' )?>">
 			<?php dynamic_sidebar( 'footer-1-sidebar-top' ); ?>
 		</section>
 	</div>
@@ -24,25 +26,25 @@ defined( 'ABSPATH' ) || exit;
 
 <div class="st-grid-row row" role="complementary">
 	<?php if ( is_active_sidebar( 'footer-1-sidebar-left' ) ) : ?>
-		<section class="footer-1-sidebar-left col-sm-3">
+		<section class="footer-1-sidebar-left <?php echo Helper::get_option( 'storms_footer_1_size_sidebar_left', 'col-sm-3' )?>">
 			<?php dynamic_sidebar( 'footer-1-sidebar-left' ); ?>
 		</section>
 	<?php endif; ?>
 
 	<?php if ( is_active_sidebar( 'footer-1-sidebar-middle-1' ) ) : ?>
-		<section class="footer-1-sidebar-middle-1 col-sm-3">
+		<section class="footer-1-sidebar-middle-1 <?php echo Helper::get_option( 'storms_footer_1_size_sidebar_middle_1', 'col-sm-3' )?>">
 			<?php dynamic_sidebar( 'footer-1-sidebar-middle-1' ); ?>
 		</section>
 	<?php endif; ?>
 
 	<?php if ( is_active_sidebar( 'footer-1-sidebar-middle-2' ) ) : ?>
-		<section class="footer-1-sidebar-middle-2 col-sm-3">
+		<section class="footer-1-sidebar-middle-2 <?php echo Helper::get_option( 'storms_footer_1_size_sidebar_middle_2', 'col-sm-3' )?>">
 			<?php dynamic_sidebar( 'footer-1-sidebar-middle-2' ); ?>
 		</section>
 	<?php endif; ?>
 
 	<?php if ( is_active_sidebar( 'footer-1-sidebar-right' ) ) : ?>
-		<section class="footer-1-sidebar-right col-sm-3">
+		<section class="footer-1-sidebar-right <?php echo Helper::get_option( 'storms_footer_1_size_sidebar_right', 'col-sm-3' )?>">
 			<?php dynamic_sidebar( 'footer-1-sidebar-right' ); ?>
 		</section>
 	<?php endif; ?>
@@ -50,7 +52,7 @@ defined( 'ABSPATH' ) || exit;
 
 <?php if ( is_active_sidebar( 'footer-1-sidebar-bottom' ) ) : ?>
 	<div class="st-grid-row row" role="complementary">
-		<section class="footer-1-sidebar-bottom col-sm-12">
+		<section class="footer-1-sidebar-bottom <?php echo Helper::get_option( 'storms_footer_1_size_sidebar_bottom', 'col-sm-12' )?>">
 			<?php dynamic_sidebar( 'footer-1-sidebar-bottom' ); ?>
 		</section>
 	</div>

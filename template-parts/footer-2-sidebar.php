@@ -14,8 +14,10 @@
 
 defined( 'ABSPATH' ) || exit;
 
+use  StormsFramework\Helper;
+
 // Get how many footer sidebars are defined for this website
-$numFooterSidebars = \StormsFramework\Helper::get_option( 'storms_number_of_footer_sidebars', 4 );
+$numFooterSidebars = Helper::get_option( 'storms_number_of_footer_sidebars', 4 );
 // Get how many sidebars are active
 $numActiveFooterSidebars = 0;
 for( $i = 1; $i <= $numFooterSidebars; $i++ ) {
@@ -38,7 +40,7 @@ if ( ( $numFooterSidebars > 0 ) && ( $numActiveFooterSidebars > 0 ) ) : ?>
                     $diff = 12 - $col_size * $numActiveFooterSidebars;
 
                     // Options: first_div: Diferença fica na primeira div; last_div: Diferença fica na ultima div; first_last_div: Diferença eh dividida entre a primeira e a ultima div;
-                    $diff_place = \StormsFramework\Helper::get_option( 'storms_footer_diff_place', 'first_last_div' );
+                    $diff_place = Helper::get_option( 'storms_footer_diff_place', 'first_last_div' );
 
                     // Incluimos a diferença na ultima div
                     if( $diff_place == 'last_div' ) {
@@ -80,7 +82,7 @@ if ( ( $numFooterSidebars > 0 ) && ( $numActiveFooterSidebars > 0 ) ) : ?>
                             }
                 }
 
-                $col_size_css = 'footer-col-'. intval( $i ) . ' ' . \StormsFramework\Helper::get_option( 'storms_footer_size_col_' . intval( $i ), 'col-md-' . $col_size );
+                $col_size_css = 'footer-col-'. intval( $i ) . ' ' . Helper::get_option( 'storms_footer_size_col_' . intval( $i ), 'col-md-' . $col_size );
                 ?>
 
                 <div class="<?php echo $col_size_css; ?>">
