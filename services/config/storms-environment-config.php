@@ -31,9 +31,11 @@ function storms_environment_options() {
 
 		update_option('woocommerce_shipping_debug_mode', 'no');
 
-		//$wc_pagseguro_options = get_option( 'woocommerce_pagseguro_settings' );
-		//$wc_pagseguro_options['sandbox'] = 'yes';
-		//update_option( 'woocommerce_pagseguro_settings', $wc_pagseguro_options );
+		$wc_pagseguro_options = get_option( 'woocommerce_pagseguro_settings' );
+		if( ! empty( $wc_pagseguro_options ) ) {
+			$wc_pagseguro_options['sandbox'] = 'yes';
+			update_option( 'woocommerce_pagseguro_settings', $wc_pagseguro_options );
+		}
 
 	} elseif (SF_ENV == 'TST') {
 
@@ -44,9 +46,11 @@ function storms_environment_options() {
 
 		update_option('woocommerce_shipping_debug_mode', 'yes');
 
-		//$wc_pagseguro_options = get_option( 'woocommerce_pagseguro_settings' );
-		//$wc_pagseguro_options['sandbox'] = 'yes';
-		//update_option( 'woocommerce_pagseguro_settings', $wc_pagseguro_options );
+		$wc_pagseguro_options = get_option( 'woocommerce_pagseguro_settings' );
+		if( ! empty( $wc_pagseguro_options ) ) {
+			$wc_pagseguro_options['sandbox'] = 'yes';
+			update_option( 'woocommerce_pagseguro_settings', $wc_pagseguro_options );
+		}
 
 	} else {
 
@@ -59,7 +63,7 @@ function storms_environment_options() {
 
 	}
 }
-add_action( 'admin_init', 'storms_environment_options' );
+add_action( 'admin_init', 'storms_environment_options', 100 );
 
 function storms_environment_deactivate_plugins() {
 
