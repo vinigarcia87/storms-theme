@@ -15,10 +15,6 @@
 use \StormsFramework\Template;
 
 defined( 'ABSPATH' ) || exit;
-
-if ( ! is_active_sidebar( 'shop-sidebar' ) ) {
-	return;
-}
 ?>
 
 <aside id="shop-sidebar" class="sidebar shop-sidebar <?php echo Template::sidebar_layout(); ?>" role="complementary">
@@ -31,7 +27,7 @@ if ( ! is_active_sidebar( 'shop-sidebar' ) ) {
 		*/
 		if ( ! dynamic_sidebar( 'shop-sidebar' ) ) {
 
-			dynamic_sidebar( 'main-sidebar' );
+			the_widget( 'WC_Widget_Product_Categories', array( 'hide_empty' => 1 ) );
 
 		}
 	?>

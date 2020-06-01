@@ -16,12 +16,10 @@ use \StormsFramework\Template;
 
 defined( 'ABSPATH' ) || exit;
 
-if ( ! is_active_sidebar( 'main-sidebar' ) ) {
-	return;
-}
+$sidebar = apply_filters( 'storms_main_sidebar_selection', 'main-sidebar' );
 ?>
 
-<aside id="sidebar" class="sidebar <?php echo Template::sidebar_layout(); ?>" role="complementary">
+<aside id="sidebar" class="sidebar <?php echo $sidebar; ?> <?php echo Template::sidebar_layout(); ?>" role="complementary">
 	<?php
 		/*
 		* When we call the dynamic_sidebar() function, it'll spit out
@@ -29,7 +27,7 @@ if ( ! is_active_sidebar( 'main-sidebar' ) ) {
 		* then the sidebar simply doesn't exist, so we'll hard-code in
 		* some default sidebar stuff just in case.
 		*/
-		if ( ! dynamic_sidebar( 'main-sidebar' ) ) {
+		if ( ! dynamic_sidebar( $sidebar ) ) {
 
 			the_widget( 'WP_Widget_Recent_Posts', array( 'number' => 10 ) );
 			the_widget( 'WP_Widget_Archives', array( 'count' => 0, 'dropdown' => 1 ) );
