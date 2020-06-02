@@ -17,6 +17,7 @@ use \StormsFramework\Template;
 defined( 'ABSPATH' ) || exit;
 
 if ( ! is_active_sidebar( 'product-sidebar' ) ) {
+	\StormsFramework\Helper::debug('product-sidebar not active');
 	return;
 }
 ?>
@@ -29,8 +30,9 @@ if ( ! is_active_sidebar( 'product-sidebar' ) ) {
 		* then the sidebar simply doesn't exist, so we'll hard-code in
 		* some default sidebar stuff just in case.
 		*/
+		\StormsFramework\Helper::debug('product-sidebar is active');
 		if ( ! dynamic_sidebar( 'product-sidebar' ) ) {
-
+			\StormsFramework\Helper::debug('product-sidebar not active');
 			// If no product-sidebar, we use shop-sidebar instead
 			dynamic_sidebar( 'shop-sidebar' );
 

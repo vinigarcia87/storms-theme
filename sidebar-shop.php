@@ -17,6 +17,7 @@ use \StormsFramework\Template;
 defined( 'ABSPATH' ) || exit;
 
 if ( ! is_active_sidebar( 'shop-sidebar' ) ) {
+	\StormsFramework\Helper::debug('shop-sidebar not active');
 	return;
 }
 ?>
@@ -29,7 +30,9 @@ if ( ! is_active_sidebar( 'shop-sidebar' ) ) {
 		* then the sidebar simply doesn't exist, so we'll hard-code in
 		* some default sidebar stuff just in case.
 		*/
+		\StormsFramework\Helper::debug('shop-sidebar is active');
 		if ( ! dynamic_sidebar( 'shop-sidebar' ) ) {
+			\StormsFramework\Helper::debug('shop-sidebar not active');
 
 			the_widget( 'WC_Widget_Product_Categories', array( 'hide_empty' => 1 ) );
 
