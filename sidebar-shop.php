@@ -15,6 +15,10 @@
 use \StormsFramework\Template;
 
 defined( 'ABSPATH' ) || exit;
+
+if ( ! is_active_sidebar( 'shop-sidebar' ) ) {
+	return;
+}
 ?>
 
 <aside id="shop-sidebar" class="sidebar shop-sidebar <?php echo Template::sidebar_layout(); ?>" role="complementary">
