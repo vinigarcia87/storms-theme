@@ -17,6 +17,10 @@ use \StormsFramework\Template;
 defined( 'ABSPATH' ) || exit;
 
 $sidebar = apply_filters( 'storms_main_sidebar_selection', 'main-sidebar' );
+
+if ( ! is_active_sidebar( $sidebar ) ) {
+	return;
+}
 ?>
 
 <aside id="sidebar" class="sidebar <?php echo $sidebar; ?> <?php echo Template::sidebar_layout(); ?>" role="complementary">
