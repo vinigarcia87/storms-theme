@@ -12628,7 +12628,6 @@ abbr.required {
   margin: 20px 0;
   border-left: 8px solid #222;
   background-color: #fdfdfd;
-  padding-left: 10px;
 }
 
 @media (min-width: 768px) {
@@ -13341,7 +13340,8 @@ abbr.required {
 }
 
 .woocommerce-checkout #payment.woocommerce-checkout-payment ul.wc_payment_methods li.payment_method_pagseguro > label img {
-  float: right;
+  float: none;
+  margin-bottom: 20px;
 }
 
 .woocommerce-checkout #payment.woocommerce-checkout-payment ul.wc_payment_methods li.payment_method_pagseguro #pagseguro-payment-methods li label {
