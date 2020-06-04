@@ -70,19 +70,28 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 			// Check for woocommerce-extra-checkout-fields-for-brazil plugin
 			if ( \StormsFramework\Helper::is_plugin_activated( 'woocommerce-extra-checkout-fields-for-brazil/woocommerce-extra-checkout-fields-for-brazil.php' ) ) {
 
+				/**
+				 * IMPORTANT!
+				 * For some reason, this plugin don't accept 0 as option
+				 * If you want some option disabled, you must remove it from the update
+				 * For example, if you want IE to not be shown, comment the line for IE
+				 */
 				update_option('wcbcf_settings', array(
-					'person_type' => 1,
-					'only_brazil' => 1,
-					'ie' => 1,
-					'birthdate_sex' => 1,
-					'cell_phone' => 1,
-					'mailcheck' => 1,
-					'maskedinput' => 1,
-					'addresscomplete' => 1,
-					'validate_cpf' => 1,
-					'validate_cnpj' => 1,
+					'person_type' 		=> 1,
+					'only_brazil' 		=> 1,
+					'ie' 				=> 1,
+					//'rg' 				=> 1,
+					//'birthdate_sex' 	=> 1,
+					'cell_phone' 		=> 1,
+					'mailcheck' 		=> 1,
+					'maskedinput' 		=> 1,
+					'addresscomplete' 	=> 1,
+					'validate_cpf' 		=> 1,
+					'validate_cnpj' 	=> 1,
 				));
+
 			}
+
 		}
 
 		add_action('admin_init', 'storms_define_woocommerce_options');
