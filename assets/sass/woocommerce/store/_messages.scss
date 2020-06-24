@@ -7,6 +7,10 @@
 	border-left: 8px solid #222;
 	background-color: #fdfdfd;
 
+	li {
+		padding: 15px 30px !important;
+	}
+
 	// Medium devices (desktops, 992px and up)
 	@include media-breakpoint-up(md) {
 		min-height: 62px;

@@ -1,5 +1,7 @@
 .woocommerce.single-product {
 	main > .product {
+		position: relative; // Para posicionar corretamente o on-sale
+
 		@include make-row();
 
 		.woocommerce-product-gallery,
