@@ -257,6 +257,8 @@ table.shop_table {
 		}
 
 		.shipping-calculator-form {
+			overflow: auto;
+
 			#calc_shipping_state_field {
 				span {
 					width: 100%;
