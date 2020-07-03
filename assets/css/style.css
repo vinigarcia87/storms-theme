@@ -12630,6 +12630,12 @@ abbr.required {
   background-color: #fdfdfd;
 }
 
+.woocommerce-message li,
+.woocommerce-error li,
+.woocommerce-info li {
+  padding: 15px 30px !important;
+}
+
 @media (min-width: 768px) {
   .woocommerce-message,
   .woocommerce-error,
@@ -12645,6 +12651,8 @@ abbr.required {
   .woocommerce-info .button {
     right: 30px;
     position: absolute;
+    max-width: 135px;
+    margin-top: -8px;
   }
 }
 
@@ -13257,6 +13265,10 @@ abbr.required {
   text-align: right;
 }
 
+.woocommerce .woocommerce-shipping-calculator .shipping-calculator-form {
+  overflow: auto;
+}
+
 .woocommerce .woocommerce-shipping-calculator .shipping-calculator-form #calc_shipping_state_field span {
   width: 100%;
 }
@@ -13694,6 +13706,7 @@ ul.order_details li strong {
 }
 
 .woocommerce.single-product main > .product {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
