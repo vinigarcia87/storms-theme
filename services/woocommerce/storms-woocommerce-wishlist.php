@@ -88,7 +88,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 
 
 			wp_enqueue_script('storms-wc-yith-wishlist-script',
-				\StormsFramework\Helper::get_asset_url( '/js/storms-wc-yith-wishlist' . ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min' ) . '.js' ),
+				\StormsFramework\Helper::get_asset_url( '/js/storms-wc-yith-wishlist' . ( ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min' ) . '.js' ),
 				array( 'jquery' ), STORMS_FRAMEWORK_VERSION, true );
 
 			// Add WordPress data to a Javascript file

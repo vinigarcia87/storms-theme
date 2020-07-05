@@ -59,7 +59,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 				\StormsFramework\Helper::get_asset_url(  '/js/jquery/jquery.mask.min.js' ), array( 'jquery' ), '1.14.16', true );
 
 			wp_enqueue_script( 'storms-wc-shipping-calculator-in-product-script',
-				\StormsFramework\Helper::get_asset_url('/js/storms-wc-shipping-calculator-in-product' . ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min' ) . '.js' ),
+				\StormsFramework\Helper::get_asset_url('/js/storms-wc-shipping-calculator-in-product' . ( ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min' ) . '.js' ),
 				array( 'jquery', 'jquery-mask' ), STORMS_FRAMEWORK_VERSION, true );
 
 			// Add WordPress data to a Javascript file

@@ -28,7 +28,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 		if( is_cart() || is_checkout() ) {
 
 			wp_enqueue_script('storms-wc-checkout-coupon-script',
-				\StormsFramework\Helper::get_asset_url( '/js/storms-wc-checkout-coupon' . ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min' ) . '.js' ),
+				\StormsFramework\Helper::get_asset_url( '/js/storms-wc-checkout-coupon' . ( ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min' ) . '.js' ),
 					array( 'jquery' ), STORMS_FRAMEWORK_VERSION, true );
 
 			// Add WordPress data to a Javascript file

@@ -23,7 +23,7 @@ if( ! function_exists( 'storms_frontend_scripts' ) ) {
 
 		// Adiciona o script que verifica qual media-query esta ativa e inclui uma classe informando
 		wp_enqueue_script( 'storms-media-query-breakpoints-script',
-			\StormsFramework\Helper::get_asset_url('/js/storms-media-query-breakpoints' . ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min' ) . '.js'), array('jquery'),
+			\StormsFramework\Helper::get_asset_url('/js/storms-media-query-breakpoints' . ( ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min' ) . '.js'), array('jquery'),
 			STORMS_FRAMEWORK_VERSION, true );
 		// Add WordPress data to a Javascript file
 		wp_localize_script( 'storms-media-query-breakpoints-script', 'storms_media_query_breakpoints_vars', [
@@ -32,7 +32,7 @@ if( ! function_exists( 'storms_frontend_scripts' ) ) {
 
 		// Adiciona o script que monitora se o nav do menu principal esta 'grudado' no topo
 		wp_enqueue_script( 'storms-sticky-nav-observer-script',
-			\StormsFramework\Helper::get_asset_url('/js/storms-sticky-nav-observer' . ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min' ) . '.js'), array('jquery', 'storms-media-query-breakpoints-script'),
+			\StormsFramework\Helper::get_asset_url('/js/storms-sticky-nav-observer' . ( ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min' ) . '.js'), array('jquery', 'storms-media-query-breakpoints-script'),
 			STORMS_FRAMEWORK_VERSION, true );
 
 		if( \StormsFramework\Helper::is_woocommerce_activated() ) {
@@ -40,19 +40,19 @@ if( ! function_exists( 'storms_frontend_scripts' ) ) {
 			if( is_product() ) {
 				// Adiciona o script que torna a imagem do produto clickavel na pagina do produto
 				wp_enqueue_script('storms-wc-improve-product-image-script',
-					\StormsFramework\Helper::get_asset_url('/js/storms-wc-improve-product-image' . ((defined('WP_DEBUG') && WP_DEBUG) ? '' : '.min') . '.js'), array('jquery'),
+					\StormsFramework\Helper::get_asset_url('/js/storms-wc-improve-product-image' . ((defined('SCRIPT_DEBUG') && SCRIPT_DEBUG) ? '' : '.min') . '.js'), array('jquery'),
 					STORMS_FRAMEWORK_VERSION, true);
 			}
 
 			// Adiciona funcionalidade de collapse para o widget de lista de categorias de produtos
 			wp_enqueue_script('storms-wc-widget-product-categories-script',
-				\StormsFramework\Helper::get_asset_url('/js/storms-wc-widget-product-categories' . ((defined('WP_DEBUG') && WP_DEBUG) ? '' : '.min') . '.js'), array('jquery'),
+				\StormsFramework\Helper::get_asset_url('/js/storms-wc-widget-product-categories' . ((defined('SCRIPT_DEBUG') && SCRIPT_DEBUG) ? '' : '.min') . '.js'), array('jquery'),
 				STORMS_FRAMEWORK_VERSION, true);
 		}
 
 		// Adiciona o script principal - /js/scripts.js
 		wp_enqueue_script( 'main-script',
-			\StormsFramework\Helper::get_asset_url('/js/scripts' . ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) ? '' : '.min' ) . '.js'), array('jquery'),
+			\StormsFramework\Helper::get_asset_url('/js/scripts' . ( ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min' ) . '.js'), array('jquery'),
 			STORMS_FRAMEWORK_VERSION, true );
 		// Add WordPress data to a Javascript file
 		wp_localize_script( 'main-script', 'storms_main_vars', [

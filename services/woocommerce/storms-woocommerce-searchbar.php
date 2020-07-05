@@ -121,23 +121,37 @@ class Storms_WC_SearchBar extends WC_Widget
                         <?php echo esc_attr( $label_dropdown ); ?> <span class="caret"></span>
                     </button>
                     <div class="dropdown-menu" role="menu">
-						<a class="dropdown-item" href="">
+						<a class="dropdown-item" href="#">
 							<?php echo esc_attr( $label_dropdown ); ?>
 						</a>
                         <?php
-                        if ( $count > 0 ) {
+                        if ( $count > 0 ) { ?>
+							<ul class="parent-list">
+							<?php
                             foreach ( $product_categories as $product_category ) { ?>
-								<a class="dropdown-item parent-cat" href="<?php echo esc_attr( $product_category->slug ); ?>">
-									<?php echo esc_attr( $product_category->name); ?>
-								</a>
+
+								<li class="dropdown-item parent-cat"><a href="<?php echo esc_attr( get_term_link( $product_category ) ); ?>">
+										<?php echo esc_attr( $product_category->name ); ?></a>
                                 <?php
-                                foreach ( $product_category->children as $child ) { ?>
-									<a class="dropdown-item child-cat" href="<?php echo esc_attr( $child->slug ); ?>">
-										<?php echo esc_attr( $child->name); ?>
-									</a>
-                                    <?php
-                                }
+								if( ! empty( $product_category->children ) ) { ?>
+									<ul class="child-list">
+									<?php
+									foreach ($product_category->children as $child) { ?>
+										<li class="dropdown-item child-cat"><a href="<?php echo esc_attr( get_term_link( $child ) ); ?>">
+												<?php echo esc_attr($child->name); ?></a></li>
+										<?php
+									}
+									?>
+									</ul>
+									<?php
+								}
+								?>
+								</li>
+								<?php
                             }
+							?>
+							</ul>
+							<?php
                         }
                         ?>
                     </div>

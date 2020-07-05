@@ -12574,6 +12574,12 @@ td.product-quantity {
   
 }
 
+ul.parent-list,
+ul.child-list {
+  padding: 4px 24px !important;
+  padding: 0.25rem 1.5rem !important;
+}
+
 .woocommerce .term-description,
 .woocommerce-page .term-description {
   text-align: justify;
@@ -12630,12 +12636,6 @@ abbr.required {
   background-color: #fdfdfd;
 }
 
-.woocommerce-message li,
-.woocommerce-error li,
-.woocommerce-info li {
-  padding: 15px 30px !important;
-}
-
 @media (min-width: 768px) {
   .woocommerce-message,
   .woocommerce-error,
@@ -12651,6 +12651,19 @@ abbr.required {
   .woocommerce-info .button {
     right: 30px;
     position: absolute;
+  }
+}
+
+.woocommerce-message li,
+.woocommerce-error li,
+.woocommerce-info li {
+  padding: 15px 30px !important;
+}
+
+@media (min-width: 768px) {
+  .woocommerce-message li .button,
+  .woocommerce-error li .button,
+  .woocommerce-info li .button {
     max-width: 135px;
     margin-top: -8px;
   }

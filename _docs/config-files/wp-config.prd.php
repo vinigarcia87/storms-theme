@@ -93,6 +93,9 @@ define('WP_DEBUG', false);
 // Hides errors from being displayed on-screen
 //@ini_set( 'display_errors', 0 );
 
+// Force WordPress to use non-minified versions of CSS and JavaScript files
+define( 'SCRIPT_DEBUG', false );
+
 // Enable the new WooCommerce logging system
 define( 'WC_LOG_HANDLER', 'WC_Log_Handler_DB' );
 
