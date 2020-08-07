@@ -34,7 +34,7 @@ function storms_environment_options() {
 		$wc_pagseguro_options = get_option( 'woocommerce_pagseguro_settings' );
 		if( ! empty( $wc_pagseguro_options ) ) {
 			$wc_pagseguro_options['sandbox'] = 'yes';
-			update_option( 'woocommerce_pagseguro_settings', $wc_pagseguro_options );
+			//update_option( 'woocommerce_pagseguro_settings', $wc_pagseguro_options );
 		}
 
 	} elseif (SF_ENV == 'TST') {
@@ -49,7 +49,7 @@ function storms_environment_options() {
 		$wc_pagseguro_options = get_option( 'woocommerce_pagseguro_settings' );
 		if( ! empty( $wc_pagseguro_options ) ) {
 			$wc_pagseguro_options['sandbox'] = 'yes';
-			update_option( 'woocommerce_pagseguro_settings', $wc_pagseguro_options );
+			//update_option( 'woocommerce_pagseguro_settings', $wc_pagseguro_options );
 		}
 
 	} else {
