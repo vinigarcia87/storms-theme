@@ -24,6 +24,13 @@ table.shop_table {
 			border: none;
 			border-collapse: collapse;
 
+			@include media-breakpoint-down(md) {
+				th.product-thumbnail,
+				td.product-thumbnail {
+					display: none;
+				}
+			}
+
 			& > thead > tr > th {
 				text-align: center;
 				vertical-align: middle;

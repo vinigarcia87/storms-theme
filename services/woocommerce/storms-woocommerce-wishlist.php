@@ -122,7 +122,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 			), $atts );
 
 			$wishlist  = '<div class="storms-wishlist ' . $atts['extra_classes'] . '">';
-			$wishlist .= '	<a href="' . YITH_WCWL()->get_wishlist_url() . '">';
+			$wishlist .= '	<a href="' . esc_url( YITH_WCWL()->get_wishlist_url() ) . '">';
 			$wishlist .= '		<i class="fa st-ic-heart-o" aria-hidden="true"></i>';
 			$wishlist .= '		<span class="wishlist-counter">' . yith_wcwl_count_all_products() .'</span>';
 			$wishlist .= '		<span class="wishlist-text">Minha Lista</span>';

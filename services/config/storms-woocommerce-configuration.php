@@ -45,7 +45,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 			update_option('woocommerce_enable_signup_and_login_from_checkout', 'yes');
 
 			// Permitir que seus clientes criem uma conta na página "Minha Conta"
-			update_option('woocommerce_enable_myaccount_registration', 'no');
+			update_option('woocommerce_enable_myaccount_registration', 'yes');
 			// Ao criar uma conta, gere automaticamente um nome de usuário da conta para o cliente com base em seu nome, sobrenome ou e-mail
 			update_option('woocommerce_registration_generate_username', 'yes');
 			// Quando uma conta for criada, gerar automaticamente uma senha para a conta

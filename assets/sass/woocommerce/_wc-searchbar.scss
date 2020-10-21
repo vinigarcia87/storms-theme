@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+@include media-breakpoint-down(sm) {
+	#storms-wc-searchbar-form {
+		.categories-dropdown-btn {
+			display: none;
+		}
+	}
+}
+
 ul.parent-list,
 ul.child-list {
 	padding: 0.25rem 1.5rem !important;

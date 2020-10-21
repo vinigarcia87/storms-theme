@@ -10890,7 +10890,7 @@ a.text-dark:hover, a.text-dark:focus {
   content: "";
 }
 
-.fa-user-circle:before {
+.fa-user-circle:before, .storms-wc-user-menu a .st-ic-user-circle:before {
   content: "";
 }
 
@@ -12574,10 +12574,66 @@ td.product-quantity {
   
 }
 
+.storms-wc-user-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5px 0;
+}
+
+.storms-wc-user-menu a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.storms-wc-user-menu a .st-ic-user-circle {
+  font-size: 30px;
+}
+
+.storms-wc-user-menu a .user-menu-text {
+  display: block;
+}
+
+.storms-wc-user-menu .user_menu_dropdown {
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1060;
+  position: absolute;
+  right: 0;
+  width: 340px;
+  background-color: #fff;
+  border: solid 1px #ccc;
+  -webkit-transition: all .1s linear;
+  transition: all .1s linear;
+}
+
+.storms-wc-user-menu .user_menu_dropdown.active {
+  visibility: visible;
+  opacity: 1;
+}
+
 ul.parent-list,
 ul.child-list {
   padding: 4px 24px !important;
   padding: 0.25rem 1.5rem !important;
+}
+
+ul.parent-list .dropdown-item:hover, ul.parent-list .dropdown-item:focus,
+ul.child-list .dropdown-item:hover,
+ul.child-list .dropdown-item:focus {
+  background-color: transparent;
+}
+
+ul.parent-list .dropdown-item a,
+ul.child-list .dropdown-item a {
+  color: #222222;
 }
 
 .woocommerce .term-description,
