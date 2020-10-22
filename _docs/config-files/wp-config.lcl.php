@@ -110,8 +110,8 @@ define('AUTOSAVE_INTERVAL', 300 ); // 300 seconds - 5 min
 //define( 'WP_ALLOW_REPAIR', true ); // Keep this disabled when not using
 
 // Define environment of this project
+define( 'WP_ENVIRONMENT_TYPE', 'development' ); // By default, this function will return production. Other values supported are local, development and staging
 define( 'WP_ENV', 'development' );
-define( 'SF_ENV', 'DEV' );
 
 // This sets the maximum amount of memory in bytes that a script is allowed to allocate
 define( 'WP_MEMORY_LIMIT', '512M' );

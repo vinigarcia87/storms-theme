@@ -22,7 +22,7 @@ function storms_environment_options() {
 		return;
 	}
 
-	if (SF_ENV == 'DEV') {
+	if ( wp_get_environment_type() == 'local' || wp_get_environment_type() == 'development' ) {
 
 		// '1' if site visible by search engine, and '0' if site not visible by search engine
 		update_option('blog_public', '0');
@@ -37,7 +37,7 @@ function storms_environment_options() {
 			update_option( 'woocommerce_pagseguro_settings', $wc_pagseguro_options );
 		}
 
-	} elseif (SF_ENV == 'TST') {
+	} elseif ( wp_get_environment_type() == 'staging' || wp_get_environment_type() == 'testing' ) {
 
 		// '1' if site visible by search engine, and '0' if site not visible by search engine
 		update_option('blog_public', '0');
@@ -72,7 +72,7 @@ function storms_environment_deactivate_plugins() {
 		return;
 	}
 
-    if( SF_ENV == 'DEV' ) {
+    if( wp_get_environment_type() == 'local' || wp_get_environment_type() == 'development' ) {
 
         deactivate_plugins( 'autoptimize/autoptimize.php' );
         deactivate_plugins( 'backwpup/backwpup.php' );
@@ -83,12 +83,12 @@ function storms_environment_deactivate_plugins() {
         deactivate_plugins( 'wp-super-cache/wp-cache.php' );
         deactivate_plugins( 'wp-optimize/wp-optimize.php' );
 
-    } elseif( SF_ENV == 'TST' ) {
+    } elseif( wp_get_environment_type() == 'staging' || wp_get_environment_type() == 'testing' ) {
 
         deactivate_plugins( 'google-analytics-for-wordpress/googleanalytics.php' );
 		deactivate_plugins( 'query-monitor/query-monitor.php' );
 
-	} elseif( SF_ENV == 'PRD' ) {
+	} elseif( wp_get_environment_type() == 'production' ) {
 		deactivate_plugins( 'query-monitor/query-monitor.php' );
     }
 }
