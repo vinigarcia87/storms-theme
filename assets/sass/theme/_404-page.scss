@@ -12,9 +12,14 @@
 
 	.page404-image {
 		text-align: center;
+
+		.display-1 {
+			font-size: 8rem;
+		}
 	}
 
 	.page404-search {
+		margin: 20px 0;
 		text-align: center;
 
 		.search-form,
@@ -24,7 +29,7 @@
 			@include media-breakpoint-up(sm) {
 				> .input-group {
 					margin: 0 auto;
-					width: 50%;
+					width: 100%;
 				}
 			}
 		}

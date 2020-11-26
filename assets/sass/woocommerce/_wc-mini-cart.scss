@@ -8,10 +8,6 @@
 	justify-content: center;
 	padding: 5px 0;
 
-	@include media-breakpoint-only(xs) {
-		display: none;
-	}
-
 	.shopping_cart_dropdown {
 		visibility: hidden;
 		opacity: 0;

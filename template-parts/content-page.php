@@ -20,10 +20,10 @@ defined( 'ABSPATH' ) || exit;
 	<header class="entry-header">
 
 		<?php
-		if ( ! is_home() && is_front_page() ) :
-			the_title( '<h1 class="entry-title sr-only">', '</h1>' );
-		else :
+		if ( apply_filters( 'storms_show_page_title', ( ! is_front_page() ) ) ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
+		else :
+			the_title( '<h1 class="entry-title sr-only">', '</h1>' );
 		endif;
 		?>
 

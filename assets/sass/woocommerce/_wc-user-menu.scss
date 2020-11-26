@@ -2,6 +2,7 @@
 
 .storms-wc-user-menu {
 	display: flex;
+	flex: 1;
 	align-items: center;
 	justify-content: center;
 	padding: 5px 0;
@@ -28,6 +29,10 @@
 				white-space: nowrap;
 				overflow: hidden;
 				text-overflow: ellipsis;
+
+				@include media-breakpoint-only(xs) {
+					width: 11ch;
+				}
 			}
 		}
 

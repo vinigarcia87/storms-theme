@@ -32,14 +32,14 @@ get_header(); ?>
 					<p class="display-1 font-weight-bold">404!</p>
 				</div>
 				<div class="page404-message col-sm-6">
-					<h1 class="entry-title"><?php _e( 'Page Not Found', 'storms' ); ?></h1>
+					<h1 class="entry-title"><?php _e( 'Página não Encontrada', 'storms' ); ?></h1>
 
-					<p class="text-justify"><?php _e( 'The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place.', 'storms' ); ?></p>
+					<p class="text-justify"><?php _e( 'Não foi possível encontrar a página que você estava procurando. Ela pode ter sido removida, renomeada ou até mesmo nunca ter existido.', 'storms' ); ?></p>
 
 					<?php if( \StormsFramework\Helper::is_woocommerce_activated() ): ?>
-						<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>" class="btn btn-outline-dark"><?php _e( 'Go to shop', 'storms' ); ?></a>
+						<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>" class="btn btn-outline-dark"><?php _e( 'Voltar para a Loja', 'storms' ); ?></a>
 					<?php else: ?>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn btn-outline-dark"><?php _e( 'Go to the home page', 'storms' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn btn-outline-dark"><?php _e( 'Ir para a página Principal', 'storms' ); ?></a>
 					<?php endif; ?>
 				</div>
 			</div>

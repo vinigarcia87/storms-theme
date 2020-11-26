@@ -19,13 +19,18 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 <div class="woocommerce-billing-fields">
-	<?php if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
 
-		<h3><?php esc_html_e( 'Billing &amp; Shipping', 'woocommerce' ); ?></h3>
+	<?php if ( apply_filters( 'storms_show_checkout_billing_title', true ) ) : ?>
 
-	<?php else : ?>
+		<?php if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
 
-		<h3><?php esc_html_e( 'Billing details', 'woocommerce' ); ?></h3>
+			<h3><?php esc_html_e( 'Billing &amp; Shipping', 'woocommerce' ); ?></h3>
+
+		<?php else : ?>
+
+			<h3><?php esc_html_e( 'Billing details', 'woocommerce' ); ?></h3>
+
+		<?php endif; ?>
 
 	<?php endif; ?>
 

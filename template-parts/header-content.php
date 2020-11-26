@@ -31,7 +31,7 @@ defined( 'ABSPATH' ) || exit;
 		<?php endif; ?>
 	</div>
 
-	<div class="page-banner-sidebar col-sm-5 col-md-4 offset-lg-2">
+	<div class="page-banner-sidebar col-sm-5 col-md-4 col-lg-6">
         <?php get_sidebar( 'header' ); ?>
 	</div>
 </div>

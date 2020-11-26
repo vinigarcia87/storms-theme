@@ -59,7 +59,6 @@ defined( 'ABSPATH' ) || exit;
 				);
 			?>
 
-
 			<div class="header-menu-sidebar-right">
 				<?php if ( is_active_sidebar( 'header-menu-sidebar-right' ) ) : ?>
 					<?php dynamic_sidebar( 'header-menu-sidebar-right' ); ?>

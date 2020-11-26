@@ -24,7 +24,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 	if( ! function_exists( 'storms_show_recent_products' ) ) {
 		function storms_show_recent_products()
 		{
-			echo apply_filters('storms_show_recent_products_title', '<h2>' . __('Recent Products', 'storms') . '</h2>');
+			echo apply_filters('storms_show_recent_products_title', '<h2>' . __('Produtos Recentes', 'storms') . '</h2>');
 			echo WC_Shortcodes::recent_products(array(
 				'limit' => '8',
 				'columns' => '4',
@@ -41,4 +41,5 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 	 */
 	remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 	add_action( 'woocommerce_after_cart', 'woocommerce_cross_sell_display' );
+
 }

@@ -39,7 +39,9 @@ if( 'IntersectionObserver' in window ) {
 					// Maybe we couldn't identify the device's size
 					const is_device_unknown = ! is_device_xs && ! is_device_sm && ! is_device_md && ! is_device_lg && ! is_device_xl;
 
-					if( is_device_xs || is_device_sm ) {
+					// Avoid this behaviour on specific media sizes
+					// TODO Make this filter customizable
+					if( is_device_xs || is_device_sm || is_device_md || is_device_lg ) {
 						sticky_el.classList.add('position-static');
 						sticky_el.classList.remove('fixed-top');
 

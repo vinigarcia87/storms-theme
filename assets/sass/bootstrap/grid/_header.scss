@@ -21,7 +21,7 @@
 			}
 		}
 
-		// .col-sm-5 .col-md-4 .offset-lg-2
+		// .col-sm-5 .col-md-4 .col-lg-6
 		.page-banner-sidebar {
 			@include make-col-ready;
 			@include make-col(12);
@@ -35,9 +35,10 @@
 			}
 
 			@include media-breakpoint-up(lg) {
-				@include make-col-offset(2);
+				@include make-col(6);
 			}
 		}
+
 	}
 
 }
