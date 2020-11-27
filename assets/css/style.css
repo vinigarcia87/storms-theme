@@ -12853,19 +12853,32 @@ abbr.required {
   border-left-color: #17a2b8;
 }
 
-.woocommerce .quantity .input-text.qty {
+.quantity {
+  width: 125px;
+}
+
+.woocommerce table.shop_table .quantity {
+  width: auto;
+}
+
+.quantity .input-text.qty {
+  float: left;
   margin: 0 auto;
   text-align: center;
   max-width: 55px;
   -moz-appearance: textfield;
 }
 
-.woocommerce .quantity .input-text.qty::-webkit-outer-spin-button, .woocommerce .quantity .input-text.qty::-webkit-inner-spin-button {
+.woocommerce table.shop_table .quantity .input-text.qty {
+  float: initial;
+}
+
+.quantity .input-text.qty::-webkit-outer-spin-button, .quantity .input-text.qty::-webkit-inner-spin-button {
   margin: 0;
   -webkit-appearance: none;
 }
 
-.woocommerce .quantity .qty-ctrl-btn {
+.quantity .qty-ctrl-btn {
   top: 0;
   right: 0;
   width: 30px;
@@ -12873,8 +12886,8 @@ abbr.required {
   position: relative;
 }
 
-.woocommerce .quantity .qty-ctrl-btn a.plus,
-.woocommerce .quantity .qty-ctrl-btn a.minus {
+.quantity .qty-ctrl-btn a.plus,
+.quantity .qty-ctrl-btn a.minus {
   float: none;
   display: block;
   position: absolute;
@@ -12887,7 +12900,7 @@ abbr.required {
   border-right: 1px solid #f8f9fa;
 }
 
-.woocommerce .quantity .qty-ctrl-btn a.minus {
+.quantity .qty-ctrl-btn a.minus {
   bottom: -37px;
   border-bottom: 1px solid #f8f9fa;
 }
