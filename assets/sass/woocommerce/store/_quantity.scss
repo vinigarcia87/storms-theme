@@ -1,5 +1,5 @@
 .quantity {
-	@include make-col(6);
+	//@include make-col(6);
 }
 .input-text.qty {
 	@extend .form-control;
@@ -8,10 +8,11 @@
 .woocommerce {
 	// Input de quantidade
 	.quantity {
-		width: 125px; // Vamos sobrescrever o width... o extend é soh pra garantir o comportamento de uma col-*-*
+		//width: 125px; // Vamos sobrescrever o width... o extend é soh pra garantir o comportamento de uma col-*-*
 
 		.input-text.qty {
-			float: left;
+			//float: left;
+			margin: 0 auto;
 			text-align: center;
 			max-width: 55px;
 
