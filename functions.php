@@ -34,6 +34,7 @@ require_once 'services/config/storms-environment-config.php';
 require_once 'services/config/storms-wordpress-configuration.php';
 require_once 'services/config/storms-woocommerce-configuration.php';
 require_once 'services/config/storms-wp-maintenance-mode-configuration.php';
+require_once 'services/config/storms-pagseguro-configuration.php';
 
 /*********************************
  *  Configuração Storms Theme
