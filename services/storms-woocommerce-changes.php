@@ -149,12 +149,12 @@ add_action( 'pre_get_posts', 'storms_product_cat_query' );
  */
 function storms_woocommerce_my_account_order() {
     $myorder = array(
-        'dashboard'       => __( 'Início', 'woocommerce' ),
+        'dashboard'       => __( 'Início', 'woocommerce' ), // ...
         'orders'          => __( 'Orders', 'woocommerce' ),
         'downloads'       => __( 'Downloads', 'woocommerce' ),
-        'edit-address'    => __( 'Dados do cliente', 'woocommerce' ),
+        'edit-address'    => __( 'Dados do cliente', 'woocommerce' ), // ...
         'payment-methods' => __( 'Payment methods', 'woocommerce' ),
-        'edit-account'    => __( 'Alterar senha', 'woocommerce' ),
+        'edit-account'    => __( 'Alterar senha', 'woocommerce' ), // Password Reset
         'customer-logout' => __( 'Logout', 'woocommerce' ),
     );
     return $myorder;

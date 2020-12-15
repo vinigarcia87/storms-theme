@@ -28,6 +28,9 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 				return;
 			}
 
+			// Currency options
+			update_option('woocommerce_currency_pos', 'left_space');
+
 			// Avançado > WooCommerce.com - Não permitir que o uso do WooCommerce seja rastreado
 			update_option('woocommerce_allow_tracking', 'no');
 			// Avançado > WooCommerce.com - Não exibir sugestões dentro do WooCommerce
@@ -101,7 +104,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 
 		}
 
-		add_action('admin_init', 'storms_define_woocommerce_options');
+		add_action( 'admin_init', 'storms_define_woocommerce_options' );
 
 	}
 
