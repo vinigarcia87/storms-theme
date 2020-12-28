@@ -12796,7 +12796,8 @@ abbr.required {
 }
 
 .woocommerce-terms-and-conditions-wrapper > p.form-row,
-.storms-privacy-policy-check {
+.storms-privacy-policy-check,
+.storms-newsletter-check {
   margin: 0;
 }
 

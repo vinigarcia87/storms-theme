@@ -109,7 +109,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 	function storms_save_privacy_policy_acceptance( $order_id ) {
 
 		if ( $_POST['privacy_policy'] ) {
-			update_post_meta( $order_id, 'privacy_policy', esc_attr( $_POST['privacy_policy'] ) );
+			update_post_meta( $order_id, 'privacy_policy', 'yes' );
 		}
 
 	}
@@ -122,7 +122,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 	 */
 	function storms_display_privacy_policy_acceptance( $order ) {
 
-		if ( get_post_meta( $order->get_id(), 'privacy_policy', true ) == '1' ) {
+		if ( 'yes' === get_post_meta( $order->get_id(), 'privacy_policy', true ) ) {
 			echo '<p><strong>Politica de Privacidade: </strong>Aceito pelo Cliente</p>';
 		} else {
 			echo '<p><strong>Politica de Privacidade: </strong>N/A</p>';
@@ -144,7 +144,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 	function storms_save_terms_conditions_acceptance( $order_id ) {
 
 		if ( $_POST['terms'] ) {
-			update_post_meta( $order_id, 'terms', esc_attr( $_POST['terms'] ) );
+			update_post_meta( $order_id, 'terms', 'yes' );
 		}
 
 	}
@@ -157,7 +157,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 	 */
 	function storms_display_terms_conditions_acceptance( $order ) {
 
-		if ( get_post_meta( $order->get_id(), 'terms', true ) == 'on' ) {
+		if ( 'yes' === get_post_meta( $order->get_id(), 'terms', true ) ) {
 			echo '<p><strong>Termos e Condições: </strong>Aceito pelo Cliente</p>';
 		} else {
 			echo '<p><strong>Termos e Condições: </strong>N/A</p>';
