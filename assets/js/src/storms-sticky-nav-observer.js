@@ -42,6 +42,7 @@ if( 'IntersectionObserver' in window ) {
 					// Avoid this behaviour on specific media sizes
 					// TODO Make this filter customizable
 					if( is_device_xs || is_device_sm || is_device_md || is_device_lg ) {
+
 						sticky_el.classList.add('position-static');
 						sticky_el.classList.remove('fixed-top');
 
@@ -54,6 +55,7 @@ if( 'IntersectionObserver' in window ) {
 
 					// When the element right on top the menu is out of the viewport, we stick the menu
 					if (!entry.isIntersecting) {
+
 						// Add classes to stick the menu
 						sticky_el.classList.remove('position-static');
 						sticky_el.classList.add('fixed-top');
@@ -63,7 +65,9 @@ if( 'IntersectionObserver' in window ) {
 
 						// Fix the position of the wrap element, so the screen don't "jump"
 						wrap_el.style.marginTop = margin.toString() + 'px';
+
 					} else {
+
 						// When the element right on top the menu is back, whe unstick the menu
 						sticky_el.classList.add('position-static');
 						sticky_el.classList.remove('fixed-top');
@@ -76,6 +80,8 @@ if( 'IntersectionObserver' in window ) {
 			},
 			headerObserverOptions);
 
-		headerObserver.observe( header_el );
+		setTimeout(() => {
+			headerObserver.observe( header_el );
+		}, 1000);
 	}
 }

@@ -60,6 +60,8 @@ if ('IntersectionObserver' in window) {
         }
       });
     }, headerObserverOptions);
-    headerObserver.observe(header_el);
+    setTimeout(function () {
+      headerObserver.observe(header_el);
+    }, 1000);
   }
 }
