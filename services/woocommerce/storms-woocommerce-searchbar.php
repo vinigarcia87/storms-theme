@@ -49,19 +49,34 @@ class Storms_WC_SearchBar extends WC_Widget
                 'std'   => __( '', 'storms' ),
                 'label' => __( 'Label categories text', 'storms' )
             ),
+			'dropdown_position' => array(
+				'type'  => 'select',
+				'std'   => 'prepend',
+				'label' => __( 'Dropdown position', 'storms' ),
+				'options' => array(
+					'prepend'   => __( 'Prepend', 'storms' ),
+					'append'  => __( 'Append', 'storms' ),
+					'hide'  => __( 'Hide', 'storms' ),
+				)
+			),
 			'type' => array(
 				'type'  => 'select',
 				'std'   => 'product',
 				'label' => __( 'Type category', 'storms' ),
 				'options' => array(
 					'product'   => __( 'Product', 'storms' ),
-					'blog'  => __( 'Blogs', 'storms' )
+					'blog'  => __( 'Blog', 'storms' )
 				)
 			),
 			'hide_empty' => array(
 				'type'  => 'checkbox',
 				'std'   => 0,
 				'label' => __( 'Hide if category is empty', 'storms' )
+			),
+			'search_button_text' => array(
+				'type'  => 'text',
+				'std'   => '',
+				'label' => __( 'Search button text', 'storms' )
 			),
 			'el_class' => array(
 				'type'  => 'text',
@@ -86,87 +101,47 @@ class Storms_WC_SearchBar extends WC_Widget
 		$hide_empty = esc_attr( $instance['hide_empty'] ?? 0 );
         $label_input = esc_attr( $instance['label_input'] ?? __( 'Procurar por...', 'storms' ) );
 		$label_dropdown = esc_attr( $instance['label_dropdown'] ?? __( 'Selecionar categorias', 'storms' ) );
+		$dropdown_position = esc_attr( $instance['dropdown_position'] ?? 'prepend' );
 		$type = esc_attr( $instance['type'] ?? 'product' );
+		$search_button_text = esc_attr( $instance['search_button_text'] ?? '' );
 		$el_class = esc_attr( $instance['el_class'] ?? '' );
 
 		$class = [ 'searchbar-form' ];
 		$class[] = $el_class;
-		$argss = array(
-			'orderby'    => 'titles',
-			'order'      => 'ASC',
-			'exclude'    => 1, //remove uncategory
-			'hide_empty' => true // $hide_empty
-		);
-		$is_blog = $type == 'blog';
-		$cat = $is_blog ? 'category' : 'product_cat';
-		$product_categories = get_terms( $cat, $argss );
-
-		$categoryHierarchy = array();
-		storms_sort_terms_hierarchicaly( $product_categories, $categoryHierarchy );
-		$product_categories = $categoryHierarchy;
-
-		$count = count( $product_categories );
 
         ob_start();
         $this->widget_start( $args, $instance );
 		?>
-		<form method="get" id="storms-wc-searchbar-form" class="<?php echo esc_attr( implode( ' ', $class ) );?>" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<form method="get" id="storms-wc-searchbar-form" class="<?php esc_attr_e( implode( ' ', $class ) ); ?>" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 
             <div class="input-group">
+
+				<?php if( 'prepend' === $dropdown_position ): ?>
+					<div class="input-group-prepend">
+						<?php $this->get_categories_dropdown( $label_dropdown, $type, $hide_empty ); ?>
+					</div>
+				<?php endif; ?>
+
                 <input class="form-control search-input" type="text" aria-label="<?php _e( 'Search our products', 'storms' ); ?>"
 					   value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="<?php echo esc_attr( $label_input ); ?>" />
 
                 <div class="input-group-append">
-					<button class="btn btn-outline-secondary dropdown-toggle categories-dropdown-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <?php echo esc_attr( $label_dropdown ); ?> <span class="caret"></span>
-                    </button>
-                    <div class="dropdown-menu" role="menu">
-						<a class="dropdown-item" href="#">
-							<?php echo esc_attr( $label_dropdown ); ?>
-						</a>
-                        <?php
-                        if ( $count > 0 ) { ?>
-							<ul class="parent-list">
-							<?php
-                            foreach ( $product_categories as $product_category ) { ?>
 
-								<li class="dropdown-item parent-cat"><a href="<?php echo esc_attr( get_term_link( $product_category ) ); ?>">
-										<?php echo esc_attr( $product_category->name ); ?></a>
-                                <?php
-								if( ! empty( $product_category->children ) ) { ?>
-									<ul class="child-list">
-									<?php
-									foreach ($product_category->children as $child) { ?>
-										<li class="dropdown-item child-cat"><a href="<?php echo esc_attr( get_term_link( $child ) ); ?>">
-												<?php echo esc_attr($child->name); ?></a></li>
-										<?php
-									}
-									?>
-									</ul>
-									<?php
-								}
-								?>
-								</li>
-								<?php
-                            }
-							?>
-							</ul>
-							<?php
-                        }
-                        ?>
-                    </div>
+					<?php if( 'append' === $dropdown_position ): ?>
+						<?php $this->get_categories_dropdown( $label_dropdown, $type, $hide_empty ); ?>
+					<?php endif; ?>
 
 					<button type="submit" id="searchsubmit" class="btn btn-outline-secondary search-submit-button">
-						<i class="fa fa-search" aria-hidden="true"></i>
+						<i class="fa fa-search" aria-hidden="true"></i> <?php esc_attr_e( $search_button_text ); ?>
 					</button>
                 </div>
             </div>
 
-            <?php if( ! $is_blog ): ?>
-                <input type="hidden" name="post_type" value="product">
-                <input type="hidden" disabled="disabled" value="" name="product_cat" />
+            <?php if( 'blog' === $type ): ?>
+				<input type="hidden" disabled="disabled" value="" name="cat" />
             <?php else: ?>
-                <input type="hidden" disabled="disabled" value="" name="cat" />
+				<input type="hidden" name="post_type" value="product">
+				<input type="hidden" disabled="disabled" value="" name="product_cat" />
             <?php  endif;?>
 
 		</form>
@@ -175,28 +150,61 @@ class Storms_WC_SearchBar extends WC_Widget
 		echo ob_get_clean();
 	}
 
-}
+	private function get_categories_dropdown( $label_dropdown, $type, $hide_empty ) {
+		$argss = array(
+			'orderby'    => 'titles',
+			'order'      => 'ASC',
+			'exclude'    => 1, //remove uncategory
+			'hide_empty' => $hide_empty
+		);
+		$cat = ( 'blog' === $type ) ? 'category' : 'product_cat';
+		$categories = get_terms( $cat, $argss );
 
-/**
- * Recursively sort an array of taxonomy terms hierarchically. Child categories will be
- * placed under a 'children' member of their parent term.
- * Source: http://wordpress.stackexchange.com/a/99516/54025
- *
- * @param Array   $cats     taxonomy term objects to sort
- * @param Array   $into     result array to put them in
- * @param integer $parentId the current parent ID to put them in
- */
-function storms_sort_terms_hierarchicaly(Array &$cats, Array &$into, $parentId = 0) {
-	foreach ($cats as $i => $cat) {
-		if ($cat->parent == $parentId) {
-			$into[$cat->term_id] = $cat;
-			unset($cats[$i]);
-		}
-	}
+		$categoryHierarchy = array();
+		\StormsFramework\Helper::sort_terms_hierarchically( $categories, $categoryHierarchy );
+		$categories = $categoryHierarchy;
 
-	foreach ($into as $topCat) {
-		$topCat->children = array();
-		storms_sort_terms_hierarchicaly($cats, $topCat->children, $topCat->term_id);
+		$count = count( $categories );
+		?>
+		<button class="btn btn-outline-secondary dropdown-toggle categories-dropdown-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<?php echo esc_attr( $label_dropdown ); ?> <span class="caret"></span>
+		</button>
+		<div class="dropdown-menu" role="menu">
+			<a class="dropdown-item" href="#">
+				<?php echo esc_attr( $label_dropdown ); ?>
+			</a>
+			<?php
+			if ( $count > 0 ) { ?>
+				<ul class="parent-list">
+					<?php
+					foreach ( $categories as $category ) { ?>
+
+						<li class="dropdown-item parent-cat"><a href="<?php echo esc_attr( get_term_link( $category ) ); ?>">
+								<?php echo esc_attr( $category->name ); ?></a>
+							<?php
+							if( ! empty( $category->children ) ) { ?>
+								<ul class="child-list">
+									<?php
+									foreach ( $category->children as $child ) { ?>
+										<li class="dropdown-item child-cat"><a href="<?php echo esc_attr( get_term_link( $child ) ); ?>">
+												<?php echo esc_attr($child->name); ?></a></li>
+										<?php
+									}
+									?>
+								</ul>
+								<?php
+							}
+							?>
+						</li>
+						<?php
+					}
+					?>
+				</ul>
+				<?php
+			}
+			?>
+		</div>
+		<?php
 	}
 }
 

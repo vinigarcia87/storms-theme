@@ -71,7 +71,9 @@ jQuery(function ($) {
             contentType: 'application/json',
             success: function success(address) {
               if (address.success) {
-                StormsWCCartCorreiosAutofillAddress.fillFields(field, address.data); // if ( copy ) {
+                StormsWCCartCorreiosAutofillAddress.fillFields(field, address.data); // Clickamos no botao Atualizar automaticamente
+
+                $('button', '.shipping-calculator-action').click(); // if ( copy ) {
                 // 	var newField = 'billing' === field ? 'shipping' : 'billing';
                 //
                 // 	StormsWCCartCorreiosAutofillAddress.fillFields( newField, address.data );
