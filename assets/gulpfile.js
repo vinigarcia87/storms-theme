@@ -82,7 +82,7 @@ gulp.task('styles', async function () {
  */
 gulp.task('load-assets', async function() {
 	gulp.src([
-		'node_modules/font-awesome/fonts/*',              		// Font-Awesome Fonts
+		'node_modules/font-awesome/fonts/*',              		// Font-Awesome 4.7 Fonts
 		wp_content + '/plugins/woocommerce/assets/fonts/*'		// WooCommerce Fonts
 	])
 		.pipe(gulp.dest('fonts'))
