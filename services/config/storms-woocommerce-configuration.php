@@ -36,6 +36,11 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 			// Avançado > WooCommerce.com - Não exibir sugestões dentro do WooCommerce
 			update_option('woocommerce_show_marketplace_suggestions', 'no');
 
+			// Onboarding options
+			update_option( 'woocommerce_onboarding_profile', [ 'completed' => 1 ] );
+			update_option('woocommerce_task_list_hidden', 'yes');
+			update_option('woocommerce_task_list_welcome_modal_dismissed', 'yes');
+
 			// Image and thumbnail sizes
 			update_option('woocommerce_single_image_width', 527);
 			update_option('woocommerce_thumbnail_image_width', 400);

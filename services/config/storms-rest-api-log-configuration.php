@@ -33,6 +33,13 @@ if( \StormsFramework\Helper::is_plugin_activated( 'wp-rest-api-log/wp-rest-api-l
 				'purge-days' 		 => '90',
 				'ip-address-display' => 'http_x_forwarded_for'
 			) );
+
+			update_option('wp-rest-api-log-settings-routes', array(
+				'ignore-core-oembed' => '1',
+				'route-log-matching-mode' 		 => 'exclude_matches',
+				'route-filters' => "/wc-analytics/\n/wc-admin/"
+			) );
+
 		}
 		add_action( 'admin_init', 'storms_define_rest_api_log_options' );
 
