@@ -22,11 +22,11 @@ defined( 'ABSPATH' ) || exit;
 		if ( ! empty( $header_image ) && ! empty( $header_image->url ) ) :
 		?>
 			<a class="header-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<img class="" src="<?php echo esc_url( $header_image->url ); ?>" height="<?php esc_attr_e( $header_image->height ); ?>" width="<?php esc_attr_e( $header_image->width ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+				<img data-no-lazy="1" class="" src="<?php echo esc_url( $header_image->url ); ?>" height="<?php esc_attr_e( $header_image->height ); ?>" width="<?php esc_attr_e( $header_image->width ); ?>" alt="<?php esc_attr_e( get_bloginfo( 'name', 'display' ) ); ?>" />
 			</a>
 		<?php else : ?>
 			<a class="header-brand" href="<?php echo esc_url( get_bloginfo('url') ) ?>">
-				<img class="" style="height: 75px;" src="<?php echo esc_url( \StormsFramework\Helper::get_asset_url('/img/storms/logo/generic-logo.svg') ) ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
+				<img data-no-lazy="1" class="" style="height: 75px;" src="<?php echo esc_url( \StormsFramework\Helper::get_asset_url('/img/storms/logo/generic-logo.svg') ) ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
 			</a>
 		<?php endif; ?>
 	</div>

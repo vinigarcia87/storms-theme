@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
 		<p><?php echo apply_filters( 'storms_footer_3_info', sprintf( esc_html__( '&copy; 2012 - %1$s by %2$s - All rights reserved.', 'storms' ), date('Y'), '<a href="http://storms.com.br/" target="_blank" rel="noopener noreferrer"><strong>Storms Websolutions</strong></a>' ) ); ?></p>
 	</div>
 	<div class="logo-storms col-md-2 text-center">
-		<a href="<?php echo esc_url('http://www.storms.com.br'); ?>" rel="noopener noreferrer" target="_blank">
+		<a href="<?php echo esc_url('https://www.storms.com.br/'); ?>" rel="noopener noreferrer" target="_blank">
 			<img src="<?php echo esc_url( \StormsFramework\Helper::get_asset_url('/img/storms/logo/bn_storms_white.png') ) ?>" alt="Storms Websolutions"/>
 		</a>
 	</div>
