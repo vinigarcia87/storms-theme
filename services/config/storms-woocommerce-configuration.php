@@ -29,7 +29,33 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 			}
 
 			// Currency options
+			update_option('woocommerce_currency', 'BRL');
 			update_option('woocommerce_currency_pos', 'left_space');
+			update_option('woocommerce_price_thousand_sep', '.');
+			update_option('woocommerce_price_decimal_sep', ',');
+			update_option('woocommerce_price_num_decimals', '2');
+
+			// Locais de venda
+			update_option( 'woocommerce_allowed_countries', 'specific' );
+			update_option( 'woocommerce_specific_allowed_countries', [ 'BR' ] );
+
+			//  Ativar gestão de estoque
+			update_option( 'woocommerce_manage_stock', 'yes' );
+
+			// Manter estoque (minutos)
+//			$day_in_minutes = DAY_IN_SECONDS / 60;
+//			$held_duration = strval( 1 );
+//			//$held_duration = strval( 3 * $day_in_minutes ); // 3 dias
+//			if( $held_duration !== get_option( 'woocommerce_hold_stock_minutes' ) ) {
+//
+//				wp_clear_scheduled_hook( 'woocommerce_cancel_unpaid_orders' );
+//
+//				if ( '' !== $held_duration ) {
+//					wp_schedule_single_event( time() + ( absint( $held_duration ) * 60 ), 'woocommerce_cancel_unpaid_orders' );
+//				}
+//
+//				update_option( 'woocommerce_hold_stock_minutes', $held_duration );
+//			}
 
 			// Avançado > WooCommerce.com - Não permitir que o uso do WooCommerce seja rastreado
 			update_option('woocommerce_allow_tracking', 'no');
