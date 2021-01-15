@@ -37,7 +37,7 @@ if( \StormsFramework\Helper::is_plugin_activated( 'wp-rest-api-log/wp-rest-api-l
 			update_option('wp-rest-api-log-settings-routes', array(
 				'ignore-core-oembed' => '1',
 				'route-log-matching-mode' 		 => 'exclude_matches',
-				'route-filters' => "/wc-analytics/\n/wc-admin/"
+				'route-filters' => "/wc-analytics/*\n/wc-admin/*"
 			) );
 
 		}
