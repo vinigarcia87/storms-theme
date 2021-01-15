@@ -33,7 +33,7 @@ if( \StormsFramework\Helper::is_plugin_activated( 'robin-image-optimizer/robin-i
 			update_option( 'wbcr_io_image_optimize_all_usage', '0' );
 			update_option( 'wbcr_io_image_optimization_level', 'normal' );
 			update_option( 'wbcr_io_image_optimization_level_custom', '70' );
-			update_option( 'wbcr_io_auto_optimize_when_upload', '1' );
+			update_option( 'wbcr_io_auto_optimize_when_upload', '0' );
 			update_option( 'wbcr_io_convert_webp_format', '0' );
 			update_option( 'wbcr_io_use_lazy_load', '0' );
 			update_option( 'wbcr_io_image_optimization_order', 'asc' );
