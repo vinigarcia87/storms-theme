@@ -39,6 +39,8 @@ if( \StormsFramework\Helper::is_plugin_activated( 'relevanssi/relevanssi.php' ) 
 			update_option( 'relevanssi_log_queries_with_ip', 'on' );
 			update_option( 'relevanssi_trim_logs', 90 );
 			update_option( 'relevanssi_excerpts', 'off' );
+			update_option( 'relevanssi_expand_shortcodes', 'off' );
+			update_option( 'relevanssi_log_queries_with_ip', 'off' );
 		}
 		add_action( 'admin_init', 'storms_define_relevanssi_options' );
 

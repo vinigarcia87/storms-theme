@@ -116,7 +116,9 @@ function scripts_3rd_party() {
 			'./js/bootstrap/popper.js',
 			'./js/bootstrap/util.js',
 			'./js/bootstrap/dropdown.js',
-			'./js/bootstrap/collapse.js'
+			'./js/bootstrap/collapse.js',
+			'./js/bootstrap/modal.js',
+			'./js/bootstrap/tab.js'
 		] ),
 		//debug(),
 		concat( 'scripts.js' ),
