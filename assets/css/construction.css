@@ -3410,7 +3410,7 @@ a {
   padding: 25px;
 }
 
-.menssage h1 {
+.message h1 {
   padding-top: 1.5em;
   color: #fff;
   display: inline-block;
@@ -3584,7 +3584,7 @@ a {
   .storms-container {
     width: 78%;
   }
-  .menssage h1 {
+  .message h1 {
     font-size: 2.5rem;
   }
 }
@@ -3602,7 +3602,7 @@ a {
   .storms-content {
     padding: 15px;
   }
-  .menssage h1 {
+  .message h1 {
     font-size: 2rem;
   }
 }
@@ -3614,13 +3614,13 @@ a {
 }
 
 @media screen and (max-width: 384px) {
-  .menssage h1 {
+  .message h1 {
     font-size: 1.8rem;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .menssage h1 {
+  .message h1 {
     font-size: 1.5rem;
   }
 }

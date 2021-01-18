@@ -46,7 +46,7 @@
 	<body class="under-construction">
 
 		<div class="banner-layer">
-			<div class="menssage text-center">
+			<div class="message text-center">
 
 				<h1>Estamos em manutenção</h1>
 				<!---728x90--->
