@@ -20,7 +20,6 @@ if( \StormsFramework\Helper::is_plugin_activated( 'wp-rest-api-log/wp-rest-api-l
 
 	if( ! function_exists( 'storms_define_rest_api_log_options' ) ) {
 
-		// Define REST API Log options
 		function storms_define_rest_api_log_options() {
 
 			// Only setup if user is an admin

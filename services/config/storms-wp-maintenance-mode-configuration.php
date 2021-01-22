@@ -16,7 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Check for wp-maintenance-mode plugin
 if ( \StormsFramework\Helper::is_plugin_activated( 'wp-maintenance-mode/wp-maintenance-mode.php' ) ) {
 
 	if( ! function_exists( 'storms_define_wp_maintenance_mode_options' ) ) {

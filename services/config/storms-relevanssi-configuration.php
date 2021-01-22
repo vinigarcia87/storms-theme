@@ -20,7 +20,6 @@ if( \StormsFramework\Helper::is_plugin_activated( 'relevanssi/relevanssi.php' ) 
 
 	if( ! function_exists( 'storms_define_relevanssi_options' ) ) {
 
-		// Define Relevanssi options
 		function storms_define_relevanssi_options() {
 
 			// Only setup if user is an admin

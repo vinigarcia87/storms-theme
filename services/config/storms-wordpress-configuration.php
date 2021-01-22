@@ -18,7 +18,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if( ! function_exists( 'storms_define_wordpress_options' ) ) {
 
-    // Define WordPress options
     function storms_define_wordpress_options() {
     	/** @var \WP_Rewrite $wp_rewrite */
 		global $wp_rewrite;

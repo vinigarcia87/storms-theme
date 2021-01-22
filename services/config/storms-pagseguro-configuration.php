@@ -20,7 +20,6 @@ if( \StormsFramework\Helper::is_plugin_activated( 'woocommerce-pagseguro/woocomm
 
 	if( ! function_exists( 'storms_define_pagseguro_options' ) ) {
 
-		// Define PagSeguro options
 		function storms_define_pagseguro_options() {
 
 			// Only setup if user is an admin
