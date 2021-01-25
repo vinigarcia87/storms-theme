@@ -69,6 +69,15 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 	}
 
 	/**
+	 * Deletes the empty cart cache
+	 *
+	 * @return void
+	 */
+	function storms_delete_cache_empty_cart() {
+		delete_transient( 'storms_get_refreshed_fragments_cache' );
+	}
+
+	/**
 	 * Serves the empty cart cache
 	 *
 	 * @return void
@@ -104,15 +113,6 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 		}
 
 		ob_start( 'storms_save_cache_empty_cart' );
-	}
-
-	/**
-	 * Deletes the empty cart cache
-	 *
-	 * @return void
-	 */
-	function storms_delete_cache_empty_cart() {
-		delete_transient( 'storms_get_refreshed_fragments_cache' );
 	}
 
 	/**
