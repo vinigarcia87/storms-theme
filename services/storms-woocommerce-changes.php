@@ -12,22 +12,6 @@
  * {{ Why this file is here? }}
  */
 
-// Remove CSS e JS para o plugin yith wc wishlist
-function storms_dequeue_stylesandscripts_yith_wc_wishlist() {
-	wp_dequeue_style('yith-wcwl-main');
-	wp_deregister_style('yith-wcwl-main');
-
-	wp_dequeue_style('yith-wcwl-font-awesome');
-	wp_dequeue_style('yith-wcwl-font-awesome');
-
-	wp_dequeue_style('woocommerce_prettyPhoto_css');
-	wp_dequeue_style('woocommerce_prettyPhoto_css');
-
-	wp_dequeue_script('jquery-selectBox');
-	wp_deregister_script('jquery-selectBox');
-}
-add_action( 'wp_enqueue_scripts', 'storms_dequeue_stylesandscripts_yith_wc_wishlist', 100 );
-
 // Modificando o script do autofill dos correios para incluir melhorias
 // Este script somente eh sobrescrito para incluir suporte para o Select2 (SelectWoo)
 // Sem esse suporte, o Autofill nao consegue preencher o campo Estado do formulario de checkout

@@ -70,6 +70,24 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 
 		}
 
+		function storms_wc_yith_wishlist_remove_default_scripts() {
+
+			// Remove all YITH Wishlist scripts
+			wp_dequeue_script( 'prettyPhoto' );
+			wp_dequeue_script( 'jquery-yith-wcwl-user' );
+			//wp_dequeue_script( 'jquery-selectBox' ); // 'jquery-yith-wcwl' depends on 'jquery-selectBox'
+			//wp_dequeue_script( 'jquery-yith-wcwl' ); // This script is responsible for add to wishlist using ajax
+
+			// Remove all YITH Wishlist styles
+			wp_dequeue_style( 'woocommerce_prettyPhoto_css' );
+			wp_dequeue_style( 'jquery-selectBox' );
+			wp_dequeue_style( 'yith-wcwl-font-awesome' );
+			wp_dequeue_style( 'yith-wcwl-main' );
+			wp_dequeue_style( 'yith-wcwl-theme' );
+		}
+
+		add_action( 'wp_enqueue_scripts', 'storms_wc_yith_wishlist_remove_default_scripts', 100 );
+
 		// Incluindo os scripts de manipulaçao do YITH Wishlist
 		function storms_wc_yith_wishlist_scripts() {
 
@@ -85,7 +103,6 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 			wp_dequeue_style( 'yith-wcwl-font-awesome' );
 			wp_dequeue_style( 'yith-wcwl-main' );
 			wp_dequeue_style( 'yith-wcwl-theme' );
-
 
 			wp_enqueue_script('storms-wc-yith-wishlist-script',
 				\StormsFramework\Helper::get_asset_url( '/js/storms-wc-yith-wishlist' . ( ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min' ) . '.js' ),
