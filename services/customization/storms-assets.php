@@ -73,7 +73,7 @@ if ( \StormsFramework\Helper::is_plugin_activated( 'google-analytics-for-wordpre
 	 * Removing additional CSS from MonsterInsights
 	 */
 	function storms_monsterinsights_scripts() {
-		wp_deregister_style( 'monsterinsights-popular-posts-style' );
+		wp_dequeue_style( 'monsterinsights-popular-posts-style' );
 	}
 	add_action( 'wp_enqueue_scripts', 'storms_monsterinsights_scripts' );
 
