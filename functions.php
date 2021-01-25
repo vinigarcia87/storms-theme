@@ -47,6 +47,8 @@ require_once 'services/config/storms-lazy-load-configuration.php';
 // Theme customizations
 require_once 'services/customization/storms-assets.php';
 require_once 'services/customization/storms-theme-customization-options.php';
+require_once 'services/customization/storms-cookie-consent.php';
+require_once 'services/customization/storms-slide-anything-cached.php';
 require_once 'services/woocommerce/storms-woocommerce-hold-stock.php';
 require_once 'services/woocommerce/storms-woocommerce-pages.php';
 require_once 'services/woocommerce/storms-woocommerce-checkout-fields.php';
@@ -59,7 +61,6 @@ require_once 'services/woocommerce/storms-woocommerce-apply-cupon-url.php';
 require_once 'services/woocommerce/storms-woocommerce-lgpd.php';
 require_once 'services/woocommerce/storms-woocommerce-cart-correios-autofill-addresses.php';
 require_once 'services/woocommerce/storms-woocommerce-improve-refreshed-fragments.php';
-require_once 'services/storms-cookie-consent.php';
 
 //require_once 'services/storms-debug.php';
 //require_once 'services/storms-temporary.php';
