@@ -78,3 +78,16 @@ if ( \StormsFramework\Helper::is_plugin_activated( 'google-analytics-for-wordpre
 	add_action( 'wp_enqueue_scripts', 'storms_monsterinsights_scripts' );
 
 }
+
+if ( \StormsFramework\Helper::is_plugin_activated( 'hummingbird-performance/wp-hummingbird.php' ) ) {
+
+	/**
+	 * Removing additional CSS from Hummingbird
+	 */
+	function storms_hummingbird_scripts() {
+		wp_dequeue_script( 'wphb-global' );
+	}
+	add_action( 'wp_enqueue_scripts', 'storms_hummingbird_scripts' );
+
+}
+

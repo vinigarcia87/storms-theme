@@ -128,42 +128,6 @@ function storms_product_cat_query( $query ) {
 add_action( 'pre_get_posts', 'storms_product_cat_query' );
 
 /**
- * Rename WooCommerce Endpoints in My Accounts Page
- * @see https://wpbeaches.com/change-rename-woocommerce-endpoints-accounts-page/
- */
-function storms_woocommerce_my_account_order() {
-    $myorder = array(
-        'dashboard'       => __( 'Início', 'woocommerce' ), // ...
-        'orders'          => __( 'Orders', 'woocommerce' ),
-        'downloads'       => __( 'Downloads', 'woocommerce' ),
-        'edit-address'    => __( 'Dados do cliente', 'woocommerce' ), // ...
-        'payment-methods' => __( 'Payment methods', 'woocommerce' ),
-        'edit-account'    => __( 'Alterar senha', 'woocommerce' ), // Password Reset
-        'customer-logout' => __( 'Logout', 'woocommerce' ),
-    );
-    return $myorder;
-}
-add_filter ( 'woocommerce_account_menu_items', 'storms_woocommerce_my_account_order' );
-
-/*
- * Change the entry title of the endpoints that appear in My Account Page
- * @see https://wpbeaches.com/change-rename-woocommerce-endpoints-accounts-page/
- */
-function storms_woocommerce_endpoint_title( $title, $id ) {
-    if ( is_wc_endpoint_url( 'dashboard' ) && in_the_loop() ) {
-        $title = 'Início';
-    }
-    elseif ( is_wc_endpoint_url( 'edit-address' ) && in_the_loop() ) {
-        $title = 'Dados do cliente';
-    }
-    elseif ( is_wc_endpoint_url( 'edit-account' ) && in_the_loop() ) {
-        $title = 'Alterar senha';
-    }
-    return $title;
-}
-add_filter( 'the_title', 'storms_woocommerce_endpoint_title', 10, 2 );
-
-/**
  * Reduce the strength requirement on the woocommerce password.
  * @see https://gist.github.com/BurlesonBrad/c89a825a64732a46b87c
  *
