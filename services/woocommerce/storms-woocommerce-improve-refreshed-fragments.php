@@ -103,7 +103,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 			return;
 		}
 
-		ob_start( 'save_cache_empty_cart' );
+		ob_start( 'storms_save_cache_empty_cart' );
 	}
 
 	/**
