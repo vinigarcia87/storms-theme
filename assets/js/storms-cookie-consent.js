@@ -33,7 +33,11 @@ var cookieConsentCookieStorage = {
     return cookies[item];
   },
   setItem: function setItem(item, value) {
-    document.cookie = "".concat(item, "=").concat(value, ";path=/;");
+    if (location.protocol !== 'https:') {
+      document.cookie = "".concat(item, "=").concat(value, ";path=/;SameSite=Strict;");
+    }
+
+    document.cookie = "".concat(item, "=").concat(value, ";path=/;SameSite=Strict;Secure;");
   }
 };
 var cookieConsentStorageType = cookieConsentCookieStorage;

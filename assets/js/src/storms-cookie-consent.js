@@ -10,7 +10,10 @@ const cookieConsentCookieStorage = {
 		return cookies[item];
 	},
 	setItem: (item, value) => {
-		document.cookie = `${item}=${value};path=/;`
+		if (location.protocol !== 'https:') {
+			document.cookie = `${item}=${value};path=/;SameSite=Strict;`
+		}
+		document.cookie = `${item}=${value};path=/;SameSite=Strict;Secure;`
 	}
 };
 
