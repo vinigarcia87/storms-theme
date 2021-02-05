@@ -22,7 +22,7 @@ function storms_log_scripts() {
 		\StormsFramework\Helper::debug( $wp_scripts->queue, 'storms_inspect_scripts' );
 	}
 }
-//add_action( 'wp_head', 'storms_log_scripts', 999 );
+add_action( 'wp_head', 'storms_log_scripts', 999 );
 
 function storms_log_hook_calls() {
 	$current_filter = current_filter();
@@ -43,4 +43,10 @@ function storms_log_widgets() {
 	\StormsFramework\Helper::debug( var_export( $widgets, true ), 'storms_log_widgets' );
 }
 add_action( 'wp_footer', 'storms_log_widgets' );
+
+function storms_show_cron_jobs() {
+	$cron_jobs = get_option( 'cron' );
+	\StormsFramework\Helper::debug( $cron_jobs, 'storms_show_cron_jobs' );
+}
+add_action( 'admin_init', 'storms_show_cron_jobs' );
 
