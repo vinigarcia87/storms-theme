@@ -35,6 +35,8 @@ require_once 'services/config/storms-wordpress-configuration.php';
 require_once 'services/config/storms-woocommerce-configuration.php';
 require_once 'services/config/storms-wp-maintenance-mode-configuration.php';
 require_once 'services/config/storms-pagseguro-configuration.php';
+require_once 'services/config/storms-correios-configuration.php';
+require_once 'services/config/storms-recaptcha-configuration.php';
 require_once 'services/config/storms-relevanssi-configuration.php';
 require_once 'services/config/storms-rest-api-log-configuration.php';
 require_once 'services/config/storms-robin-image-optimizer-configuration.php';
