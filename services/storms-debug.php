@@ -16,6 +16,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+//<editor-fold desc="Debug functions">
+
 function storms_log_scripts() {
 	if( ! is_admin() ) {
 		$wp_scripts = wp_scripts();
@@ -50,3 +52,4 @@ function storms_show_cron_jobs() {
 }
 add_action( 'admin_init', 'storms_show_cron_jobs' );
 
+//</editor-fold>
