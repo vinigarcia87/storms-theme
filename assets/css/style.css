@@ -13143,6 +13143,14 @@ abbr.required {
   display: none;
 }
 
+.woocommerce-account .woocommerce-button.pay {
+  margin-right: 10px;
+}
+
+.woocommerce-account .woocommerce-button.cancel {
+  margin-left: 10px;
+}
+
 .cross-sells > .products {
   width: 100%;
   padding-right: 15px;
