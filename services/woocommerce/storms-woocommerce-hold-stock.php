@@ -51,33 +51,32 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 
 	}
 
-	if( \StormsFramework\Helper::is_plugin_activated( 'storms-holidays/storms-holidays.php' ) ) {
+	/**
+	 * List all national holidays for the current year
+	 *
+	 * @return array|object|null
+	 * @throws Exception
+	 */
+	function storms_get_current_year_national_holidays( $holidays = [] ) {
 
-		/**
-		 * List all national holidays for the current year
-		 *
-		 * @return array|object|null
-		 * @throws Exception
-		 */
-		function storms_get_current_year_national_holidays( $holidays = [] ) {
+		if( \StormsFramework\Helper::is_plugin_activated( 'storms-holidays/storms-holidays.php' ) ) {
 			global $wpdb;
 
 			$wpdb_table = $wpdb->prefix . 'storms_holidays';
 			$query = "SELECT date, name, type, country, state, city, ID
-                  	  FROM $wpdb_table WHERE YEAR( date ) = YEAR( CURRENT_DATE() ) AND country = %s AND type = %s
-                  	  ORDER BY date ASC";
-			$query = $wpdb->prepare( $query, 'BR', 'Nacional' );
+				  FROM $wpdb_table WHERE YEAR( date ) = YEAR( CURRENT_DATE() ) AND country = %s AND type = %s
+				  ORDER BY date ASC";
+			$query = $wpdb->prepare($query, 'BR', 'Nacional');
 
 			// Query output_type will be an associative array with ARRAY_A.
-			$holidays = $wpdb->get_results( $query, ARRAY_A  );
+			$holidays = $wpdb->get_results($query, ARRAY_A);
 
 			// Convert into array of dates
-			if( ! empty( $holidays ) ) {
-				return array_column( $holidays, 'date' );
+			if (!empty($holidays)) {
+				return array_column($holidays, 'date');
 			}
-			return $holidays;
 		}
-
+		return $holidays;
 	}
 
 	/**

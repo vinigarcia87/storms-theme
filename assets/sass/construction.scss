@@ -61,6 +61,7 @@ a {
 	h2.logo {
 		img {
 			max-width: 100%;
+			padding-right: 20px;
 		}
 	}
 }
@@ -72,6 +73,10 @@ a {
 		color: #fff;
 		margin: 12px 0;
 		text-align: left;
+
+		&:first-child {
+			margin-bottom: 22px;
+		}
 	}
 
 	.info-grids {
@@ -83,16 +88,16 @@ a {
 
 			span.fa {
 				padding-right: 10px;
-				color: #F68F20;
+				color: #373a40;
 			}
 		}
 
 		a {
 			padding: 0;
-			color: #F68F20;
+			color: #000000;
 
 			&:hover {
-				color: #4A6C7C;
+				color: #bec0c1;
 			}
 		}
 	}
@@ -111,6 +116,12 @@ a {
 			li {
 				display: inline-block;
 
+				&:not(:last-child) {
+					span.fa {
+						margin: 0 1em 0 0;
+					}
+				}
+
 				a {
 					color: #ffffff;
 					text-align: center;
@@ -120,20 +131,20 @@ a {
 						&.fa-facebook:hover {
 							color: #3b5998;
 						}
-						&.fa-twitter {
-							margin:0 1em;
-						}
 						&.fa-twitter:hover {
 							color: #55acee;
-						}
-						&.fa-instagram {
-							margin:0 1em 0 0;
 						}
 						&.fa-instagram:hover {
 							color: #f26522;
 						}
 						&.fa-whatsapp:hover {
 							color: #078e31;
+						}
+						&.fa-youtube:hover {
+							color: #d20c03;
+						}
+						&.fa-linkedin:hover {
+							color: #1b3c8e;
 						}
 					}
 				}
@@ -153,7 +164,7 @@ a {
 		color: #fff;
 
 		&:hover {
-			color: #4A6C7C;
+			color: #84C3E3;
 		}
 	}
 }

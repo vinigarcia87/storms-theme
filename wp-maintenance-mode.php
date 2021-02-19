@@ -58,7 +58,9 @@
 					<div class="left-grid">
 						<h2 class="logo">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-								<img data-no-lazy="1" src="<?php  echo \StormsFramework\Helper::get_asset_url( '/img/logodex.png' ); ?>"  alt="<?php esc_attr_e( get_bloginfo( 'name', 'display' ) ); ?>" />
+
+								<?php $logo_url = apply_filters( 'storms_maintenance_url_logo', \StormsFramework\Helper::get_asset_url( '/img/storms.png' ) ); ?>
+								<img data-no-lazy="1" src="<?php echo esc_url( $logo_url ); ?>"  alt="<?php esc_attr_e( get_bloginfo( 'name', 'display' ) ); ?>" />
 							</a>
 						</h2>
 					</div>
@@ -66,18 +68,42 @@
 						<p>
 							Voltaremos em breve, enquanto isso entre em contato conosco através dos canais abaixo</p>
 
+						<?php
+						$business_info = [
+							'address'  => 'Rua Ayrton Turra, 51 - Cajuru, Curitiba - PR, 82970-015',
+							'phone_1'  => '+51 41 98825-3688',
+							'phone_2'  => '+51 41 98825-3688',
+							'email'    => 'vinicius.garcia@storms.com.br',
+						];
+						$business_info = apply_filters( 'storms_maintenance_business_info', $business_info );
+						?>
+
 						<div class="info-grids">
-							<p><span class="fa fa-map-marker"></span>Rua Cyro Correia Pereira, 3330 - CIC, Curitiba - PR, 81460-050</p>
-							<p><span class="fa fa-phone"></span>Vendas: (41) 3317-7470</p>
-							<p><span class="fa fa-phone"></span>  Outros Assuntos: (41) 3405-5560</p>
-							<p><span class="fa fa-envelope"></span>E-mail: <a href="mailto:contato@dexpecas.com.br">contato@dexpecas.com.br</a></p>
+							<p><span class="fa fa-map-marker"></span><?php esc_html_e( $business_info['address'] ) ?></p>
+							<p><span class="fa fa-phone"></span><?php esc_html_e( $business_info['phone_1'] ) ?></p>
+							<?php if( ! empty( $business_info['phone_2'] ) ): ?><p><span class="fa fa-phone"></span><?php esc_html_e( $business_info['phone_2'] ) ?></p><?php endif; ?>
+							<p><span class="fa fa-envelope"></span>E-mail: <a href="mailto:<?php esc_html_e( $business_info['email'] ) ?>"><?php esc_html_e( $business_info['email'] ) ?></a></p>
 						</div>
 						<div class="social-grids">
 							<ul>
-								<li><a title="Siga no Facebook" href="https://www.facebook.com/DexPecas" rel="noopener noreferrer" target="_blank"><span class="fa fa-facebook"></span></a></li>
-								<li><a title="Siga no Twitter" href="https://twitter.com/DexPecas" rel="noopener noreferrer" target="_blank"><span class="fa fa-twitter"></span></a></li>
-								<li><a title="Siga no Instagram" href="https://www.instagram.com/dex_pecas" rel="noopener noreferrer" target="_blank"><span class="fa fa-instagram"></span></a></li>
-								<li><a title="Siga no WhatsApp" href="https://api.whatsapp.com/send?phone=554133177470" rel="noopener noreferrer" target="_blank"><span class="fa fa-whatsapp"></span></a></li>
+								<?php
+								$social_media_links = [
+									'facebook'  => 'https://www.facebook.com/StormsWebsolutions',
+									'twitter'   => 'https://twitter.com/StormsWebsolutions',
+									'instagram' => 'https://www.instagram.com/StormsWebsolutions',
+									'whatsapp'  => 'https://api.whatsapp.com/send?phone=5541988253688',
+									'youtube'	=> 'https://www.youtube.com/c/StormsWebsolutions',
+									'linkedin'	=> 'https://www.linkedin.com/company/StormsWebsolutions',
+								];
+								$social_media_links = apply_filters( 'storms_maintenance_social_media_links', $social_media_links );
+								?>
+
+								<?php if( ! empty( $social_media_links['facebook'] ) ): ?><li><a title="Siga no Facebook" href="<?php echo esc_url( $social_media_links['facebook'] ) ?>" rel="noopener noreferrer" target="_blank"><span class="fa fa-facebook"></span></a></li><?php endif; ?>
+								<?php if( ! empty( $social_media_links['twitter'] ) ): ?><li><a title="Siga no Twitter" href="<?php echo esc_url( $social_media_links['twitter'] ) ?>" rel="noopener noreferrer" target="_blank"><span class="fa fa-twitter"></span></a></li><?php endif; ?>
+								<?php if( ! empty( $social_media_links['instagram'] ) ): ?><li><a title="Siga no Instagram" href="<?php echo esc_url( $social_media_links['instagram'] ) ?>" rel="noopener noreferrer" target="_blank"><span class="fa fa-instagram"></span></a></li><?php endif; ?>
+								<?php if( ! empty( $social_media_links['whatsapp'] ) ): ?><li><a title="Siga no WhatsApp" href="<?php echo esc_url( $social_media_links['whatsapp'] ) ?>" rel="noopener noreferrer" target="_blank"><span class="fa fa-whatsapp"></span></a></li><?php endif; ?>
+								<?php if( ! empty( $social_media_links['youtube'] ) ): ?><li><a title="Siga no YouTube" href="<?php echo esc_url( $social_media_links['youtube'] ) ?>" rel="noopener noreferrer" target="_blank"><span class="fa fa-youtube"></span></a></li><?php endif; ?>
+								<?php if( ! empty( $social_media_links['linkedin'] ) ): ?><li><a title="Siga no LinkedIn" href="<?php echo esc_url( $social_media_links['linkedin'] ) ?>" rel="noopener noreferrer" target="_blank"><span class="fa fa-linkedin"></span></a></li><?php endif; ?>
 							</ul>
 						</div>
 						<!-- <a href="<?php echo esc_url( wp_login_url() ); ?>" title="Login"><span class="fa fa-lock" title="Login"></span></a> -->

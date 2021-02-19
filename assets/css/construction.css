@@ -3428,6 +3428,7 @@ a {
 
 .left-grid h2.logo img {
   max-width: 100%;
+  padding-right: 20px;
 }
 
 .right-grid {
@@ -3441,6 +3442,10 @@ a {
   text-align: left;
 }
 
+.right-grid p:first-child {
+  margin-bottom: 22px;
+}
+
 .right-grid .info-grids p {
   color: #fff;
   margin: 12px 0;
@@ -3450,16 +3455,16 @@ a {
 
 .right-grid .info-grids p span.fa {
   padding-right: 10px;
-  color: #F68F20;
+  color: #373a40;
 }
 
 .right-grid .info-grids a {
   padding: 0;
-  color: #F68F20;
+  color: #000000;
 }
 
 .right-grid .info-grids a:hover {
-  color: #4A6C7C;
+  color: #bec0c1;
 }
 
 .right-grid .social-grids {
@@ -3478,6 +3483,10 @@ a {
   display: inline-block;
 }
 
+.right-grid .social-grids ul li:not(:last-child) span.fa {
+  margin: 0 1em 0 0;
+}
+
 .right-grid .social-grids ul li a {
   color: #ffffff;
   text-align: center;
@@ -3489,16 +3498,8 @@ a {
   color: #3b5998;
 }
 
-.right-grid .social-grids ul li a span.fa.fa-twitter {
-  margin: 0 1em;
-}
-
 .right-grid .social-grids ul li a span.fa.fa-twitter:hover {
   color: #55acee;
-}
-
-.right-grid .social-grids ul li a span.fa.fa-instagram {
-  margin: 0 1em 0 0;
 }
 
 .right-grid .social-grids ul li a span.fa.fa-instagram:hover {
@@ -3507,6 +3508,14 @@ a {
 
 .right-grid .social-grids ul li a span.fa.fa-whatsapp:hover {
   color: #078e31;
+}
+
+.right-grid .social-grids ul li a span.fa.fa-youtube:hover {
+  color: #d20c03;
+}
+
+.right-grid .social-grids ul li a span.fa.fa-linkedin:hover {
+  color: #1b3c8e;
 }
 
 .footer p {
@@ -3522,7 +3531,7 @@ a {
 }
 
 .footer p a:hover {
-  color: #4A6C7C;
+  color: #84C3E3;
 }
 
 @media screen and (max-width: 1080px) {
