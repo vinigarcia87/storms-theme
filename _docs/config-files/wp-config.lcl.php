@@ -126,9 +126,15 @@ define( 'WP_SITEURL', 'http://storms.dev.br/' );
 // Add SSL and HTTPS on your WordPress multi-site admin area or login pages
 //define('FORCE_SSL_ADMIN', true);
 
-if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && 
-	$_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https' ) {
+if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https' ) {
 	$_SERVER['HTTPS'] = 'on';
+}
+
+// Use X-Forwarded-For HTTP Header to Get Visitor's Real IP Address
+if ( isset( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) {
+	$http_x_headers = explode( ',', $_SERVER['HTTP_X_FORWARDED_FOR'] );
+
+	$_SERVER['REMOTE_ADDR'] = $http_x_headers[0];
 }
 
 // Cookie with HTTPOnly and Secure flag in WordPress
