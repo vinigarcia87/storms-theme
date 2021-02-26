@@ -1,7 +1,5 @@
 # Project
 .sass-cache/*
-*.css.map
-*.js.map
 node_modules/*
 .tmp/*
 .ftppass
