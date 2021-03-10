@@ -30,7 +30,9 @@ RedirectMatch 404 /xmlrpc.php
 # END STORMS PROTECT PAGES
 
 # BEGIN STORMS - PHP VARIABLES
-php_value memory_limit 512M
+<IfModule mod_php7.c>
+    php_value memory_limit 512M
+</IfModule>
 # END STORMS - PHP VARIABLES
 
 # BEGIN STORMS - GZIP COMPRESSION
