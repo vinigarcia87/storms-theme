@@ -62,6 +62,10 @@ if( \StormsFramework\Helper::is_plugin_activated( 'woocommerce-pagseguro/woocomm
 
 			);
 
+			if( 'production' !== wp_get_environment_type() ) {
+				$woocommerce_pagseguro_settings['sandbox'] = 'yes';
+			}
+
 			update_option( 'woocommerce_pagseguro_settings', $woocommerce_pagseguro_settings );
 		}
 		//add_action( 'admin_init', 'storms_define_pagseguro_options' ); // Example of how to configure PagSeguro

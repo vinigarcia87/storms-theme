@@ -92,6 +92,14 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 			//update_option('woocommerce_enable_review_rating', 'yes' );
 			//update_option('woocommerce_review_rating_required', 'yes' );
 
+			if( 'production' != wp_get_environment_type() ) {
+				update_option('woocommerce_force_ssl_checkout', 'no');
+				update_option('woocommerce_shipping_debug_mode', 'no');
+			} else {
+				update_option('woocommerce_force_ssl_checkout', 'yes');
+				update_option('woocommerce_shipping_debug_mode', 'no');
+			}
+
 			// Check for woocommerce-extra-checkout-fields-for-brazil plugin
 			if ( \StormsFramework\Helper::is_plugin_activated( 'woocommerce-extra-checkout-fields-for-brazil/woocommerce-extra-checkout-fields-for-brazil.php' ) ) {
 

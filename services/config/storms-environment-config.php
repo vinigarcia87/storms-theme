@@ -22,44 +22,26 @@ function storms_environment_options() {
 		return;
 	}
 
-	if ( wp_get_environment_type() == 'local' || wp_get_environment_type() == 'development' ) {
+	if ( 'local' === wp_get_environment_type() || 'development' === wp_get_environment_type() ) {
 
 		// '1' if site visible by search engine, and '0' if site not visible by search engine
 		update_option('blog_public', '0');
 
-		update_option('woocommerce_force_ssl_checkout', 'no');
+		// Website admin email
+		update_option('admin_email', 'vinicius.garcia@storms.com.br');
 
-		update_option('woocommerce_shipping_debug_mode', 'no');
-
-		$wc_pagseguro_options = get_option( 'woocommerce_pagseguro_settings' );
-		if( ! empty( $wc_pagseguro_options ) ) {
-			$wc_pagseguro_options['sandbox'] = 'yes';
-			update_option( 'woocommerce_pagseguro_settings', $wc_pagseguro_options );
-		}
-
-	} elseif ( wp_get_environment_type() == 'staging' || wp_get_environment_type() == 'testing' ) {
+	} elseif ( 'staging' === wp_get_environment_type()  || 'testing' === wp_get_environment_type() ) {
 
 		// '1' if site visible by search engine, and '0' if site not visible by search engine
 		update_option('blog_public', '0');
 
-		update_option('woocommerce_force_ssl_checkout', 'no');
-
-		update_option('woocommerce_shipping_debug_mode', 'yes');
-
-		$wc_pagseguro_options = get_option( 'woocommerce_pagseguro_settings' );
-		if( ! empty( $wc_pagseguro_options ) ) {
-			$wc_pagseguro_options['sandbox'] = 'yes';
-			update_option( 'woocommerce_pagseguro_settings', $wc_pagseguro_options );
-		}
+		// Website admin email
+		update_option('admin_email', 'vinicius.garcia@storms.com.br');
 
 	} else {
 
 		// '1' if site visible by search engine, and '0' if site not visible by search engine
 		update_option('blog_public', '1');
-
-		update_option('woocommerce_force_ssl_checkout', 'no');
-
-		update_option('woocommerce_shipping_debug_mode', 'no');
 
 	}
 }
@@ -72,7 +54,7 @@ function storms_environment_deactivate_plugins() {
 		return;
 	}
 
-    if( wp_get_environment_type() == 'local' || wp_get_environment_type() == 'development' ) {
+	if ( 'local' === wp_get_environment_type() || 'development' === wp_get_environment_type() ) {
 
         deactivate_plugins( 'autoptimize/autoptimize.php' );
         deactivate_plugins( 'backwpup/backwpup.php' );
@@ -83,7 +65,7 @@ function storms_environment_deactivate_plugins() {
         deactivate_plugins( 'wp-super-cache/wp-cache.php' );
         deactivate_plugins( 'wp-optimize/wp-optimize.php' );
 
-    } elseif( wp_get_environment_type() == 'staging' || wp_get_environment_type() == 'testing' ) {
+	} elseif ( 'staging' === wp_get_environment_type()  || 'testing' === wp_get_environment_type() ) {
 
         deactivate_plugins( 'google-analytics-for-wordpress/googleanalytics.php' );
 		deactivate_plugins( 'query-monitor/query-monitor.php' );
