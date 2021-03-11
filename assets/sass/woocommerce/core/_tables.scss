@@ -153,9 +153,3 @@ td.product-name {
 td.product-quantity {
 	min-width: 80px;
 }
-
-table.wishlist_table {
-	@extend .table;
-	@extend .table-responsive;
-	@extend .table-striped;
-}

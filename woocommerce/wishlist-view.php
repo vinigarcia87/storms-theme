@@ -312,7 +312,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 	else :
 	?>
 		<tr>
-			<td colspan="<?php echo esc_attr( $column_count ); ?>" class="wishlist-empty"><?php echo esc_html( apply_filters( 'yith_wcwl_no_product_to_remove_message', __( 'No products added to the wishlist', 'yith-woocommerce-wishlist' ), $wishlist ) ); ?></td>
+			<td colspan="<?php echo esc_attr( $column_count ); ?>" class="wishlist-empty"><?php echo esc_html( apply_filters( 'yith_wcwl_no_product_to_remove_message', __( 'Nenhum produto adicionado a sua lista', 'yith-woocommerce-wishlist' ), $wishlist ) ); ?></td>
 		</tr>
 	<?php
 	endif;
