@@ -53,6 +53,8 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 
 	<?php $column_count = 2; ?>
 
+	<?php
+	if ( $wishlist && $wishlist->has_items() ) : ?>
 	<thead>
 	<tr>
 		<?php if ( $show_cb ) : ?>
@@ -127,7 +129,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 		<?php endif; ?>
 	</tr>
 	</thead>
-
+	<?php endif; ?>
 	<tbody class="wishlist-items-wrapper">
 	<?php
 	if ( $wishlist && $wishlist->has_items() ) :
