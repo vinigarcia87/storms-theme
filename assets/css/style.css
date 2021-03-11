@@ -12951,8 +12951,7 @@ abbr.required {
 }
 
 .woocommerce table.wishlist_table > tbody > tr td.product-thumbnail {
-  width: 100px;
-  min-width: 100px;
+  width: 64px;
 }
 
 .woocommerce table.wishlist_table > tbody > tr td.product-thumbnail img {
