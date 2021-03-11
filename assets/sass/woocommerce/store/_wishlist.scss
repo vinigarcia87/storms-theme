@@ -18,14 +18,14 @@
 			border-bottom: 1px solid theme-color("light");
 		}
 
-		//th.product-name {
-		//	min-width: 583px;
-		//}
-		//
-		//th.product-price,
-		//th.product-stock-status {
-		//	max-width: 120px;
-		//}
+		th.product-name {
+			width: 100%;
+		}
+
+		th.product-price,
+		th.product-stock-status {
+			white-space: nowrap;
+		}
 
 		& > tbody > tr {
 
@@ -44,7 +44,7 @@
 			}
 
 			td.product-thumbnail {
-				width: 100px;
+				width: 64px;
 
 				img {
 					width: 64px;
@@ -58,7 +58,6 @@
 			td.product-price,
 			td.product-quantity,
 			td.product-subtotal {
-				//width: 155px;
 				text-align: center;
 			}
 

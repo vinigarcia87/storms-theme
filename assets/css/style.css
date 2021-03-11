@@ -12927,6 +12927,15 @@ abbr.required {
   border-bottom: 1px solid #f8f9fa;
 }
 
+.woocommerce table.wishlist_table th.product-name {
+  width: 100%;
+}
+
+.woocommerce table.wishlist_table th.product-price,
+.woocommerce table.wishlist_table th.product-stock-status {
+  white-space: nowrap;
+}
+
 .woocommerce table.wishlist_table > tbody > tr > td {
   vertical-align: middle;
 }
@@ -12943,6 +12952,7 @@ abbr.required {
 
 .woocommerce table.wishlist_table > tbody > tr td.product-thumbnail {
   width: 100px;
+  min-width: 100px;
 }
 
 .woocommerce table.wishlist_table > tbody > tr td.product-thumbnail img {

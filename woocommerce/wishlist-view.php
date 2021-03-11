@@ -83,7 +83,8 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 			<?php $column_count ++; ?>
 			<th class="product-price">
 				<span class="nobr">
-					<?php echo esc_html( apply_filters( 'yith_wcwl_wishlist_view_price_heading', __( 'Preço Unitário', 'yith-woocommerce-wishlist' ), $wishlist ) ); ?>
+					<?php echo esc_html( __( 'Preço', 'yith-woocommerce-wishlist' ) ); ?>
+					<br><?php echo esc_html( __( 'Unitário', 'yith-woocommerce-wishlist' ) ); ?>
 				</span>
 			</th>
 		<?php endif; ?>
@@ -101,7 +102,8 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 			<?php $column_count ++; ?>
 			<th class="product-stock-status">
 				<span class="nobr">
-					<?php echo esc_html( apply_filters( 'yith_wcwl_wishlist_view_stock_heading', __( 'Status do Estoque', 'yith-woocommerce-wishlist' ), $wishlist ) ); ?>
+					<?php echo esc_html( __( 'Status do', 'yith-woocommerce-wishlist' ) ); ?>
+					<br/><?php echo esc_html( __( 'Estoque', 'yith-woocommerce-wishlist' ) ); ?>
 				</span>
 			</th>
 		<?php endif; ?>
