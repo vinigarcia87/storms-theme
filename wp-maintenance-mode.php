@@ -71,7 +71,7 @@
 						<?php
 						$business_info = [
 							'address'  => 'Rua Ayrton Turra, 51 - Cajuru, Curitiba - PR, 82970-015',
-							'phone_1'  => '+51 41 98825-3688',
+							'phone'    => '+51 41 98825-3688',
 							'phone_2'  => '+51 41 98825-3688',
 							'email'    => 'vinicius.garcia@storms.com.br',
 						];
@@ -80,7 +80,7 @@
 
 						<div class="info-grids">
 							<p><span class="fa fa-map-marker"></span><?php esc_html_e( $business_info['address'] ) ?></p>
-							<p><span class="fa fa-phone"></span><?php esc_html_e( $business_info['phone_1'] ) ?></p>
+							<p><span class="fa fa-phone"></span><?php esc_html_e( $business_info['phone'] ) ?></p>
 							<?php if( ! empty( $business_info['phone_2'] ) ): ?><p><span class="fa fa-phone"></span><?php esc_html_e( $business_info['phone_2'] ) ?></p><?php endif; ?>
 							<p><span class="fa fa-envelope"></span>E-mail: <a href="mailto:<?php esc_html_e( $business_info['email'] ) ?>"><?php esc_html_e( $business_info['email'] ) ?></a></p>
 						</div>
