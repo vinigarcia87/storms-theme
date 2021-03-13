@@ -105,7 +105,7 @@
 	}
 
 	.widget_shopping_cart_content {
-		 padding: 0 15px;
+		 padding: 0;
 
 		 .total {
 			 .amount {
@@ -142,7 +142,6 @@
 			overflow: hidden;
 			border-bottom: none;
 			padding: 12px 0 12px;
-			height: 95px;
 			text-align: center;
 			box-sizing: border-box;
 			transition: all .1s linear;
@@ -201,6 +200,12 @@
 				}
 			}
 		}
+	}
+
+	.woocommerce-mini-cart__total,
+	.woocommerce-mini-cart__buttons {
+		margin-left: 20px;
+		margin-right: 20px;
 	}
 
 	p.cart-empty {
