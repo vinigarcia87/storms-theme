@@ -11755,7 +11755,7 @@ html {
   max-width: 100vw;
   position: relative;
   margin-left: -50vw !important;
-  left: 49.9%;
+  left: 49%;
 }
 
 #main-navigation.fixed-top {
