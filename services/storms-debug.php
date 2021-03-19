@@ -26,15 +26,33 @@ function storms_log_scripts() {
 }
 add_action( 'wp_head', 'storms_log_scripts', 999 );
 
+class StormsBuffer {
+	static $return = [];
+}
+
 function storms_log_hook_calls() {
+
+	if( ! isset( StormsBuffer::$return['storms_log_hook_calls'] ) ) {
+		StormsBuffer::$return['storms_log_hook_calls'] = [];
+	}
+
 	$current_filter = current_filter();
 	$count = did_action( $current_filter );
 
+	if( in_array( $current_filter, [ 'load_textdomain', 'unload_textdomain' ] ) ) {
+		return;
+	}
+
 	if( $count > 0 ) {
-		\StormsFramework\Helper::debug( $current_filter . ' - Executed ' . $count . ' times', 'storms_log_hook_calls' );
+		StormsBuffer::$return['storms_log_hook_calls'][] = $current_filter . ' - Executed ' . $count . ' times';
 	}
 }
 add_action( 'all', 'storms_log_hook_calls' );
+
+function storms_shutdown() {
+	\StormsFramework\Helper::debug( StormsBuffer::$return['storms_log_hook_calls'], 'storms_log_hook_calls' );
+}
+add_action( 'shutdown', 'storms_shutdown', 99999 );
 
 function storms_log_widgets() {
 	if ( empty ( $GLOBALS['wp_widget_factory'] ) ) {
