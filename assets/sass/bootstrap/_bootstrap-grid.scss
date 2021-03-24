@@ -9,12 +9,13 @@
 html {
 	overflow-x: hidden;
 }
-// Full Width qndo aplicado a uma div container-fluid, faz com que essa div seja fluid mesmo se estiver dentro de um container
-.full-width {
-	width: 100vw;
-	max-width: 100vw;
-	position: relative;
-	margin-left: -50vw !important;
-	//left: 49.9%;
-	left: 49%;
+
+/**
+ * Full Width qndo aplicado a uma div container-fluid, faz com que essa div seja fluid mesmo se estiver dentro de um container
+ * @see https://stackoverflow.com/a/53844506/1003020
+ */
+.st-grid-parallax-container,
+.st-grid-full-width {
+	width: 100vw !important;
+	margin-left: calc((100% - 100vw) / 2) !important;
 }

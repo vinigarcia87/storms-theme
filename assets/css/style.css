@@ -11750,12 +11750,11 @@ html {
   overflow-x: hidden;
 }
 
-.full-width {
-  width: 100vw;
-  max-width: 100vw;
-  position: relative;
-  margin-left: -50vw !important;
-  left: 49%;
+
+.st-grid-parallax-container,
+.st-grid-full-width {
+  width: 100vw !important;
+  margin-left: calc((100% - 100vw) / 2) !important;
 }
 
 #main-navigation.fixed-top {
