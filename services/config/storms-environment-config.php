@@ -28,7 +28,9 @@ function storms_environment_options() {
 		update_option( 'blog_public', '0' );
 
 		// Website admin email
-		update_option( 'admin_email', 'vinicius.garcia@storms.com.br' );
+		if ( 'vinicius.garcia@storms.com.br' !== get_option( 'admin_email' ) ) {
+			update_option( 'admin_email', 'vinicius.garcia@storms.com.br' );
+		}
 
 	} elseif ( 'staging' === wp_get_environment_type()  || 'testing' === wp_get_environment_type() ) {
 
@@ -36,15 +38,14 @@ function storms_environment_options() {
 		update_option( 'blog_public', '0' );
 
 		// Website admin email
-		update_option( 'admin_email', 'vinicius.garcia@storms.com.br' );
+		if ( 'vinicius.garcia@storms.com.br' !== get_option( 'admin_email' ) ) {
+			update_option( 'admin_email', 'vinicius.garcia@storms.com.br' );
+		}
 
 	} else {
 
 		// '1' if site visible by search engine, and '0' if site not visible by search engine
 		update_option( 'blog_public', '1' );
-
-		// Website admin email
-		// update_option( 'admin_email', \StormsFramework\Helper::get_shop_contact_item( 'email' ) );
 
 	}
 }
