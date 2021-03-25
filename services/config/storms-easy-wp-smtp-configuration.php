@@ -48,7 +48,7 @@ if( \StormsFramework\Helper::is_plugin_activated( 'easy-wp-smtp/easy-wp-smtp.php
 				'port' 			  	  => '465',
 				'autentication'   	  => 'yes',
 				// Access your gmail account (https://myaccount.google.com/) > Security > Less secure apps > Enabled
-				'username' 		  	  => 'vinicius.garcia@gmail.com',
+				'username' 		  	  => 'vinicius.garcia@storms.com.br',
 				//'password' 		  	  => '', // $easy_wp_smtp->encrypt_password( $smtp_password ),
 				'enable_debug' 	  	  => 0,
 				'insecure_ssl' 	  	  => 0,
