@@ -25,8 +25,6 @@ if( ! function_exists( 'theme_setup' ) ) {
         add_theme_support( 'brand-customization' );
         // Enable frontend support
         add_theme_support( 'style-frontend' );
-        // Enable layout support
-        add_theme_support( 'style-layout' );
         // Enable template support
         add_theme_support( 'theme-layouts');
         // Enable bootstrap support

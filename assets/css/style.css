@@ -12748,6 +12748,10 @@ ul.storms-menu-usuario-logado-container li {
   padding: 3px 0;
 }
 
+ul.storms-menu-usuario-logado-container li a {
+  display: block;
+}
+
 @media (max-width: 767.98px) {
   #storms-wc-searchbar-form .categories-dropdown-btn {
     display: none;
