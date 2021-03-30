@@ -42,6 +42,9 @@ if( ! function_exists( 'storms_define_wordpress_options' ) ) {
 			$wp_rewrite->flush_rules( true );
 		}
 
+ 		// Qualquer pessoa pode se registrar
+		update_option( 'users_can_register', '1' );
+
 		// Comments configuration
 		update_option( 'default_pingback_flag', 'no' );
 		update_option( 'default_ping_status', 'no' );
