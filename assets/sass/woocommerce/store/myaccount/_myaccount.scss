@@ -2,14 +2,15 @@
 
 	.woocommerce {
 
+		// Login form on checkout page
 		.woocommerce-form-login {
 			width: 40%;
 		}
 
-		.woocommerce-form-login,
-		.woocommerce-form-register {
-			.form-group {
-				width: 80%;
+		@include media-breakpoint-up(lg) {
+			.woocommerce-form-login,
+			.woocommerce-form-register {
+				padding-right: 110px;
 			}
 		}
 
@@ -30,8 +31,6 @@
 		}
 
 		.woocommerce-privacy-policy-text {
-			width: 80%;
-
 			p {
 				text-align: justify;
 			}
@@ -49,6 +48,7 @@
 		.woocommerce-form-login__submit {
 			display: block;
 			@extend .btn-primary;
+			margin-bottom: 10px;
 		}
 
 		.register {
@@ -65,6 +65,10 @@
 			ul {
 				padding-left: 0;
 				list-style: none;
+
+				li {
+					padding: 5px 0;
+				}
 			}
 		}
 
