@@ -78,6 +78,18 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 			//wp_dequeue_script( 'jquery-selectBox' ); // 'jquery-yith-wcwl' depends on 'jquery-selectBox'
 			//wp_dequeue_script( 'jquery-yith-wcwl' ); // This script is responsible for add to wishlist using ajax
 
+
+			// Remove jquery-selectBox as dependency for jquery-yith-wcwl
+			$YITH_WCWL_Frontend = YITH_WCWL_Frontend::get_instance();
+			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+			$prefix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? 'unminified/' : '';
+
+			wp_deregister_script( 'jquery-selectBox' );
+			wp_deregister_script( 'jquery-yith-wcwl' );
+
+			wp_register_script( 'jquery-yith-wcwl', YITH_WCWL_URL . 'assets/js/' . $prefix . 'jquery.yith-wcwl' . $suffix . '.js', array( 'jquery' ), $YITH_WCWL_Frontend->version, true );
+			wp_localize_script( 'jquery-yith-wcwl', 'yith_wcwl_l10n', $YITH_WCWL_Frontend->get_localize() );
+
 			// Remove all YITH Wishlist styles
 			wp_dequeue_style( 'woocommerce_prettyPhoto_css' );
 			wp_dequeue_style( 'jquery-selectBox' );

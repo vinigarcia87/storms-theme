@@ -1,8 +1,8 @@
 "use strict";
 
-jQuery(function ($) {
-  $('body').on('click', '.woocommerce-product-gallery__wrapper', function () {
+document.body.addEventListener('click', function (event) {
+  if (event.target.classList.contains('zoomImg') && event.target.closest('.woocommerce-product-gallery__wrapper')) {
     // Open lightbox on image click
-    $('.woocommerce-product-gallery__trigger').trigger('click');
-  });
-});
+    document.querySelector('.woocommerce-product-gallery__trigger').click();
+  }
+}, false);

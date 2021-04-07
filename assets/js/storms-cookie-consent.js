@@ -51,7 +51,7 @@ var saveCookieConsentToStorage = function saveCookieConsentToStorage() {
   return cookieConsentStorageType.setItem(cookieConsentPropertyName, true);
 };
 
-window.onload = function () {
+window.addEventListener('DOMContentLoaded', function () {
   // storms_cookie_consent_vars is required to continue, ensure the object exists
   if (typeof storms_cookie_consent_vars === 'undefined') {
     return false;
@@ -72,4 +72,4 @@ window.onload = function () {
       consentPopup.classList.remove('hidden');
     }, 2000);
   }
-};
+});

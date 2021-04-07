@@ -22,7 +22,7 @@ const cookieConsentPropertyName = 'storms_cookie_consent_accepted';
 const shouldShowCookieConsentPopup = () => ! cookieConsentStorageType.getItem(cookieConsentPropertyName);
 const saveCookieConsentToStorage = () => cookieConsentStorageType.setItem(cookieConsentPropertyName, true);
 
-window.onload = () => {
+window.addEventListener( 'DOMContentLoaded', function() {
 
 	// storms_cookie_consent_vars is required to continue, ensure the object exists
 	if ( typeof storms_cookie_consent_vars === 'undefined' ) {
@@ -44,4 +44,4 @@ window.onload = () => {
 		}, 2000);
 	}
 
-};
+} );

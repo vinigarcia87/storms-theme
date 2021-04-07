@@ -13046,10 +13046,11 @@ abbr.required {
   width: 40%;
 }
 
-.woocommerce-account .woocommerce .woocommerce-form-login .form-group, .woocommerce-account .woocommerce .woocommerce-form-login .form-row,
-.woocommerce-account .woocommerce .woocommerce-form-register .form-group,
-.woocommerce-account .woocommerce .woocommerce-form-register .form-row {
-  width: 80%;
+@media (min-width: 992px) {
+  .woocommerce-account .woocommerce .woocommerce-form-login,
+  .woocommerce-account .woocommerce .woocommerce-form-register {
+    padding-right: 110px;
+  }
 }
 
 .woocommerce-account .woocommerce .col2-set {
@@ -13085,10 +13086,6 @@ abbr.required {
   width: auto;
 }
 
-.woocommerce-account .woocommerce .woocommerce-privacy-policy-text {
-  width: 80%;
-}
-
 .woocommerce-account .woocommerce .woocommerce-privacy-policy-text p {
   text-align: justify;
 }
@@ -13100,6 +13097,7 @@ abbr.required {
 
 .woocommerce-account .woocommerce .woocommerce-form-login__submit {
   display: block;
+  margin-bottom: 10px;
 }
 
 .woocommerce-account .woocommerce .register .woocommerce-Button[name=register] {
@@ -13120,6 +13118,10 @@ abbr.required {
 .woocommerce-account .woocommerce .woocommerce-MyAccount-navigation ul {
   padding-left: 0;
   list-style: none;
+}
+
+.woocommerce-account .woocommerce .woocommerce-MyAccount-navigation ul li {
+  padding: 5px 0;
 }
 
 .woocommerce-account .woocommerce .woocommerce-MyAccount-content {
