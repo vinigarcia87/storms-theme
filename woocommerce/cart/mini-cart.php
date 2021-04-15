@@ -13,8 +13,8 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce/Templates
- * @version 3.7.0
+ * @package WooCommerce\Templates
+ * @version 5.2.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -41,40 +41,40 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
                     <div class="st-grid-container-fluid container-fluid">
                         <div class="st-grid-row row">
                             <div class="product-image col-md-3">
-								<?php if ( empty( $product_permalink ) ) : ?>
-									<?php echo $thumbnail /*. $product_name*/; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+                            	<?php if ( empty( $product_permalink ) ) : ?>
+									<?php echo $thumbnail; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 								<?php else : ?>
 									<a href="<?php echo esc_url( $product_permalink ); ?>">
-										<?php echo $thumbnail /*. $product_name*/; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+										<?php echo $thumbnail; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 									</a>
 								<?php endif; ?>
                             </div>
                             <div class="product-description col-md-7">
-                                <?php if ( ! $_product->is_visible() ) : ?>
-                                    <?php echo $product_name; ?>
-                                <?php else : ?>
-                                    <a href="<?php echo esc_url( $product_permalink ); ?>">
-                                        <?php echo $product_name; ?>
-                                    </a>
-                                <?php endif; ?>
-                                <?php echo wc_get_formatted_cart_item_data( $cart_item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-                                <?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								<?php if ( empty( $product_permalink ) ) : ?>
+									<?php echo wp_kses_post( $product_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								<?php else : ?>
+									<a href="<?php echo esc_url( $product_permalink ); ?>">
+										<?php echo wp_kses_post( $product_name ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+									</a>
+								<?php endif; ?>
+								<?php echo wc_get_formatted_cart_item_data( $cart_item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
                             </div>
                             <div class="product-actions col-md-2">
-                                <?php
-									echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-										'woocommerce_cart_item_remove_link',
-										sprintf(
-											'<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s">&times;</a>',
-											esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-											esc_attr__( 'Remove this item', 'woocommerce' ),
-											esc_attr( $product_id ),
-											esc_attr( $cart_item_key ),
-											esc_attr( $_product->get_sku() )
-										),
-										$cart_item_key
-									);
-                                ?>
+								<?php
+								echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+									'woocommerce_cart_item_remove_link',
+									sprintf(
+										'<a href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s">&times;</a>',
+										esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
+										esc_attr__( 'Remove this item', 'woocommerce' ),
+										esc_attr( $product_id ),
+										esc_attr( $cart_item_key ),
+										esc_attr( $_product->get_sku() )
+									),
+									$cart_item_key
+								);
+								?>
                             </div>
                         </div>
                     </div>
