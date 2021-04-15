@@ -33,7 +33,7 @@ defined( 'ABSPATH' ) || exit;
 			?>
 				<img class="brand" src="<?php echo esc_url( $url ); ?>" height="<?php esc_attr_e( $height ); ?>" width="<?php esc_attr_e( $width ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
 			<?php else : ?>
-				<img class="brand" src="<?php echo \StormsFramework\Helper::get_asset_url('/img/storms/logo/cloud_storms.png') ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
+				<?php /* <img class="brand" src="<?php echo \StormsFramework\Helper::get_asset_url('/img/storms/logo/cloud_storms.png') ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/> */ ?>
 			<?php endif; ?>
 		</a>
 

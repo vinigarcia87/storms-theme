@@ -18,11 +18,12 @@ defined( 'ABSPATH' ) || exit;
 	<div class="page-banner-content col-sm-7 col-md-8 col-lg-6">
 		<?php
 		$header_image = get_custom_header();
+		$srcset = wp_get_attachment_image_srcset( $header_image->attachment_id );
 
 		if ( ! empty( $header_image ) && ! empty( $header_image->url ) ) :
 		?>
 			<a class="header-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<img class="" src="<?php echo esc_url( $header_image->url ); ?>" height="<?php esc_attr_e( $header_image->height ); ?>" width="<?php esc_attr_e( $header_image->width ); ?>" alt="<?php esc_attr_e( get_bloginfo( 'name', 'display' ) ); ?>" />
+				<img class="" src="<?php echo esc_url( $header_image->url ); ?>" srcset="<?php echo esc_attr( $srcset ); ?>" height="<?php esc_attr_e( $header_image->height ); ?>" width="<?php esc_attr_e( $header_image->width ); ?>" alt="<?php esc_attr_e( get_bloginfo( 'name', 'display' ) ); ?>" />
 			</a>
 		<?php else : ?>
 			<a class="header-brand" href="<?php echo esc_url( get_bloginfo('url') ) ?>">
