@@ -39,7 +39,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 			if( ! in_array( $position, $position_options )  ) {
 				$position = 'woocommerce_single_product_summary';
 			}
-			add_action( $position, 'storms_wc_shipping_calculator_in_product_load_form_shipping', 90 );
+			add_action( $position, 'storms_wc_shipping_calculator_in_product_load_html', 90 );
 
 			add_shortcode( 'shipping_calculator_on_product_page', 'storms_wc_shipping_calculator_in_product_add_shortcode' );
 		}
@@ -78,7 +78,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 	 * @param null $content
 	 * @return null
 	 */
-	function storms_wc_shipping_calculator_in_product_load_form_shipping( $content = null ) {
+	function storms_wc_shipping_calculator_in_product_load_html( $content = null ) {
 		global $post;
 
 		$product = wc_get_product( $post->ID );
@@ -108,7 +108,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 		}
 
 		ob_start();
-		storms_wc_shipping_calculator_in_product_load_form_shipping();
+		storms_wc_shipping_calculator_in_product_load_html();
 		return ob_get_clean();
 	}
 
