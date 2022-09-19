@@ -13,12 +13,15 @@ var gulp          = require('gulp'),
 	pipeline 	  = require('readable-stream').pipeline,
 	debug         = require('gulp-debug'),
 	notify        = require('gulp-notify'),
+	file		  = require('gulp-file'),
 
 	pixrem		  = require('gulp-pixrem'), 	  // Generates pixel fallbacks for rem units
 	autoprefixer  = require('gulp-autoprefixer'), // Autoprefixing magic
 	plumber       = require('gulp-plumber'),      // Helps prevent stream crashing on errors
 	sourcemaps    = require('gulp-sourcemaps'),
 	cleanCSS 	  = require('gulp-clean-css'),	  // Used to minify the CSS
+	rigger 		  = require('gulp-rigger'), 	  // a module to import the contents of one file into another
+	postcss 	  = require('gulp-postcss'),
 	stripcomments = require('gulp-strip-css-comments'),
 	filter        = require('gulp-filter'),
 	rename        = require('gulp-rename'),
@@ -26,7 +29,10 @@ var gulp          = require('gulp'),
 
 	concat        = require('gulp-concat'),
 	babel 		  = require('gulp-babel'),
-	uglify        = require('gulp-uglify'),
+	uglify        = require('gulp-terser'),
+	rollup  	  = require('rollup-stream'),
+	rollup_babel  = require('rollup-plugin-babel'),
+	source 		  = require('vinyl-source-stream'),
 
 	imagemin      = require('gulp-imagemin'),
 	newer         = require('gulp-newer'),		  // Helps to pass through newer files only
@@ -52,8 +58,8 @@ var getStamp = function() {
  */
 gulp.task('styles', async function () {
 	gulp.src( './sass/*.scss' )
-		//.pipe( debug() )						 // Debug Vinyl file streams to see what files are run through your Gulp pipeline
-		.pipe( plumber() )
+		//.pipe( debug() )			 // Debug Vinyl file streams to see what files are run through your Gulp pipeline
+		.pipe( plumber() )			 // error tracking
 		.pipe( sourcemaps.init() )
 		.pipe( sass( {
 			errLogToConsole: true,
@@ -63,11 +69,12 @@ gulp.task('styles', async function () {
 		.pipe( pixrem() )
 		.pipe( autoprefixer( 'last 2 version', '> 1%', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4' ) )
 		.pipe( stripcomments({ preserve : /^# sourceMappingURL=/ } ) ) // Strip comments from CSS - except for sourceMappingUrl
+		.pipe(postcss([require('postcss-merge-rules')]))
 		.pipe( sourcemaps.write( './maps' ) )
 		.pipe( gulp.dest( './css/' ) )
 
 		.pipe( filter( '**/*.css' ) )       // Filtering stream to only css files
-		//.pipe( debug() )						 	// Debug Vinyl file streams to see what files are run through your Gulp pipeline
+		//.pipe( debug() )					// Debug Vinyl file streams to see what files are run through your Gulp pipeline
 		.pipe( sourcemaps.init() )
 		.pipe( rename({ suffix: '.min' } ) )
 		.pipe( cleanCSS() )
@@ -98,8 +105,8 @@ gulp.task('load-assets', async function() {
 		.pipe(notify({ message: 'Load jQuery scripts task complete', onLast: true }));
 
 	gulp.src([
-		'node_modules/popper.js/dist/umd/popper.js',			// Bootstrap dropdowns, popovers and tooltips depend on Popper.js
-		'node_modules/bootstrap/js/dist/*.js'					// Bootstrap 4 jQuery plugins
+		'node_modules/@popperjs/core/dist/umd/popper.js',	// Bootstrap dropdowns, popovers and tooltips depend on Popper.js
+		'node_modules/bootstrap/js/src/**/*.js'			// Bootstrap 5 javascript plugins
 	])
 		.pipe(gulp.dest('js/bootstrap'))
 		.pipe(notify({ message: 'Load Bootstrap scripts task complete', onLast: true }));
@@ -114,11 +121,7 @@ function scripts_3rd_party() {
 		gulp.src( [
 			/* HERE WE INCLUDE ALL BOOTSTRAP JS FILES WE WANT TO USE */
 			'./js/bootstrap/popper.js',
-			'./js/bootstrap/util.js',
-			'./js/bootstrap/dropdown.js',
-			'./js/bootstrap/collapse.js',
-			'./js/bootstrap/modal.js',
-			'./js/bootstrap/tab.js'
+			'./js/bootstrap/bootstrap.js'
 		] ),
 		//debug(),
 		concat( 'scripts.js' ),
@@ -134,7 +137,8 @@ function scripts_3rd_party() {
 function scripts_source() {
 	return pipeline(
 		gulp.src( [
-			'./js/src/**/*.js' // All our custom scripts
+			'./js/src/**/*.js', // All our custom scripts
+			'!./js/src/bootstrap.js'
 		] ),
 		babel({
 			presets: ['@babel/env']
@@ -150,6 +154,31 @@ function scripts_source() {
 	);
 }
 gulp.task('scripts', gulp.parallel(scripts_3rd_party, scripts_source));
+
+gulp.task('bootstrap', function() {
+	return rollup({
+		input: './js/src/bootstrap.js',
+		format: 'umd',
+		name: 'bootstrap',
+		output: {
+			globals: { '@popperjs/core': 'Popper' },
+			generatedCode: 'es2015',
+			format: 'umd',
+			name: 'bootstrap'
+		},
+		external: [ '@popperjs/core' ],
+		plugins: [
+			rollup_babel({
+				presets: [ '@babel/preset-env' ],
+				babelrc: false,
+				exclude: 'node_modules/**' }),
+		]
+	})
+	// give the file the name you want to output with.
+	.pipe(source('bootstrap.js'))
+	// and output to directory
+	.pipe(gulp.dest('./js/bootstrap/'));
+});
 
 /**
  * Images
@@ -191,7 +220,7 @@ gulp.task('zip', async function() {
  */
 
 // Default Task
-gulp.task('default', gulp.series(['load-assets', 'styles', 'scripts', 'images']));
+gulp.task('default', gulp.series(['load-assets', 'styles', 'bootstrap', 'scripts', 'images']));
 
 // Watch Task
 gulp.task('watch', gulp.series(['styles', 'scripts', 'images'], function () {

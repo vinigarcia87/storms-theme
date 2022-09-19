@@ -1203,7 +1203,7 @@
   </div>
 </div>
 
-  <div aria-live="polite" class="js-global-screen-reader-notice sr-only"></div>
+  <div aria-live="polite" class="js-global-screen-reader-notice visually-hidden"></div>
 
   </body>
 </html>

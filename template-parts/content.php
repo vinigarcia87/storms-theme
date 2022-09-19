@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 				if ( apply_filters( 'storms_show_page_title', ( ! is_front_page() ) ) ) :
 					the_title( '<h1 class="entry-title">', '</h1>' );
 				else :
-					the_title( '<h1 class="entry-title sr-only">', '</h1>' );
+					the_title( '<h1 class="entry-title visually-hidden">', '</h1>' );
 				endif;
 			else :
 				the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
