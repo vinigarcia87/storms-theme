@@ -1,8 +1,8 @@
 {
   "name": "storms-theme",
-  "description": "Storms Theme is the base theme that will help you create easy wordpress websites.",
   "version": "4.0.0",
   "author": "Storms Websolutions",
+  "description": "Storms Theme is the base theme that will help you create easy wordpress websites.",
   "license": "ISC",
   "dependencies": {
     "@popperjs/core": "^2.11.6",
