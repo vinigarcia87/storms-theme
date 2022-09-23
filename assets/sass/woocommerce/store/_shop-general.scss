@@ -38,7 +38,7 @@
 }
 
 .screen-reader-text {
-  @extend .visually-hidden;
+  @extend .sr-only;
 }
 
 abbr.required {

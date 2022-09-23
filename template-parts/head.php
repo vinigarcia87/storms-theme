@@ -41,4 +41,4 @@ defined( 'ABSPATH' ) || exit;
 	<?php wp_body_open(); ?>
 
 		<!-- Skip navigation for accessibility -->
-		<a id="skippy" class="visually-hidden visually-hidden-focusable" href="#wrap"><div class="st-grid-container container"><span class="skiplink-text"><?php _e( 'Skip to main content', 'storms' ); ?></span></div></a>
+		<a id="skippy" class="sr-only sr-only-focusable" href="#wrap"><div class="st-grid-container container"><span class="skiplink-text"><?php _e( 'Skip to main content', 'storms' ); ?></span></div></a>

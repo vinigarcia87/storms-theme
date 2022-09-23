@@ -12,15 +12,19 @@
  * Storms Starter Theme Style
  */
 
-// Bootstrap 5
+// Storms customization for Bootstrap
+$load-storms-variables: true !default;
+@import "bootstrap/bootstrap-variables";
+
+// Bootstrap 4 - 180KB
 @import "bootstrap/bootstrap-import";
 
 // Font-Awesome - 30KB
-//@import "fontawesome/fontawesome-variables";
-//@import "fontawesome/fontawesome-import";
+@import "fontawesome/fontawesome-variables";
+@import "fontawesome/fontawesome-import";
 
 // Bootstrap 4 - Custom styles for grid
-//@import "bootstrap/bootstrap-grid";
+@import "bootstrap/bootstrap-grid";
 
 // Storms CSS Helpers
 //@import "storms/gutenberg";
@@ -30,7 +34,7 @@
 @import "theme/theme";
 
 // WooCommerce
-//@import "woocommerce/woocommerce";
+@import "woocommerce/woocommerce";
 
 // ==========================================================================
 // Body

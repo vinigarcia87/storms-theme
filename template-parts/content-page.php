@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 		if ( apply_filters( 'storms_show_page_title', ( ! is_front_page() ) ) ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
-			the_title( '<h1 class="entry-title visually-hidden">', '</h1>' );
+			the_title( '<h1 class="entry-title sr-only">', '</h1>' );
 		endif;
 		?>
 
@@ -49,7 +49,7 @@ defined( 'ABSPATH' ) || exit;
 					sprintf(
 						wp_kses(
 							/* translators: %s: Name of current post. Only visible to screen readers */
-							__( 'Edit<span class="visually-hidden"> %s</span>', 'storms' ),
+							__( 'Edit<span class="sr-only"> %s</span>', 'storms' ),
 							array(
 								'span' => array(
 									'class' => array(),

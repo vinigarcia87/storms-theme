@@ -1,220 +1,303 @@
-/**
- * --------------------------------------------------------------------------
- * Bootstrap (v5.2.1): toast.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- * --------------------------------------------------------------------------
- */
+/*!
+  * Bootstrap toast.js v4.4.1 (https://getbootstrap.com/)
+  * Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  */
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('jquery'), require('./util.js')) :
+  typeof define === 'function' && define.amd ? define(['jquery', './util.js'], factory) :
+  (global = global || self, global.Toast = factory(global.jQuery, global.Util));
+}(this, (function ($, Util) { 'use strict';
 
-import { defineJQueryPlugin, reflow } from './util/index'
-import EventHandler from './dom/event-handler'
-import BaseComponent from './base-component'
-import { enableDismissTrigger } from './util/component-functions'
+  $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
+  Util = Util && Util.hasOwnProperty('default') ? Util['default'] : Util;
 
-/**
- * Constants
- */
-
-const NAME = 'toast'
-const DATA_KEY = 'bs.toast'
-const EVENT_KEY = `.${DATA_KEY}`
-
-const EVENT_MOUSEOVER = `mouseover${EVENT_KEY}`
-const EVENT_MOUSEOUT = `mouseout${EVENT_KEY}`
-const EVENT_FOCUSIN = `focusin${EVENT_KEY}`
-const EVENT_FOCUSOUT = `focusout${EVENT_KEY}`
-const EVENT_HIDE = `hide${EVENT_KEY}`
-const EVENT_HIDDEN = `hidden${EVENT_KEY}`
-const EVENT_SHOW = `show${EVENT_KEY}`
-const EVENT_SHOWN = `shown${EVENT_KEY}`
-
-const CLASS_NAME_FADE = 'fade'
-const CLASS_NAME_HIDE = 'hide' // @deprecated - kept here only for backwards compatibility
-const CLASS_NAME_SHOW = 'show'
-const CLASS_NAME_SHOWING = 'showing'
-
-const DefaultType = {
-  animation: 'boolean',
-  autohide: 'boolean',
-  delay: 'number'
-}
-
-const Default = {
-  animation: true,
-  autohide: true,
-  delay: 5000
-}
-
-/**
- * Class definition
- */
-
-class Toast extends BaseComponent {
-  constructor(element, config) {
-    super(element, config)
-
-    this._timeout = null
-    this._hasMouseInteraction = false
-    this._hasKeyboardInteraction = false
-    this._setListeners()
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
   }
 
-  // Getters
-  static get Default() {
-    return Default
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
   }
 
-  static get DefaultType() {
-    return DefaultType
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
   }
 
-  static get NAME() {
-    return NAME
+  function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+
+    if (Object.getOwnPropertySymbols) {
+      var symbols = Object.getOwnPropertySymbols(object);
+      if (enumerableOnly) symbols = symbols.filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+      keys.push.apply(keys, symbols);
+    }
+
+    return keys;
   }
 
-  // Public
-  show() {
-    const showEvent = EventHandler.trigger(this._element, EVENT_SHOW)
+  function _objectSpread2(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i] != null ? arguments[i] : {};
 
-    if (showEvent.defaultPrevented) {
-      return
+      if (i % 2) {
+        ownKeys(Object(source), true).forEach(function (key) {
+          _defineProperty(target, key, source[key]);
+        });
+      } else if (Object.getOwnPropertyDescriptors) {
+        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+      } else {
+        ownKeys(Object(source)).forEach(function (key) {
+          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+      }
     }
 
-    this._clearTimeout()
-
-    if (this._config.animation) {
-      this._element.classList.add(CLASS_NAME_FADE)
-    }
-
-    const complete = () => {
-      this._element.classList.remove(CLASS_NAME_SHOWING)
-      EventHandler.trigger(this._element, EVENT_SHOWN)
-
-      this._maybeScheduleHide()
-    }
-
-    this._element.classList.remove(CLASS_NAME_HIDE) // @deprecated
-    reflow(this._element)
-    this._element.classList.add(CLASS_NAME_SHOW, CLASS_NAME_SHOWING)
-
-    this._queueCallback(complete, this._element, this._config.animation)
+    return target;
   }
 
-  hide() {
-    if (!this.isShown()) {
-      return
-    }
+  /**
+   * ------------------------------------------------------------------------
+   * Constants
+   * ------------------------------------------------------------------------
+   */
 
-    const hideEvent = EventHandler.trigger(this._element, EVENT_HIDE)
+  var NAME = 'toast';
+  var VERSION = '4.4.1';
+  var DATA_KEY = 'bs.toast';
+  var EVENT_KEY = "." + DATA_KEY;
+  var JQUERY_NO_CONFLICT = $.fn[NAME];
+  var Event = {
+    CLICK_DISMISS: "click.dismiss" + EVENT_KEY,
+    HIDE: "hide" + EVENT_KEY,
+    HIDDEN: "hidden" + EVENT_KEY,
+    SHOW: "show" + EVENT_KEY,
+    SHOWN: "shown" + EVENT_KEY
+  };
+  var ClassName = {
+    FADE: 'fade',
+    HIDE: 'hide',
+    SHOW: 'show',
+    SHOWING: 'showing'
+  };
+  var DefaultType = {
+    animation: 'boolean',
+    autohide: 'boolean',
+    delay: 'number'
+  };
+  var Default = {
+    animation: true,
+    autohide: true,
+    delay: 500
+  };
+  var Selector = {
+    DATA_DISMISS: '[data-dismiss="toast"]'
+  };
+  /**
+   * ------------------------------------------------------------------------
+   * Class Definition
+   * ------------------------------------------------------------------------
+   */
 
-    if (hideEvent.defaultPrevented) {
-      return
-    }
+  var Toast =
+  /*#__PURE__*/
+  function () {
+    function Toast(element, config) {
+      this._element = element;
+      this._config = this._getConfig(config);
+      this._timeout = null;
 
-    const complete = () => {
-      this._element.classList.add(CLASS_NAME_HIDE) // @deprecated
-      this._element.classList.remove(CLASS_NAME_SHOWING, CLASS_NAME_SHOW)
-      EventHandler.trigger(this._element, EVENT_HIDDEN)
-    }
+      this._setListeners();
+    } // Getters
 
-    this._element.classList.add(CLASS_NAME_SHOWING)
-    this._queueCallback(complete, this._element, this._config.animation)
-  }
 
-  dispose() {
-    this._clearTimeout()
+    var _proto = Toast.prototype;
 
-    if (this.isShown()) {
-      this._element.classList.remove(CLASS_NAME_SHOW)
-    }
+    // Public
+    _proto.show = function show() {
+      var _this = this;
 
-    super.dispose()
-  }
+      var showEvent = $.Event(Event.SHOW);
+      $(this._element).trigger(showEvent);
 
-  isShown() {
-    return this._element.classList.contains(CLASS_NAME_SHOW)
-  }
+      if (showEvent.isDefaultPrevented()) {
+        return;
+      }
 
-  // Private
+      if (this._config.animation) {
+        this._element.classList.add(ClassName.FADE);
+      }
 
-  _maybeScheduleHide() {
-    if (!this._config.autohide) {
-      return
-    }
+      var complete = function complete() {
+        _this._element.classList.remove(ClassName.SHOWING);
 
-    if (this._hasMouseInteraction || this._hasKeyboardInteraction) {
-      return
-    }
+        _this._element.classList.add(ClassName.SHOW);
 
-    this._timeout = setTimeout(() => {
-      this.hide()
-    }, this._config.delay)
-  }
+        $(_this._element).trigger(Event.SHOWN);
 
-  _onInteraction(event, isInteracting) {
-    switch (event.type) {
-      case 'mouseover':
-      case 'mouseout':
-        this._hasMouseInteraction = isInteracting
-        break
-      case 'focusin':
-      case 'focusout':
-        this._hasKeyboardInteraction = isInteracting
-        break
-      default:
-        break
-    }
+        if (_this._config.autohide) {
+          _this._timeout = setTimeout(function () {
+            _this.hide();
+          }, _this._config.delay);
+        }
+      };
 
-    if (isInteracting) {
-      this._clearTimeout()
-      return
-    }
+      this._element.classList.remove(ClassName.HIDE);
 
-    const nextElement = event.relatedTarget
-    if (this._element === nextElement || this._element.contains(nextElement)) {
-      return
-    }
+      Util.reflow(this._element);
 
-    this._maybeScheduleHide()
-  }
+      this._element.classList.add(ClassName.SHOWING);
 
-  _setListeners() {
-    EventHandler.on(this._element, EVENT_MOUSEOVER, event => this._onInteraction(event, true))
-    EventHandler.on(this._element, EVENT_MOUSEOUT, event => this._onInteraction(event, false))
-    EventHandler.on(this._element, EVENT_FOCUSIN, event => this._onInteraction(event, true))
-    EventHandler.on(this._element, EVENT_FOCUSOUT, event => this._onInteraction(event, false))
-  }
+      if (this._config.animation) {
+        var transitionDuration = Util.getTransitionDurationFromElement(this._element);
+        $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+      } else {
+        complete();
+      }
+    };
 
-  _clearTimeout() {
-    clearTimeout(this._timeout)
-    this._timeout = null
-  }
+    _proto.hide = function hide() {
+      if (!this._element.classList.contains(ClassName.SHOW)) {
+        return;
+      }
 
-  // Static
-  static jQueryInterface(config) {
-    return this.each(function () {
-      const data = Toast.getOrCreateInstance(this, config)
+      var hideEvent = $.Event(Event.HIDE);
+      $(this._element).trigger(hideEvent);
 
-      if (typeof config === 'string') {
-        if (typeof data[config] === 'undefined') {
-          throw new TypeError(`No method named "${config}"`)
+      if (hideEvent.isDefaultPrevented()) {
+        return;
+      }
+
+      this._close();
+    };
+
+    _proto.dispose = function dispose() {
+      clearTimeout(this._timeout);
+      this._timeout = null;
+
+      if (this._element.classList.contains(ClassName.SHOW)) {
+        this._element.classList.remove(ClassName.SHOW);
+      }
+
+      $(this._element).off(Event.CLICK_DISMISS);
+      $.removeData(this._element, DATA_KEY);
+      this._element = null;
+      this._config = null;
+    } // Private
+    ;
+
+    _proto._getConfig = function _getConfig(config) {
+      config = _objectSpread2({}, Default, {}, $(this._element).data(), {}, typeof config === 'object' && config ? config : {});
+      Util.typeCheckConfig(NAME, config, this.constructor.DefaultType);
+      return config;
+    };
+
+    _proto._setListeners = function _setListeners() {
+      var _this2 = this;
+
+      $(this._element).on(Event.CLICK_DISMISS, Selector.DATA_DISMISS, function () {
+        return _this2.hide();
+      });
+    };
+
+    _proto._close = function _close() {
+      var _this3 = this;
+
+      var complete = function complete() {
+        _this3._element.classList.add(ClassName.HIDE);
+
+        $(_this3._element).trigger(Event.HIDDEN);
+      };
+
+      this._element.classList.remove(ClassName.SHOW);
+
+      if (this._config.animation) {
+        var transitionDuration = Util.getTransitionDurationFromElement(this._element);
+        $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
+      } else {
+        complete();
+      }
+    } // Static
+    ;
+
+    Toast._jQueryInterface = function _jQueryInterface(config) {
+      return this.each(function () {
+        var $element = $(this);
+        var data = $element.data(DATA_KEY);
+
+        var _config = typeof config === 'object' && config;
+
+        if (!data) {
+          data = new Toast(this, _config);
+          $element.data(DATA_KEY, data);
         }
 
-        data[config](this)
+        if (typeof config === 'string') {
+          if (typeof data[config] === 'undefined') {
+            throw new TypeError("No method named \"" + config + "\"");
+          }
+
+          data[config](this);
+        }
+      });
+    };
+
+    _createClass(Toast, null, [{
+      key: "VERSION",
+      get: function get() {
+        return VERSION;
       }
-    })
-  }
-}
+    }, {
+      key: "DefaultType",
+      get: function get() {
+        return DefaultType;
+      }
+    }, {
+      key: "Default",
+      get: function get() {
+        return Default;
+      }
+    }]);
 
-/**
- * Data API implementation
- */
+    return Toast;
+  }();
+  /**
+   * ------------------------------------------------------------------------
+   * jQuery
+   * ------------------------------------------------------------------------
+   */
 
-enableDismissTrigger(Toast)
 
-/**
- * jQuery
- */
+  $.fn[NAME] = Toast._jQueryInterface;
+  $.fn[NAME].Constructor = Toast;
 
-defineJQueryPlugin(Toast)
+  $.fn[NAME].noConflict = function () {
+    $.fn[NAME] = JQUERY_NO_CONFLICT;
+    return Toast._jQueryInterface;
+  };
 
-export default Toast
+  return Toast;
+
+})));
+//# sourceMappingURL=toast.js.map

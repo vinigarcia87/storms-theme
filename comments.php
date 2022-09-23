@@ -66,8 +66,8 @@ if ( post_password_required() ) {
         </ul><!-- .comment-list -->
 
         <?php the_comments_pagination( array(
-            'prev_text' => '<i class="fa fa-chevron-left" aria-hidden="true"></i><span class="visually-hidden"> ' . esc_html__( 'Older Comments', 'storms' ) . '</span>',
-            'next_text' => '<i class="fa fa-chevron-right" aria-hidden="true"></i><span class="visually-hidden"> ' . esc_html__( 'Newer Comments', 'storms' ) . '</span>',
+            'prev_text' => '<i class="fa fa-chevron-left" aria-hidden="true"></i><span class="sr-only"> ' . esc_html__( 'Older Comments', 'storms' ) . '</span>',
+            'next_text' => '<i class="fa fa-chevron-right" aria-hidden="true"></i><span class="sr-only"> ' . esc_html__( 'Newer Comments', 'storms' ) . '</span>',
         ) );
 	else: ?>
 		<p class="no-comments"><?php esc_html_e( 'Leave a comment.', 'storms' ); ?></p>
