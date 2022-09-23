@@ -117,24 +117,19 @@ class Storms_WC_SearchBar extends WC_Widget
             <div class="input-group">
 
 				<?php if( 'prepend' === $dropdown_position ): ?>
-					<div class="input-group-prepend">
-						<?php $this->get_categories_dropdown( $label_dropdown, $type, $hide_empty ); ?>
-					</div>
+					<?php $this->get_categories_dropdown( $label_dropdown, $type, $hide_empty ); ?>
 				<?php endif; ?>
 
                 <input class="form-control search-input" type="text" aria-label="<?php _e( 'Search our products', 'storms' ); ?>"
 					   value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="<?php echo esc_attr( $label_input ); ?>" />
 
-                <div class="input-group-append">
+				<?php if( 'append' === $dropdown_position ): ?>
+					<?php $this->get_categories_dropdown( $label_dropdown, $type, $hide_empty ); ?>
+				<?php endif; ?>
 
-					<?php if( 'append' === $dropdown_position ): ?>
-						<?php $this->get_categories_dropdown( $label_dropdown, $type, $hide_empty ); ?>
-					<?php endif; ?>
-
-					<button type="submit" id="searchsubmit" class="btn btn-outline-secondary search-submit-button">
-						<i class="fa fa-search" aria-hidden="true"></i> <?php esc_attr_e( $search_button_text ); ?>
-					</button>
-                </div>
+				<button type="submit" id="searchsubmit" class="btn btn-outline-secondary search-submit-button">
+					<i class="bi bi-search" aria-hidden="true"></i> <?php esc_attr_e( $search_button_text ); ?>
+				</button>
             </div>
 
             <?php if( 'blog' === $type ): ?>
@@ -166,10 +161,10 @@ class Storms_WC_SearchBar extends WC_Widget
 
 		$count = count( $categories );
 		?>
-		<button class="btn btn-outline-secondary dropdown-toggle categories-dropdown-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<button id="storms-wc-searchbar-dropdown" class="btn btn-outline-secondary dropdown-toggle categories-dropdown-btn" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
 			<?php echo esc_attr( $label_dropdown ); ?> <span class="caret"></span>
 		</button>
-		<div class="dropdown-menu" role="menu">
+		<div class="dropdown-menu" role="menu" aria-labelledby="storms-wc-searchbar-dropdown">
 			<a class="dropdown-item" href="#">
 				<?php echo esc_attr( $label_dropdown ); ?>
 			</a>

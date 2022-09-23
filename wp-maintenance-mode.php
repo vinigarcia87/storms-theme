@@ -28,8 +28,8 @@
 		<meta name="author" content="Storms Websolutions" />
 		<meta name="copyright" content="Copyright (c)2012-<?php echo date('Y') ?> Storms Websolutions. <?php echo __('All rights reserved', 'storms') ?>." />
 
-		<meta name="description" content="A Dex tem a solução certa para o seu ônibus Volvo rodar tranquilo! Acesse e encontre peças com qualidade garantida e com a praticidade de poder escolher através do seu computador, celular ou tablet.">
-		<meta name="keywords" content="Dex Peças, Peças Volvo, Ônibus, Caminhão">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
 
 		<link rel="dns-prefetch" href="//fonts.googleapis.com">
 
@@ -79,10 +79,10 @@
 						?>
 
 						<div class="info-grids">
-							<p><span class="fa fa-map-marker"></span><?php esc_html_e( $business_info['address'] ) ?></p>
-							<p><span class="fa fa-phone"></span><?php esc_html_e( $business_info['phone'] ) ?></p>
-							<?php if( ! empty( $business_info['phone_2'] ) ): ?><p><span class="fa fa-phone"></span><?php esc_html_e( $business_info['phone_2'] ) ?></p><?php endif; ?>
-							<p><span class="fa fa-envelope"></span>E-mail: <a href="mailto:<?php esc_html_e( $business_info['email'] ) ?>"><?php esc_html_e( $business_info['email'] ) ?></a></p>
+							<p><span class="bi bi-geo-alt"></span><?php esc_html_e( $business_info['address'] ) ?></p>
+							<p><span class="bi bi-telephone"></span><?php esc_html_e( $business_info['phone'] ) ?></p>
+							<?php if( ! empty( $business_info['phone_2'] ) ): ?><p><span class="bi bi-telephone"></span><?php esc_html_e( $business_info['phone_2'] ) ?></p><?php endif; ?>
+							<p><span class="bi bi-envelope"></span>E-mail: <a href="mailto:<?php esc_html_e( $business_info['email'] ) ?>"><?php esc_html_e( $business_info['email'] ) ?></a></p>
 						</div>
 						<div class="social-grids">
 							<ul>
@@ -98,15 +98,15 @@
 								$social_media_links = apply_filters( 'storms_maintenance_social_media_links', $social_media_links );
 								?>
 
-								<?php if( ! empty( $social_media_links['facebook'] ) ): ?><li><a title="Siga no Facebook" href="<?php echo esc_url( $social_media_links['facebook'] ) ?>" rel="noopener noreferrer" target="_blank"><span class="fa fa-facebook"></span></a></li><?php endif; ?>
-								<?php if( ! empty( $social_media_links['twitter'] ) ): ?><li><a title="Siga no Twitter" href="<?php echo esc_url( $social_media_links['twitter'] ) ?>" rel="noopener noreferrer" target="_blank"><span class="fa fa-twitter"></span></a></li><?php endif; ?>
-								<?php if( ! empty( $social_media_links['instagram'] ) ): ?><li><a title="Siga no Instagram" href="<?php echo esc_url( $social_media_links['instagram'] ) ?>" rel="noopener noreferrer" target="_blank"><span class="fa fa-instagram"></span></a></li><?php endif; ?>
-								<?php if( ! empty( $social_media_links['whatsapp'] ) ): ?><li><a title="Siga no WhatsApp" href="<?php echo esc_url( $social_media_links['whatsapp'] ) ?>" rel="noopener noreferrer" target="_blank"><span class="fa fa-whatsapp"></span></a></li><?php endif; ?>
-								<?php if( ! empty( $social_media_links['youtube'] ) ): ?><li><a title="Siga no YouTube" href="<?php echo esc_url( $social_media_links['youtube'] ) ?>" rel="noopener noreferrer" target="_blank"><span class="fa fa-youtube"></span></a></li><?php endif; ?>
-								<?php if( ! empty( $social_media_links['linkedin'] ) ): ?><li><a title="Siga no LinkedIn" href="<?php echo esc_url( $social_media_links['linkedin'] ) ?>" rel="noopener noreferrer" target="_blank"><span class="fa fa-linkedin"></span></a></li><?php endif; ?>
+								<?php if( ! empty( $social_media_links['facebook'] ) ): ?><li><a title="Siga no Facebook" href="<?php echo esc_url( $social_media_links['facebook'] ) ?>" rel="noopener noreferrer" target="_blank"><span class="bi bi-facebook"></span></a></li><?php endif; ?>
+								<?php if( ! empty( $social_media_links['twitter'] ) ): ?><li><a title="Siga no Twitter" href="<?php echo esc_url( $social_media_links['twitter'] ) ?>" rel="noopener noreferrer" target="_blank"><span class="bi bi-twitter"></span></a></li><?php endif; ?>
+								<?php if( ! empty( $social_media_links['instagram'] ) ): ?><li><a title="Siga no Instagram" href="<?php echo esc_url( $social_media_links['instagram'] ) ?>" rel="noopener noreferrer" target="_blank"><span class="bi bi-instagram"></span></a></li><?php endif; ?>
+								<?php if( ! empty( $social_media_links['whatsapp'] ) ): ?><li><a title="Siga no WhatsApp" href="<?php echo esc_url( $social_media_links['whatsapp'] ) ?>" rel="noopener noreferrer" target="_blank"><span class="bi bi-whatsapp"></span></a></li><?php endif; ?>
+								<?php if( ! empty( $social_media_links['youtube'] ) ): ?><li><a title="Siga no YouTube" href="<?php echo esc_url( $social_media_links['youtube'] ) ?>" rel="noopener noreferrer" target="_blank"><span class="bi bi-youtube"></span></a></li><?php endif; ?>
+								<?php if( ! empty( $social_media_links['linkedin'] ) ): ?><li><a title="Siga no LinkedIn" href="<?php echo esc_url( $social_media_links['linkedin'] ) ?>" rel="noopener noreferrer" target="_blank"><span class="bi bi-linkedin"></span></a></li><?php endif; ?>
 							</ul>
 						</div>
-						<!-- <a href="<?php echo esc_url( wp_login_url() ); ?>" title="Login"><span class="fa fa-lock" title="Login"></span></a> -->
+						<!-- <a href="<?php echo esc_url( wp_login_url() ); ?>" title="Login"><span class="bi bi-lock" title="Login"></span></a> -->
 					</div>
 				</div>
 			</div>

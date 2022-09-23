@@ -37,9 +37,9 @@
 .woocommerce-error {
 	padding-left: 0;
 	list-style: none;
-	border-left-color: theme-color("danger");
+	border-left-color: var(--bs-danger);
 }
 
 .woocommerce-info {
-	border-left-color: theme-color("info");
+	border-left-color: var(--bs-info);
 }

@@ -13,7 +13,8 @@
 			text-align: center;
 
 			.st-ic-heart-o {
-				@extend .fa-heart-o;
+				@extend .bi;
+				@extend .bi-heart;
 			}
 		}
 	}

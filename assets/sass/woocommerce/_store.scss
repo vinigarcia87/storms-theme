@@ -12,8 +12,7 @@
 // Shop Cart and Checkout pages
 @import "store/cart-checkout/shop-cart";
 @import "store/cart-checkout/checkout";
-@import "store/cart-checkout/billing-form";
-@import "store/cart-checkout/shipping-form";
+@import "store/cart-checkout/checkout-form";
 
 // Order pages
 @import "store/order/order";
@@ -25,6 +24,4 @@
 @import "store/single-product/comments";
 
 // Widgets
-@import "store/widgets/filter-by-price";
-
-
+//@import "store/widgets/filter-by-price";

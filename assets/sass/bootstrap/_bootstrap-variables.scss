@@ -4,22 +4,14 @@
 // Colors
 $storms: #84C3E3 !default;
 
-// We not gonna use bootstrap grid directly
-$enable-grid-classes: true !default;
-
-$use-grid-layout: true !default;
-$use-grid-header: true !default;
-$use-grid-footer: true !default;
-$use-grid-woocommerce: true !default;
+// We gonna use bootstrap grid directly or our won custom grid?
+$enable-grid-classes: false !default;
+$enable-container-classes: false !default;
 
 // Storms customization for Bootstrap
 $load-storms-variables: true !default;
-
 @if $load-storms-variables {
 
 	$primary: $storms;
-	$theme-colors: (
-		"primary": $storms
-	);
 
 }

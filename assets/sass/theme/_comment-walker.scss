@@ -1,0 +1,13 @@
+
+.comment-block {
+	@extend .d-flex;
+
+	.comment-block-avatar {
+		@extend .flex-shrink-0;
+	}
+
+	.comment-block-body {
+		@extend .flex-grow-1, .ms-3;
+	}
+}
+

@@ -1,9 +1,14 @@
 
-@if not $enable-grid-classes and $use-grid-layout {
+@if not $enable-grid-classes and not $enable-container-classes {
 
 	.st-grid-container {
 		@include make-container();
-		@include make-container-max-widths;
+
+		@each $breakpoint, $container-max-width in $container-max-widths {
+			@include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+				max-width: $container-max-width;
+			}
+		}
 	}
 
 	.st-grid-container-fluid {
@@ -14,13 +19,18 @@
 		@include make-row();
 	}
 
+	.st-grid-col {
+		@include make-col-ready();
+		flex: 1 0 0%; // Flexbugs #4: https://github.com/philipwalton/flexbugs#flexbug-4
+	}
+
 	.col-12 {
-		@include make-col-ready;
+		@include make-col-ready();
 		@include make-col(12);
 	}
 
 	.col-6 {
-		@include make-col-ready;
+		@include make-col-ready();
 		@include make-col(6);
 	}
 
@@ -28,15 +38,9 @@
 	 * Storms Theme Custom Gid Columns
 	 */
 
-	// .col-12
-	.comment-block.media {
-		@include make-col-ready;
-		@include make-col(12);
-	}
-
 	// .col-md-9 .order-1
 	.main-layout-left {
-		@include make-col-ready;
+		@include make-col-ready();
 		@include make-col(12);
 		@include media-breakpoint-up(md) {
 			@include make-col(9);
@@ -47,7 +51,7 @@
 
 	// .col-md-9 .order-2
 	.main-layout-right {
-		@include make-col-ready;
+		@include make-col-ready();
 		@include make-col(12);
 		@include media-breakpoint-up(md) {
 			@include make-col(9);
@@ -58,7 +62,7 @@
 
 	// .col-md-12
 	.main-layout-full {
-		@include make-col-ready;
+		@include make-col-ready();
 		@include make-col(12);
 		@include media-breakpoint-up(md) {
 			@include make-col(12);
@@ -67,7 +71,7 @@
 
 	// .col-md-3 .order-2
 	.sidebar-layout-right {
-		@include make-col-ready;
+		@include make-col-ready();
 		@include make-col(12);
 		@include media-breakpoint-up(md) {
 			@include make-col(3);
@@ -78,7 +82,7 @@
 
 	// .col-md-3 .order-1
 	.sidebar-layout-left {
-		@include make-col-ready;
+		@include make-col-ready();
 		@include make-col(12);
 		@include media-breakpoint-up(md) {
 			@include make-col(3);

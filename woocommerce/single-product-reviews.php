@@ -11,7 +11,7 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce/Templates
+ * @package WooCommerce\Templates
  * @version 4.3.0
  */
 
@@ -40,29 +40,23 @@ if ( ! comments_open() ) {
 		</h2>
 
 		<?php if ( have_comments() ) : ?>
-			<ol class="commentlist list-unstyled">
-				<?php
-				// Register Bootstrap Comment Walker
-				wp_list_comments( apply_filters( 'woocommerce_product_review_list_args', array(
-					'style'         => 'ul',
-					'short_ping'    => true,
-					'avatar_size'   => '64',
-					'allow_reply'   => false,
-					'walker'        => new \StormsFramework\Bootstrap\WP_Bootstrap_Commentwalker(),
-				) ) );
-				?>
+			<ol class="commentlist">
+				<?php wp_list_comments( apply_filters( 'woocommerce_product_review_list_args', array( 'callback' => 'woocommerce_comments' ) ) ); ?>
 			</ol>
 
 			<?php
 			if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
 				echo '<nav class="woocommerce-pagination">';
 				\StormsFramework\Bootstrap\WP_Bootstrap_Pagination::paginate_comments_links(
-                    apply_filters( 'wp_bootstrap_comment_pagination_args', array( // WPCS: XSS ok.
-                        'prev_text'   => '&larr;',
-                        'next_text'   => '&rarr;',
-                        'type' => 'array',
-                    ) )
-                );
+					apply_filters(
+						'woocommerce_comment_pagination_args',
+						array(
+							'prev_text' => is_rtl() ? '&rarr;' : '&larr;',
+							'next_text' => is_rtl() ? '&larr;' : '&rarr;',
+							'type'      => 'list',
+						)
+					)
+				);
 				echo '</nav>';
 			endif;
 			?>
@@ -137,7 +131,7 @@ if ( ! comments_open() ) {
 					</select></div>';
 				}
 
-				$comment_form['comment_field'] .= '<p class="comment-form-comment form-group"><label for="comment">' . esc_html__( 'Your review', 'woocommerce' ) . '&nbsp;<span class="required">*</span></label><textarea id="comment" name="comment" class="form-control" cols="45" rows="8" required></textarea></p>';
+				$comment_form['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Your review', 'woocommerce' ) . '&nbsp;<span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" required></textarea></p>';
 
 				comment_form( apply_filters( 'woocommerce_product_review_comment_form_args', $comment_form ) );
 				?>

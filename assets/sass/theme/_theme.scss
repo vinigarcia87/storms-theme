@@ -14,12 +14,13 @@
 				top: 46px;
 			}
 		}
-
 	}
 }
 
 // Search form style
 @import "search-form";
+
+@import "comment-walker";
 
 // 404 page style
 @import "404-page";

@@ -38,8 +38,8 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 				update_option('yith_wcwl_browse_wishlist_text', __('Ver favoritos', 'storms'));
 				update_option('yith_wcwl_already_in_wishlist_text', __('Este produto já é favorito!', 'storms'));
 				update_option('yith_wcwl_add_to_wishlist_style', 'link');
-				update_option('yith_wcwl_add_to_wishlist_icon', 'fa-heart-o');
-				update_option('yith_wcwl_added_to_wishlist_icon', 'fa-heart');
+				update_option('yith_wcwl_add_to_wishlist_icon', 'bi-heart');
+				update_option('yith_wcwl_added_to_wishlist_icon', 'bi-heart-fill');
 
 				update_option('yith_wcwl_variation_show', 'yes');
 				update_option('yith_wcwl_price_show', 'yes');
@@ -152,7 +152,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 
 			$wishlist  = '<div class="storms-wishlist ' . $atts['extra_classes'] . '">';
 			$wishlist .= '	<a href="' . esc_url( YITH_WCWL()->get_wishlist_url() ) . '">';
-			$wishlist .= '		<i class="fa st-ic-heart-o" aria-hidden="true"></i>';
+			$wishlist .= '		<i class="st-ic-heart-o" aria-hidden="true"></i>';
 			$wishlist .= '		<span class="wishlist-counter">' . yith_wcwl_count_all_products() .'</span>';
 			$wishlist .= '		<span class="wishlist-text">Minha Lista</span>';
 			$wishlist .= '	</a>';

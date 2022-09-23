@@ -13,7 +13,8 @@
 		text-align: center;
 
 		.st-ic-user-circle {
-			@extend .fa-user-circle;
+			@extend .bi;
+			@extend .bi-person-circle;
 			margin-top: 6px;
 		}
 

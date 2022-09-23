@@ -1,6 +1,4 @@
 .form-row {
-	@extend .form-group;
-
 	label {
 		font-weight: normal;
 	}
@@ -24,7 +22,10 @@
 }
 
 select.country_select,
-select.state_select,
+select.state_select {
+	@extend .form-select;
+}
+
 .input-text {
 	@extend .form-control;
 }

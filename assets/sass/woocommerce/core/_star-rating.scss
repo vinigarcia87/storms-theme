@@ -1,96 +1,101 @@
 /**
  * Star ratings
+ * This is the stars that are shown on a product/comment that was already rated
  */
 .star-rating {
-  float: right;
-  overflow: hidden;
-  position: relative;
-  height: 1em;
-  line-height: 1;
-  font-size: 1em;
-  width: 5.4em;
-  font-family: 'star';
+	font-family: 'star';
 
-  &::before {
-    content: '\73\73\73\73\73';
-    color: darken( $primary, 10% );
-    float: left;
-    top: 0;
-    left: 0;
-    position: absolute;
-  }
+	color: var(--bs-link-color);
+	float: right;
+	overflow: hidden;
+	position: relative;
+	height: 1em;
+	line-height: 1;
+	font-size: 1.2em;
+	width: 7em;
+	letter-spacing: .4em;
 
-  span {
-    overflow: hidden;
-    float: left;
-    top: 0;
-    left: 0;
-    position: absolute;
-    padding-top: 1.5em;
-  }
+	&::before {
+		content: '\73\73\73\73\73'; // Empty stars
+		float: left;
+		top: 0;
+		left: 0;
+		position: absolute;
+	}
 
-  span::before {
-    content: '\53\53\53\53\53';
-    top: 0;
-    position: absolute;
-    left: 0;
-  }
+	span {
+		overflow: hidden;
+		float: left;
+		top: 0;
+		left: 0;
+		position: absolute;
+		padding-top: 1.5em;
+	}
+
+	span::before {
+		content: '\53\53\53\53\53'; // Filled stars
+		top: 0;
+		position: absolute;
+		left: 0;
+	}
 }
 
 .woocommerce-product-rating {
-  .star-rating {
-    margin: 0.3rem 4px 0 0;
-    float: left;
-  }
+	.star-rating {
+		margin: 0.3rem 4px 0 0;
+		float: left;
+	}
 }
 
 .products {
-  .star-rating {
-    display: block;
-    margin: 0 0 0.5rem;
-    float: none;
-  }
+	.star-rating {
+		display: block;
+		margin: 0 0 0.5rem;
+		float: none;
+	}
 }
 
 .hreview-aggregate {
-  .star-rating {
-    margin: 10px 0 0;
-  }
+	.star-rating {
+		margin: 10px 0 0;
+	}
 }
 
 /**
  * Rating Filter Widget
  */
 .widget_rating_filter {
-  ul {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    list-style: none outside;
+	ul {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		list-style: none outside;
 
-    li {
-      @include clearfix();
-      padding: 0 0 1px;
-      list-style: none;
+		li {
+			@include clearfix();
+			padding: 0 0 1px;
+			list-style: none;
 
-      a {
-        padding: 1px 0;
-        text-decoration: none;
-      }
+			a {
+				padding: 1px 0;
+				text-decoration: none;
+			}
 
-      .star-rating {
-        float: none;
-        display: inline-block;
-      }
-    }
+			.star-rating {
+				float: none;
+				display: inline-block;
+			}
+		}
 
-    li.chosen {
-      a {
-        &::before {
-          @include iconbefore( '\e013' );
-          color: theme-color("success");
-        }
-      }
-    }
-  }
+		li.chosen {
+			a {
+				@extend .bi, .bi-x-octagon-fill;
+				color: var(--bs-primary);
+
+				&::before {
+
+				}
+			}
+		}
+	}
 }

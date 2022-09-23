@@ -66,10 +66,8 @@
 		content: " / ";
 	}
 
-	// Combine esta classe com a classe .fa do FontAwesome
 	.st-ic-shop-cart {
-
-		//@extend .fa-shopping-cart;
+		@extend .bi;
 
 		width: 21px;
 		height: 21px;
@@ -155,12 +153,12 @@
 				padding: 3px 0;
 
 				a {
-					@extend .clearfix;
+					@include clearfix();
 				}
 
 				.variation,
 				.quantity {
-					@extend .clearfix;
+					@include clearfix();
 
 					max-width: 100%;
 					padding-left: 15px;

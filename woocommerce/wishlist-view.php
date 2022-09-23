@@ -305,7 +305,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 
 					<?php if ( $enable_drag_n_drop ) : ?>
 						<td class="product-arrange ">
-							<i class="fa fa-arrows"></i>
+							<i class="bi bi-arrows-move"></i>
 							<input type="hidden" name="items[<?php echo esc_attr( $item->get_product_id() ); ?>][position]" value="<?php echo esc_attr( $item->get_position() ); ?>"/>
 						</td>
 					<?php endif; ?>

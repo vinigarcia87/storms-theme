@@ -1,5 +1,5 @@
 
-@if not $enable-grid-classes and $use-grid-footer {
+@if not $enable-grid-classes and not $enable-container-classes {
 
 	footer#footer {
 		// .col-sm-12

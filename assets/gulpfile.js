@@ -13,14 +13,12 @@ var gulp          = require('gulp'),
 	pipeline 	  = require('readable-stream').pipeline,
 	debug         = require('gulp-debug'),
 	notify        = require('gulp-notify'),
-	file		  = require('gulp-file'),
 
 	pixrem		  = require('gulp-pixrem'), 	  // Generates pixel fallbacks for rem units
 	autoprefixer  = require('gulp-autoprefixer'), // Autoprefixing magic
 	plumber       = require('gulp-plumber'),      // Helps prevent stream crashing on errors
 	sourcemaps    = require('gulp-sourcemaps'),
 	cleanCSS 	  = require('gulp-clean-css'),	  // Used to minify the CSS
-	rigger 		  = require('gulp-rigger'), 	  // a module to import the contents of one file into another
 	postcss 	  = require('gulp-postcss'),
 	stripcomments = require('gulp-strip-css-comments'),
 	filter        = require('gulp-filter'),
@@ -58,29 +56,29 @@ var getStamp = function() {
  */
 gulp.task('styles', async function () {
 	gulp.src( './sass/*.scss' )
-		//.pipe( debug() )			 // Debug Vinyl file streams to see what files are run through your Gulp pipeline
-		.pipe( plumber() )			 // error tracking
-		.pipe( sourcemaps.init() )
-		.pipe( sass( {
-			errLogToConsole: true,
-			outputStyle: 'expanded', // 'compressed', 'compact', 'nested', 'expanded'
-			precision: 10
-		} ) )
-		.pipe( pixrem() )
-		.pipe( autoprefixer( 'last 2 version', '> 1%', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4' ) )
-		.pipe( stripcomments({ preserve : /^# sourceMappingURL=/ } ) ) // Strip comments from CSS - except for sourceMappingUrl
-		.pipe(postcss([require('postcss-merge-rules')]))
-		.pipe( sourcemaps.write( './maps' ) )
-		.pipe( gulp.dest( './css/' ) )
+	//.pipe( debug() )			 // Debug Vinyl file streams to see what files are run through your Gulp pipeline
+	.pipe( plumber() )			 // error tracking
+	.pipe( sourcemaps.init() )
+	.pipe( sass( {
+		errLogToConsole: true,
+		outputStyle: 'expanded', // 'compressed', 'compact', 'nested', 'expanded'
+		precision: 10
+	} ) )
+	.pipe( pixrem() )
+	.pipe( autoprefixer( 'last 2 version', '> 1%', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4' ) )
+	.pipe( stripcomments({ preserve : /^# sourceMappingURL=/ } ) ) // Strip comments from CSS - except for sourceMappingUrl
+	.pipe(postcss([require('postcss-merge-rules')]))
+	.pipe( sourcemaps.write( './maps' ) )
+	.pipe( gulp.dest( './css/' ) )
 
-		.pipe( filter( '**/*.css' ) )       // Filtering stream to only css files
-		//.pipe( debug() )					// Debug Vinyl file streams to see what files are run through your Gulp pipeline
-		.pipe( sourcemaps.init() )
-		.pipe( rename({ suffix: '.min' } ) )
-		.pipe( cleanCSS() )
-		.pipe( sourcemaps.write( './maps' ) )
-		.pipe( gulp.dest( './css/' ) )
-		.pipe( notify( { message: 'Styles task complete', onLast: true } ) )
+	.pipe( filter( '**/*.css' ) )       // Filtering stream to only css files
+	//.pipe( debug() )							// Debug Vinyl file streams to see what files are run through your Gulp pipeline
+	.pipe( sourcemaps.init() )
+	.pipe( rename({ suffix: '.min' } ) )
+	.pipe( cleanCSS() )
+	.pipe( sourcemaps.write( './maps' ) )
+	.pipe( gulp.dest( './css/' ) )
+	.pipe( notify( { message: 'Styles task complete', onLast: true } ) )
 });
 
 /**
@@ -88,12 +86,23 @@ gulp.task('styles', async function () {
  * Copy the fonts, js and styles from used libs to the correct public place
  */
 gulp.task('load-assets', async function() {
+	// WooCommerce Fonts
 	gulp.src([
-		'node_modules/font-awesome/fonts/*',              		// Font-Awesome 4.7 Fonts
-		wp_content + '/plugins/woocommerce/assets/fonts/*'		// WooCommerce Fonts
+		wp_content + '/plugins/woocommerce/assets/fonts/*'
 	])
-		.pipe(gulp.dest('fonts'))
-		.pipe(notify({ message: 'Load fonts task complete', onLast: true }));
+	.pipe(gulp.dest('fonts/woocommerce'));
+
+	// Bootstrap Icons
+	gulp.src([
+		'node_modules/bootstrap-icons/font/fonts/*',
+	])
+	.pipe(gulp.dest('fonts/bootstrap-icons'));
+
+	// Bootstrap Icons Styles
+	gulp.src([
+		'node_modules/bootstrap-icons/font/bootstrap-icons.scss',
+	])
+	.pipe(gulp.dest('sass/bootstrap'));
 
 	gulp.src([
 		'node_modules/jquery/dist/jquery.min.js',					// jQuery
@@ -101,15 +110,15 @@ gulp.task('load-assets', async function() {
 		'node_modules/block-ui/jquery.blockUI.js',					// BlockUI jQuery plugin
 		'node_modules/jquery-mask-plugin/dist/jquery.mask.min.js'	// Jquery Mask plugin
 	])
-		.pipe(gulp.dest('js/jquery'))
-		.pipe(notify({ message: 'Load jQuery scripts task complete', onLast: true }));
+	.pipe(gulp.dest('js/jquery'))
+	.pipe(notify({ message: 'Load jQuery scripts task complete', onLast: true }));
 
 	gulp.src([
 		'node_modules/@popperjs/core/dist/umd/popper.js',	// Bootstrap dropdowns, popovers and tooltips depend on Popper.js
-		'node_modules/bootstrap/js/src/**/*.js'			// Bootstrap 5 javascript plugins
+		'node_modules/bootstrap/js/src/**/*.js'				// Bootstrap 5 javascript plugins
 	])
-		.pipe(gulp.dest('js/bootstrap'))
-		.pipe(notify({ message: 'Load Bootstrap scripts task complete', onLast: true }));
+	.pipe(gulp.dest('js/bootstrap'))
+	.pipe(notify({ message: 'Load Bootstrap scripts task complete', onLast: true }));
 });
 
 /**
@@ -160,8 +169,11 @@ gulp.task('bootstrap', function() {
 		input: './js/src/bootstrap.js',
 		format: 'umd',
 		name: 'bootstrap',
+		globals: {
+			jquery: 'jQuery', // Ensure we use jQuery which is always available even in noConflict mode
+			'@popperjs/core': 'Popper'
+		},
 		output: {
-			globals: { '@popperjs/core': 'Popper' },
 			generatedCode: 'es2015',
 			format: 'umd',
 			name: 'bootstrap'
@@ -188,12 +200,12 @@ gulp.task('images', async function() {
 	gulp.src([
 		'./img/raw/**/*.{png,jpg,gif,svg}'
 	])
-		//.pipe( debug() )
-		.pipe(newer('./img/'))
-		.pipe(rimraf({ force: true }))
-		.pipe(imagemin({ optimizationLevel: 7, progressive: true, interlaced: true }))
-		.pipe(gulp.dest('./img/'))
-		.pipe( notify( { message: 'Images task complete', onLast: true } ) );
+	//.pipe( debug() )
+	.pipe(newer('./img/'))
+	.pipe(rimraf({ force: true }))
+	.pipe(imagemin({ optimizationLevel: 7, progressive: true, interlaced: true }))
+	.pipe(gulp.dest('./img/'))
+	.pipe( notify( { message: 'Images task complete', onLast: true } ) );
 });
 
 /**
@@ -207,9 +219,9 @@ gulp.task('zip', async function() {
 		'!' + theme_dir + 'assets/node_modules',
 		'!' + theme_dir + 'assets/node_modules/**/*'
 	])
-		.pipe(zip(getStamp() + '-' + project + '.zip'))
-		.pipe(gulp.dest(theme_dir))
-		.pipe( notify( { message: 'Zip task complete', onLast: true } ) );
+	.pipe( zip( getStamp() + '-' + project + '.zip' ) )
+	.pipe( gulp.dest( theme_dir ) )
+	.pipe( notify( { message: 'Zip task complete', onLast: true } ) );
 });
 
 // ==== TASKS ==== //

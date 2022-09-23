@@ -15,12 +15,12 @@
 // Bootstrap 5
 @import "bootstrap/bootstrap-import";
 
-// Font-Awesome - 30KB
-//@import "fontawesome/fontawesome-variables";
-//@import "fontawesome/fontawesome-import";
+// Bootstrap Icons
+$bootstrap-icons-font-file: "../fonts/bootstrap-icons/bootstrap-icons";
+@import "bootstrap/bootstrap-icons";
 
-// Bootstrap 4 - Custom styles for grid
-//@import "bootstrap/bootstrap-grid";
+// Bootstrap 5 - Custom styles for grid
+@import "bootstrap/bootstrap-grid";
 
 // Storms CSS Helpers
 //@import "storms/gutenberg";
@@ -30,7 +30,7 @@
 @import "theme/theme";
 
 // WooCommerce
-//@import "woocommerce/woocommerce";
+@import "woocommerce/woocommerce";
 
 // ==========================================================================
 // Body

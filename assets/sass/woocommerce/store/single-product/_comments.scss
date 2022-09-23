@@ -14,16 +14,23 @@
 		}
 	}
 
+	/**
+	 * Star ratings
+	 * This is the stars that are shown when user is rating/commenting a product
+	 */
 	p.stars {
 		font-size: 22px;
 
 		a {
+			font-family: 'star';
+
 			position: relative;
 			height: 1em;
 			width: 1em;
 			text-indent: -999em;
 			display: inline-block;
 			text-decoration: none;
+			line-height: 1em;
 
 			&::before {
 				display: block;
@@ -33,51 +40,45 @@
 				width: 1em;
 				height: 1em;
 				line-height: 1;
-				font-family: 'WooCommerce';
-				content: '\e021';
+				content: '\73'; // Empty stars
 				text-indent: 0;
 			}
 
 			&:hover ~ a::before {
-				content: '\e021';
+				content: '\73'; // Empty stars
 			}
 		}
 
 		&:hover a::before {
-			content: '\e020';
+			content: '\53'; // Filled stars
 		}
 
 		&.selected {
 			a.active {
 				&::before {
-					content: '\e020';
+					content: '\53'; // Filled stars
 				}
 
 				~ a::before {
-					content: '\e021';
+					content: '\73'; // Empty stars
 				}
 			}
 
 			a:not( .active )::before {
-				content: '\e020';
+				content: '\53'; // Filled stars
 			}
 		}
 	}
 
-	#respond {
-		margin-top: 25px;
-		padding-top: 25px;
-		border-top: 1px solid theme-color("light");
+}
 
-		.form-submit {
-			text-align: right;
+// Submit button
+.comment-respond {
+	.form-submit {
+		text-align: right;
 
-			input#submit {
-				width: 200px;
-				color: #000;
-				background-color: #fff;
-			}
+		input#submit {
+			width: 200px;
 		}
 	}
-
 }
