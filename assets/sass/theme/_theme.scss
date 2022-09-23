@@ -1,5 +1,17 @@
 @charset "UTF-8";
 
+// ==========================================================================
+// Body
+// ==========================================================================
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: #FFFFFF;
+}
+
 // Sticky Menu - fix for wp admin-bar
 #main-navigation {
 	&.fixed-top {
@@ -27,3 +39,32 @@
 
 // Cookie consent modal
 @import "components/storms-cookie-consent";
+
+// ==========================================================================
+// Footer
+// ==========================================================================
+
+//
+// Sticky footer styles
+// Using HTML5 Flexbox
+// Sources: http://stackoverflow.com/questions/10825879/how-can-a-variable-height-sticky-footer-be-defined-in-pure-css/26558049#26558049
+// 			http://stackoverflow.com/questions/4347133/css-sticky-footers-with-unknown-height/20432777#20432777
+//
+html, body {
+	height: 100%;
+	margin: 0; padding: 0;  /* to avoid scrollbars */
+}
+html:not(.ie):not(.edge) {
+	body {
+		display: flex; /* use the flex model */
+		min-height: 100vh;
+		flex-direction: column; /* learn more: http://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ */
+	}
+
+	.wrap {
+		flex: 1;
+	}
+}
+#footer {
+	width:100%;
+}

@@ -98,12 +98,6 @@ gulp.task('load-assets', async function() {
 	])
 	.pipe(gulp.dest('fonts/bootstrap-icons'));
 
-	// Bootstrap Icons Styles
-	gulp.src([
-		'node_modules/bootstrap-icons/font/bootstrap-icons.scss',
-	])
-	.pipe(gulp.dest('sass/bootstrap'));
-
 	gulp.src([
 		'node_modules/jquery/dist/jquery.min.js',					// jQuery
 		'node_modules/jquery.cycle2/src/jquery.cycle2.min.js',		// Cycle2 jQuery plugin
