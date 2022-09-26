@@ -5,59 +5,62 @@
 .button,
 #respond input#submit {
 
-  @extend .btn;
-  @extend .btn-secondary;
+	@extend .btn;
+	@extend .btn-secondary;
 
-  &.alt {
-    @extend .btn-primary;
-  }
+	&.alt {
+		@extend .btn-primary;
+	}
 }
 
 .woocommerce {
 
-  /**
-   * Buttons
-   */
-  .button,
-  #respond input#submit {
+	/**
+     * Buttons
+     */
+	.button,
+	#respond input#submit {
 
-    &.loading {
-      opacity: 0.25;
-      padding-right: 2.618em;
+		&.loading {
+			@extend .bi;
+			opacity: 0.25;
+			padding-right: 2.618em;
 
-      &::after {
-        font-family: 'WooCommerce';
-        content: '\e01c';
-        vertical-align: top;
-        -webkit-font-smoothing: antialiased;
-        font-weight: 400;
-        position: absolute;
-        top: 0.618em;
-        right: 1em;
-        -webkit-animation: spin 2s linear infinite;
-        -moz-animation: spin 2s linear infinite;
-        animation: spin 2s linear infinite;
-      }
-    }
+			&::after {
+				@extend .bi-check-lg;
 
-    &.added {
-      &::after {
-        font-family: 'WooCommerce';
-        content: '\e017';
-        margin-left: 0.53em;
-        vertical-align: bottom;
-      }
-    }
-  }
+				vertical-align: top;
+				-webkit-font-smoothing: antialiased;
+				font-weight: 400;
+				position: absolute;
+				top: 0.618em;
+				right: 1em;
+				-webkit-animation: spin 2s linear infinite;
+				-moz-animation: spin 2s linear infinite;
+				animation: spin 2s linear infinite;
+			}
+		}
 
-  .cart .button,
-  .cart input.button {
-    float: none;
-  }
+		&.added {
+			@extend .bi;
 
-  a.added_to_cart {
-    padding-top: 0.5em;
-    white-space: nowrap;
-    display: inline-block;
-  }
+			&::after {
+				@extend .bi-check-lg;
+
+				margin-left: 0.53em;
+				vertical-align: bottom;
+			}
+		}
+	}
+
+	.cart .button,
+	.cart input.button {
+		float: none;
+	}
+
+	a.added_to_cart {
+		padding-top: 0.5em;
+		white-space: nowrap;
+		display: inline-block;
+	}
 }

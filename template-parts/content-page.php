@@ -59,7 +59,7 @@ defined( 'ABSPATH' ) || exit;
 						get_the_title()
 					),
 					' <span class="edit-link">',
-					' <i class="fa fa-pencil-square-o"></i></span>'
+					' <i class="bi bi-pencil-square"></i></span>'
 				);
 			?>
 		</footer><!-- .entry-footer -->

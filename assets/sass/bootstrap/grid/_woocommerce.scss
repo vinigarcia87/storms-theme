@@ -1,5 +1,6 @@
+@charset "UTF-8";
 
-@if not $enable-grid-classes and $use-grid-woocommerce {
+@if not $enable-grid-classes and not $enable-container-classes {
 
 	// .col-6 .col-sm-3 .col-md-2
 	.st-product-col-1 {

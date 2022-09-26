@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', function () {
     mqDetector.classList.add('mq-detector');
     mqDetector.classList.add('invisible');
     mqDetector.style.cssText = 'width: 0; height: 0;';
-    mqDetector.innerHTML = '<div class="d-block d-sm-none" 		  data-type="xs"></div>' + '<div class="d-none d-sm-block d-md-none" data-type="sm"></div>' + '<div class="d-none d-md-block d-lg-none" data-type="md"></div>' + '<div class="d-none d-lg-block d-xl-none" data-type="lg"></div>' + '<div class="d-none d-xl-block" 		  data-type="xl"></div>';
+    mqDetector.innerHTML = '<div class="d-block d-sm-none" 		   data-type="xs"></div>' + '<div class="d-none d-sm-block d-md-none"  data-type="sm"></div>' + '<div class="d-none d-md-block d-lg-none"  data-type="md"></div>' + '<div class="d-none d-lg-block d-xl-none"  data-type="lg"></div>' + '<div class="d-none d-xl-block d-xxl-none" data-type="xl"></div>' + '<div class="d-none d-xxl-block"           data-type="xxl"></div>';
     return mqDetector;
   }
 

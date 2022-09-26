@@ -1,6 +1,10 @@
 
-.place-order #place_order {
-	@extend .btn-block;
+.place-order {
+	display: grid !important; // d-grid
+
+	#place_order {
+		margin-top: 0.8rem;
+	}
 }
 
 .woocommerce-checkout {
@@ -23,8 +27,8 @@
 	}
 
 	form.checkout_coupon {
-		justify-content: center;
-		text-align: center;
+		display: grid !important; // d-grid
+		gap: 0.25rem !important; // gap-1
 
 		> p:first-child {
 			width: 100%;

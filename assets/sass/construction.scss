@@ -1,11 +1,12 @@
 @charset "UTF-8";
 
-// Bootstrap 4 reboot
-@import "../node_modules/bootstrap/scss/bootstrap-reboot";
-
-// Font-Awesome - 30KB
-@import "fontawesome/fontawesome-variables";
-@import "fontawesome/fontawesome-import";
+// Bootstrap Reboot
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/reboot";
 
 // ==========================================================================
 // Under Construction Template
@@ -86,7 +87,7 @@ a {
 			text-align: left;
 			letter-spacing: .7px;
 
-			span.fa {
+			span.bi {
 				padding-right: 10px;
 				color: #373a40;
 			}
@@ -117,7 +118,7 @@ a {
 				display: inline-block;
 
 				&:not(:last-child) {
-					span.fa {
+					span.bi {
 						margin: 0 1em 0 0;
 					}
 				}
@@ -125,25 +126,25 @@ a {
 				a {
 					color: #ffffff;
 					text-align: center;
-					font-size: 2rem;
+					font-size: 1.5rem;
 
-					span.fa {
-						&.fa-facebook:hover {
+					span.bi {
+						&.bi-facebook:hover {
 							color: #3b5998;
 						}
-						&.fa-twitter:hover {
+						&.bi-twitter:hover {
 							color: #55acee;
 						}
-						&.fa-instagram:hover {
+						&.bi-instagram:hover {
 							color: #f26522;
 						}
-						&.fa-whatsapp:hover {
+						&.bi-whatsapp:hover {
 							color: #078e31;
 						}
-						&.fa-youtube:hover {
+						&.bi-youtube:hover {
 							color: #d20c03;
 						}
-						&.fa-linkedin:hover {
+						&.bi-linkedin:hover {
 							color: #1b3c8e;
 						}
 					}

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(md) {
 	#storms-wc-searchbar-form {
 		.categories-dropdown-btn {
 			display: none;

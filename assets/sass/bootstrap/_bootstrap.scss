@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+// Including Bootstrap Core
+@import "bootstrap-import";
+
+// Including Bootstrap Icons
+$bootstrap-icons-font-file: "../fonts/bootstrap-icons/bootstrap-icons";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+
+// Bootstrap - Custom styles for grid
+@import "bootstrap-grid";

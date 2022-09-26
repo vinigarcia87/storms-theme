@@ -84,3 +84,6 @@ if( ! function_exists( 'storms_testing' ) ) {
 	//add_action( 'wp', 'storms_testing' );
 }
 
+// Debug assets used on the website
+//\StormsFramework\Helper::show_all_scripts();
+

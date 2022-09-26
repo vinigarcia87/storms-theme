@@ -18,6 +18,55 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 
+
+	/**
+	 * Remove screen-reader-text css class from address_2 field
+	 * This class hides the field label and we don't want that
+	 *
+	 * @param $fields
+	 * @return mixed
+	 */
+	function storms_wc_default_address_fields( $fields ) {
+
+		if( isset( $fields['address_2'] ) ) {
+
+			$fields['address_2']['label_class'] = array_filter( $fields['address_2']['label_class'], function ( $array_item ) {
+				return 'screen-reader-text' !== $array_item;
+			} );
+		}
+
+		return $fields;
+	}
+	add_filter( 'woocommerce_default_address_fields', 'storms_wc_default_address_fields' );
+
+	/**
+	 * Change the billing_neighborhood field to be required
+	 *
+	 * @param $fields
+	 * @return mixed
+	 */
+	function storms_wcbcf_billing_fields( $fields ) {
+
+		$fields['billing_neighborhood']['required'] = true;
+
+		return $fields;
+	}
+	add_filter( 'wcbcf_billing_fields', 'storms_wcbcf_billing_fields' );
+
+	/**
+	 * Change the shipping_neighborhood field to be required
+	 *
+	 * @param $fields
+	 * @return mixed
+	 */
+	function storms_wcbcf_shipping_fields( $fields ) {
+
+		$fields['shipping_neighborhood']['required'] = true;
+
+		return $fields;
+	}
+	add_filter( 'wcbcf_shipping_fields', 'storms_wcbcf_shipping_fields' );
+
 	//<editor-fold desc="Field order modifications">
 
 	/**
@@ -25,74 +74,114 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 	 * Return an array of billing fields in order
 	 */
 	function storms_wc_checkout_fields_order_billing_fields() {
-		$order = array(
-			"billing_first_name" 		=> 10,
-			"billing_last_name" 		=> 20,
-			"billing_email" 			=> 30,
+		$fields = [
+			'first_name' 		=> 10,
+			'last_name' 		=> 20,
+			'email' 			=> 30,
 
-			"billing_phone" 			=> 40,
-			"billing_cellphone" 		=> 50,	// ecfb plugin
-			"billing_birthdate" 		=> 60,	// ecfb plugin
-			"billing_sex" 				=> 70,	// ecfb plugin
+			'phone' 			=> 40,
+			'cellphone' 		=> 50,	// ecfb plugin
+			'birthdate' 		=> 60,	// ecfb plugin
+			'sex' 				=> 70,	// ecfb plugin
 
-			"billing_persontype" 		=> 80,	// ecfb plugin
+			'persontype' 		=> 80,	// ecfb plugin
 
-			"billing_cpf" 				=> 90,	// ecfb plugin
-			"billing_rg"				=> 100,	// ecfb plugin
+			'cpf' 				=> 90,	// ecfb plugin
+			'rg'				=> 100,	// ecfb plugin
 
-			"billing_company" 			=> 110,
-			"billing_cnpj" 				=> 120,	// ecfb plugin
-			"billing_ie" 				=> 130,	// ecfb plugin
+			'company' 			=> 110,
+			'cnpj' 				=> 120,	// ecfb plugin
+			'ie' 				=> 130,	// ecfb plugin
 
-			"billing_country" 			=> 160,
-			"billing_postcode" 			=> 170,
-			"billing_address_1" 		=> 180,
-			"billing_number" 			=> 190,	// ecfb plugin
-			"billing_address_2" 		=> 200,
-			"billing_neighborhood" 		=> 210,	// ecfb plugin
-			"billing_city" 				=> 220,
-			"billing_state" 			=> 230,
-		);
-
-		return $order;
-	}
-
-	//</editor-fold>
-
-	/**
-	 * Reorder billing fields in WooCommerce Checkout
-	 * @link : http://wordpress.stackexchange.com/a/127490/54025
-	 */
-	function storms_wc_checkout_fields_checkout_order_fields( $fields ) {
-
-		$order = storms_wc_checkout_fields_order_billing_fields();
-
-		foreach( $order as $field => $priority ) {
-			if( isset( $fields["billing"][$field] ) ) {
-				$fields["billing"][$field]['priority'] = $priority;
-			}
-		}
+			'country' 			=> 160,
+			'postcode' 			=> 170,
+			'address_1' 		=> 180,
+			'number' 			=> 190,	// ecfb plugin
+			'address_2' 		=> 200,
+			'neighborhood' 		=> 210,	// ecfb plugin
+			'city' 				=> 220,
+			'state' 			=> 230,
+		];
 
 		return $fields;
 	}
-	add_filter( 'woocommerce_checkout_fields', 'storms_wc_checkout_fields_checkout_order_fields', 10 );
 
 	/**
-	 * Reorder billing fields in WooCommerce Address To Edit
+	 * Reorder billing/shipping fields in WooCommerce Checkout
+	 *
+	 * @param $fields
+	 * @return mixed
 	 */
-	function storms_wc_checkout_fields_address_to_edit( $address, $load_address ) {
+	function storms_wc_checkout_fields_checkout_order_fields( $fields ) {
 
-		$order = storms_wc_checkout_fields_order_billing_fields();
-
-		if( $load_address == 'billing' ) {
-			foreach( $order as $field => $priority ) {
-				if( isset( $address[$field] ) ) {
-					$address[$field]['priority'] = $priority;
+		$fields_ordered = storms_wc_checkout_fields_order_billing_fields();
+		foreach( [ 'billing', 'shipping' ] as $field_type ) {
+			foreach( $fields_ordered as $field => $priority ) {
+				$field_name = $field_type . '_' . $field;
+				if( isset( $fields[$field_type][$field_name] ) ) {
+					$fields[$field_type][$field_name]['priority'] = $priority;
 				}
 			}
 		}
+		return $fields;
+	}
+	add_filter( 'woocommerce_checkout_fields', 'storms_wc_checkout_fields_checkout_order_fields', 999 );
 
-		return $address;
+	/**
+	 * Reorder billing/shipping fields in WooCommerce Address To Edit
+	 *
+	 * @param $address
+	 * @param $load_address
+	 * @return mixed
+	 */
+	function storms_wc_checkout_fields_address_to_edit( $fields, $field_type ) {
+
+		$fields_ordered = storms_wc_checkout_fields_order_billing_fields();
+		foreach( $fields_ordered as $field => $priority ) {
+			$field_name = $field_type . '_' . $field;
+			if( isset( $fields[$field_name] ) ) {
+				$fields[$field_name]['priority'] = $priority;
+			}
+		}
+		return $fields;
 	}
 	add_filter( 'woocommerce_address_to_edit', 'storms_wc_checkout_fields_address_to_edit', 10, 2 );
+
+	/**
+	 * Filter WooCommerce i18n functions to ensure field orders
+	 *
+	 * @param $locales
+	 * @return mixed
+	 */
+	function storms_wc_get_country_locale( $locales ) {
+
+		$field = 'postcode';
+		$fields_ordered = storms_wc_checkout_fields_order_billing_fields();
+
+		$locales['BR'][$field]['priority'] = $fields_ordered[$field];
+
+		return $locales;
+	}
+	add_filter( 'woocommerce_get_country_locale', 'storms_wc_get_country_locale' );
+
+	/**
+	 * Filter WooCommerce i18n functions to ensure field orders
+	 *
+	 * @param $default_locale
+	 * @return mixed
+	 */
+	function storms_wc_get_country_locale_default( $default_locale ) {
+
+		$fields = [ 'first_name', 'last_name', 'company', 'country', 'address_1', 'address_2', 'city', 'state', 'postcode' ];
+		$fields_ordered = storms_wc_checkout_fields_order_billing_fields();
+
+		foreach( $fields as $field ) {
+			$default_locale[$field]['priority'] = $fields_ordered[$field];
+		}
+
+		return $default_locale;
+	}
+	add_filter( 'woocommerce_get_country_locale_default', 'storms_wc_get_country_locale_default' );
+
+	//</editor-fold>
 }

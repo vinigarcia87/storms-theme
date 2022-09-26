@@ -1,13 +1,8 @@
-table.shop_table {
-	tr.coupon > td {
-		.button {
-			@extend .btn-block;
-		}
-	}
-}
 
-.checkout-button {
-	@extend .btn-block;
+.cart_totals .wc-proceed-to-checkout,
+tr.coupon .woocommerce-cupon-form {
+	display: grid !important; // d-grid
+	gap: 0.25rem !important; // gap-1
 }
 
 .cross-sells {
@@ -24,7 +19,7 @@ table.shop_table {
 			border: none;
 			border-collapse: collapse;
 
-			@include media-breakpoint-down(md) {
+			@include media-breakpoint-down(lg) {
 				th.product-thumbnail,
 				td.product-thumbnail {
 					display: none;
@@ -35,7 +30,8 @@ table.shop_table {
 				text-align: center;
 				vertical-align: middle;
 				text-transform: uppercase;
-				border-bottom: 1px solid theme-color("light");
+				border-top: 1px solid var(--bs-gray-300);
+				border-bottom: 1px solid var(--bs-gray-300);
 			}
 
 			& > tbody > tr {
@@ -82,8 +78,8 @@ table.shop_table {
 
 					.button {
 						color: #fff;
-						background-color: theme-color("primary");
-						border-color: theme-color("primary");
+						background-color: var(--bs-primary);
+						border-color: var(--bs-primary);
 					}
 
 				}
@@ -128,14 +124,6 @@ table.shop_table {
 					padding-left: 0;
 				}
 
-				tr.coupon {
-					& > td {
-						.input-text {
-							margin-bottom: 5px;
-						}
-					}
-				}
-
 				tr.cart_item {
 					td.product {
 						text-align: left;
@@ -146,7 +134,7 @@ table.shop_table {
 							float: left;
 
 							.variation {
-								@extend .clearfix;
+								@include clearfix();
 								font-size: 14px;
 							}
 						}
@@ -184,7 +172,7 @@ table.shop_table {
 
 				tr.order-total {
 					font-size: 20px;
-					background-color: theme-color("light");
+					background-color: var(--bs-light);
 				}
 			}
 		}

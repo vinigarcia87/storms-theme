@@ -16,7 +16,7 @@ use \StormsFramework\Template;
 
 defined( 'ABSPATH' ) || exit;
 ?>
-<nav id="main-navigation" class="main-menu navbar navbar-expand-md navbar-light bg-light" role="navigation" data-toggle="sticky-onscroll">
+<nav id="main-navigation" class="main-menu navbar navbar-expand-lg navbar-light bg-light" role="navigation" data-toggle="sticky-onscroll">
 	<div class="<?php echo Template::menu_container(); ?>">
 
 		<?php if( 'yes' === \StormsFramework\Helper::get_option( 'storms_show_menu_image', 'yes' ) ) : ?>
@@ -39,9 +39,8 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php endif; ?>
 
-		<!-- Botao collapse menu para mobile -->
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<!-- Collapse menu button for mobile -->
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 
@@ -49,12 +48,12 @@ defined( 'ABSPATH' ) || exit;
 			<?php
 				wp_nav_menu(
 					array(
-						'theme_location' => 'main_menu',
-						'depth'          => 2,
-						'container'      => false,
-						'menu_class'     => 'nav navbar-nav',
-						'fallback_cb'    => '\\StormsFramework\\Bootstrap\\WP_Bootstrap_Navwalker::fallback',
-						'walker'         => new \StormsFramework\Bootstrap\WP_Bootstrap_Navwalker()
+						'theme_location'  => 'main_menu',
+						'depth'           => 2,
+						'container'       => false,
+						'menu_class'      => 'navbar-nav',
+						'fallback_cb'     => '\\StormsFramework\\Bootstrap\\WP_Bootstrap_Navwalker::fallback',
+						'walker'          => new \StormsFramework\Bootstrap\WP_Bootstrap_Navwalker()
 					)
 				);
 			?>

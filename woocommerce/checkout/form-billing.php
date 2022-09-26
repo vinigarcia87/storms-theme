@@ -11,7 +11,7 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce/Templates
+ * @package WooCommerce\Templates
  * @version 3.6.0
  * @global WC_Checkout $checkout
  */
@@ -53,12 +53,12 @@ defined( 'ABSPATH' ) || exit;
 	<div class="woocommerce-account-fields">
 		<?php if ( ! $checkout->is_registration_required() ) : ?>
 
-			<div class="form-row-wide form-group">
-				<p class="form-check create-account">
-					<input class="form-check-input woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" id="createaccount" <?php checked( ( true === $checkout->get_value( 'createaccount' ) || ( true === apply_filters( 'woocommerce_create_account_default_checked', false ) ) ), true ); ?> type="checkbox" name="createaccount" value="1" />
-					<label for="createaccount" class="form-check-label woocommerce-form__label woocommerce-form__label-for-checkbox checkbox"><?php esc_html_e( 'Create an account?', 'woocommerce' ); ?></label>
-				</p>
-			</div>
+			<p class="form-row form-row-wide create-account form-check">
+				<input class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox form-check-input" id="createaccount" <?php checked( ( true === $checkout->get_value( 'createaccount' ) || ( true === apply_filters( 'woocommerce_create_account_default_checked', false ) ) ), true ); ?> type="checkbox" name="createaccount" value="1" />
+				<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox form-check-label">
+ 					<span><?php esc_html_e( 'Create an account?', 'woocommerce' ); ?></span>
+				</label>
+			</p>
 
 		<?php endif; ?>
 

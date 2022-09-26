@@ -86,11 +86,12 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 			update_option('woocommerce_logout_endpoint', 'sair');
 
 			// Avaliações dos usuarios
-			//update_option('woocommerce_enable_reviews', 'yes' ); // <-- Configure this option on your child theme
-			update_option('woocommerce_review_rating_verification_required', 'yes' ); // <-- Better for LGPD
-			//update_option('woocommerce_review_rating_verification_label', 'yes' );
-			//update_option('woocommerce_enable_review_rating', 'yes' );
-			//update_option('woocommerce_review_rating_required', 'yes' );
+			update_option('woocommerce_enable_reviews', 'yes' ); 						// <-- Configure this option on your child theme
+
+			update_option('woocommerce_review_rating_verification_required', 'no' ); 	// Only allow to review the customers who bought the product - This is better for GDPR/LGPD
+			update_option('woocommerce_review_rating_verification_label', 'yes' ); 	// Check if the user commenting had bought the product
+			update_option('woocommerce_enable_review_rating', 'yes' ); 				// Star rating the product enabled
+			update_option('woocommerce_review_rating_required', 'yes' ); 				// Star rating is required to leave a review
 
 			if( 'production' != wp_get_environment_type() ) {
 				update_option('woocommerce_force_ssl_checkout', 'no');

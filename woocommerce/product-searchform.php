@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<input type="hidden" name="post_type" value="product" />
 
-		<button class="btn" type="submit"><span class="fa fa-search" aria-hidden="true"></span></button>
+		<button class="btn" type="submit"><span class="bi bi-search" aria-hidden="true"></span></button>
 	</div>
 
 </form>

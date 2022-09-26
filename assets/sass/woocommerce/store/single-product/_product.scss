@@ -41,3 +41,8 @@ table.variations {
 		@extend .form-control;
 	}
 }
+
+.commentlist {
+	@extend .list-unstyled;
+}
+

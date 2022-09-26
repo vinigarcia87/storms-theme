@@ -18,14 +18,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 //<editor-fold desc="Debug functions">
 
-function storms_log_scripts() {
-	if( ! is_admin() ) {
-		$wp_scripts = wp_scripts();
-		\StormsFramework\Helper::debug( $wp_scripts->queue, 'storms_inspect_scripts' );
-	}
-}
-add_action( 'wp_head', 'storms_log_scripts', 999 );
-
 class StormsBuffer {
 	static $return = [];
 }

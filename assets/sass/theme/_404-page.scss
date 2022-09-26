@@ -1,3 +1,4 @@
+@charset "UTF-8";
 
 .error404 {
 
@@ -7,6 +8,12 @@
 		@include make-col(12);
 		@include media-breakpoint-up(sm) {
 			@include make-col(6);
+		}
+	}
+
+	.page404-message {
+		p {
+			text-align: justify;
 		}
 	}
 

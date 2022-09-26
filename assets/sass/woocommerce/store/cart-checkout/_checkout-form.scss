@@ -1,0 +1,83 @@
+$form-fields: (
+	"shipping",
+	"billing"
+);
+
+@each $form-field in $form-fields {
+
+	p##{$form-field}_first_name_field,
+	p##{$form-field}_cnpj_field,
+	p##{$form-field}_birthdate_field,
+	p##{$form-field}_country_field,
+	p##{$form-field}_neighborhood_field,
+	p##{$form-field}_city_field,
+	p##{$form-field}_phone_field {
+		@include media-breakpoint-up(sm) {
+			@include make-col-ready();
+			@include make-col(6);
+			float: left !important;
+			padding-left: 0;
+		}
+	}
+
+	p##{$form-field}_last_name_field,
+	p##{$form-field}_ie_field,
+	p##{$form-field}_sex_field,
+	p##{$form-field}_postcode_field,
+	p##{$form-field}_city_field,
+	p##{$form-field}_cellphone_field {
+		@include media-breakpoint-up(sm) {
+			@include make-col-ready();
+			@include make-col(6);
+			float: right !important;
+			padding-right: 0;
+		}
+	}
+
+	p##{$form-field}_address_1_field {
+		@include media-breakpoint-up(sm) {
+			@include make-col-ready();
+			@include make-col(9);
+			float: left !important;
+			padding-left: 0;
+		}
+	}
+
+	p##{$form-field}_number_field {
+		@include media-breakpoint-up(sm) {
+			@include make-col-ready();
+			@include make-col(3);
+			float: right !important;
+			padding-right: 0;
+		}
+	}
+
+	p##{$form-field}_country_field {
+		span.woocommerce-input-wrapper {
+			@extend .form-control-plaintext;
+		}
+	}
+
+}
+
+p#billing_ie_field div.isento-checkbox {
+	width: auto;
+	display: inline;
+	float: right;
+	margin: 0;
+}
+
+.woocommerce-billing-fields,
+.woocommerce-address-fields {
+	div#st-msg-box {
+		overflow: auto;
+	}
+
+	div.storms-tipo-compra,
+	div.storms-is-contribuinte {
+		@include make-col-ready();
+		@include make-col(12);
+		padding: 0;
+		margin-bottom: 1rem;
+	}
+}

@@ -34,7 +34,10 @@ if( ! function_exists( 'theme_setup' ) ) {
 
         // YOST SEO Breadcrumbs
         add_theme_support( 'yoast-seo-breadcrumbs');
-    }
+
+        // Restore Classic Wordpress Widgets
+		remove_theme_support( 'widgets-block-editor' );
+	}
     add_action( 'after_setup_theme', 'storms_theme_setup' );
 }
 
