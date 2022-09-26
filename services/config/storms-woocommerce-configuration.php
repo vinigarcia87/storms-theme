@@ -103,7 +103,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 
 			// Check for woocommerce-extra-checkout-fields-for-brazil plugin
 			if ( \StormsFramework\Helper::is_plugin_activated( 'woocommerce-extra-checkout-fields-for-brazil/woocommerce-extra-checkout-fields-for-brazil.php' ) ) {
-				\StormsFramework\Helper::debug(get_option('wcbcf_settings'));
+
 				/**
 				 * IMPORTANT!
 				 * For some reason, this plugin don't accept 0 as option
@@ -124,8 +124,6 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 					'validate_cnpj' 	=> 1,
 				));
 
-
-				\StormsFramework\Helper::debug(get_option('wcbcf_settings'));
 			}
 
 		}

@@ -26,10 +26,12 @@ var gulp          = require('gulp'),
 	sass          = require('gulp-sass'),
 
 	concat        = require('gulp-concat'),
-	babel 		  = require('gulp-babel'),
+	gulp_babel 	  = require('gulp-babel'),
 	uglify        = require('gulp-terser'),
-	rollup  	  = require('rollup-stream'),
-	rollup_babel  = require('rollup-plugin-babel'),
+
+	rollup  	  = require('@rollup/stream'),
+	{babel}       = require('@rollup/plugin-babel'),
+	{nodeResolve} = require('@rollup/plugin-node-resolve'),
 	source 		  = require('vinyl-source-stream'),
 
 	imagemin      = require('gulp-imagemin'),
@@ -108,8 +110,7 @@ gulp.task('load-assets', async function() {
 	.pipe(notify({ message: 'Load jQuery scripts task complete', onLast: true }));
 
 	gulp.src([
-		'node_modules/@popperjs/core/dist/umd/popper.js',	// Bootstrap dropdowns, popovers and tooltips depend on Popper.js
-		'node_modules/bootstrap/js/src/**/*.js'				// Bootstrap 5 javascript plugins
+		'node_modules/@popperjs/core/dist/umd/popper.js'	// Bootstrap 5 depend on Popper.js for some plugins
 	])
 	.pipe(gulp.dest('js/bootstrap'))
 	.pipe(notify({ message: 'Load Bootstrap scripts task complete', onLast: true }));
@@ -143,7 +144,7 @@ function scripts_source() {
 			'./js/src/**/*.js', // All our custom scripts
 			'!./js/src/bootstrap.js'
 		] ),
-		babel({
+		gulp_babel({
 			presets: ['@babel/env']
 		}),
 		//debug(),
@@ -161,25 +162,27 @@ gulp.task('scripts', gulp.parallel(scripts_3rd_party, scripts_source));
 gulp.task('bootstrap', function() {
 	return rollup({
 		input: './js/src/bootstrap.js',
-		format: 'umd',
-		name: 'bootstrap',
-		globals: {
-			jquery: 'jQuery', // Ensure we use jQuery which is always available even in noConflict mode
-			'@popperjs/core': 'Popper'
-		},
 		output: {
 			generatedCode: 'es2015',
 			format: 'umd',
-			name: 'bootstrap'
+			name: 'bootstrap',
+			globals: {
+				jquery: 'jQuery', // Ensure we use jQuery which is always available even in noConflict mode
+				'@popperjs/core': 'Popper'
+			},
 		},
 		external: [ '@popperjs/core' ],
 		plugins: [
-			rollup_babel({
+			nodeResolve(),
+			babel({
 				presets: [ '@babel/preset-env' ],
 				babelrc: false,
-				exclude: 'node_modules/**' }),
+				babelHelpers: 'bundled',
+				exclude: 'node_modules/**'
+			}),
 		]
 	})
+	.pipe( plumber() ) // error tracking
 	// give the file the name you want to output with.
 	.pipe(source('bootstrap.js'))
 	// and output to directory
