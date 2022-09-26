@@ -87,7 +87,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 
 			// Avaliações dos usuarios
 			//update_option('woocommerce_enable_reviews', 'yes' ); // <-- Configure this option on your child theme
-			update_option('woocommerce_review_rating_verification_required', 'yes' ); // <-- Better for LGPD
+			//update_option('woocommerce_review_rating_verification_required', 'yes' ); // <-- Better for LGPD
 			//update_option('woocommerce_review_rating_verification_label', 'yes' );
 			//update_option('woocommerce_enable_review_rating', 'yes' );
 			//update_option('woocommerce_review_rating_required', 'yes' );

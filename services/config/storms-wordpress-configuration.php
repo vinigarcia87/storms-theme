@@ -46,12 +46,14 @@ if( ! function_exists( 'storms_define_wordpress_options' ) ) {
 		update_option( 'users_can_register', '1' );
 
 		// Comments configuration
-		update_option( 'default_pingback_flag', 'no' );
-		update_option( 'default_ping_status', 'no' );
-		update_option( 'default_comment_status', 'no' );
-		update_option( 'comment_registration', 'no' );
+		update_option( 'default_comment_status', 'open' );
+		update_option( 'comment_registration', '0' );
+		update_option( 'require_name_email', '1' );
 		update_option( 'page_comments', '1' );
 		update_option( 'comments_per_page', 5 );
+
+		update_option( 'default_pingback_flag', 'no' );
+		update_option( 'default_ping_status', '0' );
     }
     add_action( 'admin_init', 'storms_define_wordpress_options' );
 
