@@ -12871,7 +12871,7 @@ fieldset:disabled #respond input#submit,
   content: "";
 }
 
-.bi-cart-fill::before {
+.bi-cart-fill::before, .storms-wc-mini-cart .st-ic-shop-cart::before {
   content: "";
 }
 
@@ -20516,15 +20516,7 @@ td.product-quantity {
 }
 
 .storms-wc-mini-cart .st-ic-shop-cart {
-  width: 21px;
-  height: 21px;
-  background-size: cover;
-  vertical-align: text-bottom;
   margin-right: 5px;
-  background-image: url("/wp-content/themes/storms-theme/assets/img/shopping_cart_regular.svg");
-  
-  -webkit-filter: invert(71%) sepia(36%) saturate(370%) hue-rotate(156deg) brightness(96%) contrast(93%);
-          filter: invert(71%) sepia(36%) saturate(370%) hue-rotate(156deg) brightness(96%) contrast(93%);
 }
 
 .widget_shopping_cart,

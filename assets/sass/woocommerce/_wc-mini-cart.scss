@@ -67,23 +67,8 @@
 	}
 
 	.st-ic-shop-cart {
-		@extend .bi;
-
-		width: 21px;
-		height: 21px;
-		background-size: cover;
-		vertical-align: text-bottom;
+		@extend .bi, .bi-cart-fill;
 		margin-right: 5px;
-
-		//transform: scaleX(-1);
-		background-image: url('/wp-content/themes/storms-theme/assets/img/shopping_cart_regular.svg');
-
-		/**
-		 * Keep the SVG black, and aplly the filters to change it to the desired color
-		 * Use the following tool to generate the correct filters: https://codepen.io/sosuke/pen/Pjoqqp
-		 * @see https://css-tricks.com/change-color-of-svg-on-hover/
-		 */
-		filter: invert(71%) sepia(36%) saturate(370%) hue-rotate(156deg) brightness(96%) contrast(93%);
 	}
 
 }
