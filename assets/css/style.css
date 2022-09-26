@@ -19835,6 +19835,13 @@ body.admin-bar #main-navigation.fixed-top {
   }
 }
 
+.breadcrumb {
+  padding: 12px 16px;
+  padding: 0.75rem 1rem;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+}
+
 .search-form,
 .woocommerce-product-search {
   margin-top: 8px !important;
@@ -20725,10 +20732,7 @@ td.product-quantity {
   display: inline-block;
   width: 100%;
   text-align: center;
-}
-
-.storms-wc-user-menu a.user-menu-link .st-ic-user-circle {
-  margin-top: 6px;
+  padding: 10px 0;
 }
 
 .storms-wc-user-menu a.user-menu-link .user-menu-text {
@@ -20802,6 +20806,10 @@ td.product-quantity {
 .storms-menu-usuario-deslogado-container {
   padding: 16px;
   padding: 1rem;
+}
+
+.storms-menu-usuario-deslogado-container p {
+  display: grid !important;
 }
 
 .storms-menu-usuario-deslogado-container p:last-child {

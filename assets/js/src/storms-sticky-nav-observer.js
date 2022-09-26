@@ -40,9 +40,9 @@ if( 'IntersectionObserver' in window ) {
 
 					const is_device_unknown = ! is_device_xs && ! is_device_sm && ! is_device_md && ! is_device_lg && ! is_device_xl && ! is_device_xxl;
 
-					// Avoid this behaviour on specific media sizes
 					// TODO Make this filter customizable
-					if( is_device_xs || is_device_sm || is_device_md || is_device_lg || is_device_xxl ) {
+					// On those specific sizes, we not gonna stick our header
+					if( is_device_xs || is_device_sm || is_device_md || is_device_lg ) {
 
 						sticky_el.classList.add('position-static');
 						sticky_el.classList.remove('fixed-top');

@@ -11,11 +11,11 @@
 		display: inline-block;
 		width: 100%;
 		text-align: center;
+		padding: 10px 0;
 
 		.st-ic-user-circle {
 			@extend .bi;
 			@extend .bi-person-circle;
-			margin-top: 6px;
 		}
 
 		.user-menu-text {
@@ -99,6 +99,10 @@
 
 .storms-menu-usuario-deslogado-container {
 	padding: 1rem;
+
+	p {
+		display: grid !important;
+	}
 
 	p:last-child {
 		margin-bottom: 0;

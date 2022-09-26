@@ -32,10 +32,10 @@ if ('IntersectionObserver' in window) {
         var is_device_xl = body_class_list.contains('sts-media-xl');
         var is_device_xxl = body_class_list.contains('sts-media-xxl'); // Maybe we couldn't identify the device's size
 
-        var is_device_unknown = !is_device_xs && !is_device_sm && !is_device_md && !is_device_lg && !is_device_xl && !is_device_xxl; // Avoid this behaviour on specific media sizes
-        // TODO Make this filter customizable
+        var is_device_unknown = !is_device_xs && !is_device_sm && !is_device_md && !is_device_lg && !is_device_xl && !is_device_xxl; // TODO Make this filter customizable
+        // On those specific sizes, we not gonna stick our header
 
-        if (is_device_xs || is_device_sm || is_device_md || is_device_lg || is_device_xxl) {
+        if (is_device_xs || is_device_sm || is_device_md || is_device_lg) {
           sticky_el.classList.add('position-static');
           sticky_el.classList.remove('fixed-top');
           body.classList.remove('has-fixed-menu');
