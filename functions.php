@@ -87,3 +87,5 @@ if( ! function_exists( 'storms_testing' ) ) {
 // Debug assets used on the website
 //\StormsFramework\Helper::show_all_scripts();
 
+// Disable cached fragments
+//add_filter( 'storms_saved_fragment_cache', '__return_null' );
