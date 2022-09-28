@@ -1,6 +1,6 @@
 {
   "name": "storms-theme",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "author": "Storms Websolutions",
   "description": "Storms Theme is the base theme that will help you create easy wordpress websites.",
   "license": "ISC",
@@ -36,7 +36,7 @@
     "gulp-postcss": "^9.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-rimraf": "^0.2.1",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-strip-css-comments": "^1.2.0",
     "gulp-terser": "^2.1.0",
@@ -45,10 +45,11 @@
     "postcss-merge-rules": "^5.1.2",
     "readable-stream": "^3.6.0",
     "rollup": "^2.79.1",
+    "sass": "^1.55.0",
     "vinyl-source-stream": "^2.0.0"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=16.0.0"
   },
   "scripts": {
     "postinstall": "gulp load-assets"
