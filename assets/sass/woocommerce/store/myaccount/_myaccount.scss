@@ -1,48 +1,27 @@
 .woocommerce-account {
-
 	.woocommerce {
 
-		// Login form on checkout page
-		.woocommerce-form-login {
-			width: 40%;
-		}
-
-		@include media-breakpoint-up(lg) {
-			.woocommerce-form-login,
-			.woocommerce-form-register {
-				padding-right: 110px;
-			}
+		.col-1,
+		.col-2 {
+			@include make-col-ready();
 		}
 
 		.col2-set {
 			@include make-row();
 
-			.col-1,
-			.col-2 {
-				@include make-col-ready();
-				@include media-breakpoint-up(sm) {
-					@include make-col(6);
-				}
-
-				.woocommerce-form-login {
-					width: auto;
-				}
+			@include media-breakpoint-up(sm) {
+				@include row-cols(2);
 			}
 		}
 
-		.woocommerce-privacy-policy-text {
-			p {
-				text-align: justify;
-			}
+		// Login / Register
+		.woocommerce-form-login .form-row,
+		.woocommerce-form-register .woocommerce-form-row {
+			display: grid !important;
 		}
-
-		.input-text {
-			@extend .form-control;
-		}
-
-		label.woocommerce-form__label.woocommerce-form__label-for-checkbox.inline {
-			display: block;
-			margin-top: 15px;
+		.woocommerce-form-login__submit,
+		.woocommerce-form-register__submit {
+			margin: 0.8rem 0;
 		}
 
 		.woocommerce-form-login__submit {
@@ -51,13 +30,7 @@
 			margin-bottom: 10px;
 		}
 
-		.register {
-			.woocommerce-Button[name=register] {
-				display: block;
-				@extend .btn-primary;
-			}
-		}
-
+		// My Account panels
 		.woocommerce-MyAccount-navigation {
 			@include make-col-ready();
 			@include make-col(3);
@@ -71,7 +44,6 @@
 				}
 			}
 		}
-
 		.woocommerce-MyAccount-content {
 			@include make-col-ready();
 			@include make-col(9);

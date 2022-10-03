@@ -894,7 +894,7 @@ progress {
   color: #6c757d;
 }
 
-.form-control, table.variations select, .woocommerce-account .woocommerce .input-text, .input-text.qty, .input-text {
+.form-control, table.variations select, .input-text.qty, .input-text {
   display: block;
   width: 100%;
   padding: 6px 12px;
@@ -917,18 +917,18 @@ progress {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .form-control, table.variations select, .woocommerce-account .woocommerce .input-text, .input-text.qty, .input-text {
+  .form-control, table.variations select, .input-text.qty, .input-text {
     -webkit-transition: none;
     transition: none;
   }
 }
-.form-control[type=file], table.variations select[type=file], .woocommerce-account .woocommerce [type=file].input-text, [type=file].input-text {
+.form-control[type=file], table.variations select[type=file], [type=file].input-text {
   overflow: hidden;
 }
 .form-control[type=file]:not(:disabled):not([readonly]), table.variations select[type=file]:not(:disabled):not([readonly]), [type=file].input-text:not(:disabled):not([readonly]) {
   cursor: pointer;
 }
-.form-control:focus, table.variations select:focus, .woocommerce-account .woocommerce .input-text:focus, .input-text:focus {
+.form-control:focus, table.variations select:focus, .input-text:focus {
   color: #212529;
   background-color: #fff;
   border-color: #86b7fe;
@@ -936,30 +936,30 @@ progress {
   -webkit-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
           box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
-.form-control::-webkit-date-and-time-value, table.variations select::-webkit-date-and-time-value, .woocommerce-account .woocommerce .input-text::-webkit-date-and-time-value, .input-text.qty::-webkit-date-and-time-value, .input-text::-webkit-date-and-time-value {
+.form-control::-webkit-date-and-time-value, table.variations select::-webkit-date-and-time-value, .input-text.qty::-webkit-date-and-time-value, .input-text::-webkit-date-and-time-value {
   height: 1.5em;
 }
-.form-control::-webkit-input-placeholder, table.variations select::-webkit-input-placeholder, .woocommerce-account .woocommerce .input-text::-webkit-input-placeholder, .input-text.qty::-webkit-input-placeholder, .input-text::-webkit-input-placeholder {
+.form-control::-webkit-input-placeholder, table.variations select::-webkit-input-placeholder, .input-text.qty::-webkit-input-placeholder, .input-text::-webkit-input-placeholder {
   color: #6c757d;
   opacity: 1;
 }
-.form-control::-moz-placeholder, table.variations select::-moz-placeholder, .woocommerce-account .woocommerce .input-text::-moz-placeholder, .input-text.qty::-moz-placeholder, .input-text::-moz-placeholder {
+.form-control::-moz-placeholder, table.variations select::-moz-placeholder, .input-text.qty::-moz-placeholder, .input-text::-moz-placeholder {
   color: #6c757d;
   opacity: 1;
 }
-.form-control::-ms-input-placeholder, table.variations select::-ms-input-placeholder, .woocommerce-account .woocommerce .input-text::-ms-input-placeholder, .input-text.qty::-ms-input-placeholder, .input-text::-ms-input-placeholder {
+.form-control::-ms-input-placeholder, table.variations select::-ms-input-placeholder, .input-text.qty::-ms-input-placeholder, .input-text::-ms-input-placeholder {
   color: #6c757d;
   opacity: 1;
 }
-.form-control::placeholder, table.variations select::placeholder, .woocommerce-account .woocommerce .input-text::placeholder, .input-text.qty::placeholder, .input-text::placeholder {
+.form-control::placeholder, table.variations select::placeholder, .input-text.qty::placeholder, .input-text::placeholder {
   color: #6c757d;
   opacity: 1;
 }
-.form-control:disabled, table.variations select:disabled, .woocommerce-account .woocommerce .input-text:disabled, .input-text:disabled {
+.form-control:disabled, table.variations select:disabled, .input-text:disabled {
   background-color: #e9ecef;
   opacity: 1;
 }
-.form-control::file-selector-button, table.variations select::file-selector-button, .woocommerce-account .woocommerce .input-text::file-selector-button, .input-text.qty::file-selector-button, .input-text::file-selector-button {
+.form-control::file-selector-button, table.variations select::file-selector-button, .input-text.qty::file-selector-button, .input-text::file-selector-button {
   padding: 6px 12px;
   padding: 0.375rem 0.75rem;
   margin: -6px -12px;
@@ -982,7 +982,7 @@ progress {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .form-control::file-selector-button, table.variations select::file-selector-button, .woocommerce-account .woocommerce .input-text::file-selector-button, .input-text.qty::file-selector-button, .input-text::file-selector-button {
+  .form-control::file-selector-button, table.variations select::file-selector-button, .input-text.qty::file-selector-button, .input-text::file-selector-button {
     -webkit-transition: none;
     transition: none;
   }
@@ -1049,7 +1049,7 @@ progress {
           margin-inline-end: 1rem;
 }
 
-textarea.form-control, .woocommerce-account .woocommerce textarea.input-text, textarea.input-text.qty, textarea.input-text {
+textarea.form-control, textarea.input-text.qty, textarea.input-text {
   min-height: calc(1.5em + 0.75rem + 2px);
 }
 textarea.form-control-sm {
@@ -1407,7 +1407,7 @@ select.state_select:-moz-focusring {
 .form-floating {
   position: relative;
 }
-.form-floating > .form-control, table.variations .form-floating > select, .woocommerce-account .woocommerce .form-floating > .input-text, .form-floating > .input-text,
+.form-floating > .form-control, table.variations .form-floating > select, .form-floating > .input-text,
 .form-floating > .form-control-plaintext,
 p#billing_country_field .form-floating > span.woocommerce-input-wrapper,
 p#shipping_country_field .form-floating > span.woocommerce-input-wrapper,
@@ -1446,7 +1446,7 @@ p#shipping_country_field .form-floating > span.woocommerce-input-wrapper,
     transition: none;
   }
 }
-.form-floating > .form-control, table.variations .form-floating > select, .woocommerce-account .woocommerce .form-floating > .input-text, .form-floating > .input-text,
+.form-floating > .form-control, table.variations .form-floating > select, .form-floating > .input-text,
 .form-floating > .form-control-plaintext,
 p#billing_country_field .form-floating > span.woocommerce-input-wrapper,
 p#shipping_country_field .form-floating > span.woocommerce-input-wrapper,
@@ -1454,28 +1454,28 @@ p#shipping_country_field .form-floating > span.woocommerce-input-wrapper,
   padding: 16px 12px;
   padding: 1rem 0.75rem;
 }
-.form-floating > .form-control::-webkit-input-placeholder, table.variations .form-floating > select::-webkit-input-placeholder, .woocommerce-account .woocommerce .form-floating > .input-text::-webkit-input-placeholder, .form-floating > .input-text::-webkit-input-placeholder,
+.form-floating > .form-control::-webkit-input-placeholder, table.variations .form-floating > select::-webkit-input-placeholder, .form-floating > .input-text::-webkit-input-placeholder,
 .form-floating > .form-control-plaintext::-webkit-input-placeholder,
 p#billing_country_field .form-floating > span.woocommerce-input-wrapper::-webkit-input-placeholder,
 p#shipping_country_field .form-floating > span.woocommerce-input-wrapper::-webkit-input-placeholder,
 .form-floating > .woocommerce-result-count::-webkit-input-placeholder {
   color: transparent;
 }
-.form-floating > .form-control::-moz-placeholder, table.variations .form-floating > select::-moz-placeholder, .woocommerce-account .woocommerce .form-floating > .input-text::-moz-placeholder, .form-floating > .input-text::-moz-placeholder,
+.form-floating > .form-control::-moz-placeholder, table.variations .form-floating > select::-moz-placeholder, .form-floating > .input-text::-moz-placeholder,
 .form-floating > .form-control-plaintext::-moz-placeholder,
 p#billing_country_field .form-floating > span.woocommerce-input-wrapper::-moz-placeholder,
 p#shipping_country_field .form-floating > span.woocommerce-input-wrapper::-moz-placeholder,
 .form-floating > .woocommerce-result-count::-moz-placeholder {
   color: transparent;
 }
-.form-floating > .form-control::-ms-input-placeholder, table.variations .form-floating > select::-ms-input-placeholder, .woocommerce-account .woocommerce .form-floating > .input-text::-ms-input-placeholder, .form-floating > .input-text::-ms-input-placeholder,
+.form-floating > .form-control::-ms-input-placeholder, table.variations .form-floating > select::-ms-input-placeholder, .form-floating > .input-text::-ms-input-placeholder,
 .form-floating > .form-control-plaintext::-ms-input-placeholder,
 p#billing_country_field .form-floating > span.woocommerce-input-wrapper::-ms-input-placeholder,
 p#shipping_country_field .form-floating > span.woocommerce-input-wrapper::-ms-input-placeholder,
 .form-floating > .woocommerce-result-count::-ms-input-placeholder {
   color: transparent;
 }
-.form-floating > .form-control::placeholder, table.variations .form-floating > select::placeholder, .woocommerce-account .woocommerce .form-floating > .input-text::placeholder, .form-floating > .input-text::placeholder,
+.form-floating > .form-control::placeholder, table.variations .form-floating > select::placeholder, .form-floating > .input-text::placeholder,
 .form-floating > .form-control-plaintext::placeholder,
 p#billing_country_field .form-floating > span.woocommerce-input-wrapper::placeholder,
 p#shipping_country_field .form-floating > span.woocommerce-input-wrapper::placeholder,
@@ -1550,7 +1550,7 @@ p#shipping_country_field .form-floating > span.woocommerce-input-wrapper ~ label
           align-items: stretch;
   width: 100%;
 }
-.input-group > .form-control, table.variations .input-group > select, .woocommerce-account .woocommerce .input-group > .input-text, .input-group > .input-text,
+.input-group > .form-control, table.variations .input-group > select, .input-group > .input-text,
 .input-group > .form-select,
 .woocommerce-ordering .input-group > .orderby,
 .input-group > select.country_select,
@@ -1604,7 +1604,7 @@ p#shipping_country_field .form-floating > span.woocommerce-input-wrapper ~ label
   border-radius: 0.375rem;
 }
 
-.input-group-lg > .form-control, table.variations .input-group-lg > select, .woocommerce-account .woocommerce .input-group-lg > .input-text, .input-group-lg > .input-text,
+.input-group-lg > .form-control, table.variations .input-group-lg > select, .input-group-lg > .input-text,
 .input-group-lg > .form-select,
 .woocommerce-ordering .input-group-lg > .orderby,
 .input-group-lg > select.country_select,
@@ -1620,7 +1620,7 @@ p#shipping_country_field .form-floating > span.woocommerce-input-wrapper ~ label
   border-radius: 0.5rem;
 }
 
-.input-group-sm > .form-control, table.variations .input-group-sm > select, .woocommerce-account .woocommerce .input-group-sm > .input-text, .input-group-sm > .input-text,
+.input-group-sm > .form-control, table.variations .input-group-sm > select, .input-group-sm > .input-text,
 .input-group-sm > .form-select,
 .woocommerce-ordering .input-group-sm > .orderby,
 .input-group-sm > select.country_select,
@@ -1712,7 +1712,7 @@ table.variations .input-group.has-validation > .form-floating:nth-last-child(n+3
   display: block;
 }
 
-.was-validated .form-control:valid, .was-validated table.variations select:valid, table.variations .was-validated select:valid, .was-validated .input-text:valid, .form-control.is-valid, table.variations select.is-valid, .woocommerce-account .woocommerce .is-valid.input-text, .is-valid.input-text {
+.was-validated .form-control:valid, .was-validated table.variations select:valid, table.variations .was-validated select:valid, .was-validated .input-text:valid, .form-control.is-valid, table.variations select.is-valid, .is-valid.input-text {
   border-color: #198754;
   padding-right: calc(1.5em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
@@ -1726,7 +1726,7 @@ table.variations .input-group.has-validation > .form-floating:nth-last-child(n+3
           box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
 }
 
-.was-validated textarea.form-control:valid, .was-validated textarea.input-text:valid, textarea.form-control.is-valid, .woocommerce-account .woocommerce textarea.is-valid.input-text, textarea.is-valid.input-text {
+.was-validated textarea.form-control:valid, .was-validated textarea.input-text:valid, textarea.form-control.is-valid, textarea.is-valid.input-text {
   padding-right: calc(1.5em + 0.75rem);
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
@@ -1826,7 +1826,7 @@ select.is-valid.state_select:focus {
   display: block;
 }
 
-.was-validated .form-control:invalid, .was-validated table.variations select:invalid, table.variations .was-validated select:invalid, .was-validated .input-text:invalid, .form-control.is-invalid, table.variations select.is-invalid, .woocommerce-account .woocommerce .is-invalid.input-text, .is-invalid.input-text {
+.was-validated .form-control:invalid, .was-validated table.variations select:invalid, table.variations .was-validated select:invalid, .was-validated .input-text:invalid, .form-control.is-invalid, table.variations select.is-invalid, .is-invalid.input-text {
   border-color: #dc3545;
   padding-right: calc(1.5em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
@@ -1840,7 +1840,7 @@ select.is-valid.state_select:focus {
           box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
 }
 
-.was-validated textarea.form-control:invalid, .was-validated textarea.input-text:invalid, textarea.form-control.is-invalid, .woocommerce-account .woocommerce textarea.is-invalid.input-text, textarea.is-invalid.input-text {
+.was-validated textarea.form-control:invalid, .was-validated textarea.input-text:invalid, textarea.form-control.is-invalid, textarea.is-invalid.input-text {
   padding-right: calc(1.5em + 0.75rem);
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
@@ -2013,7 +2013,7 @@ fieldset:disabled #respond input#submit,
   opacity: var(--bs-btn-disabled-opacity);
 }
 
-.btn-primary, .woocommerce-account .woocommerce .register .woocommerce-Button[name=register], .woocommerce-account .woocommerce .woocommerce-form-login__submit, .button.alt,
+.btn-primary, .woocommerce-account .woocommerce .woocommerce-form-login__submit, .button.alt,
 #respond input#submit.alt {
   --bs-btn-color: #fff;
   --bs-btn-bg: #0d6efd;
@@ -20534,14 +20534,15 @@ abbr.required {
   color: var(--bs-secondary);
 }
 
-.woocommerce-account .woocommerce .woocommerce-form-login {
-  width: 40%;
-}
-@media (min-width: 992px) {
-  .woocommerce-account .woocommerce .woocommerce-form-login,
-.woocommerce-account .woocommerce .woocommerce-form-register {
-    padding-right: 110px;
-  }
+.woocommerce-account .woocommerce .col-1,
+.woocommerce-account .woocommerce .col-2 {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-top: var(--bs-gutter-y);
 }
 .woocommerce-account .woocommerce .col2-set {
   --bs-gutter-x: 24px;
@@ -20556,42 +20557,26 @@ abbr.required {
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
-.woocommerce-account .woocommerce .col2-set .col-1,
-.woocommerce-account .woocommerce .col2-set .col-2 {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  width: 100%;
-  max-width: 100%;
-  padding-right: calc(var(--bs-gutter-x) * 0.5);
-  padding-left: calc(var(--bs-gutter-x) * 0.5);
-  margin-top: var(--bs-gutter-y);
-}
 @media (min-width: 576px) {
-  .woocommerce-account .woocommerce .col2-set .col-1,
-.woocommerce-account .woocommerce .col2-set .col-2 {
+  .woocommerce-account .woocommerce .col2-set > * {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
     width: 50%;
   }
 }
-.woocommerce-account .woocommerce .col2-set .col-1 .woocommerce-form-login,
-.woocommerce-account .woocommerce .col2-set .col-2 .woocommerce-form-login {
-  width: auto;
+.woocommerce-account .woocommerce .woocommerce-form-login .form-row,
+.woocommerce-account .woocommerce .woocommerce-form-register .woocommerce-form-row {
+  display: grid !important;
 }
-.woocommerce-account .woocommerce .woocommerce-privacy-policy-text p {
-  text-align: justify;
-}
-.woocommerce-account .woocommerce label.woocommerce-form__label.woocommerce-form__label-for-checkbox.inline {
-  display: block;
-  margin-top: 15px;
+.woocommerce-account .woocommerce .woocommerce-form-login__submit,
+.woocommerce-account .woocommerce .woocommerce-form-register__submit {
+  margin: 12.8px 0;
+  margin: 0.8rem 0;
 }
 .woocommerce-account .woocommerce .woocommerce-form-login__submit {
   display: block;
   margin-bottom: 10px;
-}
-.woocommerce-account .woocommerce .register .woocommerce-Button[name=register] {
-  display: block;
 }
 .woocommerce-account .woocommerce .woocommerce-MyAccount-navigation {
   -ms-flex-negative: 0;
