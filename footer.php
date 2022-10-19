@@ -22,6 +22,8 @@ defined( 'ABSPATH' ) || exit;
 
 <footer id="footer" class="content-info" role="contentinfo">
 
+	<?php do_action( 'storms_footer_start' ); ?>
+
     <div class="footer-1">
         <div class="<?php echo Template::footer_container(); ?>">
             <!-- Footer 1 sidebars -->
@@ -42,6 +44,8 @@ defined( 'ABSPATH' ) || exit;
             <?php get_template_part( 'template-parts/footer-3', 'sidebar' ); ?>
         </div>
     </div>
+
+	<?php do_action( 'storms_footer_end' ); ?>
 
 </footer>
 

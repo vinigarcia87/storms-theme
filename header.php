@@ -13,22 +13,13 @@
  * Includes all the scripts and page definitions
  */
 
-use \StormsFramework\Template;
-
 defined( 'ABSPATH' ) || exit;
 
 get_template_part( 'template-parts/head' ); ?>
 
 <header id="header" role="banner">
-
-    <div class="<?php echo Template::header_container(); ?>">
-        <!-- Header content -->
-        <?php get_template_part('template-parts/header', 'content'); ?>
-    </div>
-
-	<!-- Page navigation -->
-	<?php get_template_part('template-parts/menu'); ?>
-
+	<!-- Header content -->
+	<?php get_template_part('template-parts/header', 'content'); ?>
 </header>
 
 <!-- Wrap all page content here -->

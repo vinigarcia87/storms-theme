@@ -14,25 +14,32 @@
 
 defined( 'ABSPATH' ) || exit;
 ?>
-<div id="page-banner" class="st-grid-row row" role="banner">
-	<div class="page-banner-content col-sm-7 col-md-8 col-lg-6">
-		<?php
-		$header_image = get_custom_header();
 
-		if ( ! empty( $header_image ) && ! empty( $header_image->url ) ) :
-			$srcset = wp_get_attachment_image_srcset( $header_image->attachment_id );
-		?>
-			<a class="header-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<img class="" src="<?php echo esc_url( $header_image->url ); ?>" srcset="<?php echo esc_attr( $srcset ); ?>" height="<?php esc_attr_e( $header_image->height ); ?>" width="<?php esc_attr_e( $header_image->width ); ?>" alt="<?php esc_attr_e( get_bloginfo( 'name', 'display' ) ); ?>" />
-			</a>
-		<?php else : ?>
-			<a class="header-brand" href="<?php echo esc_url( get_bloginfo('url') ) ?>">
-				<img class="" style="height: 75px;" src="<?php echo esc_url( \StormsFramework\Helper::get_asset_url('/img/storms/logo/generic-logo.svg') ) ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
-			</a>
-		<?php endif; ?>
-	</div>
+<!-- Header content -->
+<div class="<?php echo \StormsFramework\Template::header_container(); ?>">
+	<div id="page-banner" class="st-grid-row row" role="banner">
+		<div class="page-banner-content col-sm-7 col-md-8 col-lg-6">
+			<?php
+			$header_image = get_custom_header();
 
-	<div class="page-banner-sidebar col-sm-5 col-md-4 col-lg-6">
-        <?php get_sidebar( 'header' ); ?>
+			if ( ! empty( $header_image ) && ! empty( $header_image->url ) ) :
+				$srcset = wp_get_attachment_image_srcset( $header_image->attachment_id );
+			?>
+				<a class="header-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<img class="" src="<?php echo esc_url( $header_image->url ); ?>" srcset="<?php echo esc_attr( $srcset ); ?>" height="<?php esc_attr_e( $header_image->height ); ?>" width="<?php esc_attr_e( $header_image->width ); ?>" alt="<?php esc_attr_e( get_bloginfo( 'name', 'display' ) ); ?>" />
+				</a>
+			<?php else : ?>
+				<a class="header-brand" href="<?php echo esc_url( get_bloginfo('url') ) ?>">
+					<img class="" style="height: 75px;" src="<?php echo esc_url( \StormsFramework\Helper::get_asset_url('/img/storms/logo/generic-logo.svg') ) ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"/>
+				</a>
+			<?php endif; ?>
+		</div>
+
+		<div class="page-banner-sidebar col-sm-5 col-md-4 col-lg-6">
+			<?php get_sidebar( 'header' ); ?>
+		</div>
 	</div>
 </div>
+
+<!-- Page navigation -->
+<?php get_template_part('template-parts/menu'); ?>
