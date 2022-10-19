@@ -35,7 +35,7 @@ get_template_part( 'template-parts/head' ); ?>
 		</div>
 	<?php endif; ?>
 
-    <div class="<?php echo Template::wrap_container(); ?>">
+    <div class="<?php echo \StormsFramework\Template::wrap_container(); ?>">
 
         <?php
         if ( is_front_page() && is_home() ) : ?>
