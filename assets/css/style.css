@@ -112,7 +112,7 @@ hr {
   opacity: 0.25;
 }
 
-h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, span.widget-title, h2, .h2, h1, .h1 {
   margin-top: 0;
   margin-bottom: 8px;
   margin-bottom: 0.5rem;
@@ -138,11 +138,11 @@ h2, .h2 {
   }
 }
 
-h3, .h3 {
+h3, .h3, span.widget-title {
   font-size: calc(1.3rem + 0.6vw);
 }
 @media (min-width: 1200px) {
-  h3, .h3 {
+  h3, .h3, span.widget-title {
     font-size: 1.75rem;
   }
 }
@@ -606,7 +606,7 @@ progress {
   content: "— ";
 }
 
-.img-fluid, .attachment-woocommerce_thumbnail,.img-thumbnail {
+.img-fluid, .woocommerce-product-gallery img, .attachment-woocommerce_thumbnail,.img-thumbnail {
   max-width: 100%;
   height: auto;
 }
@@ -19625,6 +19625,10 @@ html:not(.ie):not(.edge) .wrap {
   color: #155d15;
 }
 
+span.widget-title {
+  display: inline-block;
+}
+
 
 @font-face {
   font-family: "star";
@@ -19932,7 +19936,7 @@ td.product-quantity {
 }
 .widget_product_categories .product-categories > li,
 .widget_product_categories .product-categories .children > li {
-  padding: 10px 0;
+  padding: 3px 0;
 }
 .widget_product_categories .product-categories > li > a,
 .widget_product_categories .product-categories .children > li > a {
@@ -20707,15 +20711,17 @@ tr.coupon .woocommerce-cupon-form {
   background-color: var(--bs-primary);
   border-color: var(--bs-primary);
 }
-.woocommerce .cart_totals h2, .woocommerce .cart_totals .h2, .woocommerce .cart_totals h3#order_review_heading, .woocommerce .cart_totals #order_review_heading.h3,
+.woocommerce .cart_totals h2, .woocommerce .cart_totals .h2, .woocommerce .cart_totals h3#order_review_heading, .woocommerce .cart_totals #order_review_heading.h3, .woocommerce .cart_totals span#order_review_heading.widget-title,
 .woocommerce .woocommerce-checkout-review-order h2,
 .woocommerce .woocommerce-checkout-review-order .h2,
 .woocommerce .woocommerce-checkout-review-order h3#order_review_heading,
 .woocommerce .woocommerce-checkout-review-order #order_review_heading.h3,
+.woocommerce .woocommerce-checkout-review-order span#order_review_heading.widget-title,
 .woocommerce .woocommerce-shipping-calculator h2,
 .woocommerce .woocommerce-shipping-calculator .h2,
 .woocommerce .woocommerce-shipping-calculator h3#order_review_heading,
-.woocommerce .woocommerce-shipping-calculator #order_review_heading.h3 {
+.woocommerce .woocommerce-shipping-calculator #order_review_heading.h3,
+.woocommerce .woocommerce-shipping-calculator span#order_review_heading.widget-title {
   margin-top: 0;
   text-align: center;
   text-transform: capitalize;
@@ -21400,6 +21406,20 @@ a.woocommerce-product-gallery__trigger {
 }
 
 figure.woocommerce-product-gallery__wrapper {
+  cursor: pointer;
+}
+
+.flex-control-thumbs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
+  padding-left: 0;
+}
+.flex-control-thumbs li {
+  list-style-type: none;
   cursor: pointer;
 }
 
