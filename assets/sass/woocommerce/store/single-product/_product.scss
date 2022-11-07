@@ -36,6 +36,22 @@ figure.woocommerce-product-gallery__wrapper {
 	cursor: pointer;
 }
 
+.woocommerce-product-gallery img {
+	@extend .img-fluid;
+}
+
+.flex-control-thumbs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	padding-left: 0;
+
+	li {
+		list-style-type: none;
+		cursor: pointer;
+	}
+}
+
 table.variations {
 	select {
 		@extend .form-control;

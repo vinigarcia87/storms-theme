@@ -45,3 +45,8 @@
 		color: #155d15;
 	}
 }
+
+span.widget-title {
+	@extend .h3;
+	display: inline-block;
+}

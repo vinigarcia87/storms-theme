@@ -14,12 +14,12 @@ if( 'IntersectionObserver' in window ) {
 		const has_wp_adminbar = document.querySelector('body').classList.contains('admin-bar');
 
 		const body = document.querySelector('body');
-		const header_el = document.querySelector('header > div'); // This is the element right on top of the menu we wanna stick
+		const header_el = document.querySelector('header'); // This is the element right on top of the menu we wanna stick
 		const wrap_el = document.querySelector('#wrap'); // This is the element right after the menu we wanna stick
 
 		// The height of the sticky menu
 		const margin = sticky_el.offsetHeight;
-		const offsetTop = sticky_el.offsetTop;
+		//const offsetTop = sticky_el.offsetTop;
 
 		const headerObserverOptions = {
 			//rootMargin: (has_wp_adminbar ? '-' + offsetTop + 'px' : '0px')
