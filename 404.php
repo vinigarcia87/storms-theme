@@ -37,7 +37,7 @@ get_header(); ?>
 					<p class="text-justify"><?php _e( 'Não foi possível encontrar a página que você estava procurando. Ela pode ter sido removida, renomeada ou até mesmo nunca ter existido.', 'storms' ); ?></p>
 
 					<?php if( \StormsFramework\Helper::is_woocommerce_activated() ): ?>
-						<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>" class="btn btn-outline-dark"><?php _e( 'Voltar para a Loja', 'storms' ); ?></a>
+						<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>" class="btn btn-outline-dark"><?php _e( 'Voltar para Produtos', 'storms' ); ?></a>
 					<?php else: ?>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn btn-outline-dark"><?php _e( 'Ir para a página Principal', 'storms' ); ?></a>
 					<?php endif; ?>

@@ -55,3 +55,7 @@ abbr.required {
 .attachment-woocommerce_thumbnail {
 	@extend .img-fluid;
 }
+
+.product-category img {
+	@extend .img-fluid;
+}

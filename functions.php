@@ -65,6 +65,7 @@ require_once 'services/woocommerce/storms-woocommerce-apply-cupon-url.php';
 require_once 'services/woocommerce/storms-woocommerce-lgpd.php';
 require_once 'services/woocommerce/storms-woocommerce-cart-correios-autofill-addresses.php';
 require_once 'services/woocommerce/storms-woocommerce-improve-refreshed-fragments.php';
+require_once 'services/woocommerce/storms-woocommerce-product_categories.php';
 
 //require_once 'services/storms-debug.php';
 //require_once 'services/storms-temporary.php';
