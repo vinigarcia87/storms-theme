@@ -606,7 +606,7 @@ progress {
   content: "— ";
 }
 
-.img-fluid, .woocommerce-product-gallery img, .attachment-woocommerce_thumbnail,.img-thumbnail {
+.img-fluid, .woocommerce-product-gallery img, .product-category img, .attachment-woocommerce_thumbnail,.img-thumbnail {
   max-width: 100%;
   height: auto;
 }
@@ -19626,7 +19626,7 @@ html:not(.ie):not(.edge) .wrap {
 }
 
 span.widget-title {
-  display: inline-block;
+  display: block;
 }
 
 
@@ -21416,6 +21416,7 @@ figure.woocommerce-product-gallery__wrapper {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 10px;
+  margin-top: 15px;
   padding-left: 0;
 }
 .flex-control-thumbs li {
