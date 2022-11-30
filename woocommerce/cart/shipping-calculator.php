@@ -11,8 +11,8 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce/Templates
- * @version 4.0.0
+ * @package WooCommerce\Templates
+ * @version 7.0.1
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -26,13 +26,14 @@ do_action( 'woocommerce_before_shipping_calculator' ); ?>
 	<?php else: ?>
 		<p class="shipping-calculator-text"><?php _e( 'Estime o frete deste produto para seu destino', 'storms' ); ?></p>
 	<?php endif; ?>
-
+	
 	<section class="shipping-calculator-form" <?php echo ! is_product() ? 'style="display:none;"' : ''; ?> >
 
 		<?php if ( apply_filters( 'woocommerce_shipping_calculator_enable_country', true ) ) : ?>
 			<p class="form-row form-row-wide" id="calc_shipping_country_field">
+				<label for="calc_shipping_country" class="screen-reader-text"><?php esc_html_e( 'Country / region:', 'woocommerce' ); ?></label>
 				<select name="calc_shipping_country" id="calc_shipping_country" class="country_to_state country_select" rel="calc_shipping_state">
-					<option value=""><?php esc_html_e( 'Select a country / region&hellip;', 'woocommerce' ); ?></option>
+					<option value="default"><?php esc_html_e( 'Select a country / region&hellip;', 'woocommerce' ); ?></option>
 					<?php
 					foreach ( WC()->countries->get_shipping_countries() as $key => $value ) {
 						echo '<option value="' . esc_attr( $key ) . '"' . selected( WC()->customer->get_shipping_country(), esc_attr( $key ), false ) . '>' . esc_html( $value ) . '</option>';
@@ -56,6 +57,7 @@ do_action( 'woocommerce_before_shipping_calculator' ); ?>
 				} elseif ( is_array( $states ) ) {
 					?>
 					<span>
+						<label for="calc_shipping_state" class="screen-reader-text"><?php esc_html_e( 'State / County:', 'woocommerce' ); ?></label>
 						<select name="calc_shipping_state" class="state_select" id="calc_shipping_state" data-placeholder="<?php esc_attr_e( 'State / County', 'woocommerce' ); ?>">
 							<option value=""><?php esc_html_e( 'Select an option&hellip;', 'woocommerce' ); ?></option>
 							<?php
@@ -68,6 +70,7 @@ do_action( 'woocommerce_before_shipping_calculator' ); ?>
 					<?php
 				} else {
 					?>
+					<label for="calc_shipping_state" class="screen-reader-text"><?php esc_html_e( 'State / County:', 'woocommerce' ); ?></label>
 					<input type="text" class="input-text" value="<?php echo esc_attr( $current_r ); ?>" placeholder="<?php esc_attr_e( 'State / County', 'woocommerce' ); ?>" name="calc_shipping_state" id="calc_shipping_state" />
 					<?php
 				}
@@ -77,17 +80,20 @@ do_action( 'woocommerce_before_shipping_calculator' ); ?>
 
 		<?php if ( apply_filters( 'woocommerce_shipping_calculator_enable_city', true ) ) : ?>
 			<p class="form-row form-row-wide" id="calc_shipping_city_field">
+				<label for="calc_shipping_city" class="screen-reader-text"><?php esc_html_e( 'City:', 'woocommerce' ); ?></label>
 				<input type="text" class="input-text" value="<?php echo esc_attr( WC()->customer->get_shipping_city() ); ?>" placeholder="<?php esc_attr_e( 'City', 'woocommerce' ); ?>" name="calc_shipping_city" id="calc_shipping_city" />
 			</p>
 		<?php endif; ?>
 
 		<?php if ( apply_filters( 'woocommerce_shipping_calculator_enable_postcode', true ) ) : ?>
 			<p class="form-row form-row-wide" id="calc_shipping_postcode_field">
+				<label for="calc_shipping_postcode" class="screen-reader-text"><?php esc_html_e( 'Postcode / ZIP:', 'woocommerce' ); ?></label>
 				<input type="text" class="input-text" value="<?php echo esc_attr( WC()->customer->get_shipping_postcode() ); ?>" placeholder="<?php esc_attr_e( 'Postcode / ZIP', 'woocommerce' ); ?>" name="calc_shipping_postcode" id="calc_shipping_postcode" />
 			</p>
 		<?php endif; ?>
 
-		<p class="shipping-calculator-action"><button type="submit" name="calc_shipping" value="1" class="button">
+		<p class="shipping-calculator-action">
+			<button type="submit" name="calc_shipping" value="1" class="button<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>">
 				<?php if( ! is_product() ): ?>
 					<?php esc_html_e( 'Update', 'woocommerce' ); ?>
 				<?php else: ?>

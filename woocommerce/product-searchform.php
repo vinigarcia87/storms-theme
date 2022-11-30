@@ -11,8 +11,8 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce/Templates
- * @version 3.3.0
+ * @package WooCommerce\Templates
+ * @version 7.0.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,16 +20,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<form id="searchform" role="search" class="woocommerce-product-search form-inline" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
-
+<form role="search" method="get" class="woocommerce-product-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<div class="input-group">
-		<label for="s" class="visually-hidden"><?php echo __( 'Search' ); ?></label>
-		<input  id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>"
-				type="search" class="search-field form-control" name="s" placeholder="<?php esc_attr_e( 'Search products', 'woocommerce' ); ?>" value="<?php echo get_search_query(); ?>" />
-
-		<input type="hidden" name="post_type" value="product" />
-
-		<button class="btn" type="submit"><span class="bi bi-search" aria-hidden="true"></span></button>
+	<label class="screen-reader-text" for="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>"><?php esc_html_e( 'Search for:', 'woocommerce' ); ?></label>
+	<input type="search" id="woocommerce-product-search-field-<?php echo isset( $index ) ? absint( $index ) : 0; ?>" class="search-field form-control" placeholder="<?php echo esc_attr__( 'Search products&hellip;', 'woocommerce' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+		<button type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'woocommerce' ); ?>" class="btn <?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ); ?>">
+			<span class="bi bi-search" aria-hidden="true"></span></button>
+	<input type="hidden" name="post_type" value="product" />
 	</div>
-
 </form>
