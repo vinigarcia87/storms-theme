@@ -8,6 +8,10 @@
 @import "../node_modules/bootstrap/scss/root";
 @import "../node_modules/bootstrap/scss/reboot";
 
+// Including Bootstrap Icons
+$bootstrap-icons-font-file: "../fonts/bootstrap-icons/bootstrap-icons";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+
 // ==========================================================================
 // Under Construction Template
 // ==========================================================================
@@ -68,7 +72,7 @@ a {
 }
 
 .right-grid {
-	padding-left: 50px;
+	padding-left: 48px;
 
 	p {
 		color: #fff;
