@@ -52,8 +52,11 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 			update_option('woocommerce_task_list_welcome_modal_dismissed', 'yes');
 
 			// Image and thumbnail sizes
-			update_option('woocommerce_single_image_width', 527);
-			update_option('woocommerce_thumbnail_image_width', 400);
+			update_option( 'woocommerce_single_image_width', 527 );
+			update_option( 'woocommerce_thumbnail_image_width', 400 );
+			update_option( 'woocommerce_thumbnail_cropping', '1:1' ); // '1:1', 'custom', 'uncropped'
+			//update_option( 'woocommerce_thumbnail_cropping_custom_width', 4 );  // Custom crop aspect ratio
+			//update_option( 'woocommerce_thumbnail_cropping_custom_height', 3 ); // Custom crop aspect ratio
 
 			// Permitir que seus clientes efetuem pedidos sem uma conta
 			update_option('woocommerce_enable_guest_checkout', 'no');
