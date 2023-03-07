@@ -14,7 +14,7 @@
  *
  * @see https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 3.6.0
+ * @version 7.3.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -23,16 +23,10 @@ $formatted_destination    = isset( $formatted_destination ) ? $formatted_destina
 $has_calculated_shipping  = ! empty( $has_calculated_shipping );
 $show_shipping_calculator = ! empty( $show_shipping_calculator );
 $calculator_text          = '';
-
-// Check if we are in product page shipping calculator
-$storms_wc_shipping_calculator_in_product = ! empty( $storms_wc_shipping_calculator_in_product );
 ?>
 <tr class="woocommerce-shipping-totals shipping">
-
-	<td data-title="<?php echo esc_attr( $package_name ); ?>" colspan="2">
-
-		<span class="title"><?php echo wp_kses_post( $package_name ); ?></span>
-
+	<!-- <th><?php echo wp_kses_post( $package_name ); ?></th> -->
+	<td data-title="<?php echo esc_attr( $package_name ); ?>">
 		<?php if ( $available_methods ) : ?>
 			<ul id="shipping_method" class="woocommerce-shipping-methods">
 				<?php foreach ( $available_methods as $method ) : ?>
@@ -51,7 +45,6 @@ $storms_wc_shipping_calculator_in_product = ! empty( $storms_wc_shipping_calcula
 
 						printf( '<label class="form-check-label" for="shipping_method_%1$s_%2$s">%3$s</label>', $index, esc_attr( sanitize_title( $method->id ) ), wc_cart_totals_shipping_method_label( $method ) ); // WPCS: XSS ok.
 						echo '</div>';
-
 						do_action( 'woocommerce_after_shipping_rate', $method, $index );
 						?>
 					</li>
@@ -80,8 +73,22 @@ $storms_wc_shipping_calculator_in_product = ! empty( $storms_wc_shipping_calcula
 		elseif ( ! is_cart() ) :
 			echo wp_kses_post( apply_filters( 'woocommerce_no_shipping_available_html', __( 'There are no shipping options available. Please ensure that your address has been entered correctly, or contact us if you need any help.', 'woocommerce' ) ) );
 		else :
-			// Translators: $s shipping destination.
-			echo wp_kses_post( apply_filters( 'woocommerce_cart_no_shipping_available_html', sprintf( esc_html__( 'No shipping options were found for %s.', 'woocommerce' ) . ' ', '<strong>' . esc_html( $formatted_destination ) . '</strong>' ) ) );
+			echo wp_kses_post(
+			/**
+			 * Provides a means of overriding the default 'no shipping available' HTML string.
+			 *
+			 * @since 3.0.0
+			 *
+			 * @param string $html                  HTML message.
+			 * @param string $formatted_destination The formatted shipping destination.
+			 */
+				apply_filters(
+					'woocommerce_cart_no_shipping_available_html',
+					// Translators: $s shipping destination.
+					sprintf( esc_html__( 'No shipping options were found for %s.', 'woocommerce' ) . ' ', '<strong>' . esc_html( $formatted_destination ) . '</strong>' ),
+					$formatted_destination
+				)
+			);
 			$calculator_text = esc_html__( 'Enter a different address', 'woocommerce' );
 		endif;
 		?>
