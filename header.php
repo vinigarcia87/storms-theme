@@ -13,7 +13,7 @@
  * Includes all the scripts and page definitions
  */
 
-defined( 'ABSPATH' ) || exit;
+use StormsFramework\Helper;defined( 'ABSPATH' ) || exit;
 
 get_template_part( 'template-parts/head' ); ?>
 
@@ -36,6 +36,13 @@ get_template_part( 'template-parts/head' ); ?>
 	<?php endif; ?>
 
     <div class="<?php echo \StormsFramework\Template::wrap_container(); ?>">
+
+		<?php
+		// Adding Breadcrumbs to Wordpress pages - except front page, home page and WooCommerce pages
+		if ( ! is_front_page() && ! is_home() && ! ( \StormsFramework\Helper::is_woocommerce_activated() && is_woocommerce() ) ) {
+				storms_yoast_breadcrumbs();
+		}
+		?>
 
         <?php
         if ( is_front_page() && is_home() ) : ?>

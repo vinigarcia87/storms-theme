@@ -20320,6 +20320,50 @@ ul.child-list .dropdown-item a {
   color: #222222;
 }
 
+.hidden {
+  display: none;
+}
+
+.storms-wc-searchbar-loader-image {
+  
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 25px;
+  right: 50px;
+  z-index: 9999;
+  width: 25px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.storms-wc-searchbar-results {
+  display: grid;
+  gap: 4px;
+  gap: 0.25rem;
+  margin: 10px 0;
+}
+
+.storms-wc-searchbar-result {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 4px;
+  gap: 0.25rem;
+  padding: 10px;
+}
+
+.storms-wc-searchbar-result-image {
+  text-align: center;
+}
+
+.storms-wc-searchbar-result-text h4, .storms-wc-searchbar-result-text .h4,
+.storms-wc-searchbar-result-text p {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
 .woocommerce .term-description,
 .woocommerce-page .term-description {
   text-align: justify;

@@ -98,6 +98,8 @@ class Storms_WC_SearchBar extends WC_Widget
 	 */
 	public function widget( $args, $instance ) {
 
+		add_action( 'wp_footer', array( $this, 'register_scripts' ) );
+
 		$hide_empty = esc_attr( $instance['hide_empty'] ?? 0 );
         $label_input = esc_attr( $instance['label_input'] ?? __( 'Procurar por...', 'storms' ) );
 		$label_dropdown = esc_attr( $instance['label_dropdown'] ?? __( 'Selecionar categorias', 'storms' ) );
@@ -112,37 +114,127 @@ class Storms_WC_SearchBar extends WC_Widget
         ob_start();
         $this->widget_start( $args, $instance );
 		?>
-		<form method="get" id="storms-wc-searchbar-form" class="<?php esc_attr_e( implode( ' ', $class ) ); ?>" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<div class="storms-wc-searchbar-container">
+			<form method="get" id="storms-wc-searchbar-form" class="<?php esc_attr_e( implode( ' ', $class ) ); ?>" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 
-            <div class="input-group">
+				<div class="input-group">
 
-				<?php if( 'prepend' === $dropdown_position ): ?>
-					<?php $this->get_categories_dropdown( $label_dropdown, $type, $hide_empty ); ?>
-				<?php endif; ?>
+					<?php if( 'prepend' === $dropdown_position ): ?>
+						<?php $this->get_categories_dropdown( $label_dropdown, $type, $hide_empty ); ?>
+					<?php endif; ?>
 
-                <input class="form-control search-input" type="text" aria-label="<?php _e( 'Search our products', 'storms' ); ?>"
-					   value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="<?php echo esc_attr( $label_input ); ?>" />
+					<input class="form-control search-input" type="text" aria-label="<?php _e( 'Search our products', 'storms' ); ?>"
+						   value="<?php echo get_search_query(); ?>" name="s" id="s" placeholder="<?php echo esc_attr( $label_input ); ?>" autocomplete="off" />
 
-				<?php if( 'append' === $dropdown_position ): ?>
-					<?php $this->get_categories_dropdown( $label_dropdown, $type, $hide_empty ); ?>
-				<?php endif; ?>
+					<?php $loader_image = \StormsFramework\Helper::get_asset_url('/img/spinner.gif'); ?>
+					<span class="storms-wc-searchbar-loader-image hidden" style="background-image:url('<?php echo esc_url( $loader_image ) ?>');" ></span>
 
-				<button type="submit" id="searchsubmit" class="btn btn-outline-secondary search-submit-button">
-					<i class="bi bi-search" aria-hidden="true"></i> <?php esc_attr_e( $search_button_text ); ?>
-				</button>
-            </div>
+					<?php if( 'append' === $dropdown_position ): ?>
+						<?php $this->get_categories_dropdown( $label_dropdown, $type, $hide_empty ); ?>
+					<?php endif; ?>
 
-            <?php if( 'blog' === $type ): ?>
-				<input type="hidden" disabled="disabled" value="" name="cat" />
-            <?php else: ?>
-				<input type="hidden" name="post_type" value="product">
-				<input type="hidden" disabled="disabled" value="" name="product_cat" />
-            <?php  endif;?>
+					<button type="submit" id="searchsubmit" class="btn btn-outline-secondary search-submit-button">
+						<i class="bi bi-search" aria-hidden="true"></i> <?php esc_attr_e( $search_button_text ); ?>
+					</button>
+				</div>
 
-		</form>
+				<?php if( 'blog' === $type ): ?>
+					<input type="hidden" disabled="disabled" value="" name="cat" />
+				<?php else: ?>
+					<input type="hidden" name="post_type" value="product">
+					<input type="hidden" disabled="disabled" value="" name="product_cat" />
+				<?php  endif;?>
+
+			</form>
+
+			<style>
+				.hidden {
+					display: none;
+				}
+				.storms-wc-searchbar-loader-image {
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					height: 25px;
+					right: 50px;
+					z-index: 9999;
+					width: 25px;
+					background-repeat: no-repeat;
+					background-size: contain;
+				}
+				.storms-wc-searchbar-results {
+					display: grid;
+					gap: 0.25rem;
+					margin: 10px 0;
+				}
+				.storms-wc-searchbar-result {
+					border: 1px solid black;
+					display: grid;
+					grid-template-columns: 70px 1fr;
+					gap: 0.25rem;
+					padding: 10px;
+				}
+				.storms-wc-searchbar-result-image {
+					text-align: center;
+				}
+				.storms-wc-searchbar-result-text h4,
+				.storms-wc-searchbar-result-text p {
+					margin-bottom: 0;
+					padding-bottom: 0;
+				}
+			</style>
+
+			<div class="storms-wc-searchbar-results-container">
+				<div class="storms-wc-searchbar-results">
+
+					<div class="storms-wc-searchbar-result">
+						<div class="storms-wc-searchbar-result-image">
+							<img src="http://via.placeholder.com/50x50">
+						</div>
+						<div class="storms-wc-searchbar-result-text">
+							<h4>Product Name</h4>
+							<p>Description of the product</p>
+						</div>
+					</div>
+
+					<div class="storms-wc-searchbar-result">
+						<div class="storms-wc-searchbar-result-image">
+							<img src="http://via.placeholder.com/50x50">
+						</div>
+						<div class="storms-wc-searchbar-result-text">
+							<h4 style="margin-bottom: 0;">Product Name</h4>
+							<p>Description of the product</p>
+						</div>
+					</div>
+				</div>
+				<div class="storms-wc-searchbar-show-more-results">
+					<div class="storms-wc-searchbar-show-more-results-text">Mostrar mais resultados... <span>(9)</span></div>
+				</div>
+				<div class="storms-wc-searchbar-ajax-search-no-result">Não encontramos nada!</div>
+			</div>
+		</div>
 		<?php
 		$this->widget_end( $args );
 		echo ob_get_clean();
+	}
+
+	/**
+	 * Register the scripts for the searchbar
+	 */
+	public function register_scripts() {
+
+		wp_enqueue_script( 'storms-wc-searchbar-script',
+			\StormsFramework\Helper::get_asset_url('/js/storms-wc-searchbar' . ( ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min' ) . '.js' ),
+			array(), STORMS_FRAMEWORK_VERSION, true );
+
+		// Add WordPress data to a Javascript file
+		wp_localize_script('storms-wc-searchbar-script', 'storms_wc_searchbar_vars', [
+			'ajax_url' 					=> admin_url('admin-ajax.php'),
+			'wc_ajax_url' 				=> WC_AJAX::get_endpoint( "%%endpoint%%" ),
+			'storms_wc_searchbar_nonce' => wp_create_nonce( 'storms-wc-searchbar' ),
+			'debug_mode' 				=> defined('WP_DEBUG') && WP_DEBUG,
+		]);
+
 	}
 
 	private function get_categories_dropdown( $label_dropdown, $type, $hide_empty ) {
@@ -207,3 +299,57 @@ function storms_register_wc_searchbar() {
 	register_widget('storms_wc_searchbar');
 }
 add_action( 'widgets_init', 'storms_register_wc_searchbar' );
+
+function storms_wc_searchbar_load_posts() {
+	if ( ! is_admin() || ( defined( 'DOING_AJAX' ) && DOING_AJAX && isset( $_POST['action'] ) && 'storms_wc_searchbar_load_posts' == $_POST['action'] ) ) {
+
+		if ( ! wp_verify_nonce( $_POST['security'], 'storms-wc-searchbar' ) ) {
+			throw new Exception( __( 'Security check failed', 'storms' ) );
+		}
+
+
+		$query_args = apply_filters( 'is_customize_register_args', array(
+			// Query performance optimization.
+			'fields'         => 'ids',
+			'no_found_rows'  => true,
+			'posts_per_page' => -1,
+			'orderby'	 => 'Date',
+			'order'		 => 'DESC',
+			'suppress_filters' => true,
+
+			's' => esc_attr( $_POST['s'] ),
+			'post_type'  => esc_attr( $_POST['post_type'] ),
+		));
+
+		$the_query = new WP_Query( $query_args );
+
+		// TODO We should keep the list of words the users search for...
+		\StormsFramework\Helper::debug( 'search for: ' . $the_query->query['s'] );
+
+		if( $the_query->have_posts() ) {
+			$results = '';
+			while ($the_query->have_posts()) {
+				$the_query->the_post();
+
+				$results .= '<div class="storms-wc-searchbar-result">';
+				$results .= '	<div class="storms-wc-searchbar-result-image">';
+				$results .= '		<img src="http://via.placeholder.com/50x50">';
+				$results .= '	</div>';
+				$results .= '	<div class="storms-wc-searchbar-result-text">';
+				$results .= '		<h4><a href="' . esc_url( get_permalink() ) . '">' . get_the_title() . '</a></h4>';
+				$results .= '		<p>Description of the product</p>';
+				$results .= '	</div>';
+				$results .= '</div>';
+			}
+
+
+
+			\StormsFramework\Helper::debug('<ul>' . $results . '</ul>');
+			echo '<ul>' . $results . '</ul>';
+
+			wp_reset_postdata();
+		}
+	}
+}
+add_action( 'wp_ajax_storms_wc_searchbar_load_posts' , 'storms_wc_searchbar_load_posts' );
+add_action( 'wp_ajax_nopriv_storms_wc_searchbar_load_posts', 'storms_wc_searchbar_load_posts' );

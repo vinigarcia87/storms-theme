@@ -100,7 +100,7 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 				update_option('woocommerce_force_ssl_checkout', 'no');
 				update_option('woocommerce_shipping_debug_mode', 'no');
 			} else {
-				update_option('woocommerce_force_ssl_checkout', 'no'); // TODO: IN PRODUCTION MUST BE YES!
+				update_option('woocommerce_force_ssl_checkout', 'yes');
 				update_option('woocommerce_shipping_debug_mode', 'no');
 			}
 

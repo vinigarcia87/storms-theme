@@ -43,6 +43,7 @@ require_once 'services/config/storms-relevanssi-configuration.php';
 require_once 'services/config/storms-rest-api-log-configuration.php';
 require_once 'services/config/storms-robin-image-optimizer-configuration.php';
 require_once 'services/config/storms-lazy-load-configuration.php';
+require_once 'services/config/storms-yoast-configuration.php';
 
 /*********************************
  *  Configuração Storms Theme
