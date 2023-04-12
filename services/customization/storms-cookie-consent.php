@@ -22,8 +22,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function storms_cookie_consent_modal() {
 
-	$privacy_page_id = wc_privacy_policy_page_id();
-	$terms_page_id   = wc_terms_and_conditions_page_id();
+	if( \StormsFramework\Helper::is_woocommerce_activated() ) {
+		$privacy_page_id = wc_privacy_policy_page_id();
+		$terms_page_id = wc_terms_and_conditions_page_id();
+	} else {
+		$privacy_page_id = 0;
+		$terms_page_id = 0;
+	}
 	$privacy_link    = $privacy_page_id ? '<a href="' . esc_url( get_permalink( $privacy_page_id ) ) . '" class="woocommerce-privacy-policy-link" target="_blank">' . __( 'privacy policy', 'woocommerce' ) . '</a>' : __( 'privacy policy', 'woocommerce' );
 	$terms_link      = $terms_page_id ? '<a href="' . esc_url( get_permalink( $terms_page_id ) ) . '" class="woocommerce-terms-and-conditions-link" target="_blank">' . __( 'terms and conditions', 'woocommerce' ) . '</a>' : __( 'terms and conditions', 'woocommerce' );
 
