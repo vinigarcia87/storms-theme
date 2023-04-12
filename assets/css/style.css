@@ -20324,8 +20324,17 @@ ul.child-list .dropdown-item a {
   display: none;
 }
 
+.storms-wc-searchbar-results-container {
+  position: absolute;
+  background-color: #fff;
+  z-index: 999;
+  -webkit-box-shadow: 0 2px 7px 0;
+          box-shadow: 0 2px 7px 0;
+  padding: 5px;
+  margin-top: 2px;
+}
+
 .storms-wc-searchbar-loader-image {
-  
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -20343,15 +20352,35 @@ ul.child-list .dropdown-item a {
   gap: 4px;
   gap: 0.25rem;
   margin: 10px 0;
+  border: 1px solid black;
+  padding: 5px;
 }
 
-.storms-wc-searchbar-result {
+.storms-wc-searchbar-results-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  gap: 0.25rem;
+}
+
+.storms-wc-searchbar-result,
+.storms-wc-searchbar-show-more-results,
+.storms-wc-searchbar-ajax-search-no-result {
   border: 1px solid black;
   display: grid;
-  grid-template-columns: 70px 1fr;
   gap: 4px;
   gap: 0.25rem;
   padding: 10px;
+}
+
+.storms-wc-searchbar-result {
+  grid-template-columns: 70px 1fr;
+}
+
+.storms-wc-searchbar-show-more-results,
+.storms-wc-searchbar-ajax-search-no-result {
+  grid-template-columns: 1fr;
+  text-align: center;
 }
 
 .storms-wc-searchbar-result-image {
@@ -20362,6 +20391,14 @@ ul.child-list .dropdown-item a {
 .storms-wc-searchbar-result-text p {
   margin-bottom: 0;
   padding-bottom: 0;
+}
+
+.storms-wc-searchbar-show-more-results {
+  cursor: pointer;
+}
+.storms-wc-searchbar-show-more-results:hover {
+  background-color: var(--bs-secondary);
+  font-weight: bold;
 }
 
 .woocommerce .term-description,

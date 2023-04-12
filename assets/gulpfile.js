@@ -134,8 +134,8 @@ function scripts_3rd_party() {
 		rename({ suffix: '.min' } ),
 		uglify(),
 		sourcemaps.write( './maps' ),
-		gulp.dest( './js/' ),
-		notify( { message: '3rd-party scripts task complete', onLast: true } )
+		gulp.dest( './js/' )//,
+		//notify( { message: '3rd-party scripts task complete', onLast: true } )
 	);
 }
 function scripts_source() {

@@ -146,71 +146,8 @@ class Storms_WC_SearchBar extends WC_Widget
 				<?php  endif;?>
 
 			</form>
-
-			<style>
-				.hidden {
-					display: none;
-				}
-				.storms-wc-searchbar-loader-image {
-					position: absolute;
-					top: 50%;
-					transform: translateY(-50%);
-					height: 25px;
-					right: 50px;
-					z-index: 9999;
-					width: 25px;
-					background-repeat: no-repeat;
-					background-size: contain;
-				}
-				.storms-wc-searchbar-results {
-					display: grid;
-					gap: 0.25rem;
-					margin: 10px 0;
-				}
-				.storms-wc-searchbar-result {
-					border: 1px solid black;
-					display: grid;
-					grid-template-columns: 70px 1fr;
-					gap: 0.25rem;
-					padding: 10px;
-				}
-				.storms-wc-searchbar-result-image {
-					text-align: center;
-				}
-				.storms-wc-searchbar-result-text h4,
-				.storms-wc-searchbar-result-text p {
-					margin-bottom: 0;
-					padding-bottom: 0;
-				}
-			</style>
-
-			<div class="storms-wc-searchbar-results-container">
-				<div class="storms-wc-searchbar-results">
-
-					<div class="storms-wc-searchbar-result">
-						<div class="storms-wc-searchbar-result-image">
-							<img src="http://via.placeholder.com/50x50">
-						</div>
-						<div class="storms-wc-searchbar-result-text">
-							<h4>Product Name</h4>
-							<p>Description of the product</p>
-						</div>
-					</div>
-
-					<div class="storms-wc-searchbar-result">
-						<div class="storms-wc-searchbar-result-image">
-							<img src="http://via.placeholder.com/50x50">
-						</div>
-						<div class="storms-wc-searchbar-result-text">
-							<h4 style="margin-bottom: 0;">Product Name</h4>
-							<p>Description of the product</p>
-						</div>
-					</div>
-				</div>
-				<div class="storms-wc-searchbar-show-more-results">
-					<div class="storms-wc-searchbar-show-more-results-text">Mostrar mais resultados... <span>(9)</span></div>
-				</div>
-				<div class="storms-wc-searchbar-ajax-search-no-result">Não encontramos nada!</div>
+			<div class="storms-wc-searchbar-results-container hidden">
+				<div class="storms-wc-searchbar-results"></div>
 			</div>
 		</div>
 		<?php
@@ -230,7 +167,7 @@ class Storms_WC_SearchBar extends WC_Widget
 		// Add WordPress data to a Javascript file
 		wp_localize_script('storms-wc-searchbar-script', 'storms_wc_searchbar_vars', [
 			'ajax_url' 					=> admin_url('admin-ajax.php'),
-			'wc_ajax_url' 				=> WC_AJAX::get_endpoint( "%%endpoint%%" ),
+			//'wc_ajax_url' 				=> WC_AJAX::get_endpoint( "%%endpoint%%" ),
 			'storms_wc_searchbar_nonce' => wp_create_nonce( 'storms-wc-searchbar' ),
 			'debug_mode' 				=> defined('WP_DEBUG') && WP_DEBUG,
 		]);
@@ -307,49 +244,89 @@ function storms_wc_searchbar_load_posts() {
 			throw new Exception( __( 'Security check failed', 'storms' ) );
 		}
 
+		$posts_per_page = 5;
+		$page = 1;
 
 		$query_args = apply_filters( 'is_customize_register_args', array(
 			// Query performance optimization.
-			'fields'         => 'ids',
-			'no_found_rows'  => true,
-			'posts_per_page' => -1,
-			'orderby'	 => 'Date',
-			'order'		 => 'DESC',
-			'suppress_filters' => true,
-
+			'fields'         	=> 'ids',
+			'no_found_rows'  	=> true,
+			'order'		 		=> 'DESC',
+			'suppress_filters' 	=> true,
+			'post__in'			=> false,
+			'publish' 			=> 'publish',
+			'inherit' 			=> 'inherit',
+			'posts_per_page'	=> $posts_per_page,
+			'paged'				=> $page,
 			's' => esc_attr( $_POST['s'] ),
 			'post_type'  => esc_attr( $_POST['post_type'] ),
 		));
 
 		$the_query = new WP_Query( $query_args );
+		$posts_ids = relevanssi_do_query( $the_query );
 
 		// TODO We should keep the list of words the users search for...
-		\StormsFramework\Helper::debug( 'search for: ' . $the_query->query['s'] );
+		$date = (new \DateTime( 'now', new \DateTimeZone( 'America/Sao_Paulo' ) ))->format( 'Y-m-d H:i:s' );
+		\StormsFramework\Helper::debug( $date . ' - User is searching for: ' . $the_query->query['s'] );
+		//\StormsFramework\Helper::debug( $_POST );
 
-		if( $the_query->have_posts() ) {
-			$results = '';
-			while ($the_query->have_posts()) {
-				$the_query->the_post();
+		if( ! empty( $posts_ids ) ) {
+
+			$results = '<div class="storms-wc-searchbar-results-wrapper">';
+			foreach( $posts_ids as $post_id ) {
+				$product = wc_get_product( $post_id );
+
+				$img = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'woocommerce_thumbnail' );
 
 				$results .= '<div class="storms-wc-searchbar-result">';
 				$results .= '	<div class="storms-wc-searchbar-result-image">';
-				$results .= '		<img src="http://via.placeholder.com/50x50">';
+				$results .= '		<a href="' . esc_url( get_post_permalink( $post_id ) ) . '">';
+				$results .= '			<img src="' . esc_url( $img[0] ) . '" width="60" height="60">';
+				$results .= '		</a>';
 				$results .= '	</div>';
 				$results .= '	<div class="storms-wc-searchbar-result-text">';
-				$results .= '		<h4><a href="' . esc_url( get_permalink() ) . '">' . get_the_title() . '</a></h4>';
-				$results .= '		<p>Description of the product</p>';
+				$results .= '		<a href="' . esc_url( get_post_permalink( $post_id ) ) . '">';
+				$results .= '			<h4>' . $product->get_name() . '</h4>';
+				$results .= '			<p>' . wp_trim_words( $product->get_short_description(), 20, '...' ) . '</p>';
+				$results .= '		</a>';
 				$results .= '	</div>';
 				$results .= '</div>';
 			}
+			$results .= '</div>';
 
+			if( $the_query->found_posts > $posts_per_page ) {
+				$results .= '</div>';
+				$results .= '<div class="storms-wc-searchbar-show-more-results">';
+				$results .= 	'<div class="storms-wc-searchbar-show-more-results-text">' . __( 'Mostrar mais resultados...', 'storms' ) . ' <span>(' . ( $the_query->found_posts - ( $posts_per_page * $page ) ) . ')</span></div>';
+				$results .= '</div>';
+			}
 
-
-			\StormsFramework\Helper::debug('<ul>' . $results . '</ul>');
-			echo '<ul>' . $results . '</ul>';
-
-			wp_reset_postdata();
+			echo $results;
+		} else {
+			echo '<div class="storms-wc-searchbar-ajax-search-no-result">' . __( 'Não encontramos nenhum resultado!', 'storms' ) . '</div>';
 		}
+
+		wp_reset_postdata();
+
+		die();
 	}
 }
 add_action( 'wp_ajax_storms_wc_searchbar_load_posts' , 'storms_wc_searchbar_load_posts' );
 add_action( 'wp_ajax_nopriv_storms_wc_searchbar_load_posts', 'storms_wc_searchbar_load_posts' );
+
+// Change the Default Search URL Slug
+function storms_change_search_url() {
+	if ( is_search() && ! empty( $_GET['s'] ) ) {
+
+		$redirect_url = home_url( '/' . __( 'search', 'storms' ) . '/' ) . urlencode( get_query_var( 's' ) );
+
+		// Needed for WooCommerce search
+		if( 'product' === $_GET['post_type'] ) {
+			$redirect_url .= '?post_type=product';
+		}
+
+		wp_redirect( $redirect_url );
+		exit();
+	}
+}
+add_action( 'template_redirect', 'storms_change_search_url' );
