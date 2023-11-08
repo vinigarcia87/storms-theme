@@ -267,7 +267,7 @@ function storms_wc_searchbar_load_posts() {
 
 		// TODO We should keep the list of words the users search for...
 		$date = (new \DateTime( 'now', new \DateTimeZone( 'America/Sao_Paulo' ) ))->format( 'Y-m-d H:i:s' );
-		\StormsFramework\Helper::debug( $date . ' - User is searching for: ' . $the_query->query['s'] );
+		//\StormsFramework\Helper::debug( $date . ' - User is searching for: ' . $the_query->query['s'] );
 		//\StormsFramework\Helper::debug( $_POST );
 
 		if( ! empty( $posts_ids ) ) {
