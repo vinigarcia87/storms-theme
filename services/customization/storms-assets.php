@@ -30,11 +30,13 @@ if( ! function_exists( 'storms_frontend_scripts' ) ) {
 			'resizeMonitor'  => true, // Check when window is resized or run only on start
 		] );
 
-		if( ! wp_is_mobile() ) {
-			// Adiciona o script que monitora se o nav do menu principal esta 'grudado' no topo
-			wp_enqueue_script('storms-sticky-nav-observer-script',
-				\StormsFramework\Helper::get_asset_url('/js/storms-sticky-nav-observer' . ((defined('SCRIPT_DEBUG') && SCRIPT_DEBUG) ? '' : '.min') . '.js'), array('storms-media-query-breakpoints-script'),
-				STORMS_FRAMEWORK_VERSION, true);
+		if( 'yes' === \StormsFramework\Helper::get_option( 'storms_use_sticky_nav', 'yes' ) ) {
+			if( ! wp_is_mobile() ) {
+				// Adiciona o script que monitora se o nav do menu principal esta 'grudado' no topo
+				wp_enqueue_script('storms-sticky-nav-observer-script',
+					\StormsFramework\Helper::get_asset_url('/js/storms-sticky-nav-observer' . ((defined('SCRIPT_DEBUG') && SCRIPT_DEBUG) ? '' : '.min') . '.js'), array('storms-media-query-breakpoints-script'),
+					STORMS_FRAMEWORK_VERSION, true);
+			}
 		}
 
 		if( \StormsFramework\Helper::is_woocommerce_activated() ) {
@@ -59,7 +61,7 @@ if( ! function_exists( 'storms_frontend_scripts' ) ) {
 		// Add WordPress data to a Javascript file
 		wp_localize_script( 'main-script', 'storms_main_vars', [
 			'ajax_url' => admin_url('admin-ajax.php'),
-			'wc_ajax_url' => WC_AJAX::get_endpoint("%%endpoint%%")
+			//'wc_ajax_url' => WC_AJAX::get_endpoint("%%endpoint%%")
 		] );
 	}
 
