@@ -40,7 +40,10 @@ get_template_part( 'template-parts/head' ); ?>
 		<?php
 		// Adding Breadcrumbs to Wordpress pages - except front page, home page and WooCommerce pages
 		if ( ! is_front_page() && ! is_home() && ! ( \StormsFramework\Helper::is_woocommerce_activated() && is_woocommerce() ) ) {
+
+			if ( function_exists( 'storms_yoast_breadcrumbs' ) ) {
 				storms_yoast_breadcrumbs();
+			}
 		}
 		?>
 

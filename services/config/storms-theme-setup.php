@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if( ! function_exists( 'theme_setup' ) ) {
+if( ! function_exists( 'storms_theme_setup' ) ) {
     // Theme setup
     function storms_theme_setup() {
         // Enable backend support
