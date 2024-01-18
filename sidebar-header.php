@@ -25,14 +25,16 @@ defined( 'ABSPATH' ) || exit;
 		*/
 		if ( ! dynamic_sidebar( 'header-sidebar' ) ) : ?>
 
-<!--            <p class="text-right">-->
-<!--                --><?php //esc_html_e( 'Desenvolvimento de Software', 'storms' ); ?><!--<br/>-->
-<!--                --><?php //esc_html_e( 'vinicius.garcia@storms.com.br', 'storms' ); ?><!--<br/>-->
-<!--                --><?php //esc_html_e( 'Telefone: (41) 98825.3688', 'storms' ); ?><!--<br/>-->
-<!--                <a href="--><?php //echo esc_url( wp_login_url() ); ?><!--" title="Login">-->
-<!--                    --><?php //esc_html_e( 'Acessar meu sistema', 'storms' ); ?><!-- <span class="bi bi-lock" title="Login"></span>-->
-<!--                </a>-->
-<!--            </p>-->
+		<?php /*
+            <p class="text-right">
+                <?php esc_html_e( 'Desenvolvimento de Software', 'storms' ); ?><br/>
+                <?php esc_html_e( 'vinicius.garcia@storms.com.br', 'storms' ); ?><br/>
+                <?php esc_html_e( 'Telefone: (41) 98825.3688', 'storms' ); ?><br/>
+                <a href="<?php echo esc_url( wp_login_url() ); ?>" title="Login">
+                    <?php esc_html_e( 'Acessar meu sistema', 'storms' ); ?> <span class="bi bi-lock" title="Login"></span>
+                </a>
+            </p>
+		*/ ?>
 
     <?php endif; ?>
 </aside><!-- /.sidebar -->

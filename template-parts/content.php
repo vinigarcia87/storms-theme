@@ -36,44 +36,38 @@ defined( 'ABSPATH' ) || exit;
 
 				<?php \StormsFramework\Helper::posted_on(); ?>
 
+				<?php \StormsFramework\Helper::posted_by(); ?>
+
 			</div><!-- .entry-meta -->
 
 		<?php endif; ?>
 	</header>
 
-	<?php if ( is_search() ) : ?>
+	<?php \StormsFramework\Helper::post_thumbnail(); ?>
 
-		<div class="entry-summary">
-			<?php the_excerpt(); ?>
-		</div><!-- .entry-summary -->
+	<div class="entry-content">
+		<?php
+		the_content( sprintf(
+			wp_kses(
+				/* translators: %s: Name of current post. Only visible to screen readers */
+				__( 'Continue reading <span class="meta-nav">&rarr;</span>', 'storms' ),
+				array(
+					'span' => array(
+						'class' => array(),
+					),
+				)
+			),
+			get_the_title()
+		) );
 
-	<?php else : ?>
-
-		<div class="entry-content">
-			<?php
-			the_content( sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading <span class="meta-nav">&rarr;</span>', 'storms' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			) );
-
-			wp_link_pages( array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'storms' ) . '</span>',
-				'after'       => '</div>',
-				'link_before' => '<span>',
-				'link_after'  => '</span>',
-			) );
-			?>
-		</div><!-- .entry-content -->
-
-	<?php endif; ?>
+		wp_link_pages( array(
+			'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'storms' ) . '</span>',
+			'after'       => '</div>',
+			'link_before' => '<span>',
+			'link_after'  => '</span>',
+		) );
+		?>
+	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
 
