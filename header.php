@@ -41,9 +41,13 @@ get_template_part( 'template-parts/head' ); ?>
 		// Adding Breadcrumbs to Wordpress pages - except front page, home page and WooCommerce pages
 		if ( ! is_front_page() && ! is_home() && ! ( \StormsFramework\Helper::is_woocommerce_activated() && is_woocommerce() ) ) {
 
+			do_action( 'storms_before_yoast_breadcrumbs' );
+
 			if ( function_exists( 'storms_yoast_breadcrumbs' ) ) {
 				storms_yoast_breadcrumbs();
 			}
+
+			do_action( 'storms_after_yoast_breadcrumbs' );
 		}
 		?>
 

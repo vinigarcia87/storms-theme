@@ -27,32 +27,36 @@ if ( post_password_required() ) {
 
 <div id="comments" class="comments-area" itemscope itemtype="http://schema.org/Comment">
 
-    <span class="comments-title">
-    	<?php esc_html_e( 'Comentários:', 'storms' ); ?>
-	    <?php
+	<?php
+	if ( have_comments() ) : ?>
+		<span class="comments-title">
+			<?php esc_html_e( 'Comentários:', 'storms' ); ?>
+			<?php
 
-	    	// This is the original title for comments section
-			//$comment_count = get_comments_number();
-			//if ( 1 === $comment_count ) {
-			//	printf(
-			//		/* translators: 1: title. */
-			//		esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'storms' ),
-			//		'<span>' . get_the_title() . '</span>'
-			//	);
-			//} else {
-			//	printf( // WPCS: XSS OK.
-			//		/* translators: 1: comment count number, 2: title. */
-			//		esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'storms' ) ),
-			//		number_format_i18n( $comment_count ),
-			//		'<span>' . get_the_title() . '</span>'
-			//	);
-			//}
+				// This is the original title for comments section
+				//$comment_count = get_comments_number();
+				//if ( 1 === $comment_count ) {
+				//	printf(
+				//		/* translators: 1: title. */
+				//		esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'storms' ),
+				//		'<span>' . get_the_title() . '</span>'
+				//	);
+				//} else {
+				//	printf( // WPCS: XSS OK.
+				//		/* translators: 1: comment count number, 2: title. */
+				//		esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'storms' ) ),
+				//		number_format_i18n( $comment_count ),
+				//		'<span>' . get_the_title() . '</span>'
+				//	);
+				//}
 
-		?>
-    </span>
+			?>
+		</span>
+	<?php
+    endif; ?>
 
-    <?php
-    if ( have_comments() ) : ?>
+	<?php
+	if ( have_comments() ) : ?>
         <ul class="commentlist list-unstyled">
             <?php
             // Register Bootstrap Comment Walker
@@ -70,14 +74,14 @@ if ( post_password_required() ) {
             'next_text' => '<i class="bi bi-chevron-right" aria-hidden="true"></i><span class="visually-hidden"> ' . esc_html__( 'Newer Comments', 'storms' ) . '</span>',
         ) );
 	else: ?>
-		<p class="no-comments"><?php esc_html_e( 'Leave a comment.', 'storms' ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Seja o primeiro a comentar!', 'storms' ); ?></p>
 	<?php
     endif; // Check for have_comments().
 
     // If comments are closed and there are comments, let's leave a little note, shall we?
     if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 
-        <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'storms' ); ?></p>
+        <p class="no-comments"><?php esc_html_e( 'Os comentários estão fechados.', 'storms' ); ?></p>
 
         <?php
     endif;
