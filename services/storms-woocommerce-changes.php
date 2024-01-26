@@ -12,10 +12,12 @@
  * {{ Why this file is here? }}
  */
 
-// Modificando o script do autofill dos correios para incluir melhorias
-// Este script somente eh sobrescrito para incluir suporte para o Select2 (SelectWoo)
-// Sem esse suporte, o Autofill nao consegue preencher o campo Estado do formulario de checkout
-// A unica modificacao eh a inclusao do codigo `$( '#' + field + '_state' ).val( data.state ).trigger('change'); // Select2 support` no final do metodo `fillFields`
+/**
+ * Modificando o script do autofill dos correios para incluir melhorias
+ * Este script somente eh sobrescrito para incluir suporte para o Select2 (SelectWoo)
+ * Sem esse suporte, o Autofill nao consegue preencher o campo Estado do formulario de checkout
+ * A unica modificacao eh a inclusao do codigo `$( '#' + field + '_state' ).val( data.state ).trigger('change'); // Select2 support` no final do metodo `fillFields`
+ */
 function storms_autofill_correios_frontend_scripts() {
 	if ( is_checkout() || is_account_page() ) {
 		wp_dequeue_script('woocommerce-correios-autofill-addresses');
