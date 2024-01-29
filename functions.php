@@ -56,6 +56,7 @@ require_once 'services/customization/storms-cookie-consent.php';
 require_once 'services/customization/storms-slide-anything-cached.php';
 require_once 'services/customization/storms-register-menu-areas.php';
 require_once 'services/customization/storms-register-widget-areas.php';
+require_once 'services/customization/storms-post-pagination.php';
 require_once 'services/woocommerce/storms-woocommerce-hold-stock.php';
 require_once 'services/woocommerce/storms-woocommerce-pages.php';
 require_once 'services/woocommerce/storms-woocommerce-checkout-fields.php';
