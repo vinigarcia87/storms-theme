@@ -71,19 +71,6 @@ defined( 'ABSPATH' ) || exit;
 
 	<footer class="entry-footer">
 
-		<?php if ( 'post' == get_post_type() ) : ?>
-
-		<p>
-			<?php _e('Post anterior:', 'storms'); ?>
-			<?php previous_post_link('%link', '%title'); ?>
-		</p>
-		<p>
-			<?php _e('Post seguinte:', 'storms'); ?>
-			<?php next_post_link('%link', '%title'); ?>
-		</p>
-
-		<?php endif; ?>
-
 		<?php \StormsFramework\Helper::entry_footer(); ?>
 
 	</footer>

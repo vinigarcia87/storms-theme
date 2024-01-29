@@ -265,7 +265,12 @@ if( \StormsFramework\Helper::is_woocommerce_activated() ) {
 			));
 
 			$the_query = new WP_Query( $query_args );
-			$posts_ids = relevanssi_do_query( $the_query );
+
+			if( \StormsFramework\Helper::is_plugin_activated( 'relevanssi/relevanssi.php' ) ) {
+				$posts_ids = relevanssi_do_query( $the_query );
+			} else {
+				$posts_ids = $the_query->posts;
+			}
 
 			// TODO We should keep the list of words the users search for...
 			$date = (new \DateTime( 'now', new \DateTimeZone( 'America/Sao_Paulo' ) ))->format( 'Y-m-d H:i:s' );

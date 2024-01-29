@@ -54,6 +54,8 @@ require_once 'services/customization/storms-assets.php';
 require_once 'services/customization/storms-theme-customization-options.php';
 require_once 'services/customization/storms-cookie-consent.php';
 require_once 'services/customization/storms-slide-anything-cached.php';
+require_once 'services/customization/storms-register-menu-areas.php';
+require_once 'services/customization/storms-register-widget-areas.php';
 require_once 'services/woocommerce/storms-woocommerce-hold-stock.php';
 require_once 'services/woocommerce/storms-woocommerce-pages.php';
 require_once 'services/woocommerce/storms-woocommerce-checkout-fields.php';
@@ -84,6 +86,13 @@ if( ! function_exists( 'storms_testing' ) ) {
 		\StormsFramework\Helper::debug( 'Debugging Storms Theme', 'Storms Theme' );
 	}
 	//add_action( 'wp', 'storms_testing' );
+}
+
+if( ! function_exists( 'storms_cientifica_admin_testing' ) ) {
+	function storms_admin_testing() {
+		\StormsFramework\Helper::debug( 'Memory consumed: '.(memory_get_peak_usage(true)/1024/1024).' MiB' );
+	}
+	//add_action( 'shutdown', 'storms_admin_testing' );
 }
 
 // Debug assets used on the website
