@@ -53,7 +53,7 @@ if( ! function_exists( 'storms_define_wordpress_options' ) ) {
 		update_option( 'comments_per_page', 5 );
 
 		update_option( 'default_pingback_flag', 'no' );
-		update_option( 'default_ping_status', '0' );
+		update_option( 'default_ping_status', 0 );
     }
     add_action( 'admin_init', 'storms_define_wordpress_options' );
 

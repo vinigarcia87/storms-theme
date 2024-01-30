@@ -29,29 +29,25 @@ if ( post_password_required() ) {
 
 	<?php
 	if ( have_comments() ) : ?>
-		<span class="comments-title">
-			<?php esc_html_e( 'Comentários:', 'storms' ); ?>
+		<h3 class="comments-title">
 			<?php
-
-				// This is the original title for comments section
-				//$comment_count = get_comments_number();
-				//if ( 1 === $comment_count ) {
-				//	printf(
-				//		/* translators: 1: title. */
-				//		esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'storms' ),
-				//		'<span>' . get_the_title() . '</span>'
-				//	);
-				//} else {
-				//	printf( // WPCS: XSS OK.
-				//		/* translators: 1: comment count number, 2: title. */
-				//		esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'storms' ) ),
-				//		number_format_i18n( $comment_count ),
-				//		'<span>' . get_the_title() . '</span>'
-				//	);
-				//}
-
+				$comment_count = get_comments_number();
+				if ( 1 === $comment_count ) {
+					printf(
+						/* translators: 1: title. */
+						esc_html_e( 'Um comentário em &ldquo;%1$s&rdquo;', 'storms' ),
+						'<span>' . get_the_title() . '</span>'
+					);
+				} else {
+					printf( // WPCS: XSS OK.
+						/* translators: 1: comment count number, 2: title. */
+						esc_html( _nx( '%1$s comentário em &ldquo;%2$s&rdquo;', '%1$s comentários em &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'storms' ) ),
+						number_format_i18n( $comment_count ),
+						'<span>' . get_the_title() . '</span>'
+					);
+				}
 			?>
-		</span>
+		</h3>
 	<?php
     endif; ?>
 
