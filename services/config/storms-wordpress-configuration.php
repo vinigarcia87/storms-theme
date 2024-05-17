@@ -43,7 +43,7 @@ if( ! function_exists( 'storms_define_wordpress_options' ) ) {
 		}
 
  		// Qualquer pessoa pode se registrar
-		update_option( 'users_can_register', '1' );
+		//update_option( 'users_can_register', '1' );
 
 		// Comments configuration
 		update_option( 'default_comment_status', 'open' );
