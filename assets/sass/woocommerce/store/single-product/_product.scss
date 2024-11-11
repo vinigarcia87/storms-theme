@@ -42,7 +42,7 @@ figure.woocommerce-product-gallery__wrapper {
 
 .flex-control-thumbs {
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	gap: 10px;
 	margin-top: 15px;
 	padding-left: 0;

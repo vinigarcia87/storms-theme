@@ -20305,6 +20305,14 @@ ul.storms-menu-usuario-logado-container li a {
     display: none;
   }
 }
+#storms-wc-searchbar-form .input-group {
+  margin: 15px 10px;
+}
+#storms-wc-searchbar-form .input-group > button, #storms-wc-searchbar-form .input-group > input {
+  border-radius: 0;
+  padding: 15px;
+}
+
 ul.parent-list,
 ul.child-list {
   padding: 4px 24px !important;
@@ -20331,7 +20339,7 @@ ul.child-list .dropdown-item a {
   -webkit-box-shadow: 0 2px 7px 0;
           box-shadow: 0 2px 7px 0;
   padding: 5px;
-  margin-top: 2px;
+  margin: -10px 0 0 10px;
 }
 
 .storms-wc-searchbar-loader-image {
@@ -20347,15 +20355,6 @@ ul.child-list .dropdown-item a {
   background-size: contain;
 }
 
-.storms-wc-searchbar-results {
-  display: grid;
-  gap: 4px;
-  gap: 0.25rem;
-  margin: 10px 0;
-  border: 1px solid black;
-  padding: 5px;
-}
-
 .storms-wc-searchbar-results-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -20366,7 +20365,6 @@ ul.child-list .dropdown-item a {
 .storms-wc-searchbar-result,
 .storms-wc-searchbar-show-more-results,
 .storms-wc-searchbar-ajax-search-no-result {
-  border: 1px solid black;
   display: grid;
   gap: 4px;
   gap: 0.25rem;
@@ -20376,11 +20374,18 @@ ul.child-list .dropdown-item a {
 .storms-wc-searchbar-result {
   grid-template-columns: 70px 1fr;
 }
+.storms-wc-searchbar-result:nth-child(2n-1) {
+  border-right: 1px solid var(--bs-gray-200);
+}
+.storms-wc-searchbar-result:hover, .storms-wc-searchbar-result:focus {
+  background-color: var(--bs-gray-200);
+}
 
 .storms-wc-searchbar-show-more-results,
 .storms-wc-searchbar-ajax-search-no-result {
   grid-template-columns: 1fr;
   text-align: center;
+  color: var(--bs-link-color);
 }
 
 .storms-wc-searchbar-result-image {
@@ -20395,10 +20400,10 @@ ul.child-list .dropdown-item a {
 
 .storms-wc-searchbar-show-more-results {
   cursor: pointer;
+  border-top: 1px solid var(--bs-gray-200);
 }
 .storms-wc-searchbar-show-more-results:hover {
-  background-color: var(--bs-secondary);
-  font-weight: bold;
+  background-color: var(--bs-gray-200);
 }
 
 .woocommerce .term-description,
@@ -21494,8 +21499,8 @@ figure.woocommerce-product-gallery__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   gap: 10px;
   margin-top: 15px;
   padding-left: 0;
