@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) || exit;
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'storms' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( 'Nenhum resultado encontrado', 'storms' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -49,7 +49,7 @@ defined( 'ABSPATH' ) || exit;
 			do_action('storms_before_search_empty_content');
 			?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'storms' ); ?></p>
+			<p><?php esc_html_e( 'Desculpe, não foi possivel encontrar nada com esses termos. Por favor, tente novamente com outros termos.', 'storms' ); ?></p>
 			<?php
 				\StormsFramework\Helper::get_search_form();
 
@@ -61,7 +61,7 @@ defined( 'ABSPATH' ) || exit;
 
 		else : ?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'storms' ); ?></p>
+			<p><?php esc_html_e( 'Parece que não conseguimos encontrar o que você procura. Tente nossa busca avançada.', 'storms' ); ?></p>
 			<?php
 			\StormsFramework\Helper::get_search_form();
 
